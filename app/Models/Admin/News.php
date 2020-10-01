@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Admin;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class News extends Model
 {
     use CrudTrait;
 
@@ -15,7 +15,7 @@ class Category extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'categories';
+    protected $table = 'news';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
@@ -28,6 +28,11 @@ class Category extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+
+	public function category()
+	{
+		return $this->belongsToMany(Category::class, 'category_news', 'category_id','new_id');
+	}
 
     /*
     |--------------------------------------------------------------------------
@@ -52,4 +57,15 @@ class Category extends Model
     | MUTATORS
     |--------------------------------------------------------------------------
     */
+
+	public function setImgAttribute($value)
+	{
+		$attribute_name = "img";
+		$disk = "public";
+		$destination_path = "news";
+
+		$this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
+
+		// return $this->attributes[{$attribute_name}]; // uncomment if this is a translatable field
+	}
 }

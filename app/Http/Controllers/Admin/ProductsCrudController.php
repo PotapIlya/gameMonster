@@ -26,9 +26,9 @@ class ProductsCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Products::class);
+        CRUD::setModel(\App\Models\Admin\Products::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/products');
-        CRUD::setEntityNameStrings('products', 'products');
+        CRUD::setEntityNameStrings('Продукт', 'Продукты');
     }
 
     /**
@@ -60,14 +60,63 @@ class ProductsCrudController extends CrudController
 
 
 		CRUD::addField([
-			'label'     => "Tags",
+			'label'     => "Заголовок",
+			'type'      => 'text',
+			'name'      => 'title',
+		]);
+		CRUD::addField([
+			'name' => 'price',
+			'label' => 'Цена',
+			'type' => 'number',
+			 'prefix'     => "P",
+			// 'suffix'     => ".00",
+		]);
+		CRUD::addField([
+			'name' => 'old_price',
+			'label' => 'Старая цена',
+			'type' => 'number',
+			'prefix'     => "P",
+			// 'suffix'     => ".00",
+		]);
+		CRUD::addField([
+			'name' => 'discounts',
+			'label' => 'Скидка',
+			'type' => 'number',
+			'prefix'     => "%",
+		]);
+		CRUD::addField([
+			'name' => 'text',
+			'label' => 'Описание',
+			'type' => 'tinymce',
+		]);
+		CRUD::addField([
+			'name'      => 'preloader',
+			'label'     => 'Заглушка',
+			'type'      => 'upload',
+			'upload'    => true,
+//			'disk'      => 'uploads', // if you store files in the /public folder, please ommit this; if you store them in /storage or S3, please specify it;
+			// optional:
+//			'temporary' => 10 // if using a service, such as S3, that requires you to make temporary URL's this will make a URL that is valid for the number of minutes specified
+		]);
+		CRUD::addField([
+			'name'      => 'img',
+			'label'     => 'Картинки',
+			'type'      => 'upload_multiple',
+			'upload'    => true,
+//			'disk'      => 'uploads', // if you store files in the /public folder, please ommit this; if you store them in /storage or S3, please specify it;
+//			// optional:
+//			'temporary' => 10 // if using a service, such as S3, that requires you to make temporary URL's this will make a URL that is valid for the number of minutes specified
+		]);
+
+		CRUD::addField([
+			'label'     => "Категории",
 			'type'      => 'select2_multiple',
-			'name'      => 'tags', // the method that defines the relationship in your Model
+			'name'      => 'category', // the method that defines the relationship in your Model
 
 			// optional
-			'entity'    => 'tags', // the method that defines the relationship in your Model
-			'model'     => "App\Models\Category", // foreign key model
-			'attribute' => 'title', // foreign key attribute that is shown to user
+			'entity'    => 'category', // the method that defines the relationship in your Model
+			'model'     => "App\Models\Admin\Category", // foreign key model
+			'attribute' => 'name', // foreign key attribute that is shown to user
 			'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
 			// 'select_all' => true, // show Select All and Clear buttons?
 		]);

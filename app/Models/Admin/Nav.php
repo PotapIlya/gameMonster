@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Admin;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class Products extends Model
+class Nav extends Model
 {
     use CrudTrait;
 
@@ -15,7 +15,7 @@ class Products extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'products';
+    protected $table = 'navs';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
@@ -28,10 +28,6 @@ class Products extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
-	public function tags()
-	{
-		return $this->belongsToMany(Category::class, 'category_product', 'category_id','product_id');
-	}
 
     /*
     |--------------------------------------------------------------------------

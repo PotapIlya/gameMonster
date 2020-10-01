@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -176,8 +176,14 @@ return [
         App\Providers\RouteServiceProvider::class,
 
 
+		/*
+		 *  My Service Providers...
+		 */
+
 		Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 		Barryvdh\Debugbar\ServiceProvider::class,
+
+
     ],
 
     /*
