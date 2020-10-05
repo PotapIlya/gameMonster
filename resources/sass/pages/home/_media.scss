@@ -1,0 +1,195 @@
+
+@media only screen and (max-width : 1500px) {
+
+    .header{
+        padding: 0 20px;
+    }
+
+    .luck__item{
+        margin-right: 40px;
+    }
+    .catalog{
+        padding: 0 10px;
+    }
+
+    .news__item_5,
+    .news__thumb-block,{
+        right: -15px;
+    }
+    .news__thumb-medium{
+        right: 55px;
+    }
+
+}
+
+@media only screen and (max-width : 1400px) {
+
+    .news_block-2{
+        margin-left: 0;
+    }
+
+    .news_block-1{
+        flex: 0 0 40%;
+        max-width: 40%;
+        margin-left: auto;
+    }
+
+
+    .proposal_item__wrapper-3{
+        right: 130px;
+    }
+
+}
+
+@media only screen and (max-width : 1300px) {
+
+    .header__translate{
+        display: none;
+    }
+
+
+    .news_block-1{
+        flex: 0 0 42%;
+        max-width: 42%;
+
+    }
+
+}
+
+
+@media only screen and (max-width : 1200px) {
+
+    .header{
+
+        &__list,
+        &__search,
+        &__money{
+            display: none;
+        }
+
+    }
+
+    .news_block-1{
+        flex: 0 0 45%;
+        max-width: 45%;
+
+    }
+
+}
+
+
+@media only screen and (max-width : 992px) {
+
+
+
+    .news_block-1{
+        margin-left: 0;
+        flex: 0 0 100%;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .section__subtitle{
+        margin: 0;
+        font-size: 28px;
+    }
+
+}
+
+
+@media only screen and (max-width : 768px) {
+
+
+
+    .luck {
+
+        &__block{
+            margin-bottom:  0;
+        }
+
+        &__item {
+            margin-bottom: 25px;
+
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+        }
+    }
+
+}
+
+
+@media only screen and (max-width : 600px) {
+
+
+    .catalog__item-img{
+        height: 200px;
+    }
+
+
+
+
+}
+
+
+@media only screen and (max-width : 500px) {
+
+  .section__title{
+      font-size: 28px;
+  }
+  .luck__item{
+      width: 100%;
+  }
+
+}
+
+
+@media only screen and (max-width : 450px) {
+
+    .luck__item{
+        &-img .rate{
+            left: 70%;
+        }
+        &-price{
+            left: 88%;
+        }
+    }
+
+}
+
+
+
+@media only screen and (max-width : 400px) {
+
+    .luck__item{
+        &-img {
+            &-detail_1 {
+                left: -125px;
+            }
+            &-detail_3 {
+                left: -125px;
+            }
+
+            .rate {
+                left: 75%;
+            }
+        }
+        &-price{
+            left: 88%;
+            .new{
+                font-size: 22px;
+            }
+            .old{
+                font-size: 19px;
+            }
+        }
+
+    }
+
+}
+
+@media only screen and (max-width : 320px) {
+
+}

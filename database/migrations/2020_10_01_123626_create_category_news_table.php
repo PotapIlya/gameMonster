@@ -16,8 +16,8 @@ class CreateCategoryNewsTable extends Migration
         Schema::create('category_news', function (Blueprint $table) {
             $table->id();
 
-            $table->integer('category_id');
-            $table->integer('new_id');
+            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('new_id');
 
             $table->timestamps();
 

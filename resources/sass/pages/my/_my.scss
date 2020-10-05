@@ -1,0 +1,89 @@
+
+
+.my-private{
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 33px;
+    line-height: 106.19%;
+}
+
+.my-title{
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 106.19%;
+}
+
+form{
+    input[type="text"]{
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        width: 274px;
+        height: 56px;
+        background: $innput-text;
+        outline: none;
+        border:none;
+        padding: 11px 16px;
+        margin-bottom: 14px;
+        border-radius: 6px;
+    }
+
+    input[type="button"]{
+        font-family: "Rubik";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        background:$black;
+        outline: none;
+        border: 1px solid $input-button;
+        padding: 16px 20px;
+        border-radius: 6px;
+        color: $innput-button;
+    }
+}
+
+@media only screen and (min-width:638px){
+    form:first-child{
+        margin-right: 20px;
+    }
+
+    form:last-child{
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width:638px){
+    form:first-child{
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width:638px){
+    .my-form{
+        flex-direction: column;
+    }
+}
+
+@media only screen and (min-width:1200px){
+    .my-private{
+        margin-bottom: 43px;
+    }
+}
+
+@media only screen and (max-width:768px){
+    .my-private{
+        margin-bottom: 17px;
+    }
+}
+
+@media only screen and (max-width:320px){
+    .my-private{
+        margin-bottom: 24px;
+    }
+}

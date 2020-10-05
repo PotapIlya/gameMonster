@@ -13,10 +13,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+/** All */
+
+Route::group([], function ()
+{
+	$data = [
+		'namespace' => 'App\Http\Controllers\All'
+	];
+
+	Route::group($data, function ()
+	{
+		Route::resource('/', 'IndexController')->names('main');
+		Route::get('/{id}', 'IndexController@show')->name('mainShow');
+	});
+
+
+});
+
+/** User */
+
+Route::group([], function ()
+{
+	$data = [
+		'namespace' => 'App\Http\Controllers\User'
+	];
+
+	Route::group($data, function ()
+	{
+		Route::resource('/my', 'IndexController')->names('user');
+	});
+
+
+});
+
+

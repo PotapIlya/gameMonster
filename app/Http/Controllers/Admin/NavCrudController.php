@@ -14,7 +14,7 @@ use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 class NavCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
-//    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
+//    use \Backpack\CRUD\app\Http\Controllers\Operations\Create	Operation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
 //    use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
@@ -29,7 +29,11 @@ class NavCrudController extends CrudController
         CRUD::setModel(\App\Models\Admin\Nav::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/nav');
         CRUD::setEntityNameStrings('Меню', 'navs');
+//		$this->crud->addButtonFromView('line', 'moderate', 'moderate', 'beginning');
     }
+
+
+
 
     /**
      * Define what happens when the List operation is loaded.
@@ -91,4 +95,9 @@ class NavCrudController extends CrudController
     {
         $this->setupCreateOperation();
     }
+
+//	public function moderate()
+//	{
+//		dd(12);
+//	}
 }

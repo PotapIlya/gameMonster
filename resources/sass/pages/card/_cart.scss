@@ -1,0 +1,242 @@
+//body{
+//    background: url("/assets/release/img/bg.jpg"), rgba(0,0,0,.9);
+//    background-blend-mode: multiply;
+//}
+
+.container{
+    @media only screen and (max-width:1500px){
+        padding: 0 28px;
+    }
+
+    @media only screen and (max-width:768px){
+        padding: 0 16px;
+    }
+}
+
+.cart-images{
+    width: 100%;
+
+    &__yellow{
+        color: $yellow;
+    }
+
+    &__additional-image{
+        padding-top: 13px;
+    }
+
+    &__main-image{
+        img{
+            width:  100%;
+            border-radius: 25px;
+            @media only screen and (max-width:768px){
+                border-radius: 20px;
+            }
+        }
+    }
+
+    &__additem{
+        max-width: 15.18%;
+        padding: 0;
+        img{
+            width: 100%;
+            border-radius: 10px;
+            @media only screen and (max-width:768px){
+                border-radius: 5px;
+            }
+        }
+        
+    }
+}
+
+.game-description{
+    font-size: 18px;
+    line-height: 184%;
+}
+
+.right-wrap{
+    width: 100%;
+    padding-left: 54px;
+    @media only screen and (max-width:1200px){
+        padding-left: 0;
+    }
+    font-weight: 100;
+
+    &__title{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 56px;
+        line-height: 106.69%;
+
+        @media only screen and (max-width:768px){
+            font-size: 33px;
+            line-height: 106.69%;
+        }
+    }
+
+    &__genre{
+
+        &:not(:first-child){
+            margin-left: 10px;
+        }
+
+        padding: 0 10px;
+        background: $genre-bg;
+        color:$genre-color;
+    }
+
+    &__prices{
+        padding-top: 40px;
+        margin-bottom: 38px;
+        @media only screen and (max-width:768px){
+            padding-top: 15px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__get-keys{
+        margin-bottom: 27px;
+        @media only screen and (min-width:769px){
+            flex-direction: row !important;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__buy-key{
+        padding: 14px 24px;
+        background: $buy-key-bg;
+        border-radius: 6px;
+        color: $white;
+    }
+
+    &__random-key{
+        padding: 14px 24px;
+        background: $random-key;
+        border-radius: 6px;
+        color: $white;
+        margin-left: 17px;
+        @media only screen and (max-width:768px){
+            margin-left: 0;
+            margin-top: 10px;
+        }
+    }
+
+    &__actual{
+        font-weight: 500;
+        font-size: 38px;
+        line-height: 64.19%;
+    }
+
+    &__irrelevant{
+        text-decoration: line-through;
+        color:#A0A0A0;
+        font-weight: 300;
+        font-size: 29px;
+        line-height: 64.19%;
+        margin-left: 25px;
+    }
+
+    &__lists{
+        margin-bottom: 35px;
+        @media only screen and (max-width:768px){
+            margin-bottom: 10px;
+        }
+    }
+
+    &__tag{
+        font-size: 16px;
+        line-height: 200%;
+        text-align: right;
+        color:$tag-bg;
+    }
+    
+    &__value{
+        padding-left: 26px;
+        font-size: 16px;
+        line-height: 200%;
+        text-align: left;
+        color:$white
+    }
+}
+
+.originacc{
+
+    &-wrap{
+        background: $black;
+        border-radius: 13px;
+
+        &__hd{
+            background: $originacc-hd-bg;
+            padding: 26px 0;
+            border-radius: 13px;
+            color: $origin-text;
+        }
+
+        &__title{
+            font-family: "Rubik";
+            font-size: 19px;
+            font-weight: 400;
+            padding-left: 52px;
+            background: url('/assets/release/img/origin.png') no-repeat 8% center;
+        }
+
+        &__price{
+            font-size: 21px;
+            font-weight: 300;
+            span{
+                font-size: 21px;
+                font-weight: 500;
+            }
+
+            &1{
+                font-size: 21px;
+                font-weight: 300;
+
+                span{
+                font-size: 21px;
+                font-weight: 500;
+                }
+
+                display: none;
+                @media only screen and (max-width:768px){
+                    display: block;
+                }
+            }
+
+            @media only screen and (max-width:768px){
+                display: none;
+            }
+            padding-right: 25px;
+        }
+
+        &__games{
+            padding: 12px 28px 18px 52px;
+            @media only screen and (max-width:768px){
+                padding-left: 20px;
+            }
+        }
+
+        &__button{
+            font-family: "Rubik";
+            font-weight: 400;
+
+            &:hover{
+                color: $white;
+                font-weight: 700;
+            }
+
+            outline: none;
+            background: $transparent;
+            border: none;
+            color: $origin-text;
+            font-size: 19px;
+            line-height: 190.19%;
+        }
+
+        &__rent-acc{
+            font-size: 19px;
+            background: url('/assets/release/img/rent-acc.png') no-repeat 100% center;
+            color:$rent-acc;
+            padding-right: 20px;
+        }
+    }
+}

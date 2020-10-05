@@ -1,0 +1,236 @@
+.proposal{
+    padding-top: 96px;
+    padding-bottom: 92px;
+
+
+
+    &_item{
+        position: relative;
+
+        &_1{
+            margin-right: -12%;
+            margin-top: -14px;
+            position: relative;
+            z-index: 10;
+        }
+        &_2{
+            margin-right: -48px;
+        }
+        &_3 {
+            position: relative;
+            margin-left: -26px;
+            margin-top: -70px;
+            z-index: 100;
+        }
+
+        &-title{
+            font-weight: 900;
+            font-size: 60px;
+            line-height: 95.69%;
+            margin-bottom: 20px;
+        }
+        &-text{
+            font-weight: 500;
+            font-size: 22.7121px;
+            line-height: 131.19%;
+            margin-bottom: 35px;
+            color: $opacityWhite;
+        }
+        &-btn{
+            padding: 20px 35px;
+            color: $white;
+            border-radius: 12px;
+            font-weight: 500;
+            line-height: 125.69%;
+            font-size: 16px;
+        }
+        input,
+        textarea{
+            color: $opacityWhite;
+            border: 1px solid transparent;
+            font-size: 18px;
+            padding: 22px;
+            background: rgba(193, 193, 193, 0.22);
+            backdrop-filter: blur(24px);
+            border-radius: 12px;
+            &::placeholder{
+                color: $opacityWhite;
+            }
+            &:focus{
+                border: 1px solid $opacityWhite;
+            }
+        }
+        &__wrapper{
+            position: absolute;
+
+
+            &-1{
+                top: 0;
+                left: 0;
+                height: 80%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                //top: 90px;
+                //left: 45px;
+                //padding-right: 100%;
+                //
+                //.proposal_item-btn{
+                //    background: rgba(0, 0, 0, 0.17);
+                //    backdrop-filter: blur(24px);
+                //}
+            }
+            &-2{
+                top: 70px;
+                left: 45px;
+                padding-right: 40%;
+
+                .proposal_item-text{
+                    position: absolute;
+                    bottom: -130%;
+                    left: 18%;
+                    padding-right: 60%;
+                }
+                form{
+                    position: absolute;
+                    bottom: -175%;
+                    left: 15%;
+                    z-index: 200;
+                }
+                .proposal_item-btn{
+                    background: $orange;
+                }
+            }
+
+            &-3{
+                bottom: 45px;
+                right: 55px;
+
+
+                .proposal_item-title{
+                    padding-right: 10%;
+                    margin-bottom: 0;
+                }
+                .proposal_item-btn{
+
+                    background: rgba(0, 0, 0, 0.25);
+                    backdrop-filter: blur(24px);
+                }
+            }
+        }
+
+    }
+
+
+
+}
+
+
+
+//.proposal
+//	padding-top: 96px
+//	padding-bottom: 92px
+//	overflow: hidden
+//	&__row
+//		position: relative
+//		min-height: 1068px
+//	&__item
+//		position: absolute
+//		background-repeat: no-repeat
+//		&_1, &_2
+//			height: 673px
+//		&_1
+//			top: 0
+//			left: 0
+//			width: 828px
+//			.proposal__item-img
+//				top: -37px
+//				right: 0
+//			.proposal__item-title
+//				max-width: 362px
+//				margin-bottom: 21px
+//			.proposal__item-descr
+//				max-width: 240px
+//				margin-bottom: 35px
+//			.proposal__item-text
+//				left: 45.5px
+//				top: 60px
+//		&_2
+//			top: 0
+//			right: 0
+//			width: 767px
+//			.proposal__item-img
+//				top: -23px
+//				right: -49px
+//			.proposal__item-title
+//				max-width: 362px
+//				margin-bottom: 21px
+//			.proposal__item-descr
+//				max-width: 240px
+//				margin-bottom: 35px
+//				position: absolute
+//				left: 177px
+//				bottom: 180px
+//			.proposal__item-text
+//				left: 47px
+//				top: 54px
+//			.proposal__item-form
+//				display: flex
+//				align-items: center
+//				position: absolute
+//				left: 177px
+//				bottom: 90px
+//				z-main: 6
+//				.input__group-input
+//					margin-right: 28px
+//		&_3
+//
+//			left: -44px
+//			bottom: -14px
+//			width: 106%
+//			height: 501px
+//			.proposal__item-img
+//				top: -190px
+//				right: -43px
+//			.proposal__item-title
+//				max-width: 362px
+//				margin-bottom: 21px
+//			.proposal__item-descr
+//				max-width: 240px
+//				margin-bottom: 35px
+//				position: absolute
+//				left: 177px
+//				bottom: 180px
+//			.proposal__item-text
+//				left: 389px
+//				bottom: 59px
+//			.proposal__item-form
+//				display: flex
+//				//align-items: center
+//				position: absolute
+//				right: 73px
+//				bottom: 59px
+//				z-main: 6
+//				align-items: flex-end
+//				flex-direction: row-reverse
+//				.input__group-input
+//					display: block
+//					&:not(:last-child)
+//						margin-bottom: 16px
+//					&.textarea
+//						height: 204px
+//				.proposal__item-button
+//					margin-right: 29px
+//					background: rgba(0, 0, 0, 0.25)
+//		&-img, &-text
+//			position: absolute
+//			z-main: 2
+//		&-title
+//			font-weight: 900
+//			font-size: 60px
+//			line-height: 57px
+//		&-descr
+//			font-weight: 500
+//			font-size: 22.7121px
+//			line-height: 30px
+//			color: rgba(255, 255, 255, 0.8)

@@ -1,0 +1,79 @@
+.catalog
+	&__title
+		margin-bottom: 0
+	&__text
+		margin-bottom: 20.6px
+	&__row
+		margin-right: -24px
+		margin-left: -24px
+		margin-bottom: 32px
+	&__item
+		margin-bottom: 28px
+		display: block
+		&-img
+			position: relative
+			background-repeat: no-repeat
+			height: 257px
+			.rate, .catalog__price
+				position: absolute
+			.rate
+				right: 10px
+				bottom: 77px
+			.catalog__price
+				right: 15px
+				bottom: 7px
+				.new
+					font-weight: 500
+					font-size: 24px
+					line-height: 30px
+				.old
+					font-weight: 300
+					font-size: 16px
+					line-height: 20px
+					display: inline
+					position: relative
+					color: #AAAAAA
+					&::after
+						content: ''
+						display: block
+						position: absolute
+						width: 100%
+						height: 1px
+						background-color: #E3E3E3
+						top: 50%
+						left: 0
+						transform: translateY(-50%)
+
+  &-info
+    position: absolute
+    top: 20px
+    left: 20px
+    &-item
+      border-radius: 8px
+      padding: 6px 10px
+      font-weight: 100
+      font-size: 14px
+		&-title
+			font-weight: normal
+			font-size: 20px
+			margin-top: 12px
+			margin-bottom: 12px
+			line-height: 25px
+		&-company
+			position: absolute
+			right: 64px
+			bottom: 68px
+			+size(24px)
+		&-tags
+			display: flex
+		&-tag
+			background: #1C1C1C
+			border-radius: 4px
+			padding: 9px 14px
+			font-weight: normal
+			font-size: 14px
+			line-height: 9px
+			display: block
+			&:not(:last-child)
+				margin-right: 10px
+

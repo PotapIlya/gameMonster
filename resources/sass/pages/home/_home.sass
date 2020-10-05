@@ -1,0 +1,161 @@
+.home
+	margin-bottom: 43px
+	&__block
+		height: 683px
+	&__item, &__item-first-img
+		background-repeat: no-repeat
+	&__item
+		&-first
+			width: 638.5px
+			position: relative
+			&-img
+				position: absolute
+			&-img
+				left: -89px
+				top: -24px
+				z-index: 2
+			&-text
+				font-size: 66px
+				bottom: 38px
+				left: 66px
+				max-width: 500px
+				line-height: 61px
+		&-block
+			max-width: calc(100% - 638.5px)
+			width: 100%
+			position: relative
+		&-second
+			height: 523px
+			width: 901px
+			background-position: center right
+			position: absolute
+			right: 0
+			top: 0
+			z-index: 1
+			.home__text
+				font-size: 75px
+				line-height: 76px
+				max-width: 417px
+				top: 63px
+				left: 53px
+			.home__price
+				position: absolute
+				bottom: 55px
+				left: 186px
+				&-block
+					display: flex
+					align-items: center
+				.home__current
+					font-size: 55px
+					line-height: 61px
+					font-weight: 500
+					margin-right: 30px
+				&-was
+					position: relative
+					font-size: 48px
+					line-height: 53px
+					color: rgba(255, 255, 255, 0.8)
+					&::after
+						content: ''
+						width: 110%
+						height: 3px
+						background-color: #E9E9E9
+						position: absolute
+						left: 50%
+						top: 50%
+						transform: translate(-50%, -50%)
+						border-radius: 100px
+		&-small
+			width: 125px
+			height: 120px
+			position: absolute
+			bottom: 0
+	&__text
+    top: 70px
+    left: 0
+    font-weight: 900
+    position: absolute
+    font-size: 75.1888px
+    line-height: 101.69%
+    padding-right: 300px
+
+
+.home
+	&__block
+		&-grid
+			display: grid
+			grid-template-rows: 521px 160px
+			grid-template-columns: 638.5px 180px 155px 155px 155px 155px
+			grid-template-areas: "home__item_1 home__item_2 home__item_2 home__item_2 home__item_2 home__item_2" "home__item_1 home__item_3 home__item_4 home__item_5 home__item_6 home__item_7"
+	&__item
+		&-grid
+			position: relative
+			display: flex
+			align-items: flex-end
+			justify-content: flex-end
+
+			.home__item-img
+				position: absolute
+			&:nth-child(n+3)
+				background-position: bottom right
+			&_1
+				grid-area: home__item_1
+				z-index: 2
+				.home__item-img
+					&:nth-child(1)
+						top: 0
+						left: 0
+					&:nth-child(2)
+						top: -24px
+						left: -89px
+			&_2
+				grid-area: home__item_2
+				z-index: 1
+				.home__item-img
+					right: -2px
+					top: 0
+		&-link
+			display: inline-block
+
+
+
+.home__item-link-img
+  width: 130px
+
+.home__text-grid
+  z-index: 100
+  position: relative
+  font-weight: 900
+  font-size: 66px
+  line-height: 92.69%
+  padding-bottom: 0
+  padding-left: 60px
+  padding-right: 50px
+
+
+.home
+
+  &__price
+    line-height: 110.19%
+    bottom: 55px
+    left: 100px
+    position: absolute
+  &__current
+    position: absolute
+    top: -60px
+    font-weight: bold
+    font-size: 55px
+
+  &__price-was
+    color: $lightWhite
+    font-size: 47.9141px
+    font-weight: 400
+    text-decoration: line-through
+
+  &__rate
+    position: absolute
+    top: -65px
+    left: 150px
+
+
+

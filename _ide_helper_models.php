@@ -10,49 +10,9 @@
  */
 
 
-namespace App\Models\Admin{
+namespace App\Models{
 /**
- * App\Models\Admin\Category
- *
- * @property int $id
- * @property string|null $name
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @method static \Illuminate\Database\Eloquent\Builder|Category newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Category newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Category query()
- * @method static \Illuminate\Database\Eloquent\Builder|Category whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Category whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Category whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Category whereUpdatedAt($value)
- */
-	class Category extends \Eloquent {}
-}
-
-namespace App\Models\Admin{
-/**
- * App\Models\Admin\Products
- *
- * @property int $id
- * @property string $name
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Admin\Category[] $category
- * @property-read int|null $category_count
- * @method static \Illuminate\Database\Eloquent\Builder|Products newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Products newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Products query()
- * @method static \Illuminate\Database\Eloquent\Builder|Products whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Products whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Products whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Products whereUpdatedAt($value)
- */
-	class Products extends \Eloquent {}
-}
-
-namespace App{
-/**
- * App\User
+ * App\Models\User
  *
  * @property int $id
  * @property string $name

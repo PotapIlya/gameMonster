@@ -26,8 +26,7 @@ class NavRequest extends FormRequest
     public function rules()
     {
         return [
-             'name' => 'required',
-             'url' => 'required',
+            // 'name' => 'required|min:5|max:255'
         ];
     }
 

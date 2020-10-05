@@ -65,6 +65,7 @@ class CategoryCrudController extends CrudController
     {
         CRUD::setValidation(CategoryRequest::class);
 
+
         CRUD::setFromDb(); // fields
 
         /**

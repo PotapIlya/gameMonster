@@ -104,11 +104,11 @@ class NewsCrudController extends CrudController
 			// 'select_all' => true, // show Select All and Clear buttons?
 		]);
 
-		CRUD::addField([
-			'name' => 'text',
-			'label' => 'Описание',
-			'type' => 'tinymce',
-		]);
+//		CRUD::addField([
+//			'name' => 'text',
+//			'label' => 'Описание',
+//			'type' => 'tinymce',
+//		]);
 
         CRUD::setFromDb(); // fields
 
