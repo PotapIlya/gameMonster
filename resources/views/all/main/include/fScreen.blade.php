@@ -6,7 +6,7 @@
 
             <div class="col-4 px-0 d-none d-lg-block">
                 <div>
-                    <img class="home__img myCrutch" src="/img/home/head.png" alt=""/>
+                    <img class="home__img myCrutch" src="/assets/static/img/fScreen/head.png" alt=""/>
                 </div>
                 <div class="home__title d-flex align-items-end">
                     Страшные скидки в честь открытия
@@ -20,8 +20,8 @@
 
                         <div class="swiper-slide d-flex justify-content-end">
                             <div class="w-100">
-                                <img class="w-100 d-none d-lg-block" src="/assets/release/img/test.png" alt="">
-                                <img class="w-100 d-block d-lg-none" src="/assets/release/img/mobileTest.png" alt="">
+                                <img class="w-100 d-none d-lg-block" src="/assets/static/oldImage/assets/release/img/test.png" alt="">
+                                <img class="w-100 d-block d-lg-none" src="/assets/static/oldImage/assets/release/img/mobileTest.png" alt="">
                             </div>
                             <div class="swiper-slide-text h-100 d-flex flex-column justify-content-between py-0 py-md-5">
                                 <h1 class="slide-title">
@@ -39,8 +39,8 @@
                         </div>
                         <div class="swiper-slide d-flex justify-content-end">
                             <div class="w-100">
-                                <img class="w-100 d-none d-lg-block" src="/assets/release/img/test.png" alt="">
-                                <img class="w-100 d-block d-lg-none" src="/assets/release/img/mobileTest.png" alt="">
+                                <img class="w-100 d-none d-lg-block" src="/assets/static/oldImage/assets/release/img/test.png" alt="">
+                                <img class="w-100 d-block d-lg-none" src="/assets/static/oldImage/assets/release/img/mobileTest.png" alt="">
                             </div>
                             <div class="swiper-slide-text h-100 d-flex flex-column justify-content-between py-0 py-md-5">
                                 <h1 class="slide-title">
@@ -58,8 +58,8 @@
                         </div>
                         <div class="swiper-slide d-flex justify-content-end">
                             <div class="w-100">
-                                <img class="w-100 d-none d-lg-block" src="/assets/release/img/test.png" alt="">
-                                <img class="w-100 d-block d-lg-none" src="/assets/release/img/mobileTest.png" alt="">
+                                <img class="w-100 d-none d-lg-block" src="/assets/static/oldImage/assets/release/img/test.png" alt="">
+                                <img class="w-100 d-block d-lg-none" src="/assets/static/oldImage/assets/release/img/mobileTest.png" alt="">
                             </div>
                             <div class="swiper-slide-text h-100 d-flex flex-column justify-content-between py-0 py-md-5">
                                 <h1 class="slide-title">
@@ -77,8 +77,8 @@
                         </div>
                         <div class="swiper-slide d-flex justify-content-end">
                             <div class="w-100">
-                                <img class="w-100 d-none d-lg-block" src="/assets/release/img/test.png" alt="">
-                                <img class="w-100 d-block d-lg-none" src="/assets/release/img/mobileTest.png" alt="">
+                                <img class="w-100 d-none d-lg-block" src="/assets/static/oldImage/assets/release/img/test.png" alt="">
+                                <img class="w-100 d-block d-lg-none" src="/assets/static/oldImage/assets/release/img/mobileTest.png" alt="">
                             </div>
                             <div class="swiper-slide-text h-100 d-flex flex-column justify-content-between py-0 py-md-5">
                                 <h1 class="slide-title">
@@ -96,8 +96,8 @@
                         </div>
                         <div class="swiper-slide d-flex justify-content-end">
                             <div class="w-100">
-                                <img class="w-100 d-none d-lg-block" src="/assets/release/img/test.png" alt="">
-                                <img class="w-100 d-block d-lg-none" src="/assets/release/img/mobileTest.png" alt="">
+                                <img class="w-100 d-none d-lg-block" src="/assets/static/oldImage/assets/release/img/test.png" alt="">
+                                <img class="w-100 d-block d-lg-none" src="/assets/static/oldImage/assets/release/img/mobileTest.png" alt="">
                             </div>
                             <div class="swiper-slide-text h-100 d-flex flex-column justify-content-between py-0 py-md-5">
                                 <h1 class="slide-title">
@@ -121,20 +121,20 @@
                     <div class="swiper-wrapper">
                         <!--                        <div class="swiper-slide">-->
                         <div class="swiper-slide">
-                            <img class="mw-100" src="/assets/release/img/test.png" alt="">
+                            <img class="mw-100" src="/assets/static/oldImage/assets/release/img/test.png" alt="">
                         </div>
                         <!--						</div>-->
                         <div class="swiper-slide">
-                            <img class="mw-100" src="/assets/release/img/test.png" alt="">
+                            <img class="mw-100" src="/assets/static/oldImage/assets/release/img/test.png" alt="">
                         </div>
                         <div class="swiper-slide">
-                            <img class="mw-100" src="/assets/release/img/test.png" alt="">
+                            <img class="mw-100" src="/assets/static/oldImage/assets/release/img/test.png" alt="">
                         </div>
                         <div class="swiper-slide">
-                            <img class="mw-100" src="/assets/release/img/test.png" alt="">
+                            <img class="mw-100" src="/assets/static/oldImage/assets/release/img/test.png" alt="">
                         </div>
                         <div class="swiper-slide">
-                            <img class="mw-100" src="/assets/release/img/test.png" alt="">
+                            <img class="mw-100" src="/assets/static/oldImage/assets/release/img/test.png" alt="">
                         </div>
                     </div>
                 </div>

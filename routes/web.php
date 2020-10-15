@@ -49,37 +49,29 @@ Auth::routes();
 
 /** All */
 
-Route::group([], function ()
-{
-	$data = [
+Route::group(
+	[
 		'namespace' => 'App\Http\Controllers\All'
-	];
-
-	Route::group($data, function ()
+	],
+	function ()
 	{
 		Route::resource('/', 'IndexController')->names('main');
-//		Route::get('/{id}', 'IndexController@show')->name('mainShow');
-	});
-
-
+		Route::get('/show/{id}', 'IndexController@show')->name('mainShow');
 });
+
+
 
 /** User */
 
-
-Route::group([], function ()
-{
-	$data = [
+Route::group(
+	[
 		'namespace' => 'App\Http\Controllers\User',
 		'middleware' => 'auth'
-	];
-
-	Route::group($data, function ()
+	],
+	function ()
 	{
 		Route::resource('/my', 'IndexController')->names('user');
-	});
-
-
-});
+	}
+);
 
 

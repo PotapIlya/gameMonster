@@ -99,14 +99,14 @@
            &-img{
                position: relative;
                &:after{
-                   content: url("/assets/release/img/apple.png");
+                   content: url("/assets/static/img/main/icon/apple.png");
                    position: absolute;
                    right: 5%;
 
                    bottom: 45px;
                }
                &:before{
-                   content: url("/assets/release/img/google.png");
+                   content: url("/assets/static/img/main/icon/google.png");
                    position: absolute;
                    right: 5%;
                    bottom: 10px;

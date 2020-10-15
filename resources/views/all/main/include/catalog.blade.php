@@ -8,7 +8,9 @@
         </div>
         <div class="row catalog__row pl-0 pl-sm-3 pl-xl-0 justify-content-center">
 
-            @include('base.include.catalogItem')
+            @foreach($catalog as $item)
+                @include('base.include.catalogItem', ['item' => $item])
+            @endforeach
 
         </div>
     </div>

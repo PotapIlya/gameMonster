@@ -35,7 +35,7 @@
 
                 </div>
                 <a href="/" class="header__logo">
-                    <img class="" src="/assets/release/img/logo.svg" alt="Game Monster"/>
+                    <img class="" src="/assets/static/oldImage/assets/release/img/logo.svg" alt="Game Monster"/>
                 </a>
             </div>
             <div class="d-xl-flex flex-row flex-wrap flex-xl-nowrap flex-column flex-xl-row align-items-center justify-content-between w-100 mobile_menu-form">
@@ -51,7 +51,7 @@
                         <a class="header__list-link" href="#!">
                             Товары
                             <div class="header__list-arrow">
-                                <img src="img/arrow-down.svg" alt=""/>
+                                <img src="/assets/static/img/header/arrow-down.svg" alt=""/>
                             </div>
                         </a>
                     </li>
@@ -91,7 +91,7 @@
                                 </div>
                             </div>
                             <div>
-                                <img src="/img/game/steam.svg" alt="">
+                                <img src="/assets/static/oldImage/img/services/steam.png" alt="">
                             </div>
                         </li>
                         <li class="d-flex justify-content-between mb-3">
@@ -112,7 +112,7 @@
                                 </div>
                             </div>
                             <div>
-                                <img src="/img/game/steam.svg" alt="">
+                                <img src="/assets/static/oldImage/img/services/steam.png" alt="">
                             </div>
                         </li>
                         <li class="d-flex justify-content-between mb-3">
@@ -133,7 +133,7 @@
                                 </div>
                             </div>
                             <div>
-                                <img src="/img/game/steam.svg" alt="">
+                                <img src="/assets/static/oldImage/img/services/steam.png" alt="">
                             </div>
                         </li>
 
@@ -172,10 +172,10 @@
                     <span class="mr-3 header__user-money">12 976 ₽</span>
                     <div class="d-flex align-items-center">
                         <div>
-                            <img class="mw-100" src="/assets/release/img/header/avatar.png" alt="">
+                            <img class="mw-100" src="/assets/static/img/my/avatar.png" alt="">
                         </div>
                         <div class="header__list-arrow d-none d-sm-block">
-                            <img src="img/arrow-down.svg" alt=""/>
+                            <img src="/assets/static/img/header/arrow-down.svg" alt=""/>
                         </div>
                     </div>
 

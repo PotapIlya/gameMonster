@@ -23,6 +23,13 @@ class Category extends Model
     // protected $hidden = [];
     // protected $dates = [];
 
+
+
+	public function catalog()
+	{
+		return $this->belongsToMany(Catalog::class, 'category_product', 'product_id','category_id')->limit(4);
+	}
+
     /*
     |--------------------------------------------------------------------------
     | FUNCTIONS

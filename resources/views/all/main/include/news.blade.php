@@ -12,14 +12,14 @@
 
             <div class="col-12 col-lg-6 col-xl-4 pl-0  news_block-1">
                 <a class="news__item news__item_1 d-block" href="#!">
-                    <img class="news__item-img" src="/img/news/division.png" alt=""/>
+                    <img class="news__item-img" src="/assets/static/img/news/division.png" alt=""/>
                     <div class="news__item-text">
                         <div class="news__item-metatag">Скидки и акции</div>
                         <div class="news__item-title news__item-title_division">The Division раздают бесплатно</div>
                     </div>
                 </a>
                 <a class="news__item news__item_2 d-none d-lg-block" href="#!">
-                    <img class="news__item-img" src="/img/news/flight.png" alt=""/>
+                    <img class="news__item-img" src="/assets/static/img/news/flight.png" alt=""/>
                     <div class="news__item-text">
                         <div class="news__item-metatag">Симуляторы</div>
                         <div class="news__item-title">Microsoft Flight Simulator. Дорога
@@ -30,7 +30,7 @@
 
             <div class="col-6 col-xl-4 d-none d-lg-block news_block-2">
                 <a class="news__item news__item_3 d-block" href="#!">
-                    <img class="news__item-img" src="/img/news/apple.png" alt=""/>
+                    <img class="news__item-img" src="/assets/static/img/news/apple.png" alt=""/>
                     <div class="news__item-text">
                         <div class="news__item-metatag">Технологии</div>
                         <div class="news__item-title">Apple готовит
@@ -39,7 +39,7 @@
                     </div>
                 </a>
                 <a class="news__item news__item_4 d-block" href="#!">
-                    <img class="news__item-img" src="/img/news/cosmos.png" alt=""/>
+                    <img class="news__item-img" src="/assets/static/img/news/cosmos.png" alt=""/>
                     <div class="news__item-text">
                         <div class="news__item-metatag">Подборки</div>
                         <div class="news__item-title">Выбор редации:
@@ -54,7 +54,7 @@
                 <div class="news_block-3-item d-none d-lg-block">
                     <a class="news__item news__item_5 d-block">
                         <div class="news__item_5-img">
-                            <img class="mw-100" src="/img/news/vebmack.png" alt=""/>
+                            <img class="mw-100" src="/assets/static/img/news/vebmack.png" alt=""/>
                         </div>
                         <div class="news__item-text">
                             <div class="news__item-title">Релиз мобильного приложения по игре Ведьмак 3</div>
@@ -66,7 +66,7 @@
                     <div class="pl-4 pt-3 col-11 d-flex flex-column flex-lg-row d-xl-block">
                         <a class="news__thumb news__thumb_1 d-flex flex-lg-column flex-xl-row align-items-center mb-3" href="#!">
                             <div class="col-4">
-                                <img src="/assets/release/img/news/thumb.png" alt="">
+                                <img src="/assets/static/img/news/gotham.png" alt="">
                             </div>
                             <div>
                                 <p class="news__thumb__text">
@@ -79,7 +79,7 @@
                         </a>
                         <a class="news__thumb news__thumb_1 d-flex flex-lg-column flex-xl-row align-items-center mb-3" href="#!">
                             <div class="col-4">
-                                <img src="/assets/release/img/news/thumb.png" alt="">
+                                <img src="/assets/static/img/news/gotham.png" alt="">
                             </div>
                             <div>
                                 <p class="news__thumb__text">
@@ -92,7 +92,7 @@
                         </a>
                         <a class="news__thumb news__thumb_1 d-flex flex-lg-column flex-xl-row align-items-center mb-3" href="#!">
                             <div class="col-4">
-                                <img src="/assets/release/img/news/thumb.png" alt="">
+                                <img src="/assets/static/img/news/gotham.png" alt="">
                             </div>
                             <div>
                                 <p class="news__thumb__text">
@@ -111,9 +111,9 @@
                         <div class="mr-2 col-6">
                             <div class="news__video">
                                 <div>
-                                    <img class="mw-100"  src="/img/news/video.png" alt=""/>
+                                    <img class="mw-100"  src="/assets/static/img/news/video.png" alt=""/>
                                 </div>
-                                <img class="news__video-icon" src="/assets/release/img/news/play.png" alt="">
+                                <img class="news__video-icon" src="/assets/static/img/main/play.png" alt="">
                             </div>
                         </div>
                         <div class="news__thumb__video">

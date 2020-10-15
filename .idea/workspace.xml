@@ -2,245 +2,104 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="173ae8e2-6c61-4da4-b691-8c53b3dd54f3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/composerJson.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/fonts/Rubik-Black.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/fonts/Rubik-BlackItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/fonts/Rubik-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/fonts/Rubik-BoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/fonts/Rubik-ExtraBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/fonts/Rubik-ExtraBoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/fonts/Rubik-Italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/fonts/Rubik-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/fonts/Rubik-LightItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/fonts/Rubik-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/fonts/Rubik-MediumItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/fonts/Rubik-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/fonts/Rubik-SemiBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/fonts/Rubik-SemiBoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/gulpfile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/Modal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/auth/AuthComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/auth/Login.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/swiper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/preAssets/js/_scripts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/preAssets/js/scripts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/base/alert/error.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/base/alert/success.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/css/modules.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/fScreen/head.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/header/arrow-down.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/header/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/luck/common.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/luck/epic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/luck/legend.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/main/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/main/icon/apple.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/main/icon/google.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/main/icon/steam.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/main/iphone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/main/play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/main/player.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/my/avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/news/apple.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/news/cosmos.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/news/division.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/news/flight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/news/gotham.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/news/vebmack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/news/video.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/proposal/answer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/proposal/bonus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/proposal/mobileAnswer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/proposal/mobileBonus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/proposal/mobileReferal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/proposal/referal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/preAssets/js/scripts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/modules/appModules.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/modules/bootstrap-grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/modules/swiper-bundle.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/NavCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/NavCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TestCrudController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/All/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/All/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/BasicUserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/BasicUserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Admin/Catalog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Catalog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/bootstrap-grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Rubik-Black.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/Rubik-Black.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Rubik-BlackItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/Rubik-BlackItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Rubik-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/Rubik-Bold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Rubik-BoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/Rubik-BoldItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Rubik-ExtraBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/Rubik-ExtraBold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Rubik-ExtraBoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/Rubik-ExtraBoldItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Rubik-Italic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/Rubik-Italic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Rubik-Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/Rubik-Light.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Rubik-LightItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/Rubik-LightItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Rubik-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/Rubik-Medium.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Rubik-MediumItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/Rubik-MediumItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Rubik-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/Rubik-Regular.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Rubik-SemiBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/Rubik-SemiBold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/Rubik-SemiBoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/Rubik-SemiBoldItalic.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/search.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/arrow-down.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/game/PUBG.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/game/Ubisoft.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/game/bioshock.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/game/crew.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/game/csgo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/game/daylight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/game/doom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/game/farcry.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/game/fifa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/game/nomansky.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/game/steam.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/game/titanfail.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/game/watchdogs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/game/witcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/gpay.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/home/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/home/11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/home/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/home/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/home/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/home/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/home/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/home/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/iphonepay.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/luck/common-title.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/luck/common.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/luck/common1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/luck/epic-title.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/luck/epic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/luck/epic1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/luck/legend-title.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/luck/legend.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/luck/legend1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/news/Mask Group.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/news/apple.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/news/apple1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/news/arrow-right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/news/cosmos.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/news/cosmos1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/news/cosmos2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/news/division.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/news/flight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/news/flight1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/news/google-play.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/news/gotham.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/news/gotham2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/news/iphone.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/news/player.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/news/vedbmak.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/news/vedbmak1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/news/witcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/oval.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/payeer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/proposal/answer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/proposal/answer1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/proposal/bonus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/proposal/bonus1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/proposal/button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/proposal/referal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/proposal/referal1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/search.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/visa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/img/webmoney.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js.LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/app.js.LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/CatalogRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/CatalogRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Admin/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_01_122446_create_sliders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_01_122446_create_sliders_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/Rubik-Black.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/fonts/Rubik-Black.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/Rubik-BlackItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/fonts/Rubik-BlackItalic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/Rubik-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/fonts/Rubik-Bold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/Rubik-BoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/fonts/Rubik-BoldItalic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/Rubik-ExtraBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/fonts/Rubik-ExtraBold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/Rubik-ExtraBoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/fonts/Rubik-ExtraBoldItalic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/Rubik-Italic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/fonts/Rubik-Italic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/Rubik-Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/fonts/Rubik-Light.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/Rubik-LightItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/fonts/Rubik-LightItalic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/Rubik-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/fonts/Rubik-Medium.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/Rubik-MediumItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/fonts/Rubik-MediumItalic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/Rubik-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/fonts/Rubik-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/Rubik-SemiBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/fonts/Rubik-SemiBold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fonts/Rubik-SemiBoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/fonts/Rubik-SemiBoldItalic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/app.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/img/no-image.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/img/main/no-image.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/img/no-image.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/img/no-image.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/.tmb/l1_Q2FtXzA1LmpwZw1601927230.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/Cam_05.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/arrow-down.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/game/PUBG.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/game/Ubisoft.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/game/bioshock.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/game/crew.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/game/csgo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/game/daylight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/game/doom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/game/farcry.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/game/fifa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/game/nomansky.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/game/steam.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/game/titanfail.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/game/watchdogs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/game/witcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/gpay.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/home/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/home/11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/home/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/home/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/home/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/home/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/home/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/home/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/iphonepay.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/luck/common-title.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/luck/common.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/luck/common1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/luck/epic-title.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/luck/epic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/luck/epic1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/luck/legend-title.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/luck/legend.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/luck/legend1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/news/Mask Group.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/news/apple.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/news/apple1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/news/arrow-right.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/news/cosmos.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/news/cosmos1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/news/cosmos2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/news/division.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/news/flight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/news/flight1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/news/google-play.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/news/gotham.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/news/gotham2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/news/iphone.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/news/player.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/news/vedbmak.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/news/vedbmak1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/news/witcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/oval.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/p.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/payeer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/proposal/answer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/proposal/answer1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/proposal/bonus.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/proposal/bonus1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/proposal/button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/proposal/referal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/proposal/referal1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/search.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/visa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/img/webmoney.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/Rubik-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/Rubik-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/Rubik-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/Rubik-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/Rubik-ExtraBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/Rubik-ExtraBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/Rubik-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/Rubik-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/Rubik-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/Rubik-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/Rubik-MediumItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/Rubik-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/Rubik-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/fonts/Rubik-SemiBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/gulpfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/Modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/persone/Modal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_main.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/assets/_app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/assets/_app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/assets/_custom-bootstrap.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/assets/_fonts.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/assets/_reset.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/assets/_tools.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/assets/_vars.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/pages/card/_cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/card/_cart.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/pages/home/_app.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/pages/home/_catalog.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/pages/home/_home.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/pages/home/_luck.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/pages/home/_media.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/pages/home/_news.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/pages/home/_proposal.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/pages/my/_my.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/my/_my.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/template/_app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/template/_app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/template/_footer.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/template/_header.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/template/_media.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/template/_media.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/persone/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/swiper.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/persone/swiper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/preAssets/js/_scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/preAssets/js/scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/assets/_fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/assets/_fonts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/assets/_tools.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/assets/_tools.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/pages/main/_app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/main/_app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/pages/main/_news.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/main/_news.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/pages/main/_proposal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/main/_proposal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/template/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/template/_header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/all/main/include/catalog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/all/main/include/catalog.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/all/main/include/fScreen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/all/main/include/fScreen.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/all/main/include/luck.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/all/main/include/luck.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/all/main/include/news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/all/main/include/news.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/all/main/include/proposal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/all/main/include/proposal.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/all/main/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/all/main/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/all/main/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/all/main/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/include/catalogItem.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/base/include/catalogItem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/base/include/catalogItem.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/include/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/include/footer.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/include/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/include/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/my/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/my/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/backpack/custom.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/backpack/custom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
@@ -257,6 +116,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -410,24 +270,29 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/static/img" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Laravel.SettingsForm" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\OpenServer\domains\gameMonster\public\assets" />
+      <recent name="C:\OpenServer\domains\gameMonster\public\assets\static\img\main\icon" />
+      <recent name="C:\OpenServer\domains\gameMonster\public\assets\static\img\main" />
+      <recent name="C:\OpenServer\domains\gameMonster\public\assets\static" />
+      <recent name="C:\OpenServer\domains\gameMonster\resources\js" />
+      <recent name="C:\OpenServer\domains\gameMonster\resources\js\persone" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\OpenServer\domains\gameMonster\resources" />
-      <recent name="C:\OpenServer\domains\gameMonster\resources\views\base\alert" />
-      <recent name="C:\OpenServer\domains\gameMonster\resources\js" />
-      <recent name="C:\OpenServer\domains\gameMonster\app\Providers" />
-      <recent name="C:\OpenServer\domains\gameMonster\routes" />
+      <recent name="C:\OpenServer\domains\gameMonster\public\assets\static\img" />
+      <recent name="C:\OpenServer\domains\gameMonster\public\assets\static\img\main\icon" />
+      <recent name="C:\OpenServer\domains\gameMonster\public\assets\static\img\main" />
+      <recent name="C:\OpenServer\domains\gameMonster\public\assets\static\img\news" />
+      <recent name="C:\OpenServer\domains\gameMonster\public\assets\static\img\lunk" />
     </key>
   </component>
   <component name="RunManager">
@@ -456,7 +321,9 @@
       <workItem from="1602673866468" duration="1187000" />
       <workItem from="1602703041772" duration="45000" />
       <workItem from="1602706374765" duration="225000" />
-      <workItem from="1602756743354" duration="5967000" />
+      <workItem from="1602756743354" duration="13610000" />
+      <workItem from="1602773010170" duration="2310000" />
+      <workItem from="1602784460169" duration="14005000" />
     </task>
     <servers />
   </component>
@@ -465,6 +332,9 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="690" y="301" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602760433348">
@@ -487,5 +357,9 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="616" y="258" key="run.anything.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1601932898259" />
+    <state x="623" y="257" key="search.everywhere.popup" timestamp="1602768263827">
+      <screen x="0" y="30" width="1920" height="1050" />
+    </state>
+    <state x="623" y="257" key="search.everywhere.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1602768263827" />
   </component>
 </project>

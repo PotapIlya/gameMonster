@@ -86,7 +86,7 @@
 
 
             &:after{
-                content: url("./../img/search.svg");
+                content: url("/assets/static/img/header/search.svg");
                 position: absolute;
                 top: 58%;
                 transform: translateY(-50%);
@@ -118,7 +118,7 @@
 
 
             &:after{
-                content: url("./../img/search.svg");
+                content: url("/assets/static/img/header/search.svg");
                 position: absolute;
                 top: 56%;
                 transform: translateY(-50%);

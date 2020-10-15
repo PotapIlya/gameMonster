@@ -7,8 +7,8 @@
 
             <div class="proposal_item proposal_item_1">
                 <div>
-                    <img class="myCrutch d-none d-lg-block" src="/img/proposal/bonus.png" alt="">
-                    <img class="d-block d-lg-none" src="/img/proposal/mobileBonus.png" alt="">
+                    <img class="myCrutch d-none d-lg-block" src="/assets/static/img/proposal/bonus.png" alt="">
+                    <img class="d-block d-lg-none" src="/assets/static/img/proposal/mobileBonus.png" alt="">
                 </div>
                 <div class="proposal_item__wrapper proposal_item__wrapper-1 d-flex flex-column justify-content-between">
                     <div class="proposal_item-title">
@@ -28,8 +28,8 @@
 
             </div>
             <div class="proposal_item proposal_item_2">
-                <img class="myCrutch d-none d-lg-block" src="/img/proposal/referal.png" alt="">
-                <img class="d-block d-lg-none" src="/img/proposal/mobileReferal.png" alt="">
+                <img class="myCrutch d-none d-lg-block" src="/assets/static/img/proposal/referal.png" alt="">
+                <img class="d-block d-lg-none" src="/assets/static/img/proposal/mobileReferal.png" alt="">
 
                 <div class="proposal_item__wrapper proposal_item__wrapper-2 d-flex flex-column justify-content-between">
                     <div class="proposal_item-title">
@@ -60,8 +60,8 @@
 
             <div class="proposal_item proposal_item_3">
                 <div>
-                    <img class="myCrutch d-none d-lg-block" src="/img/proposal/answer.png" alt="">
-                    <img class="d-block d-lg-none" src="/img/proposal/mobileAnswer.png" alt="">
+                    <img class="myCrutch d-none d-lg-block" src="/assets/static/img/proposal/answer.png" alt="">
+                    <img class="d-block d-lg-none" src="/assets/static/img/proposal/mobileAnswer.png" alt="">
                 </div>
 
                 <div class="proposal_item__wrapper proposal_item__wrapper-3 d-flex justify-content-center justify-content-sm-start align-items-end col-12 col-lg-10 col-xl-8">
@@ -72,7 +72,7 @@
                         <div class=" mr-0 mr-lg-4 ml-0 ml-sm-4 ml-lg-0 mt-2 mt-sm-0 d-none d-lg-block">
                             <button class="proposal_item-btn">Отправить</button>
                         </div>
-                        <div class="d-flex flex-lg-column flex-column-reverse">
+                        <div class="d-flex flex-lg-column flex-column-reverse mx-auto">
 
                             <label class="w-100 mb-0 mb-lg-3 mt-3 mt-lg-0 d-flex align-items-center" for="">
                                 <input placeholder="E-mail" class="w-100" type="text">
@@ -84,9 +84,9 @@
                                 <textarea placeholder="Сообщение" class="d-block " name="" id="" cols="30" rows="7"></textarea>
                             </label>
                             <span class="d-block d-lg-none proposal_item-title">
-									Остались
-									вопросы?
-								</span>
+                                Остались
+                                вопросы?
+                            </span>
                         </div>
                     </form>
                 </div>

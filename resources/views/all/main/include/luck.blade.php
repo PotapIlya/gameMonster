@@ -8,12 +8,11 @@
             <a class="luck__item" href="#!">
                 <div class="luck__item-img">
                     <div class="luck__item-title">
-                        <!--							<img class="mw-100" src="./img/luck/epic-title.png" alt="Epic"/>-->
                     </div>
                     <div class="rate">-30%</div>
                 </div>
                 <div class="luck__item-img-block">
-                    <img class="luck__item-img-detail luck__item-img-detail_1" src="./img/luck/epic.png" alt=""/>
+                    <img class="luck__item-img-detail luck__item-img-detail_1" src="/assets/static/img/luck/epic.png" alt=""/>
                 </div>
                 <div class="luck__item-text-block">
                     <div class="luck__item-text">800 игр</div>
@@ -35,7 +34,7 @@
                     <div class="rate">-30%</div>
                 </div>
                 <div class="luck__item-img-block">
-                    <img class="luck__item-img-detail luck__item-img-detail_2" src="./img/luck/common.png" alt=""/>
+                    <img class="luck__item-img-detail luck__item-img-detail_2" src="/assets/static/img/luck/common.png" alt=""/>
                 </div>
                 <div class="luck__item-text-block">
                     <div class="luck__item-text">800 игр</div>
@@ -51,11 +50,11 @@
             <a class="luck__item" href="#!">
                 <!--					<div class="luck__item-img" style="background:url(./img/luck/legend.png) no-repeat center center">-->
                 <div class="luck__item-img">
-                    <div class="luck__item-title"><img src="./img/luck/legend-title.png" alt="Epic"/></div>
+{{--                    <div class="luck__item-title"><img src="./img/luck/legend-title.png" alt="Epic"/></div>--}}
                     <div class="rate">-30%</div>
                 </div>
                 <div class="luck__item-img-block">
-                    <img class="luck__item-img-detail luck__item-img-detail_3" src="./img/luck/legend.png" alt=""/>
+                    <img class="luck__item-img-detail luck__item-img-detail_3" src="/assets/static/img/luck/legend.png" alt=""/>
                 </div>
                 <div class="luck__item-text-block">
                     <div class="luck__item-text">800 игр</div>

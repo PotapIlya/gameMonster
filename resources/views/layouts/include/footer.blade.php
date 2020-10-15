@@ -3,7 +3,7 @@
         <div class="footer__row">
 
             <div class="footer__element1 element1 unit">
-                <img src="/img/logo.svg" alt="Game Monster"/>
+                <img src="/assets/static/oldImage/assets/release/img/logo.svg" alt="Game Monster"/>
             </div>
 
             <ul class="footer__element2 element2 unit">
@@ -42,15 +42,15 @@
                 </div>
                 <div class="footer__icons-block footer__item-second">
                     <div class="d-flex align-items-center mb-3">
-                        <img class="mr-2" src="./img/webmoney.png" alt="Webmoney"/>
-                        <img class="mr-2" src="./img/p.png" alt="P"/>
-                        <img class="mr-2" src="./img/visa.png" alt="Visa"/>
-                        <img class="mr-2" src="./img/oval.png" alt=""/>
+                        <img class="mr-2" src="/assets/static/oldImage/img/webmoney.png" alt="Webmoney"/>
+                        <img class="mr-2" src="/assets/static/oldImage/img/p.png" alt="P"/>
+                        <img class="mr-2" src="/assets/static/oldImage/img/visa.png" alt="Visa"/>
+                        <img class="mr-2" src="/assets/static/oldImage/img/oval.png" alt=""/>
                     </div>
                     <div class="footer__icons">
-                        <img class="mr-2" src="./img/gpay.png" alt="G Pay"/>
-                        <img class="mr-2" src="./img/iphonepay.png" alt="Iphone Pay"/>
-                        <img class="mr-2" src="./img/payeer.png" alt="Payeer"/>
+                        <img class="mr-2" src="/assets/static/oldImage/img/gpay.png" alt="G Pay"/>
+                        <img class="mr-2" src="/assets/static/oldImage/img/iphonepay.png" alt="Iphone Pay"/>
+                        <img class="mr-2" src="/assets/static/oldImage/img/payeer.png" alt="Payeer"/>
                     </div>
                 </div>
                 <div class="footer__copy" style="color: #777777;">© 2020</div>
@@ -93,27 +93,27 @@
             <div class="footer__element7 unit d-flex flex-wrap element7 align-items-center align-items-md-start ml-auto">
                 <div class="social__network">
                     <a href="#" class="service1">
-                        <img src="/img/services/steam.png" alt="steam">
+                        <img src="/assets/static/oldImage/img/services/steam.png" alt="steam">
                     </a>
                 </div>
                 <div class="social__network">
                     <a href="#" class="service1">
-                        <img src="/img/services/steam.png" alt="steam">
+                        <img src="/assets/static/oldImage/img/services/steam.png" alt="steam">
                     </a>
                 </div>
                 <div class="social__network">
                     <a href="#" class="service1">
-                        <img src="/img/services/steam.png" alt="steam">
+                        <img src="/assets/static/oldImage/img/services/steam.png" alt="steam">
                     </a>
                 </div>
                 <div class="social__network">
                     <a href="#" class="service1">
-                        <img src="/img/services/steam.png" alt="steam">
+                        <img src="/assets/static/oldImage/img/services/steam.png" alt="steam">
                     </a>
                 </div>
                 <div class="social__network">
                     <a href="#" class="service1">
-                        <img src="/img/services/steam.png" alt="steam">
+                        <img src="/assets/static/oldImage/img/services/steam.png" alt="steam">
                     </a>
                 </div>
             </div>

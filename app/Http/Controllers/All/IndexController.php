@@ -4,6 +4,7 @@ namespace App\Http\Controllers\All;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Catalog;
+use App\Models\Admin\Category;
 use Illuminate\Http\Request;
 
 class IndexController extends BasicAllController
@@ -23,14 +24,13 @@ class IndexController extends BasicAllController
     public function index()
     {
 
-		$catalog = Catalog::limit(16)->get();
-
-
+		$catalog = Catalog::limit(16)->with('category')->get();
 
 
 
     	return view('all.main.index', compact('catalog'));
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -64,8 +64,18 @@ class IndexController extends BasicAllController
     	$item = Catalog::with('category')->find($id);
 
 
+    	// беерем категории у родителей и от связи в категория берем схожие
 
-    	return view('all.main.show', compact('item'));
+		// переписать, тк берет только первую категорию
+    	$otherGame = Category::whereIn('name', $item->category->pluck('name')) // получаю все категории родителя
+			->with('catalog')
+			->limit(1)
+			->get()
+			->pluck('catalog')->first();
+
+
+
+    	return view('all.main.show', compact('item', 'otherGame'));
     }
 
     /**

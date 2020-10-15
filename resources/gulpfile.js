@@ -20,22 +20,31 @@ function css (){
         .pipe(concat('app.css'))
         .pipe(dest('../public/assets/css'));
 }
+function modules (){
+    return src(["sass/modules/appModules.scss"])
+        .pipe(sass({outputStyle: 'expanded'}))
+        .pipe(autoprefixer())
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(concat('modules.css'))
+        .pipe(dest('../public/assets/css'));
+}
+
 
 function js (){
-    return src(["js/**/[^_]*.js"])
+    return src(["js/script.js"])
         .pipe(babel({
             presets: ['@babel/env']
         }))
         .pipe(concat('scripts.js'))
-        .pipe(dest('preAssets/js'));
+        .pipe(dest('js/preAssets/js'));
 }
 
 function browserify_js (){
-    return browserify('preAssets/js/scripts.js').bundle()
+    return browserify('js/preAssets/js/scripts.js').bundle()
         .pipe(source('scripts.js'))
         .pipe(buffer())
         .pipe(uglify())
-        .pipe(dest('../../public/assets/js'))
+        .pipe(dest('../public/assets/js'))
 }
 
 function img (){
@@ -47,6 +56,7 @@ function img (){
 
 
 exports.css = css;
+exports.modules = modules;
 exports.js = series(js, browserify_js);
 exports.img = img;
 exports.default = series(css, js, browserify_js, img);
@@ -55,5 +65,5 @@ exports.watch = function() {
     watch(["css/**/*.+(css|sass|scss)"], css);
     watch(["js/**/*.js"], js);
     watch('preassets/js/scripts.js', browserify_js);
-    watch(["img/**/*.+(jpg|png|jpeg|gif|svg)"], img)
+    // watch(["img/**/*.+(jpg|png|jpeg|gif|svg)"], img)
 };
