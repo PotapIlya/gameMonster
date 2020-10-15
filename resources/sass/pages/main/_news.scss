@@ -1,0 +1,204 @@
+
+.news {
+
+    &__downText{
+        margin-top: 41px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 123%;
+        color: $white;
+    }
+
+    &__item {
+        position: relative;
+
+        &-text {
+            position: absolute;
+            bottom: 10%;
+            left: 34px;
+            padding-right: 100px;
+            z-index: 2;
+
+        }
+
+        &-metatag {
+            color: rgba(255, 255, 255, 0.66);
+            font-weight: normal;
+            //font-size: 16.2px;
+            font-size: 18px;
+            line-height: 109.5%;
+            margin-bottom: 8px;
+        }
+
+        &-title {
+            font-weight: 500;
+            font-size: 35px;
+            line-height: 106.5%;
+
+            &_division{
+                font-size: 30px;
+            }
+
+        }
+
+        &_1 {
+            height: 30%;
+
+            img{
+                position: relative;
+                z-index: 1;
+            }
+            .news__item-title{
+                font-weight: 500;
+                font-size: 30px;
+                line-height: 120%;
+            }
+        }
+
+        &_2 {
+            margin-top: 50px;
+            margin-bottom: -130px;
+            z-index: 10;
+            .news__item-title{
+                font-weight: 500;
+                font-size: 36px;
+                line-height: 106.5%;
+            }
+        }
+
+        &_3 {
+            margin-top: -42px;
+
+            .news__item-title{
+                font-weight: 500;
+                font-size: 36px;
+                line-height: 109.5%;
+            }
+        }
+
+        &_4 {
+            margin-top: -32px;
+
+            .news__item-title{
+                font-weight: 500;
+                font-size: 36px;
+                line-height: 109.5%;
+            }
+        }
+
+        &_5 {
+            margin-top: -31px;
+
+
+            .news__item-title{
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 120%;
+            }
+
+           &-img{
+               position: relative;
+               &:after{
+                   content: url("/assets/release/img/apple.png");
+                   position: absolute;
+                   right: 5%;
+
+                   bottom: 45px;
+               }
+               &:before{
+                   content: url("/assets/release/img/google.png");
+                   position: absolute;
+                   right: 5%;
+                   bottom: 10px;
+               }
+           }
+
+        }
+
+        &_6 {
+            margin-left: -50px;
+            margin-bottom: 5px;
+        }
+    }
+
+    .news__downText{
+        span{
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 123%;
+        }
+    }
+
+
+    &__thumb{
+        font-size: 16px;
+
+        img{
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        &__text{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 140.5%;
+        }
+        &__category{
+            color: rgba(255, 255, 255, 0.66);
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 140.5%;
+        }
+
+        &__href{
+            color: $orange;
+        }
+        &__video{
+            font-size: 18px;
+        }
+    }
+
+    &__video{
+        position: relative;
+        cursor: pointer;
+
+        span{
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 123%;
+            //margin-bottom: 10px;
+        }
+
+        &__href{
+            line-height: 123%;
+        }
+
+        &-icon{
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+
+    &_block {
+
+        &-3{
+
+            &-item{
+                margin-right: -16px;
+            }
+        }
+        &-2 {
+            margin-left: 20px;
+        }
+    }
+}
+
+
+
+
+
+
+

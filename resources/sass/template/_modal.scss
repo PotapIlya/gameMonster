@@ -1,0 +1,589 @@
+.modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100000000;
+
+    background: rgba(0,0,0, .9);
+    //background: red;
+
+    .global-wrap{
+        width: 100%;
+        height: 100vh;
+        position: relative;
+    }
+    
+    .modal-wrap{
+        position: absolute;
+        width: 608px;
+        height:auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .registration{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 63px;
+        background: $black;
+        border-radius: 47px;
+    
+        input{
+            width: 90%;
+            height: 56px;
+            background: #2C2C2C;
+            border-radius: 6px;
+            outline: none;
+            border:none;
+            margin-bottom: 18px;
+            font-size: 18px;
+            padding-left: 20px;
+        }
+    
+        &__sign-in{
+            &:hover{
+                font-weight: 500;
+            }
+            font-weight: normal;
+            font-size: 37px;
+            line-height: 121.19%;
+
+            margin-right: 20px;
+        }
+    
+        &__sign-up{
+            &:hover{
+                font-weight: 500;
+            }
+            font-weight: normal;
+            font-size: 37px;
+            line-height: 121.19%;
+        }
+    
+        &__enter{
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            padding: 14px 33px;
+            background: #F59502;
+            border-radius: 6px;
+        }
+    
+        &__forgot{
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            color: $colorForgotPassword;
+            margin-left: 20px;
+        }
+    
+        &__enter-help{
+            font-size: 16px;
+            line-height: 19px;
+            color: #6A6A6A;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+    
+        &__services{
+            background: transparent;
+        }
+    }
+    
+    .button-close{
+        position: absolute;
+        top: -22px;
+        right: -23px;
+        font-size: 30px;
+        cursor: pointer;
+        background: $transparent;
+        border: 0 none;
+        color: $white;
+    }
+
+
+
+    &-key{
+
+        .modal__wrap{
+            background: $blackModal;
+            padding: 50px 60px;
+            border-radius: 47px;
+
+            &-title{
+                font-weight: bold;
+                font-size: 37px;
+                line-height: 121.19%;
+            }
+            &-input{
+                font-size: 16px;
+                line-height: 19px;
+                width: 100%;
+                padding: 20px;
+                margin-bottom: 18px;
+                background: $innput-text;
+                border: 0 none;
+                border-radius: 6px;
+                //-webkit-touch-callout: none;
+                //-webkit-user-select: none;
+                ////-khtml-user-select: none;
+                //-moz-user-select: none;
+                //-ms-user-select: none;
+                //user-select: none;
+            }
+            &-group{
+                label{
+                    position: relative;
+                }
+                img{
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 25px;
+                }
+            }
+
+        }
+
+    }
+
+    &-bonus{
+
+        .modal-wrap{
+            width: 50%;
+            background: url("/assets/release/img/static/modalBonus.png") no-repeat center center;
+            background-size: contain;
+            position: relative;
+
+            padding: 61px 223px 54px 67px;
+
+            .modal__wrap-title{
+                font-weight: bold;
+                font-size: 47px;
+                line-height: 121.19%;
+            }
+            .modal__wrap-text{
+                font-weight: normal;
+                font-size: 22.7121px;
+                line-height: 145.19%;
+                margin-bottom: 75px;
+            }
+            .modal__wrap-input{
+                font-size: 16px;
+                line-height: 19px;
+                width: 100%;
+                padding: 20px;
+                border: 0 none;
+
+                background: $modal-bonus;
+                backdrop-filter: blur(24px);
+                border-radius: 12px;
+            }
+            .button{
+                background: $orange;
+            }
+            .button-close{
+                right: 120px;
+                top: -12px;
+                //right: 150px;
+                color: $tag-bg;
+            }
+        }
+    }
+
+
+}
+
+
+
+.modal.modal-forgot{
+
+    .registration{
+
+        &__buttons{
+            span{
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 130.69%;
+                margin-bottom: 10px;
+            }
+        }
+
+        &__sign-in{
+            font-size: 37px ;
+            line-height: 121.19% ;
+            font-weight: 700 ;
+            margin-right: 0;
+            margin-bottom: 8px;
+        }
+    }
+
+}
+
+
+
+
+.getCash{
+    cursor: pointer;
+}
+
+.modal-auth-input{
+    position: relative;
+    input{
+        padding-top: 14px;
+    }
+}
+
+.modal_header_active_text{
+    font-weight: bold !important;
+    font-size: 37px !important;
+    line-height: 121.19% !important;
+}
+
+.modal-auth-span{
+    position: absolute;
+    top: 7px;
+    left: 20px;
+    font-size: 12px;
+    font-weight: 400;
+    color: $colorFormLabel;
+}
+
+
+
+@media only screen and (min-width:1530px){
+
+    //.modal-bonus .modal-wrap{
+    //    padding-right: 300px;
+    //}
+
+    .modal-bonus .modal-wrap .modal__wrap-title{
+        font-size: 36px;
+    }
+    .modal-bonus .modal-wrap .modal__wrap-text{
+        font-size: 17.7121px;
+    }
+
+}
+
+@media only screen and (min-width:1400px) and (max-width:1530px){
+    .modal-bonus .modal-wrap .modal__wrap-title{
+        font-size: 34px;
+    }
+    .modal-bonus .modal-wrap .modal__wrap-text{
+        font-size: 14.7121px;
+    }
+
+}
+
+
+@media only screen and (max-width:1400px){
+
+    .modal-bonus .modal-wrap .modal__wrap-title{
+        font-size: 30px;
+    }
+    .modal-bonus .modal-wrap .modal__wrap-text{
+        font-size: 16.7121px;
+    }
+
+}
+
+
+@media only screen and (max-width:1400px){
+
+
+
+}
+
+@media only screen and (max-width: 1301px){
+    .modal .modal-wrap{
+        width: 65%;
+    }
+
+}
+
+@media only screen and (max-width: 1300px){
+
+    .modal-bonus .modal-wrap .modal__wrap-title{
+        font-size: 37px;
+    }
+    .modal-bonus .modal-wrap .modal__wrap-text{
+        font-size: 18px;
+    }
+
+}
+
+@media only screen and (max-width: 1200px){
+    .modal .modal-wrap{
+        width: 65%;
+    }
+
+}
+
+
+@media only screen and (max-width: 1100px){
+    .modal .modal-wrap{
+        width: 70%;
+    }
+
+}
+
+
+
+@media only screen and (max-width: 992px){
+    .modal .modal-wrap{
+        width: 75%;
+
+        .getCash{
+            padding: 16px;
+            width: 100%;
+            font-size: 14px;
+        }
+        .button-close{
+            right: 50px;
+        }
+        .modal__wrap-text{
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .modal__wrap-title{
+            font-size: 34px;
+        }
+    }
+    .modal-bonus .modal-wrap .modal__wrap-input{
+        font-size: 14px;
+    }
+
+}
+
+@media only screen and (max-width: 900px){
+
+
+    .modal .modal-wrap{
+        width: 85%;
+    }
+
+}
+
+
+@media only screen and (max-width: 768px){
+
+    .modal.modal-forgot .registration__sign-in{
+        font-size: 32px;
+    }
+    .modal.modal-forgot .registration__buttons span{
+        font-size: 16px;
+    }
+
+    .modal__wrap-group{
+        width: 90%;
+    }
+
+    //.modal .modal-wrap{
+    //    width: 95%;
+    //}
+
+    .modal-bonus .modal-wrap .modal__wrap-title{
+        font-size: 30px;
+    }
+    .modal-bonus .modal-wrap .modal__wrap-text{
+        font-size: 15px;
+    }
+
+    .modal-bonus .modal-wrap .modal__wrap-input{
+        margin-bottom: 10px;
+    }
+
+    .modal .modal-wrap {
+        width: 95%;
+        padding: 30px 60px;
+
+        .button-close {
+            display: none;
+        }
+    }
+
+}
+
+@media only screen and (max-width:666px){
+
+    .modal .modal-wrap{
+        width: 90%;
+        padding-right: 20px;
+        padding-left: 20px;
+        background-size: cover;
+        //background-position: 54% center;
+    }
+    .modal-bonus .modal-wrap .modal__wrap-title{
+        font-size: 27px;
+    }
+    .modal-bonus .modal-wrap .modal__wrap-text{
+        font-size: 14px;
+    }
+
+    .modal .button-close{
+        display: none;
+    }
+}
+
+
+@media only screen and (max-width:600px){
+    .modal-wrap{
+        width: 100%;
+
+        input{
+            width: 100%;
+            height: 56px;
+            padding-left: 20px;
+        }
+    }
+}
+
+@media only screen and (max-width:550px){
+
+
+
+    .modal.modal-forgot .registration__sign-in{
+        font-size: 26px;
+    }
+    .modal.modal-forgot .registration__buttons span{
+        font-size: 14px;
+    }
+    .modal.modal-forgot .registration{
+        padding: 30px;
+        input{
+            width: 100%;
+        }
+    }
+
+    .modal-auth{
+
+        .forgot{
+            align-items: flex-start !important;
+        }
+        .registration {
+            padding: 24px;
+
+            &__services{
+                flex-direction: row !important;
+            }
+            &__enter-help{
+                margin-top: 0;
+            }
+            &__enter{
+                width: 100%;
+                text-align: center;
+            }
+            &__forgot{
+                padding-left: 0;
+            }
+            &__sign-up,
+            &__sign-in{
+                font-size: 24px;
+            }
+            &>div{
+                flex-direction: column;
+            }
+            input {
+                width: 100% !important;
+            }
+        }
+    }
+
+
+
+    .modal-auth .registration__forgot{
+        margin-left: 0 !important;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+    .modal .registration__enter-help{
+        margin-bottom: 16px;
+    }
+
+    .modal_header_active_text{
+        font-size: 30px !important;
+    }
+}
+
+
+@media only screen and (max-width:500px){
+
+
+
+
+    .modal .modal-wrap{
+        background-position: 70% center;
+    }
+}
+
+@media only screen and (max-width:430px){
+
+    .modal.modal-forgot{
+        text-align: center !important;
+    }
+
+}
+
+
+@media only screen and (max-width:450px){
+
+    .modal-key .modal__wrap-title {
+        font-size: 25px;
+    }
+
+}
+
+@media only screen and (max-width:400px){
+
+
+
+    .modal .modal-wrap .modal__wrap-title{
+        font-size: 26px;
+    }
+
+    .registration{
+        &__sign-in{
+            font-size: 23px;
+        }
+    
+        &__sign-up{
+            font-size: 23px;
+        }
+    }
+
+
+    .modal-key{
+
+        .modal__wrap{
+
+            &-title{
+                font-size: 18px;
+            }
+            &-input{
+                width: 100%;
+                font-size: 14px;
+            }
+        }
+    }
+
+
+}
+
+@media only screen and (max-width:430px){
+    .forgot{
+        flex-direction: column;
+    }
+
+    .registration__services{
+        justify-content: center;
+    }
+
+    .registration__enter-help{
+        text-align: center;
+    }
+}

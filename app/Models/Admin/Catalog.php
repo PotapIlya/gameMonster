@@ -64,7 +64,7 @@ class Catalog extends Model
 	{
 		$attribute_name = "preloader";
 		$disk = "public";
-		$destination_path = "product";
+		$destination_path = "catalog";
 
 		$this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
 
@@ -75,7 +75,7 @@ class Catalog extends Model
 	{
 		$attribute_name = "img";
 		$disk = "public";
-		$destination_path = "product";
+		$destination_path = "catalog";
 
 		$this->uploadMultipleFilesToDisk($value, $attribute_name, $disk, $destination_path);
 	}

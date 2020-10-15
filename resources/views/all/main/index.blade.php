@@ -3,9 +3,15 @@
 @section('content')
 
 
+    @include('all.main.include.fScreen')
+{{--    @include('all.main.include.luck')--}}
+    @include('all.main.include.catalog')
+    @include('all.main.include.news')
+    @include('all.main.include.proposal')
+
 {{--        @includeWhen(count($slider), 'all.main.include.fScreen')--}}
 {{--        @include('all.main.include.luck')--}}
-        @includeWhen(count($catalog), 'all.main.include.catalog')
+{{--        @includeWhen(count($catalog), 'all.main.include.catalog')--}}
 {{--        @includeWhen(count($news), 'all.main.include.news')--}}
 {{--        @include('all.main.include.proposal')--}}
 

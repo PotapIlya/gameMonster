@@ -12,6 +12,7 @@ class BasicUserController extends Controller
 		parent::__construct();
 
 
+
 		$this->middleware('auth');
 	}
 }

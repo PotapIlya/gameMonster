@@ -1,0 +1,118 @@
+.catalog{
+
+
+
+    &__wrapper{
+
+    }
+    &__img{
+        position: relative;
+    }
+    &__text{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        //
+        //background: red;
+        //padding: 10px 10px 10px 20px;
+        //border-radius: 20px 0 0 0;
+
+        //&:after{
+        //    content: '';
+        //    top: 0;
+        //    right: 0;
+        //    display: block;
+        //
+        //    overflow: hidden;
+        //    position: relative;
+        //    margin: 10px;
+        //    width: 100px;
+        //    height: 100px;
+        //
+        //    background: #c00; /* fallback */
+        //    background:
+        //            linear-gradient(135deg, transparent 35px, #c00 0) top left;
+        //    background-size: 50% 50%;
+        //    background-repeat: no-repeat;
+        //    background-image:
+        //            radial-gradient(circle at 0 0, rgba(204,0,0,0) 50px, #c00 35px);
+        //}
+
+    }
+
+    &__price{
+        margin-top: 15px;
+        .new{
+            color: $white;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 125.69%;
+        }
+        .old{
+            text-decoration: line-through;
+            color: $catalogOldPrice;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 125.69%;
+        }
+    }
+    .rate{
+        width: 70%;
+    }
+
+    &__tags {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+
+        &-item {
+            padding: 6px 10px;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 125.69%;
+            color: $white;
+            border-radius: 8px;
+
+        }
+    }
+
+    &__title{
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 125.69%;
+    }
+
+    &__category{
+        margin-top: 12px;
+
+
+        &-item{
+            color: $genre-color;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 64.19%;
+            padding: 6px 14px;
+            border-radius: 4px;
+            background: $genre-bg;
+        }
+    }
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+

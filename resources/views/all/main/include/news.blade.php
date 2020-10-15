@@ -3,18 +3,19 @@
         <div class="col-12 col-10 col-xl mx-auto">
             <div class="section__text news__text d-flex justify-content-between justify-content-lg-start">
                 <h3 class="section__title news__title">Игровые новости</h3>
-                <p class="section__subtitle">Все материалы</p>
+                <a href="#" class="section__subtitle">Все материалы</a>
             </div>
         </div>
 
         <div class="d-flex flex-wrap flex-xl-nowrap justify-content-between">
+
 
             <div class="col-12 col-lg-6 col-xl-4 pl-0  news_block-1">
                 <a class="news__item news__item_1 d-block" href="#!">
                     <img class="news__item-img" src="/img/news/division.png" alt=""/>
                     <div class="news__item-text">
                         <div class="news__item-metatag">Скидки и акции</div>
-                        <div class="news__item-title">The Division раздают бесплатно</div>
+                        <div class="news__item-title news__item-title_division">The Division раздают бесплатно</div>
                     </div>
                 </a>
                 <a class="news__item news__item_2 d-none d-lg-block" href="#!">
@@ -31,7 +32,7 @@
                 <a class="news__item news__item_3 d-block" href="#!">
                     <img class="news__item-img" src="/img/news/apple.png" alt=""/>
                     <div class="news__item-text">
-                        <div class="news__item_1-metatag">Технологии</div>
+                        <div class="news__item-metatag">Технологии</div>
                         <div class="news__item-title">Apple готовит
                             не только свои процессоры,
                             но и видеокарты</div>
@@ -52,7 +53,9 @@
             <div class="news_block-3 col-12 col-xl-4 d-flex flex-row flex-xl-column align-items-end justify-content-between">
                 <div class="news_block-3-item d-none d-lg-block">
                     <a class="news__item news__item_5 d-block">
-                        <img class="mw-100" src="/img/news/vebmack.png" alt=""/>
+                        <div class="news__item_5-img">
+                            <img class="mw-100" src="/img/news/vebmack.png" alt=""/>
+                        </div>
                         <div class="news__item-text">
                             <div class="news__item-title">Релиз мобильного приложения по игре Ведьмак 3</div>
                         </div>
@@ -63,7 +66,7 @@
                     <div class="pl-4 pt-3 col-11 d-flex flex-column flex-lg-row d-xl-block">
                         <a class="news__thumb news__thumb_1 d-flex flex-lg-column flex-xl-row align-items-center mb-3" href="#!">
                             <div class="col-4">
-                                <img src="https://images.wallpaperscraft.ru/" alt="">
+                                <img src="/assets/release/img/news/thumb.png" alt="">
                             </div>
                             <div>
                                 <p class="news__thumb__text">
@@ -76,7 +79,7 @@
                         </a>
                         <a class="news__thumb news__thumb_1 d-flex flex-lg-column flex-xl-row align-items-center mb-3" href="#!">
                             <div class="col-4">
-                                <img src="https://images.wallpaperscraft.ru/" alt="">
+                                <img src="/assets/release/img/news/thumb.png" alt="">
                             </div>
                             <div>
                                 <p class="news__thumb__text">
@@ -89,7 +92,7 @@
                         </a>
                         <a class="news__thumb news__thumb_1 d-flex flex-lg-column flex-xl-row align-items-center mb-3" href="#!">
                             <div class="col-4">
-                                <img src="https://images.wallpaperscraft.ru/" alt="">
+                                <img src="/assets/release/img/news/thumb.png" alt="">
                             </div>
                             <div>
                                 <p class="news__thumb__text">
@@ -106,16 +109,23 @@
                 <div class="d-none d-lg-block">
                     <div class="news__item_6 d-flex justify-content-between">
                         <div class="mr-2 col-6">
-                            <img class="mw-100" style="max-width: 100%" src="/img/news/video.png" alt=""/>
+                            <div class="news__video">
+                                <div>
+                                    <img class="mw-100"  src="/img/news/video.png" alt=""/>
+                                </div>
+                                <img class="news__video-icon" src="/assets/release/img/news/play.png" alt="">
+                            </div>
                         </div>
                         <div class="news__thumb__video">
-                            <p class="mb-3">
-                                Показан геймплей The Witcher: Monster Slayer
-                            </p>
+							<span class="">
+								Показан геймплей The Witcher: Monster Slayer
+								<br><br>
+							</span>
                             <a class="news__thumb__href" href="#">
                                 Смотреть видео >
                             </a>
                         </div>
+
                     </div>
 
                 </div>
@@ -125,24 +135,32 @@
 
         </div>
 
-        <div class="news__text d-none d-lg-flex row justify-content-between">
-            <div class="col-2">
-                Онлайн-шоу с анонсами по Minecraft стартует 3 октября
+        <div class="news__downText d-none d-lg-flex row justify-content-between">
+            <div class="col-2 pr-0">
+				<span class="">
+					Онлайн-шоу с анонсами по Minecraft стартует 3 октября
+				</span>
             </div>
-            <div class="col-2">
-                Второй сезон Fallout 76 начнётся 15 сентября
+            <div class="col-2 px-0">
+				<span>
+					Второй сезон Fallout 76 начнётся 15 сентября
+				</span>
             </div>
-            <div class="col-2">
-                Warface скоро появится в Steam
+            <div class="col-2 px-0">
+				<span>
+					Warface скоро появится в Steam
+				</span>
             </div>
-            <div class="col-2">
-                Релиз PC-версии Spelunky 2 состоится 29 сентября
+            <div class="col-2 px-0">
+				<span>
+					Релиз PC-версии Spelunky 2 состоится 29 сентября
+				</span>
             </div>
-            <div class="col-2">
-                Анонсирована The Witcher: Monster Slayer — мобильная игра по «Ведьмаку»
+            <div class="col-2 pl-0">
+				<span>
+					Анонсирована The Witcher: Monster Slayer — мобильная игра по «Ведьмаку»
+				</span>
             </div>
         </div>
-
-
     </div>
 </section>

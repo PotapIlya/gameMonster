@@ -27,6 +27,8 @@ class IndexController extends BasicAllController
 
 
 
+
+
     	return view('all.main.index', compact('catalog'));
     }
 
@@ -59,8 +61,9 @@ class IndexController extends BasicAllController
      */
     public function show($id)
     {
+    	$item = Catalog::with('category')->find($id);
 
-    	$item = Catalog::find($id);
+
 
     	return view('all.main.show', compact('item'));
     }

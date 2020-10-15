@@ -5,9 +5,13 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -69,4 +73,20 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+	public function register(Request $request)  {
+		$validation = $this->validator($request->all());
+		if ($validation->fails())  {
+			return response()->json($validation->errors()->toArray());
+		}
+		else{
+			$this->create($request->all());
+
+			if (Auth::attempt($request->only(['email', 'password'])))
+			{
+				return response()->json(['success'=> 'success']);
+			}
+		}
+	}
+
 }

@@ -12,30 +12,19 @@
                         <div class="cart-images col-12 col-xl-7 px-0 mb-5 ">
                             <div class="cart-images__main-image">
                                 <a href="#">
-                                    <img src="/storage/{{ $item->preloader }}" alt="main-image" class="mw-100">
+                                    <img src="/storage/{{ $item->img[0] }}" alt="main-image" class="mw-100">
                                 </a>
                             </div>
                             <div class="cart-images__additional-image d-flex justify-content-between">
-                                <div class="cart-images__additem col-xl-2">
-                                    <a href="#" class="d-block">
-                                        <img class="mw-100" src="/assets/release/img/card-image.jpg" alt="main-image">
-                                    </a>
-                                </div>
-                                <div class="cart-images__additem col-xl-2">
-                                    <a href="#" class="d-block">
-                                        <img class="mw-100" src="/assets/release/img/card-image.jpg" alt="main-image">
-                                    </a>
-                                </div>
-                                <div class="cart-images__additem col-xl-2">
-                                    <a href="#" class="d-block">
-                                        <img class="mw-100" src="/assets/release/img/card-image.jpg" alt="main-image">
-                                    </a>
-                                </div>
-                                <div class="cart-images__additem col-xl-2">
-                                    <a href="#" class="d-block">
-                                        <img class="mw-100" src="/assets/release/img/card-image.jpg" alt="main-image">
-                                    </a>
-                                </div>
+
+                                @foreach($item->img as $img)
+                                    <div class="cart-images__additem col-xl-2">
+                                        <a href="#" class="d-block">
+                                            <img class="mw-100" src="/storage/{{ $img }}" alt="main-image">
+                                        </a>
+                                    </div>
+                                @endforeach
+
                             </div>
                         </div>
                     @elseif($item->preloader)
@@ -62,11 +51,15 @@
                         </div>
                         <div class="right-wrap12 d-flex flex-column flex-sm-row flex-xl-column justify-content-between">
                             <div class="right-wrap1">
-                                <div class="right-wrap__genre-button">
-                                    <button class="right-wrap__genre">RPG</button>
-                                    <button class="right-wrap__genre">Экшен</button>
-                                    <button class="right-wrap__genre">Приключения</button>
-                                </div>
+                                @isset($item->category)
+                                    <div class="right-wrap__genre-button">
+                                        @foreach($item->category as $category)
+                                            <button class="right-wrap__genre">
+                                                {{ $category->name }}
+                                            </button>
+                                        @endforeach
+                                    </div>
+                                @endisset
                                 <div class="right-wrap__prices d-flex align-items-center">
                                     <div class="right-wrap__actual">
                                         {{ $item->price }} ₽

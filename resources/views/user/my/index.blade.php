@@ -40,5 +40,6 @@
                <button type="submit" class="btn btn-primary">update password</button>
            </form>
        </div>
+
     </div>
 @endsection
