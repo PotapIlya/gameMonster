@@ -5,7 +5,7 @@
  */
 
 require('./bootstrap');
-require('./persone/swiper')
+// require('./persone/swiper')
 
 window.Vue = require('vue');
 
@@ -22,6 +22,7 @@ window.Vue = require('vue');
 
 Vue.component('auth-component', require('./components/auth/AuthComponent.vue').default);
 Vue.component('login', require('./components/auth/Login.vue').default);
+Vue.component('app-my-component', require('./components/user/my/AppComponent').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

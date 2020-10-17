@@ -71,6 +71,14 @@ Route::group(
 	function ()
 	{
 		Route::resource('/my', 'IndexController')->names('user');
+		Route::resource('/balance', 'BalanceController')->names('user.balance');
+
+
+		/** API */
+
+		Route::post('/my/updateInfo', 'IndexController@updateInfo');
+		Route::post('/my/updatePassword', 'IndexController@updatePassword');
+
 	}
 );
 

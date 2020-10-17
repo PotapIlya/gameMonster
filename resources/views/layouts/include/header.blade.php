@@ -46,21 +46,32 @@
                     <input id="ru" type="radio" name="translate" checked="checked"/>
                     <label for="ru" class="activeText">Ru</label>
                 </div>
-                <ul class="header__list d-flex align-items-start align-items-xl-center flex-column flex-xl-row order-2 order-xl-0 mr-0 mr-xl-5">
-                    <li class="header__list-item">
-                        <a class="header__list-link" href="#!">
-                            Товары
-                            <div class="header__list-arrow">
-                                <img src="/assets/static/img/header/arrow-down.svg" alt=""/>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="header__list-item"><a class="header__list-link" href="#!">Рулетка</a></li>
-                    <li class="header__list-item"><a class="header__list-link" href="#!">Акции</a></li>
-                    <li class="header__list-item"><a class="header__list-link" href="#!">Гарантии</a></li>
-                    <li class="header__list-item"><a class="header__list-link" href="#!">Контакты</a></li>
-                    <li class="header__list-item"><a class="header__list-link gradient__orange-yellow" href="#!">Аренда аккаунтов    </a></li>
-                </ul>
+
+                @if(count($basic['nav']))
+                    <ul class="header__list d-flex align-items-start align-items-xl-center flex-column flex-xl-row order-2 order-xl-0 mr-0 mr-xl-5">
+                        @foreach($basic['nav'] as $index=>$nav)
+                            @if($index === 0)
+                                <li class="header__list-item">
+                                    <a class="header__list-link" href="{{ $nav->url }}">
+                                        {{ $nav->name }}
+                                        <div class="header__list-arrow">
+                                            <img src="/assets/static/img/header/arrow-down.svg" alt=""/>
+                                        </div>
+                                    </a>
+                                </li>
+                            @elseif($index+1 === count($basic['nav']))
+                                <li class="header__list-item">
+                                    <a class="header__list-link gradient__orange-yellow" href="{{ $nav->url }}">{{ $nav->name }}</a>
+                                </li>
+                            @else
+                                <li class="header__list-item">
+                                    <a class="header__list-link" href="{{ $nav->url }}">{{ $nav->name }}</a>
+                                </li>
+                            @endif
+                        @endforeach
+                    </ul>
+                @endif
+
                 <div class="header__search order-1 order-xl-0 mb-3 mb-xl-0 mb-2 mb-xl-0">
                     <div class="header__search-btn">
                         <button class="button">Поиск</button>
@@ -158,46 +169,56 @@
             </div>
 
             <div class="d-flex align-items-center justify-content-end col-4 col-md-3 col-xl-2 px-0">
-                <!--				<div class="header__auth">-->
-                <!--					<div class="d-none d-xl-flex align-items-center">-->
-                <!--						<div class="header__auth-item openAuth">Вход</div>-->
-                <!--						<div class="header__inclined mx-1">/</div>-->
-                <!--						<div class="header__auth-item openAuth">Регистрация</div>-->
-                <!--					</div>-->
-                <!--					<div class="d-block d-xl-none">-->
-                <!--						<button class="btn_mobile openAuth">Войти</button>-->
-                <!--					</div>-->
-                <!--				</div>-->
-                <div class="header__user d-flex align-items-center">
-                    <span class="mr-3 header__user-money">12 976 ₽</span>
-                    <div class="d-flex align-items-center">
-                        <div>
-                            <img class="mw-100" src="/assets/static/img/my/avatar.png" alt="">
-                        </div>
-                        <div class="header__list-arrow d-none d-sm-block">
-                            <img src="/assets/static/img/header/arrow-down.svg" alt=""/>
+
+                @guest
+                    <div class="header__auth">
+                        <div class="d-none d-xl-flex align-items-center">
+                            <div class="header__auth-item openAuth">Вход</div>
+                            <div class="header__inclined mx-1">/</div>
+                            <div class="header__auth-item openAuth">Регистрация</div>
+                            </div>
+                            <div class="d-block d-xl-none">
+                            <button class="btn_mobile openAuth">Войти</button>
                         </div>
                     </div>
+                @else
+                    <div class="header__user d-flex align-items-center">
+                        <span class="mr-3 header__user-money">{{ \Auth::user()->about->money }} ₽</span>
+                        <div class="d-flex align-items-center">
+                            <div>
+                                <img class="mw-100" src="/assets/static/img/my/avatar.png" alt="">
+                            </div>
+                            <div class="header__list-arrow d-none d-sm-block">
+                                <img src="/assets/static/img/header/arrow-down.svg" alt=""/>
+                            </div>
+                        </div>
 
-                    <ul class="header__user-menu">
-                        <li>
-                            <a href="/pages/development.php">
-                                Пополнить баланс
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/pages/my.php">
-                                Личный кабинет
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Выйти
-                            </a>
-                        </li>
-                    </ul>
+                        <ul class="header__user-menu">
+                            <li>
+                                <a href="{{ route('user.balance.index') }}">
+                                    Пополнить баланс
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('user.index') }}">
+                                    Личный кабинет
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();"
+                                >
+                                    Выйти
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
 
-                </div>
+                @endguest
             </div>
 
 

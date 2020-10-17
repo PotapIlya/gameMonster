@@ -149,7 +149,8 @@
         </div>
     </section>
 
-    @if(count($otherGame))
+
+    @if(!is_null($otherGame) && $otherGame && count($otherGame))
         <section class="d-none d-sm-block">
             <div class="container">
                 <div class="section__text news__text d-flex justify-content-between justify-content-lg-start d-block">

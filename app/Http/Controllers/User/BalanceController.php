@@ -1,16 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\All;
+namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin\Catalog;
-use App\Models\Admin\Category;
 use Illuminate\Http\Request;
 
-class IndexController extends BasicAllController
+class BalanceController extends BasicUserController
 {
-
-
 	public function __construct()
 	{
 		parent::__construct();
@@ -19,17 +15,12 @@ class IndexController extends BasicAllController
 	/**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-
-		$catalog = Catalog::limit(16)->with('category')->get();
-
-
-    	return view('all.main.index', compact('catalog'));
+        return view('errors.development');
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -56,25 +47,11 @@ class IndexController extends BasicAllController
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-    	$item = Catalog::with('category')->find($id);
-
-
-    	// беерем категории у родителей и от связи в категория берем схожие
-
-		// переписать, тк берет только первую категорию
-    	$otherGame = Category::whereIn('name', $item->category->pluck('name')) // получаю все категории родителя
-			->with('catalog')
-			->limit(1)
-			->get()
-			->pluck('catalog')->first();
-
-
-
-    	return view('all.main.show', compact('item', 'otherGame'));
+        //
     }
 
     /**

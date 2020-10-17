@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\UserAbout;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
@@ -68,7 +69,7 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => explode('@', $data['email'])[0],
+            'login' => explode('@', $data['email'])[0],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
@@ -80,11 +81,17 @@ class RegisterController extends Controller
 			return response()->json($validation->errors()->toArray());
 		}
 		else{
-			$this->create($request->all());
+			$user = $this->create($request->all());
+
+			UserAbout::create([
+				'user_id' => $user['id']
+			]);
+
 
 			if (Auth::attempt($request->only(['email', 'password'])))
 			{
-				return response()->json(['success'=> 'success']);
+				return redirect('/my');
+//				return response()->json(['success'=> 'success']);
 			}
 		}
 	}

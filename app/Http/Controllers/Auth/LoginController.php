@@ -48,8 +48,8 @@ class LoginController extends Controller
 	protected function validator(array $data)
 	{
 		return Validator::make($data, [
-			'email' => ['required', 'string', 'email', 'max:255'],
-			'password' => ['required', 'string', 'min:8'],
+			'email' => ['required', 'email', 'string', 'max:255'],
+			'password' => ['required', 'string', 'min:8', 'max:255'],
 		]);
 	}
 
@@ -57,15 +57,16 @@ class LoginController extends Controller
 	{
 		$validation = $this->validator($request->all());
 		if ($validation->fails())  {
-				return response()->json($validation->errors()->toArray());
+				return response()->json(['errors' => $validation->errors()->toArray()]);
 		}
 
 		if (Auth::attempt($request->only(['email', 'password']), $request->has('remember'))) {
 			// Authentication passed...
-			return response()->json(['success'=> 'success']);
+			return redirect('/my');
+//			return response()->json(['success'=> 'success']);
 		}
 		else{
-			return response()->json(['success'=> 'Неправильный логин или пароль']);
+			return response()->json(['errors'=> 'Неправильный логин или пароль']);
 		}
 	}
 
