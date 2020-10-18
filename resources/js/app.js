@@ -24,6 +24,11 @@ Vue.component('auth-component', require('./components/auth/AuthComponent.vue').d
 Vue.component('login', require('./components/auth/Login.vue').default);
 Vue.component('app-my-component', require('./components/user/my/AppComponent').default);
 
+
+/** Modal */
+Vue.component('app-modal-login-component', require('./components/base/modal/LoginComponent').default);
+Vue.component('app-modal-register-component', require('./components/base/modal/RegisterComponent').default);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

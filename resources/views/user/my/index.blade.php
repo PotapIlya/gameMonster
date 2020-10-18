@@ -37,7 +37,7 @@
 		<?
 //		include 'template/__modalKey.php';
 //		include 'template/__modalBonus.php';
-//		include 'template/__modalAuth.php';
+//		include 'template/modalAuth.blade.php';
 		?>
 
 

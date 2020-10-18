@@ -10,6 +10,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Validator;
+use Laravel\Socialite\Facades\Socialite;
 
 class LoginController extends Controller
 {
@@ -41,6 +42,8 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+    	parent::__construct();
+
         $this->middleware('guest')->except('logout');
     }
 

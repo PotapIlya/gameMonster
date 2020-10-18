@@ -44,6 +44,18 @@ Auth::routes();
 
 
 
+Route::group(
+	[
+		'namespace' => 'App\Http\Controllers\Auth',
+		'middleware' => 'guest'
+	], function ()
+	{
+		Route::get('/login/{name}', 'AuthenticationController@redirectToProvider')->name('login.services');
+		Route::get('/login/{name}/callback', 'AuthenticationController@handleProviderCallback');
+});
+
+http://127.0.0.1:8000/login/facebook/callback
+
 
 
 

@@ -19,6 +19,7 @@
 				/>
 				
 				<PasswordComponent
+					v-if="show"
 					@changeStatus = updateTitle
 				/>
 				
@@ -39,8 +40,16 @@
 		},
 		data: () => ({
             statusTitle: false,
+            show: true,
 		}),
-		methods:{
+		mounted()
+		{
+		    if (this.user_data.authentication_id)
+			{
+                this.show = false;
+			}
+        },
+        methods:{
             updateTitle()
 			{
 			    // отложенно до лучших времен

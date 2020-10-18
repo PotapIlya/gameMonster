@@ -2,4 +2,4 @@
 
 require('../../persone/scripts');
 
-require('../../persone/Modal'); // require('../../persone/swiper')
+require('../../persone/Modal');

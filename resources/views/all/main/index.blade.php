@@ -12,6 +12,7 @@
 
 
 
+    @include('base.modal.modalAuth')
 
 
 @endsection
