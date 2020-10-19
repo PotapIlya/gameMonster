@@ -37,6 +37,16 @@ class Catalog extends Model
 		return $this->belongsToMany(Category::class, 'category_product', 'category_id','product_id');
 	}
 
+	public function key()
+	{
+		return $this->hasOne(CatalogKey::class, 'catalog_id', 'id')->where('status', 1);
+	}
+
+	public function allKey()
+	{
+		return $this->hasOne(CatalogKey::class, 'catalog_id', 'id');
+	}
+
 	/*
 	|--------------------------------------------------------------------------
 	| RELATIONS

@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Models\Admin\Catalog;
+use App\Models\Admin\Role;
+use App\Models\User\ShoppingHistory;
 use Backpack\CRUD\app\Notifications\ResetPasswordNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -63,9 +66,29 @@ class User extends Authenticatable
 	}
 
 
+
+	/** FUNCTIONS */
+
 	public function about()
 	{
 		return $this->hasOne(UserAbout::class, 'user_id', 'id');
+	}
+
+	public function history()
+	{
+		return $this->belongsToMany(Catalog::class, 'shopping_histories', 'user_id', 'catalog_id');
+//		return $this->hasMany(ShoppingHistory::class, 'user_id', 'id');
+	}
+
+	public function roles()
+	{
+		return $this->hasOne(Role::class, 'id', 'role_id');
+	}
+
+	public function isAdmin()
+	{
+//		$user->roles()->where('name', 'admin')->exists()
+		return $this->hasOne(Role::class, 'id', 'role_id')->where('name', 'admin');
 	}
 
 

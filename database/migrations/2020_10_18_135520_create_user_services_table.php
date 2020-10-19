@@ -16,11 +16,17 @@ class CreateUserServicesTable extends Migration
         Schema::create('user_services', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('user_id');
-            $table->string('type');
+			$table->unsignedBigInteger('user_id');
+			$table->string('authentication_id', 255)->default(null)->nullable();
+			$table->string('type');
+			$table->string('login', 255);
+			$table->string('img')->default(null)->nullable();
+			$table->string('email', 255)->unique()->nullable();
 
-            $table->timestamps();
-        });
+			$table->timestamps();
+
+			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+		});
     }
 
     /**

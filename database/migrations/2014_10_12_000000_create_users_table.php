@@ -17,7 +17,6 @@ class CreateUsersTable extends Migration
 		{
             $table->id();
 
-            $table->string('authentication_id', 255)->default(null)->nullable();
             $table->unsignedBigInteger('role_id')->default(1);
             $table->string('login', 255);
             $table->string('img')->default(null)->nullable();

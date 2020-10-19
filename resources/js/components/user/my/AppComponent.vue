@@ -1,31 +1,29 @@
 <template>
-	<section class="my mb-5">
-		<div class="container">
-			<div class="my-private">Личный кабинет</div>
-			<div class="my-title mb-4 d-flex align-items-center justify-content-between">
+	<div>
+		<div class="my-private">Личный кабинет</div>
+		<div class="my-title mb-4 d-flex align-items-center justify-content-between">
 				<span>
 					Аккаунт
 				</span>
-				<span v-if="statusTitle"
-					  style="background: green">
+			<span v-if="statusTitle"
+				  style="background: green">
 					Обновленно
 				</span>
-			</div>
-			<div class="my-form d-flex flex-column flex-md-row">
-				
-				<InfoComponent
+		</div>
+		<div class="my-form d-flex flex-column flex-md-row">
+			
+			<InfoComponent
 					:user_data="user_data"
 					@changeStatus = updateTitle
-				/>
-				
-				<PasswordComponent
+			/>
+			
+			<PasswordComponent
 					v-if="show"
 					@changeStatus = updateTitle
-				/>
-				
-			</div>
+			/>
+		
 		</div>
-	</section>
+	</div>
 </template>
 
 <script>

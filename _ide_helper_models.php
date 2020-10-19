@@ -30,6 +30,7 @@ namespace App\Models\Admin{
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Admin\Category[] $category
  * @property-read int|null $category_count
+ * @property-read \App\Models\Admin\CatalogKey|null $key
  * @method static \Illuminate\Database\Eloquent\Builder|Catalog newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Catalog newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Catalog query()
@@ -49,6 +50,30 @@ namespace App\Models\Admin{
  * @method static \Illuminate\Database\Eloquent\Builder|Catalog whereUpdatedAt($value)
  */
 	class Catalog extends \Eloquent {}
+}
+
+namespace App\Models\Admin{
+/**
+ * App\Models\Admin\CatalogKey
+ *
+ * @property int $id
+ * @property int|null $catalog_id
+ * @property string|null $key
+ * @property int $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\Admin\Catalog|null $catalog
+ * @method static \Illuminate\Database\Eloquent\Builder|CatalogKey newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|CatalogKey newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|CatalogKey query()
+ * @method static \Illuminate\Database\Eloquent\Builder|CatalogKey whereCatalogId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CatalogKey whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CatalogKey whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CatalogKey whereKey($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CatalogKey whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CatalogKey whereUpdatedAt($value)
+ */
+	class CatalogKey extends \Eloquent {}
 }
 
 namespace App\Models\Admin{
@@ -120,6 +145,25 @@ namespace App\Models\Admin{
 
 namespace App\Models\Admin{
 /**
+ * App\Models\Admin\Role
+ *
+ * @property int $id
+ * @property string|null $name
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Role newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Role newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Role query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Role whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Role whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Role whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Role whereUpdatedAt($value)
+ */
+	class Role extends \Eloquent {}
+}
+
+namespace App\Models\Admin{
+/**
  * App\Models\Admin\Slider
  *
  * @property int $id
@@ -145,39 +189,26 @@ namespace App\Models\Admin{
 
 namespace App\Models{
 /**
- * App\Models\Role
- *
- * @property int $id
- * @property string|null $name
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @method static \Illuminate\Database\Eloquent\Builder|Role newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Role newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Role query()
- * @method static \Illuminate\Database\Eloquent\Builder|Role whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Role whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Role whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Role whereUpdatedAt($value)
- */
-	class Role extends \Eloquent {}
-}
-
-namespace App\Models{
-/**
  * App\Models\User
  *
  * @property int $id
  * @property int $role_id
  * @property string $login
- * @property string $email
+ * @property string|null $img
+ * @property string|null $email
  * @property string|null $phone
  * @property \Illuminate\Support\Carbon|null $email_verified_at
- * @property string $password
+ * @property string|null $password
  * @property string|null $remember_token
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\UserAbout|null $about
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Passport\Client[] $clients
+ * @property-read int|null $clients_count
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Passport\Token[] $tokens
+ * @property-read int|null $tokens_count
  * @method static \Illuminate\Database\Eloquent\Builder|User newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|User newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|User query()
@@ -185,6 +216,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|User whereEmail($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereEmailVerifiedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereImg($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User whereLogin($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User wherePassword($value)
  * @method static \Illuminate\Database\Eloquent\Builder|User wherePhone($value)
@@ -195,19 +227,73 @@ namespace App\Models{
 	class User extends \Eloquent {}
 }
 
+namespace App\Models{
+/**
+ * App\Models\UserAbout
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property string $money
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|UserAbout newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|UserAbout newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|UserAbout query()
+ * @method static \Illuminate\Database\Eloquent\Builder|UserAbout whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserAbout whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserAbout whereMoney($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserAbout whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserAbout whereUserId($value)
+ */
+	class UserAbout extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\UserServices
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property string|null $authentication_id
+ * @property string $type
+ * @property string $login
+ * @property string|null $img
+ * @property string|null $email
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|UserServices newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|UserServices newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|UserServices query()
+ * @method static \Illuminate\Database\Eloquent\Builder|UserServices whereAuthenticationId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserServices whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserServices whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserServices whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserServices whereImg($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserServices whereLogin($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserServices whereType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserServices whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|UserServices whereUserId($value)
+ */
+	class UserServices extends \Eloquent {}
+}
+
 namespace App\Models\User{
 /**
  * App\Models\User\ShoppingHistory
  *
  * @property int $id
+ * @property int $user_id
+ * @property int $catalog_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|ShoppingHistory newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ShoppingHistory newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ShoppingHistory query()
+ * @method static \Illuminate\Database\Eloquent\Builder|ShoppingHistory whereCatalogId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ShoppingHistory whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ShoppingHistory whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ShoppingHistory whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ShoppingHistory whereUserId($value)
  */
 	class ShoppingHistory extends \Eloquent {}
 }

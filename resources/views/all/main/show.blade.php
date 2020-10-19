@@ -9,6 +9,8 @@
         <div class="container row  mx-0">
             <div class="row px-0 m-0 mb-md-5 w-100">
 
+
+
                 @if( count($item->img) && !is_null($item->img) && $item->img )
 
                     <div class="cart-images col-12 col-xl-7 px-0">
@@ -82,8 +84,30 @@
                                 </div>
                             </div>
                             <div class="right-wrap__get-keys d-flex flex-column flex-md-row align-items-start mb-4">
-                                <button class="right-wrap__buy-key" style="cursor:pointer;">Купить ключ</button>
-                                <button class="right-wrap__random-key" style="cursor:pointer;">Выбить в рандоме</button>
+                                @guest
+                                    <a href="{{ route('login') }}"
+                                       class="right-wrap__buy-key"
+                                       style="cursor:pointer;"
+                                    >Войти в аккаунт</a>
+                                @else
+                                    @if(!is_null($item->key))
+                                        <form action="{{ route('user.buyKey') }}" method="POST">
+                                            @csrf
+                                            @method('PATCH')
+                                            <input type="hidden" name="price" value="{{ $item->price }}">
+                                            <input type="hidden" name="catalogId" value="{{ $item->id }}">
+                                            <button
+                                                    type="submit"
+                                                    class="right-wrap__buy-key"
+                                                    style="cursor:pointer;"
+                                            >Купить ключ</button>
+                                        </form>
+                                    @else
+                                        <button class="right-wrap__buy-key" style="cursor:pointer;">Нет ключа</button>
+                                    @endif
+                                        <a href="/development" class="right-wrap__random-key" style="cursor:pointer;">Выбить в рандоме</a>
+                                @endguest
+
                             </div>
                         </div>
 
@@ -138,7 +162,7 @@
                             <div class="originacc-wrap__price1"><span style="color:#fff">179</span>₽</div>
 
                             <div class="originacc-wrap__rent d-flex align-items-end">
-                                <a href="#" class="originacc-wrap__rent-acc">Aрендовать аккаунт</a>
+                                <a href="/development" class="originacc-wrap__rent-acc" >Aрендовать аккаунт</a>
                             </div>
                         </div>
                     </div>

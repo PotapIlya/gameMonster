@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class ShoppingHistory extends Model
 {
     use HasFactory;
+
+    protected $table = 'shopping_histories';
+	protected $guarded = ['id'];
+
+
 }

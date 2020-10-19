@@ -1,4 +1,9 @@
 
+
+
+
+
+
 {{--@dd($item)--}}
 
 <div class="col-10 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
@@ -12,7 +17,7 @@
                         <img class="w-100" src="/assets/static/img/main/no-image.png" alt="">
                     @endif
                 </div>
-                <div class="catalog__text">
+                <div class="catalog__text test">
                     @if($item->discounts)
                         <div class="d-flex justify-content-end">
                             <div class="rate"> -{{ $item->discounts }}% </div>
@@ -39,7 +44,7 @@
                             Предзаказ
                         </span>
                     @endif
-                        @if($item->early_access)
+                    @if($item->early_access)
                         <span class="catalog__tags-item black mr-2">
                             Ранний доступ
                         </span>
@@ -55,6 +60,7 @@
                         <img class="mw-100" src="/assets/static/img/main/icon/steam.svg" alt="">
                     </div>
                 </div>
+
                 @if(count($item->category))
                     <div class="catalog__category">
                         @foreach($item->category as $category)
@@ -69,4 +75,15 @@
 
         </div>
     </a>
+
+    @if($show)
+        <div class="mt-2 showCart"
+             data-key="{{ $item->allKey->key }}"
+        >
+            <span>
+                Показать товар
+            </span>
+        </div>
+    @endif
+
 </div>

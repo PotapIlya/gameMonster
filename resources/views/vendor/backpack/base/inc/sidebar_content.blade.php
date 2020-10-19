@@ -7,3 +7,5 @@
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('news') }}'><i class='nav-icon la la-question'></i> News</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('nav') }}'><i class='nav-icon la la-question'></i> Navs</a></li>
 <li class='nav-item'><a class='nav-link' href='{{ backpack_url('catalog') }}'><i class='nav-icon la la-question'></i> Catalogs</a></li>
+
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('catalogkey') }}'><i class='nav-icon la la-question'></i> CatalogKeys</a></li>

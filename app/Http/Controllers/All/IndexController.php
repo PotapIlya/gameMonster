@@ -4,6 +4,7 @@ namespace App\Http\Controllers\All;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Catalog;
+use App\Models\Admin\CatalogKey;
 use App\Models\Admin\Category;
 use Illuminate\Http\Request;
 
@@ -21,10 +22,10 @@ class IndexController extends BasicAllController
      *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(Request $request)
     {
+		$catalog = Catalog::limit(16)->with('category', 'key')->get();
 
-		$catalog = Catalog::limit(16)->with('category')->get();
 
 
     	return view('all.main.index', compact('catalog'));
@@ -60,7 +61,8 @@ class IndexController extends BasicAllController
      */
     public function show($id)
     {
-    	$item = Catalog::with('category')->find($id);
+    	$item = Catalog::with('category', 'key')->find($id);
+
 
 
     	// беерем категории у родителей и от связи в категория берем схожие

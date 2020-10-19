@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateShoppingHistoriesTable extends Migration
+class CreateCatalogKeysTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,16 @@ class CreateShoppingHistoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('shopping_histories', function (Blueprint $table) {
+        Schema::create('catalog_keys', function (Blueprint $table) {
             $table->id();
 
+            $table->unsignedBigInteger('catalog_id')->nullable();
+            $table->string('key', 255)->nullable();
+            $table->boolean('status')->default(true);
+
             $table->timestamps();
+
+			$table->foreign('catalog_id')->references('id')->on('catalogs')->onDelete('cascade');
         });
     }
 
@@ -27,6 +33,6 @@ class CreateShoppingHistoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shopping_histories');
+        Schema::dropIfExists('catalog_keys');
     }
 }

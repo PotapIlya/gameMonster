@@ -43,6 +43,11 @@ Auth::routes();
 //Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 
+Route::get('/development', function ()
+{
+	return view('errors.development');
+});
+
 
 Route::group(
 	[
@@ -54,9 +59,7 @@ Route::group(
 		Route::get('/login/{name}/callback', 'AuthenticationController@handleProviderCallback');
 });
 
-http://127.0.0.1:8000/login/facebook/callback
-
-
+//http://127.0.0.1:8000/login/facebook/callback
 
 
 /** All */
@@ -84,6 +87,8 @@ Route::group(
 	{
 		Route::resource('/my', 'IndexController')->names('user');
 		Route::resource('/balance', 'BalanceController')->names('user.balance');
+		Route::patch('/buyKey', 'BuyKeyController@buyKey')->name('user.buyKey');
+
 
 
 		/** API */

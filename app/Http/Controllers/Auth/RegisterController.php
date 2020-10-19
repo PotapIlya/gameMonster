@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Auth;
+use Cookie;
 
 class RegisterController extends Controller
 {
@@ -22,7 +23,7 @@ class RegisterController extends Controller
     |--------------------------------------------------------------------------
     |
     | This controller handles the registration of new users as well as their
-    | validation and creation. By default this controller uses a trait to
+    | validation and creation. By default this controller uses a Potap to
     | provide this functionality without requiring any additional code.
     |
     */
@@ -83,15 +84,14 @@ class RegisterController extends Controller
 		else{
 			$user = $this->create($request->all());
 
-			UserAbout::create([
-				'user_id' => $user['id']
-			]);
+//			UserAbout::create([
+//				'user_id' => $user['id']
+//			]);
 
 
 			if (Auth::attempt($request->only(['email', 'password'])))
 			{
-				return redirect('/my');
-//				return response()->json(['success'=> 'success']);
+				return redirect('/my')->withCookie(cookie()->forever('userId', $user['id']));
 			}
 		}
 	}

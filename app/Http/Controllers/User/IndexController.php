@@ -24,10 +24,17 @@ class IndexController extends BasicUserController
      */
     public function index()
     {
-//    	dd('auth');
+    	$user = Auth::user();
+		if ($user){
+			$user = $user->load('history');
+		}
 
 
-        return view('user.my.index');
+
+
+
+
+        return view('user.my.index', compact('user'));
     }
 
     /**
@@ -37,6 +44,7 @@ class IndexController extends BasicUserController
      */
     public function create()
     {
+
         //
     }
 

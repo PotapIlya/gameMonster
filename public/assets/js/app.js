@@ -2226,8 +2226,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2274,6 +2272,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
 //
 //
 //
@@ -3600,43 +3599,41 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("section", { staticClass: "my mb-5" }, [
-    _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "my-private" }, [_vm._v("Личный кабинет")]),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass:
-            "my-title mb-4 d-flex align-items-center justify-content-between"
-        },
-        [
-          _c("span", [_vm._v("\n\t\t\t\tАккаунт\n\t\t\t")]),
-          _vm._v(" "),
-          _vm.statusTitle
-            ? _c("span", { staticStyle: { background: "green" } }, [
-                _vm._v("\n\t\t\t\tОбновленно\n\t\t\t")
-              ])
-            : _vm._e()
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "my-form d-flex flex-column flex-md-row" },
-        [
-          _c("InfoComponent", {
-            attrs: { user_data: _vm.user_data },
-            on: { changeStatus: _vm.updateTitle }
-          }),
-          _vm._v(" "),
-          _vm.show
-            ? _c("PasswordComponent", { on: { changeStatus: _vm.updateTitle } })
-            : _vm._e()
-        ],
-        1
-      )
-    ])
+  return _c("div", [
+    _c("div", { staticClass: "my-private" }, [_vm._v("Личный кабинет")]),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass:
+          "my-title mb-4 d-flex align-items-center justify-content-between"
+      },
+      [
+        _c("span", [_vm._v("\n\t\t\t\tАккаунт\n\t\t\t")]),
+        _vm._v(" "),
+        _vm.statusTitle
+          ? _c("span", { staticStyle: { background: "green" } }, [
+              _vm._v("\n\t\t\t\tОбновленно\n\t\t\t")
+            ])
+          : _vm._e()
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "my-form d-flex flex-column flex-md-row" },
+      [
+        _c("InfoComponent", {
+          attrs: { user_data: _vm.user_data },
+          on: { changeStatus: _vm.updateTitle }
+        }),
+        _vm._v(" "),
+        _vm.show
+          ? _c("PasswordComponent", { on: { changeStatus: _vm.updateTitle } })
+          : _vm._e()
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = []
@@ -3723,7 +3720,12 @@ var render = function() {
             }
           ],
           staticClass: "personal-data",
-          attrs: { type: "email", placeholder: "Email", required: "" },
+          attrs: {
+            id: "formEmail",
+            type: "email",
+            placeholder: "Email",
+            required: ""
+          },
           domProps: { value: _vm.email },
           on: {
             input: function($event) {

@@ -82,5 +82,66 @@
 
 <script src="{{ asset('/assets/js/app.js') }}"></script>
 <script src="{{ asset('/assets/js/scripts.js') }}"></script>
+
+
+    <script>
+        const showCarts = document.querySelectorAll('.showCart');
+        const email = document.getElementById('formEmail');
+
+        const modal = document.querySelector('.modal.modal-key');
+        const modalWrap = modal.querySelector('.global-wrap')
+        const modalTitle = modal.querySelector('#modalTitle');
+        const modalEmail = modal.querySelector('#modalEmail');
+        const modalKey = modal.querySelector('#modalKey');
+        const close = modal.querySelector('.close')
+
+        showCarts.forEach(cart => {
+            cart.addEventListener('click', () =>
+            {
+                const key = cart.dataset.key;
+                const title = cart.parentElement.querySelector('.catalog__title').textContent;
+
+
+                modal.classList.add('d-block')
+
+                modalTitle.textContent = title;
+                modalEmail.value = email.value;
+                modalKey.value = key;
+
+
+
+
+                const btnsCash = modal.querySelectorAll('.getCash')
+                btnsCash.forEach(cash =>{
+                    cash.addEventListener('click', () => {
+                        if (modal.classList.contains('d-block'))
+                        {
+                            const input = cash.parentElement.querySelector('input');
+                            input.removeAttribute('disabled');
+
+                            input.select();
+                            document.execCommand("copy");
+
+                            input.setAttribute('disabled', 'disabled');
+                        }
+                    })
+                })
+
+
+                window.addEventListener('click', (e) => {
+                    if (e.target === modalWrap )
+                    {
+                        modal.classList.remove('d-block')
+                    }
+                })
+                close.addEventListener('click', () => {
+                    modal.classList.remove('d-block')
+                })
+
+
+            })
+        })
+
+    </script>
 </body>
 </html>

@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use App\Http\Requests\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
-class CatalogRequest extends FormRequest
+class CatalogKeyRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,10 +26,8 @@ class CatalogRequest extends FormRequest
     public function rules()
     {
         return [
-             'title' => 'required',
-             'text' => 'required',
-             'price' => 'required',
-
+             'catalog_id' => 'required',
+             'key' => 'required',
         ];
     }
 

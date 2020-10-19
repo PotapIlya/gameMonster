@@ -14,8 +14,8 @@ class ResetPasswordController extends Controller
     |--------------------------------------------------------------------------
     |
     | This controller is responsible for handling password reset requests
-    | and uses a simple trait to include this behavior. You're free to
-    | explore this trait and override any methods you wish to tweak.
+    | and uses a simple Potap to include this behavior. You're free to
+    | explore this Potap and override any methods you wish to tweak.
     |
     */
 

@@ -11,4 +11,5 @@ class UserAbout extends Model
 
     protected $table = 'user_abouts';
     protected $guarded = ['id'];
+
 }

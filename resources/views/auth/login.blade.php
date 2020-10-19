@@ -45,10 +45,18 @@
                             </div>
                             <a href="#" class="registration__enter-help">Войти с помощью</a>
                             <div class="registration__services d-flex align-items-center">
-                                <a href="#" class="service1"><img src="../img/services/steam.png" alt="steam"></a>
-                                <a href="#" class="service2 mr-2 ml-4"><img src="../img/services/google.png" alt="google"></a>
-                                <a href="#" class="service3 mr-4 ml-2"><img src="../img/services/vk.png" alt="vk"></a>
-                                <a href="#" class="service4"><img src="../img/services/facebook.png" alt="facebook"></a>
+                                <a href="{{ route('login.services', 'steam') }}" class="service1">
+                                    <img src="/assets/static/img/services/steam.png" alt="steam">
+                                </a>
+                                <a href="{{ route('login.services', 'google') }}" class="service2 mr-2 ml-4">
+                                    <img src="/assets/static/img/services/google.png" alt="google">
+                                </a>
+                                <a href="{{ route('login.services', 'vkontakte') }}" class="service3 mr-4 ml-2">
+                                    <img src="/assets/static/img/services/vk.png" alt="vk">
+                                </a>
+                                <a href="#" class="service4">
+                                    <img src="/assets/static/img/services/facebook.png" alt="facebook">
+                                </a>
                             </div>
                         </form>
                     </div>

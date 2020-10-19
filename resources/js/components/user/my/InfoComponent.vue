@@ -19,6 +19,7 @@
 		</label>
 		<label class="personal-label" for="">
 			<input
+					id="formEmail"
 					v-model="email"
 					class="personal-data"
 					type="email"
