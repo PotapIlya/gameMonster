@@ -76,24 +76,28 @@ class RegisterController extends Controller
         ]);
     }
 
-	public function register(Request $request)  {
+	public function register(Request $request)
+	{
 		$validation = $this->validator($request->all());
 		if ($validation->fails())  {
-			return response()->json($validation->errors()->toArray());
+			return response()->json(['errors' => $validation->errors()]);
 		}
-		else{
-			$user = $this->create($request->all());
 
-//			UserAbout::create([
-//				'user_id' => $user['id']
-//			]);
+//		return response()->json(['test' => 'potap']);
+		$user = $this->create($request->all());
 
-
+		if ($user)
+		{
 			if (Auth::attempt($request->only(['email', 'password'])))
 			{
-				return redirect('/my')->withCookie(cookie()->forever('userId', $user['id']));
+				return response()->json(['success' => 'success']);
 			}
 		}
+		else{
+			return response()->json(['errors' => ['email' => ['Ой, что то пошло не так']]]);
+		}
+
+
 	}
 
 }

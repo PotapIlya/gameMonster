@@ -16,7 +16,7 @@ class UserAboutObserver
     public function created(UserAbout $userAbout)
     {
 
-    	dd('observer created');
+//    	dd('observer created');
     }
 
     /**

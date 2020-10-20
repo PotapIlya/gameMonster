@@ -71,7 +71,7 @@ Route::group(
 	function ()
 	{
 		Route::resource('/', 'IndexController')->names('main');
-		Route::get('/show/{id}', 'IndexController@show')->name('mainShow');
+		Route::get('/key/{name}', 'IndexController@show')->name('mainShow');
 });
 
 

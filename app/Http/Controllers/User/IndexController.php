@@ -148,7 +148,6 @@ class IndexController extends BasicUserController
 	{
 		$userId = Auth::id();
 
-
 		$validation = \Validator::make($request->all() ,[
 			'login' => ['required', 'string', 'max:255', Rule::unique('users')->ignore($userId)],
 			'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($userId)],

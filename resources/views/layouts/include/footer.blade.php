@@ -60,13 +60,15 @@
 
 
             <ul class="footer__element6 element6 unit" style="color: #fff;">
-                <li class="footer__auth mb-4">
-                    <div class="d-flex">
-                        <div class="footer__auth-item openAuth openModal" data-type="login">Вход</div>
-                        <div class="footer__inclined mx-1">/</div>
-                        <div class="footer__auth-item openAuth openModal" data-type="login">Регистрация</div>
-                    </div>
-                </li>
+                @guest
+                    <li class="footer__auth mb-4">
+                        <div class="d-flex">
+                            <div class="footer__auth-item openAuth openModal" data-type="login">Вход</div>
+                            <div class="footer__inclined mx-1">/</div>
+                            <div class="footer__auth-item openAuth openModal" data-type="login">Регистрация</div>
+                        </div>
+                    </li>
+                @endguest
                 <li class="footer__translate d-flex mb-4">
                     <input class="d-none" id="en" type="radio" name="translate"/>
                     <label for="en">En</label>

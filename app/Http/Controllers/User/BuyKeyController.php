@@ -23,7 +23,7 @@ class BuyKeyController extends BasicUserController
 
 		if ( $authUser->about->money < $request->input('price'))
 		{
-			dd('No money');
+			return redirect()->back()->withErrors(['errors' => 'У вас недостаточно средств']);
 		}
 
 		$newMoney = $authUser->about->money - $request->input('price');
@@ -43,7 +43,7 @@ class BuyKeyController extends BasicUserController
 			'catalog_id' => $request->input('catalogId'),
 		]);
 		if ($createHistory){
-			return redirect('/my');
+			return redirect()->back()->with(['success' => 'Товар успешно приобретен']);
 		}
 
 

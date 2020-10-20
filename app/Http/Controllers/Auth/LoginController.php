@@ -60,16 +60,14 @@ class LoginController extends Controller
 	{
 		$validation = $this->validator($request->all());
 		if ($validation->fails())  {
-				return response()->json(['errors' => $validation->errors()->toArray()]);
+			return response()->json(['errors' => $validation->errors()]);
 		}
-
-		if (Auth::attempt($request->only(['email', 'password']), $request->has('remember'))) {
-			// Authentication passed...
-			return redirect('/my');
-//			return response()->json(['success'=> 'success']);
+		if (Auth::attempt($request->only(['email', 'password']), $request->has('remember')))
+		{
+			return response()->json(['success' => 'success']);
 		}
 		else{
-			return response()->json(['errors'=> 'Неправильный логин или пароль']);
+			return response()->json(['errors'=> ['email' => ['Неправильный логин или пароль']]]);
 		}
 	}
 

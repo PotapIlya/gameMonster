@@ -61,8 +61,10 @@ class IndexController extends BasicAllController
      */
     public function show($id)
     {
-    	$item = Catalog::with('category', 'key')->find($id);
-
+    	$item = Catalog::with('category', 'key')->where('url', $id)->first();
+    	if (!$item){
+    		dd( 'IndexController show' );
+		}
 
 
     	// беерем категории у родителей и от связи в категория берем схожие

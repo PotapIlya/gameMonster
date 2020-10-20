@@ -31,7 +31,7 @@
 
                                 @foreach($item->img as $img)
                                     <div class="cart-images__additem swiper-slide">
-                                        <a href="#" style="block">
+                                        <a href="#" class="d-block">
                                             <img class="mw-100" src="/storage/{{ $img }}" alt="main-image">
                                         </a>
                                     </div>
@@ -109,6 +109,8 @@
                                 @endguest
 
                             </div>
+                                @include('base.alert.success')
+                                @include('base.alert.error')
                         </div>
 
 
@@ -136,11 +138,12 @@
 
             </div>
             <div class="row2 row px-0 m-0 d-flex w-100">
-                <div class="game-description col-12 col-xl-7 px-0 mb-3 mb-md-5 mb-xl-0">
-                    <p>
-                        {!! Str::limit($item->text, 500) !!}
-                        <a href="#" style="color:#F59502; text-decoration:none;">подробнее..</a>
-                    </p>
+                <div class="game-description col-12 col-xl-7 px-0 mb-3 mb-md-5 mb-xl-0" id="showDescription">
+
+                        {!! $item->text !!}
+{{--                        {!! Str::limit($item->text, 500) !!}--}}
+{{--                    <span style="color:#F59502; text-decoration:none;">подробнее..</span>--}}
+
                 </div>
 
 
@@ -184,7 +187,7 @@
                 <div class="row">
 
                     @foreach($otherGame as $item)
-                        @include('base.include.catalogItem', ['item' => $item])
+                        @include('base.include.catalogItem', ['item' => $item, 'show' => false])
                     @endforeach
 
                 </div>

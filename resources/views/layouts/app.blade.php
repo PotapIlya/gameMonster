@@ -11,8 +11,13 @@
 
     <link href="{{ asset('/assets/css/modules.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets/css/app.css') }}" rel="stylesheet">
-{{--    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">--}}
-{{--    <link href="{{ asset('css/bootstrap-grid.scss') }}" rel="stylesheet">--}}
+
+    <script src="{{ asset('/assets/js/header.js') }}"></script>
+
+
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
 </head>
 <body>
 
@@ -70,78 +75,91 @@
     {{--            </div>--}}
     {{--        </nav>--}}
 
+
+    <div id="app">
         @include('layouts.include.header')
 
-        <main id="app">
+        <main>
             @yield('content')
         </main>
 
         @include('layouts.include.footer')
 
+    </div>
 
 
 <script src="{{ asset('/assets/js/app.js') }}"></script>
 <script src="{{ asset('/assets/js/scripts.js') }}"></script>
+<script src="{{ asset('/assets/js/custom.js') }}"></script>
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script>
-        const showCarts = document.querySelectorAll('.showCart');
-        const email = document.getElementById('formEmail');
+        if (document.querySelector('.swiper-top')){
 
-        const modal = document.querySelector('.modal.modal-key');
-        const modalWrap = modal.querySelector('.global-wrap')
-        const modalTitle = modal.querySelector('#modalTitle');
-        const modalEmail = modal.querySelector('#modalEmail');
-        const modalKey = modal.querySelector('#modalKey');
-        const close = modal.querySelector('.close')
+            const galleryThumbs = new Swiper('.swiper-thumbs', {
+                spaceBetween: 15,
+                slidesPerView: 6,
+                loop: true,
+                centeredSlides: true,
+                slidesPerGroup: 1,
+                loopedSlides: 5,
+            });
+            const galleryTop = new Swiper('.swiper-top', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                loopedSlides: 5,
+                loop:true,
+                thumbs: {
+                    swiper: galleryThumbs,
+                },
+            });
+            galleryTop.update();
+            galleryThumbs.update();
+        }
 
-        showCarts.forEach(cart => {
-            cart.addEventListener('click', () =>
-            {
-                const key = cart.dataset.key;
-                const title = cart.parentElement.querySelector('.catalog__title').textContent;
+        if (document.querySelector('.swiper-home')){
+            // console.log(window.innerWidth)
+            if (window.innerWidth > 992){
+                document.querySelector('.swiper-home_pagination').remove()
+                const homeThumbs = new Swiper('.swiper-home_thumbs', {
+                    spaceBetween: 15,
+                    slidesPerView: 5,
+                    loop: true,
+                    centeredSlides: true,
+                    slidesPerGroup: 1,
+                    loopedSlides: 5,
 
-
-                modal.classList.add('d-block')
-
-                modalTitle.textContent = title;
-                modalEmail.value = email.value;
-                modalKey.value = key;
-
-
-
-
-                const btnsCash = modal.querySelectorAll('.getCash')
-                btnsCash.forEach(cash =>{
-                    cash.addEventListener('click', () => {
-                        if (modal.classList.contains('d-block'))
-                        {
-                            const input = cash.parentElement.querySelector('input');
-                            input.removeAttribute('disabled');
-
-                            input.select();
-                            document.execCommand("copy");
-
-                            input.setAttribute('disabled', 'disabled');
-                        }
-                    })
-                })
-
-
-                window.addEventListener('click', (e) => {
-                    if (e.target === modalWrap )
-                    {
-                        modal.classList.remove('d-block')
-                    }
-                })
-                close.addEventListener('click', () => {
-                    modal.classList.remove('d-block')
-                })
-
-
-            })
-        })
+                });
+                const homeTop = new Swiper('.swiper-home', {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    loopedSlides: 5,
+                    loop:true,
+                    thumbs: {
+                        swiper: homeThumbs,
+                    },
+                });
+                homeTop.update();
+                homeThumbs.update();
+            }else{
+                document.querySelector('.swiper-home_thumbs').remove()
+                const homeTop = new Swiper('.swiper-home', {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    loopedSlides: 5,
+                    loop:true,
+                    pagination: {
+                        el: '.swiper-home_pagination',
+                        type: 'bullets',
+                    },
+                });
+                homeTop.update();
+            }
+        }
 
     </script>
+
+
 </body>
 </html>

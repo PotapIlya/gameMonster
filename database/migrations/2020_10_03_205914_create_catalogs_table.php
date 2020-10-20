@@ -16,6 +16,7 @@ class CreateCatalogsTable extends Migration
         Schema::create('catalogs', function (Blueprint $table) {
             $table->id();
 
+			$table->string('url', 255)->unique()->default(null)->nullable();
 			$table->string('title', 255)->default(null)->nullable();
 			$table->string('price', 255)->default(null)->nullable();
 			$table->string('old_price', 255)->default(null)->nullable();

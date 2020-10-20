@@ -14,6 +14,7 @@ class UserSeeder extends Seeder
     public function run()
     {
     	$data = [
+    		'role_id' => 2,
     		'login' => 'tester',
     		'email' => 'tester@t.r',
     		'password' => bcrypt('testertester'),

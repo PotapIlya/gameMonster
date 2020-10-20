@@ -1,13 +1,7 @@
 
 
-
-
-
-
-{{--@dd($item)--}}
-
 <div class="col-10 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
-    <a href="{{ route('mainShow', $item->id) }}" class="w-100">
+    <a href="{{ route('mainShow', $item->url) }}" class="w-100">
         <div class="catalog__wrapper d-flex flex-column">
             <div class="catalog__img">
                 <div>

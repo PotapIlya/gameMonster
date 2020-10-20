@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Admin\Catalog;
 use App\Models\Admin\Nav;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
@@ -34,6 +35,7 @@ class BasicServiceProvider extends ServiceProvider
 		{
 			$view->with('basic', [
 				'nav' => Nav::select(['name', 'url'])->toBase()->get(),
+				'search' => Catalog::select(['id', 'url','title', 'preloader', 'price', 'old_price'])->with('category')->get(),
 			] );
 		});
 	}

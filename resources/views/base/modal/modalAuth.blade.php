@@ -1,3 +1,3 @@
-<app-modal-login-component />
+{{--<app-modal-login-component />--}}
 
-<app-modal-register-component />
+{{--<app-modal-register-component />--}}

@@ -27,8 +27,9 @@ class CatalogRequest extends FormRequest
     {
         return [
              'title' => 'required',
-             'text' => 'required',
+
              'price' => 'required',
+             'url' => 'required',
 
         ];
     }
