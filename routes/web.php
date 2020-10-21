@@ -52,7 +52,6 @@ Route::get('/development', function ()
 Route::group(
 	[
 		'namespace' => 'App\Http\Controllers\Auth',
-		'middleware' => 'guest'
 	], function ()
 	{
 		Route::get('/login/{name}', 'AuthenticationController@redirectToProvider')->name('login.services');

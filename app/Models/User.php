@@ -71,7 +71,11 @@ class User extends Authenticatable
 
 	public function about()
 	{
-		return $this->hasOne(UserAbout::class, 'user_id', 'id');
+		return $this->hasOne(User\UserAbout::class, 'user_id', 'id');
+	}
+	public function services()
+	{
+		return $this->hasMany(User\UserServices::class, 'user_id', 'id');
 	}
 
 	public function history()

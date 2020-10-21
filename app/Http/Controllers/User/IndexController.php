@@ -26,15 +26,10 @@ class IndexController extends BasicUserController
     {
     	$user = Auth::user();
 		if ($user){
-			$user = $user->load('history');
+			$user = $user->load('history', 'services');
 		}
 
-
-
-
-
-
-        return view('user.my.index', compact('user'));
+		return view('user.my.index', compact('user'));
     }
 
     /**

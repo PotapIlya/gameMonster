@@ -5,8 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Auth\CustomTrait\AuthTrait;
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Models\UserAbout;
-use App\Models\UserServices;
+use App\Models\User\UserServices;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use Auth;
@@ -26,7 +25,7 @@ class AuthenticationController extends Controller
 
 		$this->steam = $steamAuth;
 
-		$this->middleware('guest')->except('logout');
+//		$this->middleware('guest')->except('logout');
 	}
 
 
@@ -117,135 +116,85 @@ class AuthenticationController extends Controller
 	private function AuthGoogle()
 	{
 		$user = Socialite::driver('google')->user();
-		$cookie = Cookie::get('userId');
 
-		$services = $this->CheckServices($user->user['sub'], 'google');
-		if ($services) {
-
-			$this->AuthById($services->user_id);
-			return;
-		}
-
-
-
-		$check = User::find((int) $cookie);
-
-		if ($check)
+		if (Auth::check())
 		{
-			$checkServices = UserServices::where('authentication_id', $user->user['sub'])->first();
-			if ($checkServices)
-			{
-				$this->AuthById($checkServices->user_id);
-			}
-			else
-			{
-				$create = UserServices::create([
-					'user_id' => $check->id,
-					'authentication_id' => $user->user['sub'],
-					'type' => 'google',
-					'login' => $user->user['given_name'].' '.$user->user['family_name'],
-					'img' => $user->user['picture'],
-					'email' => $user->user['email'],
-				]);
-				$this->AuthById($create->user_id);
-			}
-		}
-		else
-		{
-			$create = User::create([
-				'login' => $user->user['given_name'].' '.$user->user['family_name'],
-				'img' => $user->user['picture'],
-				'email' => $user->user['email'],
-			]);
-			Cookie::forever('userId', $create['id']);
-			UserAbout::create([
-				'user_id' => $create['id']
-			]);
+			$findOrCreateUser = $this->findOrCreate(
+				Auth::id(),
+				$user['sub'],
+				'google',
+				$user['given_name'].'_'.$user['family_name'],
+				$user['picture'],
+				$user['email'],
+			);
 
-			if ($create)
+			if ($findOrCreateUser)
 			{
-				$createServices = UserServices::create([
-					'user_id' => $create->id,
-					'authentication_id' => $user->user['sub'],
-					'type' => 'google',
-					'login' => $user->user['given_name'].' '.$user->user['family_name'],
-					'img' => $user->user['picture'],
-					'email' => $user->user['email'],
-				]);
-				$this->AuthById($createServices->user_id);
+				return redirect()->back()->with(['success' => self::SAVE]);
+			}
+			else {
+				return redirect()->back()->withErrors(['errors' => self::ERRORS]);
 			}
 		}
+		else{
+			$findUser = UserServices::where('authentication_id',  $user['sub'])->first();
+			if ($findUser)
+			{
+				$auth = $this->AuthById($findUser->user->id);
+				if ($auth){
+
+					return redirect('/my');
+				} else{
+					return redirect()->back()->withErrors(['errors' => self::ERRORS]);
+				}
+			}
+			else{
+				return redirect()->back()->withErrors(['errors' => self::ERRORS_REGISTER]);
+			}
+		}
+
 	}
 
 	private function AuthVK()
 	{
 		$user = Socialite::driver('vkontakte')->user();
 
-//		dd($user);
+		if (Auth::check())
+		{
+			$findOrCreateUser = $this->findOrCreate(
+				Auth::id(),
+				$user['id'],
+				'vk',
+				$user['first_name'].'_'.$user['last_name'],
+				$user['photo_200'],
+				$user['email'],
+			);
 
-		$cookie = Cookie::get('userId');
-
-
-		// запрос в user_service на случаей если пользователь есть в базе, а нету cookie
-		$services = $this->CheckServices($user->user['id'], 'vk');
-		if ($services) {
-			$this->AuthById($services->user_id);
-			return;
+			if ($findOrCreateUser)
+			{
+				return redirect()->back()->with(['success' => self::SAVE]);
+			}
+			else {
+				return redirect()->back()->withErrors(['errors' => self::ERRORS]);
+			}
 		}
-//
-//		// ищем пользователя по cookie в users
-//		$check = User::find((int) $cookie);
-//		if ($check)
-//		{
-//			// есть в users
-//			$checkServices = UserServices::where('authentication_id', $user->user['id'])->first();
-//			if ($checkServices)
-//			{
-//				$this->AuthById($checkServices->user_id);
-//			}
-//			else
-//			{
-//				// Нету в services
-//				$create = $this->CreateUserServices(
-//					$check->id,
-//					$user->user['id'],
-//					'vk',
-//					$user->user['first_name'].' '.$user->user['last_name'],
-//					$user->user['photo_200'],
-//					$user->user['email']
-//				);
-//				if ($create) {
-//					$this->AuthById($create->user_id);
-//				}
-//			}
-//		}
-//		else
-//		{
-//			$createUser = $this->CreateUser(
-//				$user->user['first_name'].' '.$user->user['last_name'],
-//					$user->user['photo_200'],
-//					$user->user['email'],
-//			);
-//			if ($createUser)
-//			{
-//				$createServices = $this->CreateUserServices(
-//					$createUser->id,
-//					$user->user['id'],
-//					'vk',
-//					$user->user['first_name'].' '.$user->user['last_name'],
-//					$user->user['photo_200'],
-//					$user->user['email'],
-//				);
-//				if ($createServices) {
-//					$this->AuthById($createServices->user_id);
-//
-////					dd($createUser);
-//					Cookie::queue('userId', $createUser->id, 60);
-//					dd(true);
-//				}
-//
-//			}
-//		}
+		else{
+			$findUser = UserServices::where('authentication_id',  $user['id'])->first();
+			if ($findUser)
+			{
+				$auth = $this->AuthById($findUser->user->id);
+				if ($auth){
+
+					return redirect('/my');
+				} else{
+					return redirect()->back()->withErrors(['errors' => self::ERRORS]);
+				}
+			}
+			else{
+				return redirect()->back()->withErrors(['errors' => self::ERRORS_REGISTER]);
+			}
+		}
+
 	}
 
 

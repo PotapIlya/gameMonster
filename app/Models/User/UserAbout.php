@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\User;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class UserServices extends Model
+class UserAbout extends Model
 {
     use HasFactory;
 
-    protected $table = 'user_services';
+    protected $table = 'user_abouts';
     protected $guarded = ['id'];
 
 }

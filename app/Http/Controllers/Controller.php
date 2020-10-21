@@ -11,6 +11,11 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+
+    const ERRORS = 'Ой, что то пошло не так';
+    const SAVE = 'Обновленно';
+    const ERRORS_REGISTER = 'Зарегистрируйтесь и привяжите аккаунт';
+
     public function __construct()
 	{
 

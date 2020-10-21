@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 use App\Models\User;
 use App\Observers\User\UserObserver;
 
-use App\Models\UserAbout;
+use App\Models\User\UserAbout;
 use App\Observers\User\UserAboutObserver;
 
 

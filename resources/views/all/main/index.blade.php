@@ -4,9 +4,9 @@
 
 
     @includeWhen(count($slider), 'all.main.include.fScreen')
-{{--    @include('all.main.include.luck')--}}
+    @include('all.main.include.luck')
     @includeWhen(count($catalog), 'all.main.include.catalog')
-{{--    @include('all.main.include.news')--}}
+    @include('all.main.include.news')
 {{--    @include('all.main.include.proposal')--}}
 
 

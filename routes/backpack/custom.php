@@ -27,4 +27,5 @@ Route::group([
 
 
     Route::crud('catalogkey', 'CatalogKeyCrudController');
+    Route::crud('users', 'UsersCrudController');
 }); // this should be the absolute last line of this file
