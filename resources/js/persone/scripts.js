@@ -199,49 +199,6 @@ document.addEventListener('DOMContentLoaded', () =>
 
 
 
-    if (document.querySelector('.myCrutch'))
-    {
-        const myCrutch = document.querySelectorAll('.myCrutch')
-
-        let xx = () =>{
-            myCrutch.forEach(x =>
-            {
-                if (x.clientHeight > 0)
-                {
-                    x.parentElement.style.height = x.clientHeight+'px'
-                }
-            })
-        }
-        let i = 0 ;
-        const interval = setInterval(() =>{
-            xx();
-
-            myCrutch.forEach(x =>
-            {
-                if (x.clientHeight > 0)
-                {
-                    i++;
-                }
-            })
-            if (i < myCrutch.length)
-            {
-                i = 0;
-            }
-            else if (i === myCrutch.length)
-            {
-                clearInterval(interval)
-            }
-        }, 100)
-
-
-
-        setTimeout(() =>{
-            xx()
-        }, 1000)
-        window.addEventListener('resize', () =>{
-            xx();
-        })
-    }
 
 
 

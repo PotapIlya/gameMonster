@@ -90,9 +90,8 @@
 
 <script src="{{ asset('/assets/js/app.js') }}"></script>
 <script src="{{ asset('/assets/js/scripts.js') }}"></script>
-<script src="{{ asset('/assets/js/custom.js') }}"></script>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script>
         if (document.querySelector('.swiper-top')){

@@ -1,7 +1,7 @@
 <template>
 	<div class="modal modal-auth" :class="{ 'd-block' : status }">
 		<div class="global-wrap">
-			<div class="modal-wrap">
+			<div class="modal-wrap" style="z-index: 100000000;">
 				
 				
 				<div v-if="statusModals === 'login' ">

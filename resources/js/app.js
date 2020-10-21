@@ -5,6 +5,8 @@
  */
 
 require('./bootstrap');
+require('./script')
+require('./persone/scripts')
 // require('./persone/swiper')
 
 window.Vue = require('vue');
@@ -20,8 +22,8 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('auth-component', require('./components/auth/AuthRegisterComponent.vue').default);
-Vue.component('login', require('./components/auth/AuthLoginComponent.vue').default);
+Vue.component('auth-register-component', require('./components/auth/AuthRegisterComponent.vue').default);
+Vue.component('auth-login-component', require('./components/auth/AuthLoginComponent.vue').default);
 Vue.component('app-my-component', require('./components/user/my/AppComponent').default);
 
 

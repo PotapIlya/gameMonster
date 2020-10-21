@@ -1,57 +1,78 @@
 <template>
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-md-8">
-				<div class="card">
-					<div class="card-header">Register</div>
-					
-					<div class="card-body">
-						<form @submit.prevent="upload">
-							
-							<div class="form-group row">
-								<label for="email" class="col-md-4 col-form-label text-md-right">Email</label>
-								
-								<div class="col-md-6">
-									<input id="email" v-model="email" type="email" class="form-control" name="email" value="" required autocomplete="email">
-									
-									<span class="invalid-feedback" role="alert">
-                                        <strong></strong>
-                                    </span>
-									
-								</div>
-							</div>
-							
-							<div class="form-group row">
-								<label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-								
-								<div class="col-md-6">
-									<input id="password" type="password" class="form-control" v-model="password" name="password" required autocomplete="new-password">
-									
-									<span class="invalid-fedback" role="alert">
-                                        <strong></strong>
-                                    </span>
-								
-								</div>
-							</div>
-							
-							<div class="form-group row">
-								<label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
-								
-								<div class="col-md-6">
-									<input id="password-confirm" type="password" class="form-control" v-model="password_confirmation" name="password_confirmation" required autocomplete="new-password">
-								</div>
-							</div>
-							
-							<div class="form-group row mb-0">
-								<div class="col-md-6 offset-md-4">
-									<button type="submit" class="btn btn-primary">
-										Register
-									</button>
-								</div>
-							</div>
-						</form>
+	<div class="modal modal-auth d-block" style="position: relative; background:transparent;">
+		<div class="global-wrap" style="height: 48vh">
+			<div class="modal-wrap">
+				
+				<form @submit.prevent="upload" method="POST" class="registration d-flex flex-column" style="background:transparent;">
+				
+					<div class="registration__buttons d-flex justify-content-sm-start justify-content-center mb-3">
+						<a href="/login" class="registration__sign-in">Вход</a>
+						<a href="/register" class="registration__sign-up modal_header_active_text">Регистрация</a>
 					</div>
-				</div>
+					
+					
+					<label for="" class="modal-auth-input">
+						<input
+								name="email"
+								placeholder="Email"
+								type="text"
+								v-model="email"
+								
+						>
+						<span class="modal-auth-span">Email</span>
+						<ul v-if="errorEmail.length">
+							<li v-for="error in errorEmail">
+								{{ error[0] }}
+							</li>
+						</ul>
+					</label>
+					
+					<label for="" class="modal-auth-input">
+						<input
+								name="password"
+								placeholder="Password"
+								type="password"
+								v-model="password"
+						>
+						<span class="modal-auth-span">Пароль</span>
+						<ul v-if="errorPassword.length">
+							<li v-for="error in errorPassword">
+								{{ error[0] }}
+							</li>
+						</ul>
+					</label>
+					<label for="" class="modal-auth-input">
+						<input
+								v-model="password_confirmation"
+								name="password_confirmation"
+								placeholder="Password"
+								type="password"
+						>
+						<span class="modal-auth-span">Повторите пароль</span>
+					</label>
+					
+					
+					
+					<div class="forgot d-flex align-items-center">
+						<button type="submit" class="registration__enter">Войти</button>
+						<a href="#" class="registration__forgot">Забыли пароль?</a>
+					</div>
+					<a href="#" class="registration__enter-help">Войти с помощью</a>
+					<div class="registration__services d-flex align-items-center">
+						<a href="/login/steam" class="service1">
+							<img src="/assets/static/img/services/steam.png" alt="steam">
+						</a>
+						<a href="/login/google" class="service2 mr-2 ml-4">
+							<img src="/assets/static/img/services/google.png" alt="google">
+						</a>
+						<a href="/login/vkontakte" class="service3 mr-4 ml-2">
+							<img src="/assets/static/img/services/vk.png" alt="vk">
+						</a>
+						<a href="/login/facebook" class="service4">
+							<img src="/assets/static/img/services/facebook.png" alt="facebook">
+						</a>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -65,23 +86,41 @@
             email: '',
             password: '',
             password_confirmation: '',
-			url: '/register'
+            url: '/register',
+
+            errorEmail: [],
+            errorPassword: [],
 		}),
 		methods: {
             upload()
-			{
+            {
+                this.errorPassword.length = 0;
+                this.errorEmail.length = 0;
+
                 axios.post(this.url, {
                     email: this.email,
                     password: this.password,
                     password_confirmation: this.password_confirmation,
-				})
+                })
 				.then(response =>{
-                    console.log(response.data)
+					if (response.data.success)
+					{
+						document.location.href = '/my';
+					}
+					if (response.data.errors)
+					{
+						if (response.data.errors.email){
+							this.errorEmail.push(response.data.errors.email)
+						}
+						if (response.data.errors.password){
+							this.errorPassword.push(response.data.errors.password)
+						}
+					}
 				})
 				.catch(error =>{
 					console.log(error)
 				})
-			}
+            }
 		}
     }
 </script>

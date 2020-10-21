@@ -117,7 +117,7 @@
                     </div>
                     <div class="swiper-home_pagination d-flex justify-content-center my-3"></div>
                 </div>
-                <div class="swiper-container swiper-home_thumbs mw-100">
+                <div class="swiper-container swiper-home_thumbs mw-100 mr-0">
                     <div class="swiper-wrapper">
                         <!--                        <div class="swiper-slide">-->
                         <div class="swiper-slide">

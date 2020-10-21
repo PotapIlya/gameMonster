@@ -1,70 +1,67 @@
 <template>
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-md-8">
-				<div class="card">
-					<div class="card-header">Login</div>
-					
-					<div class="card-body">
-						<form @submit.prevent="upload">
-							
-							
-							<div class="form-group row">
-								<label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
-								
-								<div class="col-md-6">
-									<input v-model="email" id="email" type="email" class="form-control " name="email" value="" required autocomplete="email" autofocus>
-									
-									
-									<span class="invalid-feedback" role="alert">
-                                        <strong></strong>
-                                    </span>
-									
-								</div>
-							</div>
-							
-							<div class="form-group row">
-								<label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
-								
-								<div class="col-md-6">
-									<input v-model="password" id="password" type="password" class="form-control " name="password" required autocomplete="current-password">
-									
-								
-									<span class="invalid-feedback" role="alert">
-                                        <strong></strong>
-                                    </span>
-								
-								</div>
-							</div>
-							
-<!--							<div class="form-group row">-->
-<!--								<div class="col-md-6 offset-md-4">-->
-<!--									<div class="form-check">-->
-<!--										<input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>-->
-<!--										-->
-<!--										<label class="form-check-label" for="remember">-->
-<!--											{{ __('Remember Me') }}-->
-<!--										</label>-->
-<!--									</div>-->
-<!--								</div>-->
-<!--							</div>-->
-							
-							<div class="form-group row mb-0">
-								<div class="col-md-8 offset-md-4">
-									<button type="submit" class="btn btn-primary">
-										Login
-									</button>
-									
-<!--									@if (Route::has('password.request'))-->
-<!--									<a class="btn btn-link" href="{{ route('password.request') }}">-->
-<!--										{{ __('Forgot Your Password?') }}-->
-<!--									</a>-->
-<!--									@endif-->
-								</div>
-							</div>
-						</form>
+	<div class="modal d-block" style="position: relative; background:transparent;">
+		<div class="global-wrap" style="height: 48vh">
+			<div class="modal-wrap">
+				
+				<form @submit.prevent="upload" method="POST" class="registration d-flex flex-column" style="background:transparent;">
+					<div class="registration__buttons d-flex justify-content-sm-start justify-content-center mb-3">
+						<a href="/login" class="registration__sign-in modal_header_active_text">Вход</a>
+						<a href="/register" class="registration__sign-up">Регистрация</a>
 					</div>
-				</div>
+					
+					<label for="" class="modal-auth-input">
+						<input
+								id="email"
+								name="email"
+								placeholder="Email"
+								type="text"
+								v-model="email"
+						>
+						<span class="modal-auth-span">Логин</span>
+						<ul v-if="errorEmail.length">
+							<li v-for="error in errorEmail">
+								{{ error[0] }}
+							</li>
+						</ul>
+					</label>
+					
+					<label for="" class="modal-auth-input">
+						<input
+								v-model="password"
+								id="password"
+								name="password"
+								placeholder="Password"
+								type="password"
+						>
+						<span class="modal-auth-span">Пароль</span>
+						<ul v-if="errorPassword.length">
+							<li v-for="error in errorPassword">
+								{{ error[0] }}
+							</li>
+						</ul>
+					</label>
+					
+					
+					<div class="forgot d-flex align-items-center">
+						<button type="submit" class="registration__enter">Войти</button>
+						<a href="#" class="registration__forgot">Забыли пароль?</a>
+					</div>
+					<a href="#" class="registration__enter-help">Войти с помощью</a>
+					<div class="registration__services d-flex align-items-center">
+						<a href="/login/steam" class="service1">
+							<img src="/assets/static/img/services/steam.png" alt="steam">
+						</a>
+						<a href="/login/google" class="service2 mr-2 ml-4">
+							<img src="/assets/static/img/services/google.png" alt="google">
+						</a>
+						<a href="/login/vkontakte" class="service3 mr-4 ml-2">
+							<img src="/assets/static/img/services/vk.png" alt="vk">
+						</a>
+						<a href="/login/facebook" class="service4">
+							<img src="/assets/static/img/services/facebook.png" alt="facebook">
+						</a>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -77,21 +74,40 @@
         data: () => ({
             email: '',
             password: '',
-            url: '/login'
+            url: '/login',
+
+            errorPassword: [],
+            errorEmail: [],
         }),
         methods: {
             upload()
             {
+                this.errorPassword.length = 0;
+                this.errorEmail.length = 0;
+				
                 axios.post(this.url, {
                     email: this.email,
                     password: this.password,
                 })
-                    .then(response =>{
-                        console.log(response.data)
-                    })
-                    .catch(error =>{
-                        console.log(error)
-                    })
+				.then(response =>{
+
+					if (response.data.success)
+					{
+						document.location.href = '/my';
+					}
+					if (response.data.errors)
+					{
+						if (response.data.errors.password){
+							this.errorPassword.push(response.data.errors.password)
+						}
+						if (response.data.errors.email){
+							this.errorPassword.push(response.data.errors.email)
+						}
+					}
+				})
+				.catch(error =>{
+					console.log(error)
+				})
             }
         }
     }

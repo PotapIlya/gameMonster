@@ -74,7 +74,9 @@
             <div class="d-flex align-items-center justify-content-end col-4 col-md-3 col-xl-2 px-0">
 
                 @guest
-                    <modal-auth-component />
+                    @if(Request::path() !== 'login' && Request::path() !== 'register')
+                        <modal-auth-component />
+                    @endif
                 @else
                     <div class="header__user d-flex align-items-center">
                         <span class="mr-3 header__user-money">{{ \Auth::user()->about->money }} ₽</span>

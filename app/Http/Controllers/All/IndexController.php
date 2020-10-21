@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin\Catalog;
 use App\Models\Admin\CatalogKey;
 use App\Models\Admin\Category;
+use App\Models\Admin\Slider;
 use Illuminate\Http\Request;
 
 class IndexController extends BasicAllController
@@ -25,10 +26,11 @@ class IndexController extends BasicAllController
     public function index(Request $request)
     {
 		$catalog = Catalog::limit(16)->with('category', 'key')->get();
+		$slider = Slider::all();
 
 
 
-    	return view('all.main.index', compact('catalog'));
+    	return view('all.main.index', compact('catalog', 'slider'));
     }
 
 
