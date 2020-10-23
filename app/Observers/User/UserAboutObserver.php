@@ -3,14 +3,14 @@
 namespace App\Observers\User;
 
 use App\Models\User\ShoppingHistory;
-use App\Models\UserAbout;
+use App\Models\User\UserAbout;
 
 class UserAboutObserver
 {
     /**
      * Handle the user about "created" event.
      *
-     * @param  \App\Models\UserAbout  $userAbout
+     * @param  \App\Models\User\UserAbout  $userAbout
      * @return void
      */
     public function created(UserAbout $userAbout)
@@ -22,7 +22,7 @@ class UserAboutObserver
     /**
      * Handle the user about "updated" event.
      *
-     * @param  \App\Models\UserAbout  $userAbout
+     * @param  \App\Models\User\UserAbout  $userAbout
      * @return void
      */
 
@@ -39,7 +39,7 @@ class UserAboutObserver
     /**
      * Handle the user about "deleted" event.
      *
-     * @param  \App\Models\UserAbout  $userAbout
+     * @param  \App\Models\User\UserAbout  $userAbout
      * @return void
      */
     public function deleted(UserAbout $userAbout)
@@ -50,7 +50,7 @@ class UserAboutObserver
     /**
      * Handle the user about "restored" event.
      *
-     * @param  \App\Models\UserAbout  $userAbout
+     * @param  \App\Models\User\UserAbout  $userAbout
      * @return void
      */
     public function restored(UserAbout $userAbout)
@@ -61,7 +61,7 @@ class UserAboutObserver
     /**
      * Handle the user about "force deleted" event.
      *
-     * @param  \App\Models\UserAbout  $userAbout
+     * @param  \App\Models\User\UserAbout  $userAbout
      * @return void
      */
     public function forceDeleted(UserAbout $userAbout)

@@ -5,7 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Catalog;
 use App\Models\User\ShoppingHistory;
-use App\Models\UserAbout;
+use App\Models\User\UserAbout;
 use Illuminate\Http\Request;
 use Auth;
 

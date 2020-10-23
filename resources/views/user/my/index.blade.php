@@ -21,39 +21,57 @@
                    </div>
                    <div class="mt-3">
 
+                     <div class="service1">
+                         @if(!is_null($user->services->pluck('type')->flip()->get('steam')))
+                             <a href="/login/steam" class="service1">
+                                 <div>
+                                     <img src="/assets/static/img/services/steam.png" alt="steam">
+                                 </div>
+                                 <div class="col-1">
+                                     <img class="mw-100" src="/assets/static/img/main/greenOK.png" alt="">
+                                 </div>
+                             </a>
+                         @else
+                             <div>
+                                 <img src="/assets/static/img/services/steam.png" alt="steam">
+                             </div>
+                         @endif
+                     </div>
 
+                     <div class="service2">
+                         @if(!is_null($user->services->pluck('type')->flip()->get('google')))
+                             <a href="/login/google">
+                                 <div>
+                                     <img src="/assets/static/img/services/google.png" alt="google">
+                                 </div>
+                                 <div class="col-1">
+                                     <img class="mw-100" src="/assets/static/img/main/greenOK.png" alt="">
+                                 </div>
+                             </a>
+                         @else
+                             <div class="col-1">
+                                 <img src="/assets/static/img/services/google.png" alt="google">
+                             </div>
+                         @endif
+                       </div>
+                       <div class="service3">
 
-
-                           <a href="/login/steam" class="service1">
-                               <div>
-                                   <img src="/assets/static/img/services/steam.png" alt="steam">
-                               </div>
-                               @if(!is_null($user->services->pluck('type')->flip()->get('steam')))
+                           @if(!is_null($user->services->pluck('type')->flip()->get('vk')))
+                               <a href="/login/vkontakte">
+                                   <div>
+                                       <img src="/assets/static/img/services/vk.png" alt="vk">
+                                   </div>
                                    <div class="col-1">
                                        <img class="mw-100" src="/assets/static/img/main/greenOK.png" alt="">
                                    </div>
-                               @endif
-                           </a>
-                           <a href="/login/google" class="service2 mr-2 ml-4">
-                               <div>
-                                   <img src="/assets/static/img/services/google.png" alt="google">
-                               </div>
-                               @if(!is_null($user->services->pluck('type')->flip()->get('google')))
-                                   <div class="col-1">
-                                       <img class="mw-100" src="/assets/static/img/main/greenOK.png" alt="">
-                                   </div>
-                               @endif
-                           </a>
-                           <a href="/login/vkontakte" class="service3 mr-4 ml-2">
-                               <div>
+                               </a>
+                           @else
+                               <div class="col-1">
                                    <img src="/assets/static/img/services/vk.png" alt="vk">
                                </div>
-                               @if(!is_null($user->services->pluck('type')->flip()->get('vk')))
-                                   <div class="col-1">
-                                       <img class="mw-100" src="/assets/static/img/main/greenOK.png" alt="">
-                                   </div>
-                               @endif
-                           </a>
+                           @endif
+                       </div>
+
 
 {{--                       <a href="/login/facebook" class="service4">--}}
 {{--                           <img src="/assets/static/img/services/facebook.png" alt="facebook">--}}

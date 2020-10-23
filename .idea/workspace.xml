@@ -2,32 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="173ae8e2-6c61-4da4-b691-8c53b3dd54f3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersCrudController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/UsersRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Admin/Users.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/img/main/greenOK.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/user/addBalance/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.phpstorm.meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/.phpstorm.meta.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_ide_helper_models.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper_models.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthenticationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthenticationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/CustomTrait/AuthTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/CustomTrait/AuthTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Admin/Role.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Role.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/UserAbout.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User/UserAbout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/UserServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User/UserServices.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/ObserverServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/ObserverServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_10_18_135520_create_user_services_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_10_18_135520_create_user_services_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/all/main/include/fScreen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/all/main/include/fScreen.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/all/main/include/news.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/all/main/include/news.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/all/main/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/all/main/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/BalanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/BalanceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/BuyKeyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/BuyKeyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Observers/User/UserAboutObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/User/UserAboutObserver.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Observers/User/UserObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/User/UserObserver.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user/my/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/my/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/backpack/custom.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/backpack/custom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,6 +271,11 @@
       <workItem from="1603271042616" duration="3414000" />
       <workItem from="1603285690364" duration="8843000" />
       <workItem from="1603300940010" duration="11585000" />
+      <workItem from="1603359146688" duration="5000000" />
+      <workItem from="1603374850997" duration="145000" />
+      <workItem from="1603451582259" duration="148000" />
+      <workItem from="1603452609125" duration="641000" />
+      <workItem from="1603461390792" duration="4162000" />
     </task>
     <servers />
   </component>
@@ -326,10 +313,10 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="677" y="277" key="NewPhpClassDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1603102856837" />
-    <state x="795" y="478" key="NewPhpFileDialog" timestamp="1603218220048">
+    <state x="795" y="478" key="NewPhpFileDialog" timestamp="1603465237807">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="795" y="478" key="NewPhpFileDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1603218220048" />
+    <state x="795" y="478" key="NewPhpFileDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1603465237807" />
     <state x="461" y="199" key="SettingsEditor" timestamp="1603099391674">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
@@ -346,10 +333,10 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="667" y="290" width="585" height="530" key="find.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1603136820299" />
-    <state x="616" y="258" key="run.anything.popup" timestamp="1603197787517">
+    <state x="616" y="258" key="run.anything.popup" timestamp="1603363923536">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="616" y="258" key="run.anything.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1603197787517" />
+    <state x="616" y="258" key="run.anything.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1603363923536" />
     <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1603217840132">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>

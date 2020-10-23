@@ -66,50 +66,44 @@ class AuthenticationController extends Controller
 		if ($this->steam->validate()) {
 
 			$user = $this->steam->getUserInfo();
-			$cookie = Cookie::get('userId');
 
-			$check = User::find((int)$cookie);
 
-			if ($check) {
-				$checkServices = UserServices::where('authentication_id', $user['steamID64'])->first();
-				if ($checkServices) {
-					$this->AuthById($checkServices->user_id);
-				} else {
-					$create = UserServices::create([
-						'user_id' => $check->id,
-						'authentication_id' => $user['steamID64'],
-						'type' => 'steam',
-						'login' => $user['personaname'],
-						'img' => $user['avatar'],
-						'email' => null,
-					]);
-					$this->AuthById($create->user_id);
+			if (Auth::check())
+			{
+				$findOrCreateUser = $this->findOrCreate(
+					Auth::id(),
+					$user['steamID64'],
+					'steam',
+					$user['personaname'],
+					$user['picture'],
+					null,
+				);
+
+				if ($findOrCreateUser)
+				{
+					return redirect()->back()->with(['success' => self::SAVE]);
 				}
-			} else {
-				$create = User::create([
-					'login' => $user['personaname'],
-					'img' => $user['avatar'],
-					'email' => null,
-				]);
-				UserAbout::create([
-					'user_id' => $create['id']
-				]);
-
-				Cookie::forever('userId', $create['id']);
-
-
-				if ($create) {
-					$createServices = UserServices::create([
-						'user_id' => $check->id,
-						'authentication_id' => $user['steamID64'],
-						'type' => 'steam',
-						'login' => $user['personaname'],
-						'img' => $user['avatar'],
-						'email' => null,
-					]);
-					$this->AuthById($createServices->user_id);
+				else {
+					return redirect()->back()->withErrors(['errors' => self::ERRORS]);
 				}
 			}
+			else{
+				$findUser = UserServices::where('authentication_id',  $user['sub'])->first();
+				if ($findUser)
+				{
+					$auth = $this->AuthById($findUser->user->id);
+					if ($auth){
+
+						return redirect('/my');
+					} else{
+						return redirect()->back()->withErrors(['errors' => self::ERRORS]);
+					}
+				}
+				else{
+					return redirect()->back()->withErrors(['errors' => self::ERRORS_REGISTER]);
+				}
+			}
+
 		}
 	}
 

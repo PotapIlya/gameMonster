@@ -15,11 +15,13 @@ class BalanceController extends BasicUserController
 	/**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
-        return view('errors.development');
+
+
+        return view('user.addBalance.index');
     }
 
     /**
