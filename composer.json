@@ -20,10 +20,10 @@
         "laravel/socialite": "^5.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.0",
+        "qiwi/bill-payments-php-sdk": "^0.1.2",
         "socialiteproviders/facebook": "^1.0",
         "socialiteproviders/google": "^3.1",
-        "socialiteproviders/vkontakte": "^4.1",
-        "idma/robokassa": "dev-master"
+        "socialiteproviders/vkontakte": "^4.1"
     },
     "require-dev": {
         "backpack/generators": "^3.1",

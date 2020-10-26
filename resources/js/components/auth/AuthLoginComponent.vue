@@ -44,7 +44,7 @@
 					
 					<div class="forgot d-flex align-items-center">
 						<button type="submit" class="registration__enter">Войти</button>
-						<a href="#" class="registration__forgot">Забыли пароль?</a>
+						<a href="/password/reset" class="registration__forgot">Забыли пароль?</a>
 					</div>
 					<a href="#" class="registration__enter-help">Войти с помощью</a>
 					<div class="registration__services d-flex align-items-center">

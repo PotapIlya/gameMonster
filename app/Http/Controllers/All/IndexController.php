@@ -25,7 +25,7 @@ class IndexController extends BasicAllController
      */
     public function index(Request $request)
     {
-		$catalog = Catalog::limit(16)->with('category', 'key')->get();
+		$catalog = Catalog::limit(16)->with('category')->get();
 		$slider = Slider::all();
 
 
@@ -66,8 +66,7 @@ class IndexController extends BasicAllController
     	$item = Catalog::with('category', 'key')->where('url', $id)->first();
     	if (!$item){
     		dd( 'IndexController show' );
-		}
-
+		};
 
     	// беерем категории у родителей и от связи в категория берем схожие
 

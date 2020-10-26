@@ -7,10 +7,11 @@
     <section>
         <div class="container">
 
-            <form action="" method="POST" class="py-5">
+            <form action="{{ route('user.balance.store') }}" method="POST" class="py-5">
                 @csrf
+                @method('POST')
 
-                <input type="number">
+                <input style="color: red" type="number">
                 <button type="submit">Add</button>
 
             </form>

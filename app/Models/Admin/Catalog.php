@@ -39,7 +39,7 @@ class Catalog extends Model
 
 	public function key()
 	{
-		return $this->hasOne(CatalogKey::class, 'catalog_id', 'id')->where('status', 1);
+		return $this->hasOne(CatalogKey::class, 'catalog_id', 'id');
 	}
 
 	public function allKey()

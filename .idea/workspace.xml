@@ -2,14 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="173ae8e2-6c61-4da4-b691-8c53b3dd54f3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/user/addBalance/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gameMonster.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gameMonster.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/All/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/All/IndexController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthenticationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthenticationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/BalanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/BalanceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/BuyKeyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/BuyKeyController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Observers/User/UserAboutObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/User/UserAboutObserver.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Observers/User/UserObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/User/UserObserver.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Admin/Catalog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Catalog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/auth/AuthLoginComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/auth/AuthLoginComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/base/modal/include/LoginComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/base/modal/include/LoginComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/addBalance/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/addBalance/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user/my/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/my/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/backpack/custom.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/backpack/custom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,6 +196,9 @@
       <path value="$PROJECT_DIR$/vendor/socialiteproviders/vkontakte" />
       <path value="$PROJECT_DIR$/vendor/socialiteproviders/facebook" />
       <path value="$PROJECT_DIR$/vendor/invisnik/laravel-steam-auth" />
+      <path value="$PROJECT_DIR$/vendor/idma/robokassa" />
+      <path value="$PROJECT_DIR$/vendor/curl/curl" />
+      <path value="$PROJECT_DIR$/vendor/qiwi/bill-payments-php-sdk" />
     </include_path>
   </component>
   <component name="ProjectId" id="1iTNKNBEzjwTTLAbbm7foUhiKhR" />
@@ -207,19 +220,19 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\OpenServer\domains\gameMonster\app\Models\User" />
-      <recent name="C:\OpenServer\domains\gameMonster\app\Models\Admin" />
-      <recent name="C:\OpenServer\domains\gameMonster\app\Http\Controllers\Auth\Trait" />
-      <recent name="C:\OpenServer\domains\gameMonster\resources\js\components\base\modal" />
-      <recent name="C:\OpenServer\domains\gameMonster\resources\js\components\user" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\OpenServer\domains\gameMonster\public\assets\static\img\main" />
       <recent name="C:\OpenServer\domains\gameMonster\public\assets\static\img\modal" />
       <recent name="C:\OpenServer\domains\gameMonster" />
       <recent name="C:\OpenServer\domains\gameMonster\public\assets\static\img" />
       <recent name="C:\OpenServer\domains\gameMonster\resources\views\base\modal" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\gameMonster\app\Models\User" />
+      <recent name="C:\OpenServer\domains\gameMonster\app\Models\Admin" />
+      <recent name="C:\OpenServer\domains\gameMonster\app\Http\Controllers\Auth\Trait" />
+      <recent name="C:\OpenServer\domains\gameMonster\resources\js\components\base\modal" />
+      <recent name="C:\OpenServer\domains\gameMonster\resources\js\components\user" />
     </key>
   </component>
   <component name="RunManager">
@@ -275,7 +288,12 @@
       <workItem from="1603374850997" duration="145000" />
       <workItem from="1603451582259" duration="148000" />
       <workItem from="1603452609125" duration="641000" />
-      <workItem from="1603461390792" duration="4162000" />
+      <workItem from="1603461390792" duration="6031000" />
+      <workItem from="1603475538856" duration="191000" />
+      <workItem from="1603540086643" duration="11256000" />
+      <workItem from="1603558156259" duration="70000" />
+      <workItem from="1603563624637" duration="2983000" />
+      <workItem from="1603626941115" duration="4257000" />
     </task>
     <servers />
   </component>
@@ -329,14 +347,14 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="769" y="468" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.30.1920.1050@0.30.1920.1050" timestamp="1603122694654" />
-    <state x="667" y="290" width="585" height="530" key="find.popup" timestamp="1603136820299">
+    <state x="667" y="290" width="585" height="530" key="find.popup" timestamp="1603469084385">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="667" y="290" width="585" height="530" key="find.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1603136820299" />
-    <state x="616" y="258" key="run.anything.popup" timestamp="1603363923536">
+    <state x="667" y="290" width="585" height="530" key="find.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1603469084385" />
+    <state x="616" y="258" key="run.anything.popup" timestamp="1603469330540">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="616" y="258" key="run.anything.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1603363923536" />
+    <state x="616" y="258" key="run.anything.popup/0.30.1920.1050@0.30.1920.1050" timestamp="1603469330540" />
     <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1603217840132">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>

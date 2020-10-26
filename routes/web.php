@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Auth::routes();
-
+//
 //Route::get('password/reset', 'App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
 //Route::post('password/reset', 'App\Http\Controllers\Auth\ResetPasswordController@reset');
 //Route::get('password/reset/{token}', 'App\Http\Controllers\Auth\ResetPasswordController@showResetForm')->name('backpack.auth.password.reset.token');
@@ -41,6 +41,10 @@ Auth::routes();
 //Route::get('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
 //Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
 //Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+
+
+
+Route::get('/qiwi', 'App\Http\Controllers\User\BalanceController@potap');
 
 
 Route::get('/development', function ()

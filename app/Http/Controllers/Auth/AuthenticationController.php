@@ -40,7 +40,7 @@ class AuthenticationController extends Controller
 		}
 	}
 
-	public function handleProviderCallback($name)
+	public function handleProviderCallback(string $name)
 	{
 		if ($name === 'vk')
 		{
@@ -149,12 +149,14 @@ class AuthenticationController extends Controller
 
 	}
 
-	private function AuthVK()
+	public function AuthVK()
 	{
 		$user = Socialite::driver('vkontakte')->user();
 
+
 		if (Auth::check())
 		{
+
 			$findOrCreateUser = $this->findOrCreate(
 				Auth::id(),
 				$user['id'],
@@ -166,7 +168,8 @@ class AuthenticationController extends Controller
 
 			if ($findOrCreateUser)
 			{
-				return redirect()->back()->with(['success' => self::SAVE]);
+//				$this->potap();
+				return redirect()->route('user.index');
 			}
 			else {
 				return redirect()->back()->withErrors(['errors' => self::ERRORS]);
@@ -188,6 +191,13 @@ class AuthenticationController extends Controller
 				return redirect()->back()->withErrors(['errors' => self::ERRORS_REGISTER]);
 			}
 		}
+
+	}
+
+	private function potap()
+	{
+
+		return 123;
 
 	}
 
