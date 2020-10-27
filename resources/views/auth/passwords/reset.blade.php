@@ -24,6 +24,8 @@
 
                     @csrf
 
+                    <input type="hidden" name="token" value="{{ $token }}">
+
                     <div class="registration__buttons d-flex flex-column justify-content-sm-start justify-content-center mb-3">
                         <span class="registration__sign-in">
                             Смена пароля
@@ -43,7 +45,7 @@
                     </label>
 
                     <label for="" class="modal-auth-input">
-                        <input name="password" placeholder="Password" type="text" required>
+                        <input name="password" placeholder="Password" type="password" required>
                         <span class="modal-auth-span">Password</span>
 
                         @error('password')
@@ -54,7 +56,7 @@
 
                     </label>
                     <label for="" class="modal-auth-input">
-                        <input name="password_confirmation" placeholder="Password confirmation" type="text" required>
+                        <input name="password_confirmation" placeholder="Password confirmation" type="password" required>
                         <span class="modal-auth-span">Password confirmation</span>
                     </label>
 

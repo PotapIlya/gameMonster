@@ -39,6 +39,19 @@ class CatalogCrudController extends CrudController
      */
     protected function setupListOperation()
     {
+
+    	CRUD::addColumn([
+			'name'      => 'preloader', // The db column name
+			'label'     => 'Image', // Table column heading
+			'type'      => 'image',
+			 'prefix' => '/storage/',
+			// image from a different disk (like s3 bucket)
+			// 'disk'   => 'disk-name',
+			// optional width/height if 25px is not ok with you
+			'width'  => '150px',
+			'height' => '100px',
+		]);
+
         CRUD::setFromDb(); // columns
 
         /**

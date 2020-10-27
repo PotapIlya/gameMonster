@@ -12,23 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Auth::routes();
+//Auth::routes();
 //
+
 //Route::get('password/reset', 'App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
 //Route::post('password/reset', 'App\Http\Controllers\Auth\ResetPasswordController@reset');
 //Route::get('password/reset/{token}', 'App\Http\Controllers\Auth\ResetPasswordController@showResetForm')->name('backpack.auth.password.reset.token');
 //Route::post('password/email', 'App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 
-// Authentication Routes...
-//Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-//Route::post('login', 'Auth\LoginController@login');
-//Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
-
-//// Registration Routes...
-//Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-//Route::post('register', 'Auth\RegisterController@register');
 
 // Password Reset Routes...
 //Route::get('password/reset', 'App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
@@ -44,6 +36,12 @@ Auth::routes();
 
 
 
+//Route::get('password/reset/{token}', 'App\Http\Controllers\Auth\ResetPasswordController@showResetForm')->name('backpack.auth.password.reset.token');
+//Route::post('password/email', 'App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail')->name('backpack.auth.password.email');
+//Route::post('password/reset', 'App\Http\Controllers\Auth\ResetPasswordController@reset')->name('password.update');
+
+
+
 Route::get('/qiwi', 'App\Http\Controllers\User\BalanceController@potap');
 
 
@@ -53,16 +51,36 @@ Route::get('/development', function ()
 });
 
 
+
+
 Route::group(
 	[
 		'namespace' => 'App\Http\Controllers\Auth',
 	], function ()
 	{
+		// Authentication Routes...
+		Route::get('login', 'LoginController@showLoginForm')->name('login');
+		Route::post('login', 'LoginController@login');
+		Route::post('logout', 'LoginController@logout')->name('logout');
+
+
+		// Registration Routes...
+		Route::get('register', 'RegisterController@showRegistrationForm')->name('register');
+		Route::post('register', 'RegisterController@register');
+
+		// Password Reset Routes...
+		Route::get('password/reset', 'ForgotPasswordController@showLinkRequestForm')->name('password.request');
+		Route::post('password/email', 'ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+		Route::get('password/reset/{token}', 'ResetPasswordController@showResetForm')->name('backpack.auth.password.reset.token');
+		Route::post('password/reset', 'ResetPasswordController@reset')->name('password.update');
+
+
+		// Auth of message...
 		Route::get('/login/{name}', 'AuthenticationController@redirectToProvider')->name('login.services');
 		Route::get('/login/{name}/callback', 'AuthenticationController@handleProviderCallback');
 });
 
-//http://127.0.0.1:8000/login/facebook/callback
+//Route::post('password/reset', 'Backpack\CRUD\app\Http\Controllers\Auth\ResetPasswordController@reset')->name('password.update');
 
 
 /** All */

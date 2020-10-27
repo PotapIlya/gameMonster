@@ -21,3 +21,6 @@
 
 
 {{--<li class="nav-item"><a class="nav-link" href="{{ backpack_url('elfinder') }}"><i class="nav-icon la la-files-o"></i> <span>{{ trans('backpack::crud.file_manager') }}</span></a></li>--}}
+
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('lick') }}'><i class='nav-icon la la-question'></i> Licks</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('proposal') }}'><i class='nav-icon la la-question'></i> Proposals</a></li>

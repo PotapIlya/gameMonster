@@ -12,11 +12,8 @@
     <link href="{{ asset('/assets/css/modules.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets/css/app.css') }}" rel="stylesheet">
 
-    <script src="{{ asset('/assets/js/header.js') }}"></script>
-
-
-
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
 
 </head>
 <body>

@@ -21,5 +21,6 @@ class DatabaseSeeder extends Seeder
 		$this->call(CaregorySeeder::class);
 		$this->call(UserAboutSeeder::class);
 		$this->call(NavSeeder::class);
+		$this->call(LinkSeeder::class);
     }
 }

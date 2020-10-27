@@ -789,6 +789,10 @@
         &__item {
             margin-bottom: 25px;
 
+            &:first-child{
+                margin-left: 110px;
+            }
+
             &:not(:last-child) {
                 margin-right: 0;
             }

@@ -34,8 +34,8 @@ Route::group(
 			Route::post('logout', 'Auth\LoginController@logout');
 
 			// Registration Routes...
-			Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('backpack.auth.register');
-			Route::post('register', 'Auth\RegisterController@register');
+//			Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('backpack.auth.register');
+//			Route::post('register', 'Auth\RegisterController@register');
 		}
 
 		// if not otherwise configured, setup the dashboard routes
@@ -56,11 +56,10 @@ Route::group(
 
 
 // Password Reset Routes...
-Route::get('password/reset', 'App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm')->name('backpack.auth.password.reset');
-Route::post('password/reset', 'App\Http\Controllers\Auth\ResetPasswordController@reset');
-Route::get('password/reset/{token}', 'App\Http\Controllers\Auth\ResetPasswordController@showResetForm')->name('backpack.auth.password.reset.token');
-Route::post('password/email', 'App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail')->name('backpack.auth.password.email');
-
+//Route::get('password/reset', 'App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm')->name('backpack.auth.password.reset');
+//Route::post('password/reset', 'App\Http\Controllers\Auth\ResetPasswordController@reset')->name('password.update');
+//Route::get('password/reset/{token}', 'App\Http\Controllers\Auth\ResetPasswordController@showResetForm')->name('backpack.auth.password.reset.token');
+//Route::post('password/email', 'App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail')->name('backpack.auth.password.email');
 
 
 Route::group([
@@ -80,4 +79,6 @@ Route::group([
 
     Route::crud('catalogkey', 'CatalogKeyCrudController');
     Route::crud('users', 'UsersCrudController');
+    Route::crud('lick', 'LickCrudController');
+    Route::crud('proposal', 'ProposalCrudController');
 }); // this should be the absolute last line of this file

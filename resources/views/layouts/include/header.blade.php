@@ -88,7 +88,7 @@
                                 @else
                                     <img class="mw-100" src="/assets/static/img/my/avatar.png" alt="">
                                 @endif
-{{--                                <img class="mw-100" src="/assets/static/img/my/avatar.png" alt="">--}}
+
                             </div>
                             <div class="header__list-arrow d-none d-sm-block">
                                 <img src="/assets/static/img/header/arrow-down.svg" alt=""/>
