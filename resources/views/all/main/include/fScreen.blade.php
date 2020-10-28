@@ -22,22 +22,31 @@
 {{--                            @dd($item)--}}
                             <a href="{{ $item->url }}" class="swiper-slide d-flex justify-content-end">
                                 <div class="w-100">
-                                    <img class="w-100 d-none d-lg-block"
+                                    <img class="w-100"
                                          src="/storage/{{ $item->img }}" alt="">
-                                    <img class="w-100 d-block d-lg-none"
-                                         src="/storage/{{ $item->img }}" alt="">
+{{--                                    <img class="w-100 d-block d-lg-none"--}}
+{{--                                         src="/storage/{{ $item->img }}" alt="">--}}
                                 </div>
                                 <div class="swiper-slide-text h-100 d-flex flex-column justify-content-between py-0 py-md-5">
-                                    <h1 class="slide-title">
-                                        Witcher 3:<br>
-                                        Wild Hunt
-                                    </h1>
+                                    @if(!is_null($item->title) && $item->title)
+                                        <h1 class="slide-title">
+                                            {{ $item->title }}
+    {{--                                        Witcher 3:<br>--}}
+    {{--                                        Wild Hunt--}}
+                                        </h1>
+                                    @endif
                                     <div class="slide-group">
                                         <div class="d-flex align-items-center mb-1">
-                                            <div class="slide-new mr-4">{{ $item->price }}P</div>
-                                            <div class="slide-rate">-{{ $item->discounts }}%</div>
+                                            @if(!is_null($item->price) && $item->price)
+                                                <div class="slide-new mr-4">{{ $item->price }}P</div>
+                                            @endif
+                                            @if(!is_null($item->discounts) && $item->discounts)
+                                                <div class="slide-rate">-{{ $item->discounts }}%</div>
+                                            @endif
                                         </div>
-                                        <div class="slide-old">{{ $item->old_price }}P</div>
+                                        @if(!is_null($item->old_price) && $item->old_price)
+                                            <div class="slide-old">{{ $item->old_price }}P</div>
+                                        @endif
                                     </div>
                                 </div>
                             </a>

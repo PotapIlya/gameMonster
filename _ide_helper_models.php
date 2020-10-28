@@ -102,6 +102,39 @@ namespace App\Models\Admin{
 
 namespace App\Models\Admin{
 /**
+ * App\Models\Admin\Lick
+ *
+ * @property int $id
+ * @property string|null $img
+ * @property string|null $games
+ * @property string|null $profit
+ * @property string|null $games_form
+ * @property string|null $new_price
+ * @property string|null $old_price
+ * @property string|null $href
+ * @property string|null $discount
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Lick newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Lick newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Lick query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Lick whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Lick whereDiscount($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Lick whereGames($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Lick whereGamesForm($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Lick whereHref($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Lick whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Lick whereImg($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Lick whereNewPrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Lick whereOldPrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Lick whereProfit($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Lick whereUpdatedAt($value)
+ */
+	class Lick extends \Eloquent {}
+}
+
+namespace App\Models\Admin{
+/**
  * App\Models\Admin\Nav
  *
  * @property int $id
@@ -148,6 +181,33 @@ namespace App\Models\Admin{
 
 namespace App\Models\Admin{
 /**
+ * App\Models\Admin\Proposal
+ *
+ * @property int $id
+ * @property string|null $img
+ * @property string|null $mobile_img
+ * @property string|null $title
+ * @property string|null $text
+ * @property string|null $button
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Proposal newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Proposal newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Proposal query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Proposal whereButton($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Proposal whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Proposal whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Proposal whereImg($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Proposal whereMobileImg($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Proposal whereText($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Proposal whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Proposal whereUpdatedAt($value)
+ */
+	class Proposal extends \Eloquent {}
+}
+
+namespace App\Models\Admin{
+/**
  * App\Models\Admin\Role
  *
  * @property int $id
@@ -171,6 +231,7 @@ namespace App\Models\Admin{
  *
  * @property int $id
  * @property string|null $url
+ * @property string|null $title
  * @property string|null $price
  * @property string|null $old_price
  * @property string|null $discounts
@@ -186,6 +247,7 @@ namespace App\Models\Admin{
  * @method static \Illuminate\Database\Eloquent\Builder|Slider whereImg($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Slider whereOldPrice($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Slider wherePrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Slider whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Slider whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Slider whereUrl($value)
  */
@@ -322,7 +384,7 @@ namespace App\Models\User{
  * @property int $user_id
  * @property string|null $authentication_id
  * @property string $type
- * @property string $login
+ * @property string|null $login
  * @property string|null $img
  * @property string|null $email
  * @property \Illuminate\Support\Carbon|null $created_at

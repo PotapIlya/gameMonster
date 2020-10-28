@@ -23,7 +23,8 @@
         "qiwi/bill-payments-php-sdk": "^0.1.2",
         "socialiteproviders/facebook": "^1.0",
         "socialiteproviders/google": "^3.1",
-        "socialiteproviders/vkontakte": "^4.1"
+        "socialiteproviders/vkontakte": "^4.1",
+        "ext-curl": "*"
     },
     "require-dev": {
         "backpack/generators": "^3.1",

@@ -29,7 +29,7 @@ class AuthenticationController extends Controller
 	}
 
 
-	public function redirectToProvider($name)
+	public function redirectToProvider(string $name)
 	{
 		if ($name === 'steam')
 		{
@@ -44,11 +44,11 @@ class AuthenticationController extends Controller
 	{
 		if ($name === 'vk')
 		{
-			$this->AuthVK();
+			return $this->AuthVK();
 		}
 		elseif ($name === 'google')
 		{
-			$this->AuthGoogle();
+			return $this->AuthGoogle();
 		}
 		elseif ($name === 'facebook')
 		{
@@ -56,9 +56,8 @@ class AuthenticationController extends Controller
 		}
 		elseif ($name === 'steam')
 		{
-			$this->AuthSteam();
+			return $this->AuthSteam();
 		}
-
 	}
 
 	private function AuthSteam()
@@ -71,7 +70,7 @@ class AuthenticationController extends Controller
 			if (Auth::check())
 			{
 				$findOrCreateUser = $this->findOrCreate(
-					Auth::id(),
+					 Auth::id(),
 					$user['steamID64'],
 					'steam',
 					$user['personaname'],
@@ -137,7 +136,7 @@ class AuthenticationController extends Controller
 				$auth = $this->AuthById($findUser->user->id);
 				if ($auth){
 
-					return redirect('/my');
+					return redirect()->route('user.index');
 				} else{
 					return redirect()->back()->withErrors(['errors' => self::ERRORS]);
 				}
@@ -149,14 +148,13 @@ class AuthenticationController extends Controller
 
 	}
 
-	public function AuthVK()
+	private function AuthVK()
 	{
 		$user = Socialite::driver('vkontakte')->user();
 
 
 		if (Auth::check())
 		{
-
 			$findOrCreateUser = $this->findOrCreate(
 				Auth::id(),
 				$user['id'],
@@ -168,7 +166,6 @@ class AuthenticationController extends Controller
 
 			if ($findOrCreateUser)
 			{
-//				$this->potap();
 				return redirect()->route('user.index');
 			}
 			else {
@@ -182,22 +179,15 @@ class AuthenticationController extends Controller
 				$auth = $this->AuthById($findUser->user->id);
 				if ($auth){
 
-					return redirect('/my');
-				} else{
-					return redirect()->back()->withErrors(['errors' => self::ERRORS]);
+						return redirect('/my');
+					} else{
+						return redirect()->back()->withErrors(['errors' => self::ERRORS]);
 				}
 			}
 			else{
 				return redirect()->back()->withErrors(['errors' => self::ERRORS_REGISTER]);
 			}
 		}
-
-	}
-
-	private function potap()
-	{
-
-		return 123;
 
 	}
 

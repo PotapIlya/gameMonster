@@ -43,6 +43,7 @@ class IndexController extends BasicAllController
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
         //

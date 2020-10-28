@@ -21,6 +21,9 @@ class BuyKeyController extends BasicUserController
 	{
 		$authUser = Auth::user();
 
+		// optional
+		// psr
+
 		if ( $authUser->about->money < $request->input('price'))
 		{
 			return redirect()->back()->withErrors(['errors' => 'У вас недостаточно средств']);
@@ -29,14 +32,19 @@ class BuyKeyController extends BasicUserController
 		$newMoney = $authUser->about->money - $request->input('price');
 
 		$user = UserAbout::where('user_id', Auth::id())->first();
+		if (is_null($user))
+		{
+			dd('error');
+		}
 		$user->update([
 			'money' => $newMoney,
 		]);
 
+
 		$catalog = Catalog::find($request->input('catalogId'))->key->update([
 			'status' => 0,
 		]);
-
+		// error
 
 		$createHistory = ShoppingHistory::create([
 			'user_id' => $authUser->id,

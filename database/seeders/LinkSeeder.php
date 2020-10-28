@@ -28,6 +28,6 @@ class LinkSeeder extends Seeder
 			],
 		];
 
-        \DB::table('links')->insert($data);
+        \DB::table('licks')->insert($data);
     }
 }

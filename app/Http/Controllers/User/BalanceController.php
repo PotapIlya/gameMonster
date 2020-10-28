@@ -7,10 +7,7 @@ use Illuminate\Http\Request;
 
 class BalanceController extends BasicUserController
 {
-
-	const ID = 'potap228';
-	const LOGIN = 'admin';
-	const PASSWORD = 'LWz99Ko9jG';
+	const KEY = '48e7qUxn9T7RyYE1MVZswX1FRSbE6iyCj2gCRwwF3Dnh5XrasNTx3BGPiMsyXQFNKQhvukniQG8RTVhYm3iPrbVt6tpBwgfVmyWQ3enANLUNFX2muKZcxzdec4Cbd8rvfbmQ1SDALAKXBGdoby5nXQwZwmZ2o4JFBsjpK9SZZR4kJrT4Weot19PhaeQSi';
 
 	public function __construct()
 	{
@@ -39,26 +36,25 @@ class BalanceController extends BasicUserController
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
 
-    const KEY = '832b8cf0eae7c70e650313c030e2bb0e';
-
+	/**
+	 * @param Request $request
+	 * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+	 */
     public function store(Request $request)
-    {
+	{
 		$billPayments = new \Qiwi\Api\BillPayments(self::KEY);
 
-		$publicKey = self::KEY;
+
+//		$id = md5(date('m.d.Y.H:i:s'));
+
+		$id = 'potap23';
 
 		$params = [
-			'publicKey' => $publicKey,
-			'amount' => 200,
-			'billId' => 'cc961e8d-d4d6-4f02-b737-2297e51fb48e',
-			'successUrl' => 'http://127.0.0.1:8000/qiwi',
+			'publicKey' => self::KEY,
+			'amount' => 1,
+			'billId' => $id,
+			'successUrl' => 'http://127.0.0.1:8000/qiwi/',
 		];
 
 		$link = $billPayments->createPaymentForm($params);
@@ -66,13 +62,12 @@ class BalanceController extends BasicUserController
 		return redirect($link);
 
 
-
 	}
 
 
-	public function potap()
+	public function potap(Request $request)
 	{
-		dd(123);
+		dd($request);
 	}
 
     /**
