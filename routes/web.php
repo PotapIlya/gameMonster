@@ -42,13 +42,15 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/qiwi', 'App\Http\Controllers\User\BalanceController@potap');
 
 
 Route::get('/development', function ()
 {
 	return view('errors.development');
 });
+
+
+Route::get('/qiwi', 'App\Http\Controllers\User\BalanceController@potap');
 
 
 
@@ -110,7 +112,7 @@ Route::group(
 	{
 		Route::resource('/my', 'IndexController')->names('user');
 		Route::resource('/balance', 'BalanceController')->names('user.balance');
-		Route::patch('/buyKey', 'BuyKeyController@buyKey')->name('user.buyKey');
+		Route::patch('/buyKey/{id}', 'BuyKeyController@buyKey')->name('user.buyKey');
 
 
 

@@ -341,6 +341,7 @@ namespace App\Models\User{
  * @property int $id
  * @property int $user_id
  * @property int $catalog_id
+ * @property string|null $key
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Illuminate\Database\Eloquent\Builder|ShoppingHistory newModelQuery()
@@ -349,6 +350,7 @@ namespace App\Models\User{
  * @method static \Illuminate\Database\Eloquent\Builder|ShoppingHistory whereCatalogId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ShoppingHistory whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ShoppingHistory whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ShoppingHistory whereKey($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ShoppingHistory whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ShoppingHistory whereUserId($value)
  */

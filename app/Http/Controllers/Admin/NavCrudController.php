@@ -28,7 +28,7 @@ class NavCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Admin\Nav::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/nav');
-        CRUD::setEntityNameStrings('Меню', 'navs');
+        CRUD::setEntityNameStrings('Меню', 'Меню');
 //		$this->crud->addButtonFromView('line', 'moderate', 'moderate', 'beginning');
     }
 

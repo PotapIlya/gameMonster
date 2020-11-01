@@ -3,11 +3,15 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin\HistoryPayments;
+use App\Services\User\BalanceService;
+use Cookie;
 use Illuminate\Http\Request;
+use Auth;
 
 class BalanceController extends BasicUserController
 {
-	const KEY = '48e7qUxn9T7RyYE1MVZswX1FRSbE6iyCj2gCRwwF3Dnh5XrasNTx3BGPiMsyXQFNKQhvukniQG8RTVhYm3iPrbVt6tpBwgfVmyWQ3enANLUNFX2muKZcxzdec4Cbd8rvfbmQ1SDALAKXBGdoby5nXQwZwmZ2o4JFBsjpK9SZZR4kJrT4Weot19PhaeQSi';
+
 
 	public function __construct()
 	{
@@ -43,31 +47,53 @@ class BalanceController extends BasicUserController
 	 */
     public function store(Request $request)
 	{
-		$billPayments = new \Qiwi\Api\BillPayments(self::KEY);
-
-
-//		$id = md5(date('m.d.Y.H:i:s'));
-
-		$id = 'potap23';
-
-		$params = [
-			'publicKey' => self::KEY,
-			'amount' => 1,
-			'billId' => $id,
-			'successUrl' => 'http://127.0.0.1:8000/qiwi/',
-		];
-
-		$link = $billPayments->createPaymentForm($params);
-
-		return redirect($link);
+		// rules
+		if (!is_null($request->input('qiwi')))
+		{
+			return $this->qiwi($request);
+		}
 
 
 	}
 
 
-	public function potap(Request $request)
+	private function qiwi($request)
 	{
-		dd($request);
+
+		$key = 'eyJ2ZXJzaW9uIjoiUDJQIiwiZGF0YSI6eyJwYXlpbl9tZXJjaGFudF9zaXRlX3VpZCI6ImY4czdzdS0wMCIsInVzZXJfaWQiOiI3OTYxNDQwNTM5MCIsInNlY3JldCI6ImQ5MThhYTlhYzA2ZWIxMWE2YTQyZWYzN2Q3ZDdjOWRjNGIzNDFmOWY4NThlYTI5Mjg4ZDYxM2Q5YjgyMDNhMDkifX0=';
+
+		$billPayments = new \Qiwi\Api\BillPayments($key);
+		$billId = $billPayments->generateId();
+
+//		dd($billPayments);
+		$response = $billPayments->createBill($billId, [
+				'amount' => $request->input('money'),
+				'currency' => 'RUB',
+				'expirationDateTime' => $billPayments->getLifetimeByDay(1),
+				'account' => \Auth::id(),
+				'successUrl' => 'http://potap-test.fiery.host/qiwi'
+			]);
+
+		$create = HistoryPayments::create([
+			'user_id' => Auth::id(),
+			'money' => $request->input('money'),
+			'billId' => $billId,
+			'type' => 'qiwi',
+			'status' => false,
+		]);
+
+		if ($create)
+		{
+			return redirect($response['payUrl'])
+				->withCookie('billId', $billId)
+				->withCookie('id', \Auth::id());
+		}
+
+	}
+
+	public function potap(BalanceService $balanceService)
+	{
+		$balanceService->addBalanceByCoolie();
 	}
 
     /**

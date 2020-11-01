@@ -28,7 +28,7 @@ class SliderCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Admin\Slider::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/slider');
-        CRUD::setEntityNameStrings('slider', 'sliders');
+        CRUD::setEntityNameStrings('слайд', 'Слайдер');
     }
 
     /**

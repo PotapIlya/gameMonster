@@ -9,9 +9,9 @@
         <div class="d-flex flex-column flex-md-row align-items-center luck__block">
 
 
-            @foreach($link as  $item)
+            @foreach($link as $i=>$item)
 
-                <a class="luck__item" href="{{ $item->href }}">
+                <a class="luck__item " href="{{ $item->href }}">
                     <div class="luck__item-img">
                         <div class="luck__item-title">
                         </div>
@@ -20,7 +20,7 @@
                         @endif
                     </div>
                     <div class="luck__item-img-block">
-                        <img class="luck__item-img-detail luck__item-img-detail_1" src="/storage/{{ $item->img }}" alt=""/>
+                        <img class="luck__item-img-detail luck__item-img-detail_{{ $i+1 }}" src="/storage/{{ $item->img }}" alt=""/>
                     </div>
                     <div class="luck__item-text-block">
                         @if(!is_null($item->games) && $item->games)

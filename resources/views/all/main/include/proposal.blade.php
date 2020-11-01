@@ -26,7 +26,7 @@
                         @if(!is_null($proposal[0]->button) && $proposal[0]->button)
                             <button class="proposal_item-btn">
                                 {{ $proposal[0]->button ?? '' }}
-                                Подробнее
+{{--                                Подробнее--}}
                             </button>
                         @endif
                     </div>
@@ -40,7 +40,7 @@
                 <div class="proposal_item__wrapper proposal_item__wrapper-2 d-flex flex-column justify-content-between">
                     <div class="proposal_item-title">
                         {{ $proposal[1]->title ?? ''}}
-{{--                        Уникальные<br class="d-none d-md-block">--}}
+{{--                        Уникальные<br class="d-none d   -md-block">--}}
 {{--                        скидки<br>--}}
 {{--                        и бонусы--}}
                     </div>

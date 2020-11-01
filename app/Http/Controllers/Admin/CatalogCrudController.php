@@ -28,7 +28,7 @@ class CatalogCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Admin\Catalog::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/catalog');
-        CRUD::setEntityNameStrings('catalog', 'catalogs');
+        CRUD::setEntityNameStrings('товар', 'Товары');
     }
 
     /**

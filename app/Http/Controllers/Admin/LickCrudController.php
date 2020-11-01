@@ -14,7 +14,7 @@ use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 class LickCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
+//    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
@@ -28,7 +28,7 @@ class LickCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\Admin\Lick::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/lick');
-        CRUD::setEntityNameStrings('lick', 'licks');
+        CRUD::setEntityNameStrings('lick', 'Испытай удачу');
     }
 
     /**

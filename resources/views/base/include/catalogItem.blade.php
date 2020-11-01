@@ -1,5 +1,6 @@
 
 
+
 <div class="col-10 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
     <a href="{{ route('mainShow', $item->url) }}" class="w-100">
         <div class="catalog__wrapper d-flex flex-column">
@@ -47,9 +48,11 @@
             </div>
             <div class="mt-1">
                 <div class="d-flex align-items-center justify-content-between">
-                    <div class="catalog__title">
-                        {{ $item->title ?? '' }}
-                    </div>
+                    @if($item->title)
+                        <div class="catalog__title">
+                            {{ $item->title ?? '' }}
+                        </div>
+                    @endif
                     <div class="catalog__playground mr-0 mr-lg-4">
                         <img class="mw-100" src="/assets/static/img/main/icon/steam.svg" alt="">
                     </div>
@@ -70,9 +73,11 @@
         </div>
     </a>
 
+
+
     @if($show)
         <div class="mt-2 showCart"
-             data-key="{{ $item->allKey->key }}"
+             data-key="{{ $item->pivot->key }}"
         >
             <span>
                 Показать товар

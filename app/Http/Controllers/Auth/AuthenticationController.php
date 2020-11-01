@@ -16,9 +16,16 @@ class AuthenticationController extends Controller
 {
 	use AuthTrait;
 
+	/**
+	 * @var SteamAuth
+	 */
 	private $steam;
 
 
+	/**
+	 * AuthenticationController constructor.
+	 * @param SteamAuth $steamAuth
+	 */
 	public function __construct(SteamAuth $steamAuth)
 	{
 		parent::__construct();
@@ -29,6 +36,10 @@ class AuthenticationController extends Controller
 	}
 
 
+	/**
+	 * @param string $name
+	 * @return \Illuminate\Http\RedirectResponse|\Symfony\Component\HttpFoundation\RedirectResponse
+	 */
 	public function redirectToProvider(string $name)
 	{
 		if ($name === 'steam')
@@ -40,156 +51,52 @@ class AuthenticationController extends Controller
 		}
 	}
 
+	/**
+	 * @param string $name
+	 * @return \Illuminate\Http\RedirectResponse
+	 * @throws \GuzzleHttp\Exception\GuzzleException
+	 */
 	public function handleProviderCallback(string $name)
 	{
 		if ($name === 'vk')
 		{
-			return $this->AuthVK();
-		}
-		elseif ($name === 'google')
-		{
-			return $this->AuthGoogle();
-		}
-		elseif ($name === 'facebook')
-		{
-			dd('authController  facebook');
-		}
-		elseif ($name === 'steam')
-		{
-			return $this->AuthSteam();
-		}
-	}
-
-	private function AuthSteam()
-	{
-		if ($this->steam->validate()) {
-
-			$user = $this->steam->getUserInfo();
-
-
-			if (Auth::check())
-			{
-				$findOrCreateUser = $this->findOrCreate(
-					 Auth::id(),
-					$user['steamID64'],
-					'steam',
-					$user['personaname'],
-					$user['picture'],
-					null,
-				);
-
-				if ($findOrCreateUser)
-				{
-					return redirect()->back()->with(['success' => self::SAVE]);
-				}
-				else {
-					return redirect()->back()->withErrors(['errors' => self::ERRORS]);
-				}
-			}
-			else{
-				$findUser = UserServices::where('authentication_id',  $user['sub'])->first();
-				if ($findUser)
-				{
-					$auth = $this->AuthById($findUser->user->id);
-					if ($auth){
-
-						return redirect('/my');
-					} else{
-						return redirect()->back()->withErrors(['errors' => self::ERRORS]);
-					}
-				}
-				else{
-					return redirect()->back()->withErrors(['errors' => self::ERRORS_REGISTER]);
-				}
-			}
-
-		}
-	}
-
-	private function AuthGoogle()
-	{
-		$user = Socialite::driver('google')->user();
-
-		if (Auth::check())
-		{
-			$findOrCreateUser = $this->findOrCreate(
-				Auth::id(),
-				$user['sub'],
-				'google',
-				$user['given_name'].'_'.$user['family_name'],
-				$user['picture'],
-				$user['email'],
-			);
-
-			if ($findOrCreateUser)
-			{
-				return redirect()->back()->with(['success' => self::SAVE]);
-			}
-			else {
-				return redirect()->back()->withErrors(['errors' => self::ERRORS]);
-			}
-		}
-		else{
-			$findUser = UserServices::where('authentication_id',  $user['sub'])->first();
-			if ($findUser)
-			{
-				$auth = $this->AuthById($findUser->user->id);
-				if ($auth){
-
-					return redirect()->route('user.index');
-				} else{
-					return redirect()->back()->withErrors(['errors' => self::ERRORS]);
-				}
-			}
-			else{
-				return redirect()->back()->withErrors(['errors' => self::ERRORS_REGISTER]);
-			}
-		}
-
-	}
-
-	private function AuthVK()
-	{
-		$user = Socialite::driver('vkontakte')->user();
-
-
-		if (Auth::check())
-		{
-			$findOrCreateUser = $this->findOrCreate(
-				Auth::id(),
+			$user = Socialite::driver('vkontakte')->user();
+			return $this->AuthWithServices(
 				$user['id'],
 				'vk',
 				$user['first_name'].'_'.$user['last_name'],
 				$user['photo_200'],
 				$user['email'],
 			);
+		}
 
-			if ($findOrCreateUser)
-			{
-				return redirect()->route('user.index');
-			}
-			else {
-				return redirect()->back()->withErrors(['errors' => self::ERRORS]);
+		if ($name === 'steam')
+		{
+			if ( $this->steam->validate() ) {
+
+				$user = $this->steam->getUserInfo();
+
+				return $this->AuthWithServices(
+					$user['steamID64'],
+					'steam',
+					$user['personaname'],
+					$user['avatar'],
+					null,
+				);
 			}
 		}
-		else{
-			$findUser = UserServices::where('authentication_id',  $user['id'])->first();
-			if ($findUser)
-			{
-				$auth = $this->AuthById($findUser->user->id);
-				if ($auth){
+		if ($name === 'google')
+		{
+			$user = Socialite::driver('google')->user();
 
-						return redirect('/my');
-					} else{
-						return redirect()->back()->withErrors(['errors' => self::ERRORS]);
-				}
-			}
-			else{
-				return redirect()->back()->withErrors(['errors' => self::ERRORS_REGISTER]);
-			}
+			return $this->AuthWithServices(
+				(int) $user['sub'],
+				'google',
+				$user['given_name'].'_'.$user['family_name'],
+				$user['picture'],
+				$user['email'],
+			);
 		}
 
 	}
-
-
 }

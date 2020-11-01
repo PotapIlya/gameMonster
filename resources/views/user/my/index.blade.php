@@ -84,6 +84,7 @@
         </div>
     </section>
 
+
     @if(count($user->history))
         <section class="my_by">
             <div class="container">

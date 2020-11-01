@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\User\UpdateInfoRequest;
 use App\Models\User;
+use App\Services\User\UpdatePersonalAreaService;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Auth;
@@ -18,16 +20,19 @@ class IndexController extends BasicUserController
 
 
 	/**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
-     */
+	 * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|void
+	 */
     public function index()
     {
-    	$user = Auth::user();
-		if ($user){
-			$user = $user->load('history', 'services');
+    	$user = Auth::user()->with('history.key', 'services')->first();
+		if (!$user){
+			return abort('500');
 		}
+
+//		dd($user);
+
+
+//		dd(\Cookie::get('id'));
 
 		return view('user.my.index', compact('user'));
     }
@@ -85,61 +90,15 @@ class IndexController extends BasicUserController
      */
     public function update(Request $request, $id)
     {
-		$userId = \Auth::id();
 
-    	if ($userId === (int) $id)
-		{
-			if ($request['_method'] === 'PATCH') // other
-			{
-//				$validation = \Validator::make($request->all() ,[
-//					'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-//					'phone' => ['required', 'max:255'],
-//					'name' => ['required', 'string', 'max:255', 'unique:users'],
-//
-//				]);
-//				if ($validation->fails())
-//				{
-//					dd($validation->errors());
-//				}
-//
-//				User::find($id)->update([
-//					'name' => $request->input('name'),
-//					'email' => $request->input('email'),
-////					'phone' => $request->input('phone'),
-//				]);
-//				dd(true);
-
-
-			}
-//			if ($request['_method'] === 'PUT') //password
-//			{
-//
-//				$validation = \Validator::make($request->all() ,[
-//					'password' => ['required', 'string', 'min:8', 'confirmed'],
-//				]);
-//				if ($validation->fails()) {
-//					dd($validation->errors());
-//				}
-//
-//				if (\Hash::check($request->old_password, \Auth::user()->password))
-//				{
-//					User::find($id)->update([
-//						'password' => bcrypt($request->password)
-//					]);
-//					dd(true);
-//				}
-//				else{
-//					dd( 'password_old не правильный' );
-//				}
-//
-//			}
-
-
-
-		}
     }
 
-    public function updateInfo(Request $request)
+	/**
+	 * @param UpdateInfoRequest $request
+	 * @param UpdatePersonalAreaService $update
+	 * @return \Illuminate\Http\JsonResponse
+	 */
+    public function updateInfo(UpdateInfoRequest $request, UpdatePersonalAreaService $update)
 	{
 		$userId = Auth::id();
 
@@ -153,17 +112,16 @@ class IndexController extends BasicUserController
 			return response()->json(['errors' => $validation->errors()]);
 		}
 
-		User::find($userId)->update([
-			'login' => $request->input('login'),
-			'email' => $request->input('email'),
-			'phone' => $request->input('phone'),
-		]);
-		return response()->json(['success' => 'success']);
+		return $update->updateInfoUser($userId, $request);
 	}
 
 
-
-	public function updatePassword(Request $request)
+	/**
+	 * @param Request $request
+	 * @param UpdatePersonalAreaService $update
+	 * @return \Illuminate\Http\JsonResponse
+	 */
+	public function updatePassword(Request $request, UpdatePersonalAreaService $update)
 	{
 		$user = Auth::user();
 
@@ -175,23 +133,8 @@ class IndexController extends BasicUserController
 			return response()->json(['errors' => $validation->errors()]);
 		}
 
-		if ($request->input('oldPassword') === $request->input('password'))
-		{
-				return response()->json(['errors' => ['oldPassword' => ['Старый и новый пароль совпадает']]]);
-		}
+		return $update->updatePassword($user, $request);
 
-
-		if (\Hash::check($request->input('oldPassword'), $user->password))
-		{
-			User::find($user->id)->update([
-				'password' => bcrypt($request->input('password'))
-			]);
-			return response()->json(['success' => 'success']);
-		}
-		else
-		{
-			return response()->json(['errors' => 'password_old не правильный']);
-		}
 	}
 
 

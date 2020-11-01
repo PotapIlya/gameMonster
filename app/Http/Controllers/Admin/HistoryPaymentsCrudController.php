@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\CatalogKeyRequest;
+use App\Http\Requests\HistoryPaymentsRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class CatalogKeyCrudController
+ * Class HistoryPaymentsCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class CatalogKeyCrudController extends CrudController
+class HistoryPaymentsCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
+//    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
-//    use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
     /**
@@ -26,9 +26,9 @@ class CatalogKeyCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Admin\CatalogKey::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/catalogkey');
-        CRUD::setEntityNameStrings('ключ', 'Ключи');
+        CRUD::setModel(\App\Models\Admin\HistoryPayments::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/historypayments');
+        CRUD::setEntityNameStrings('historypayments', 'История пополнений');
     }
 
     /**
@@ -39,13 +39,23 @@ class CatalogKeyCrudController extends CrudController
      */
     protected function setupListOperation()
     {
+
+    	CRUD::addColumn(['name' => 'id']);
+
     	CRUD::addColumn([
-    		'name' => 'id'
+			'label'     => 'Parent', // Table column heading
+			'type'      => 'select',
+			'name'      => 'user_id', // the column that contains the ID of that connected entity;
+			'entity'    => 'person', // the method that defines the relationship in your Model
+			'attribute' => 'login', // foreign key attribute that is shown to user
+//			'model'     => "App\Models\Category", // foreign key model
 		]);
 
-        CRUD::setFromDb(); // columns
+		CRUD::setFromDb(); // columns
 
-        /**
+		CRUD::removeColumn('billId');
+
+		/**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
          * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
@@ -60,23 +70,11 @@ class CatalogKeyCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(CatalogKeyRequest::class);
-
-
-        CRUD::addField([
-			'label'     => "Каталог",
-			'type'      => 'select2',
-			'name'      => 'catalog_id', // the db column for the foreign key
-
-//			// optional
-			'entity'    => 'catalog', // the method that defines the relationship in your Model
-			'model'     => "App\Models\Admin\Catalog", // foreign key model
-			'attribute' => 'title', // foreign key attribute that is shown to user
-////			'default'   => 2, // set the default value of the select2
-		]);
-
+        CRUD::setValidation(HistoryPaymentsRequest::class);
 
         CRUD::setFromDb(); // fields
+
+		CRUD::removeField('billId');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

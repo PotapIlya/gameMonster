@@ -189,6 +189,10 @@
 
 @media only screen and (max-width : 1367px) {
 
+    .swiper-home .swiper-slide-fixed{
+        padding: 125px 60px;
+    }
+
     .proposal_item__wrapper-2 form{
         width: 85%;
     }
@@ -204,6 +208,7 @@
             font-size: 68.0633px;
             line-height: 101.69%;
             padding-bottom: 0;
+            padding-top: 3%;
         }
         &-new{
             font-weight: bold;
@@ -216,8 +221,7 @@
             line-height: 110.19%;
         }
         &-group{
-            padding-bottom: 28%;
-            padding-left: 30%;
+            //padding-left: 18%;
         }
     }
 
@@ -321,15 +325,22 @@
 
 @media only screen and (max-width : 1200px) {
 
-    //.proposal_item__wrapper-3{
-    //
-    //    label{
-    //        width: 140% !important;
-    //        .w-100{
-    //            width: 140% !important;
-    //        }
-    //    }
-    //}
+    .swiper-home .swiper-slide-fixed {
+        padding: 110px 60px;
+    }
+
+    .slide-title{
+        font-size: 55px;
+    }
+    .slide-new{
+        font-size: 40px;
+    }
+    .slide-old{
+        font-size: 34px;
+    }
+    .slide-group{
+        padding-bottom: 22%;
+    }
 
     .proposal_item__wrapper-2 form{
         width: 70%;
@@ -359,6 +370,9 @@
 @media only screen and (max-width : 1100px) {
 
 
+    .swiper-home .swiper-slide-fixed {
+        padding: 105px 35px;
+    }
 
     .proposal_item_3 img{
         margin-top: -16px;
@@ -408,6 +422,13 @@
 @media only screen and (max-width : 992px) {
 
 
+    .slide-title{
+        padding-bottom: 22%;
+    }
+
+    .swiper-home .swiper-slide-fixed{
+        display: none;
+    }
 
 
     .proposal_item__wrapper-2 form{
@@ -982,6 +1003,19 @@
 
 @media only screen and (max-width : 576px){
 
+
+    .home {
+
+        .slide-title{
+            padding-top: 15%;
+            font-weight: 900;
+            font-size: 26.7702px;
+            line-height: 101.69%;
+        }
+        .swiper-slide img {
+            border-radius: 0;
+        }
+    }
 
     .proposal_item_1 .proposal_item-title{
         font-size: 30px;

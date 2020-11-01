@@ -70,3 +70,10 @@ input[type="submit"] {
 .mb-45{
     margin-bottom: 40px !important;
 }
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button,
+input[type='number']{
+    -webkit-appearance: none;
+}

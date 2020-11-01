@@ -90,12 +90,11 @@
                                        style="cursor:pointer;"
                                     >Войти в аккаунт</a>
                                 @else
-                                    @if(!is_null($item->key))
-                                        <form action="{{ route('user.buyKey') }}" method="POST">
+
+                                    @if(count($item->key) && !is_null($item->key))
+                                        <form action="{{ route('user.buyKey', $item->id) }}" method="POST">
                                             @csrf
                                             @method('PATCH')
-                                            <input type="hidden" name="price" value="{{ $item->price }}">
-                                            <input type="hidden" name="catalogId" value="{{ $item->id }}">
                                             <button
                                                     type="submit"
                                                     class="right-wrap__buy-key"

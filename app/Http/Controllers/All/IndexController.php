@@ -27,14 +27,20 @@ class IndexController extends BasicAllController
      */
     public function index(Request $request)
     {
-		$catalog = Catalog::limit(16)->with('category')->get();
-		$slider = Slider::all();
-		$link = Lick::all();
-		$proposal = Proposal::all();
+//		$catalog = Catalog::limit(16)->with('category')->get();
+//		$slider = Slider::all();
+//		$link = Lick::all();
+//		$proposal = Proposal::all();
 
 
 
-    	return view('all.main.index', compact('catalog', 'slider', 'link', 'proposal'));
+    	return view('all.main.index', [
+    		'catalog' => Catalog::limit(16)->with('category')->get(),
+    		'slider' => Slider::all(),
+    		'link' => Lick::all(),
+    		'proposal' => Proposal::all()
+		]);
+//    	return view('all.main.index', compact('catalog', 'slider', 'link', 'proposal'));
     }
 
 
@@ -60,15 +66,21 @@ class IndexController extends BasicAllController
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
+
+	/**
+	 * @param string $id
+	 * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|void
+	 */
     public function show(string $id)
     {
-    	$item = Catalog::with('category', 'key')->where('url', $id)->first();
+    	$item = Catalog::with('category')->with('key', function ($query)
+		{
+			$query->where('status', 1)->first();
+		})
+			->where('url', $id)
+			->first();
+
+
     	if (!$item){
     		return abort(404);
 //    		dd( 'IndexController show' );

@@ -18,6 +18,7 @@ class CreateShoppingHistoriesTable extends Migration
 
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('catalog_id');
+            $table->string('key')->nullable()->default('error');
 
             $table->timestamps();
 
