@@ -50,7 +50,7 @@ Route::get('/development', function ()
 });
 
 
-Route::get('/qiwi', 'App\Http\Controllers\User\BalanceController@potap');
+Route::post('/qiwi', 'App\Http\Controllers\User\BalanceController@potap');
 
 
 

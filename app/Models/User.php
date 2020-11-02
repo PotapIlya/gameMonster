@@ -80,8 +80,7 @@ class User extends Authenticatable
 
 	public function history()
 	{
-		return $this->belongsToMany(Catalog::class, 'shopping_histories', 'user_id', 'catalog_id')
-			->withPivot('key');
+		return $this->belongsToMany(Catalog::class, 'shopping_histories', 'user_id', 'catalog_id');
 	}
 
 	public function roles()

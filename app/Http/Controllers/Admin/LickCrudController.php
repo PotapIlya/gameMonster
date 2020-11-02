@@ -43,18 +43,19 @@ class LickCrudController extends CrudController
 
 		CRUD::addColumn([
 			'name'      => 'img', // The db column name
-			'label'     => 'Image', // Table column heading
+			'label'     => 'Картинка', // Table column heading
 			'type'      => 'image',
 			'prefix' => '/storage/',
 			// image from a different disk (like s3 bucket)
 			// 'disk'   => 'disk-name',
 			// optional width/height if 25px is not ok with you
-			'width'  => '150px',
-			'height' => '100px',
+			'width'  => '200px',
+			'height' => 'auto',
 		]);
+		CRUD::addColumn(['name' => 'href']);
 
 
-        CRUD::setFromDb(); // columns
+//        CRUD::setFromDb(); // columns
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:

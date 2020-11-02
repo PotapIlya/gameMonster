@@ -18,6 +18,7 @@ class CatalogCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
 //    use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\CloneOperation;
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
@@ -42,17 +43,32 @@ class CatalogCrudController extends CrudController
 
     	CRUD::addColumn([
 			'name'      => 'preloader', // The db column name
-			'label'     => 'Image', // Table column heading
+			'label'     => 'Картинка', // Table column heading
 			'type'      => 'image',
 			 'prefix' => '/storage/',
 			// image from a different disk (like s3 bucket)
 			// 'disk'   => 'disk-name',
 			// optional width/height if 25px is not ok with you
-			'width'  => '150px',
-			'height' => '100px',
+			'width'  => '200px',
+			'height' => 'auto'
 		]);
 
-        CRUD::setFromDb(); // columns
+    	CRUD::addColumn([
+    		'name' => 'title',
+			'label' => 'Заголовок'
+		]);
+
+		CRUD::addColumn([
+			'name' => 'url',
+			'label' => 'Ссылка'
+		]);
+		CRUD::addColumn([
+			'name' => 'price',
+			'label' => 'Цена'
+		]);
+
+
+//        CRUD::setFromDb(); // columns
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -103,11 +119,6 @@ class CatalogCrudController extends CrudController
 			'prefix'     => "%",
 		]);
 		CRUD::addField([
-			'name' => 'text',
-			'label' => 'Описание',
-			'type' => 'tinymce',
-		]);
-		CRUD::addField([
 			'name'      => 'preloader',
 			'label'     => 'Заглушка',
 			'type'      => 'upload',
@@ -115,6 +126,21 @@ class CatalogCrudController extends CrudController
 //			'disk'      => 'uploads', // if you store files in the /public folder, please ommit this; if you store them in /storage or S3, please specify it;
 			// optional:
 //			'temporary' => 10 // if using a service, such as S3, that requires you to make temporary URL's this will make a URL that is valid for the number of minutes specified
+		]);
+		CRUD::addField([
+			'name'      => 'img',
+			'label'     => 'Картинки',
+			'type'      => 'upload_multiple',
+			'upload'    => true,
+//			'disk'      => 'uploads', // if you store files in the /public folder, please ommit this; if you store them in /storage or S3, please specify it;
+//			// optional:
+//			'temporary' => 10 // if using a service, such as S3, that requires you to make temporary URL's this will make a URL that is valid for the number of minutes specified
+		]);
+
+		CRUD::addField([
+			'name' => 'text',
+			'label' => 'Описание',
+			'type' => 'tinymce',
 		]);
 
 		CRUD::addField([
@@ -138,15 +164,6 @@ class CatalogCrudController extends CrudController
 			'type'  => 'checkbox'
 		]);
 
-		CRUD::addField([
-			'name'      => 'img',
-			'label'     => 'Картинки',
-			'type'      => 'upload_multiple',
-			'upload'    => true,
-//			'disk'      => 'uploads', // if you store files in the /public folder, please ommit this; if you store them in /storage or S3, please specify it;
-//			// optional:
-//			'temporary' => 10 // if using a service, such as S3, that requires you to make temporary URL's this will make a URL that is valid for the number of minutes specified
-		]);
 
 		CRUD::addField([
 			'label'     => "Категории",

@@ -16,7 +16,7 @@ class UsersCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
 //    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
+//    use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
     /**
@@ -50,9 +50,18 @@ class UsersCrudController extends CrudController
 			'attribute' => 'name', // foreign key attribute that is shown to user
 			'model'     => "App\Models\Admin\Roles", // foreign key model
 		]);
-		CRUD::addColumn(['name' => 'login']);
-		CRUD::addColumn(['name' => 'email']);
-		CRUD::addColumn(['name' => 'phone']);
+		CRUD::addColumn([
+			'name' => 'login',
+			'label' => 'Логин'
+		]);
+		CRUD::addColumn([
+			'name' => 'email',
+			'label' => 'Email'
+		]);
+		CRUD::addColumn([
+			'name' => 'phone',
+			'label' => 'Телефон'
+		]);
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -85,7 +94,23 @@ class UsersCrudController extends CrudController
 //			'default'   => 2, // set the default value of the select2
 		]);
 
-        CRUD::setFromDb(); // fields
+        CRUD::addField([
+        	'name' => 'login',
+			'label' => "Логин"
+		]);
+
+		CRUD::addField([
+			'name' => 'email',
+			'label' => "Email"
+		]);
+
+		CRUD::addField([
+			'name' => 'Phone',
+			'label' => "Телефон"
+		]);
+
+
+//		CRUD::setFromDb(); // fields
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

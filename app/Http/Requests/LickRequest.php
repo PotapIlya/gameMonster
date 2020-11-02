@@ -26,7 +26,7 @@ class LickRequest extends FormRequest
     public function rules()
     {
         return [
-             'img' => 'required',
+
              'href' => 'required',
         ];
     }

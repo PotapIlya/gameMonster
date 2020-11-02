@@ -20,14 +20,15 @@ class ProposalSeeder extends Seeder
 			],
 			[
 				'img' => 'proposal/02d03ff4736281a657d764e871ecade2.png',
-				'mobile_img' => 'proposal/33b6ea2f7636e430ec40c4b4c1d9684c.png',
+				'mobile_img' => 'proposal/7c8ff7a4cb0034918f0b27a174d15e55.png',
 			],
 			[
 				'img' => 'proposal/e16a2a40c2e032fbafefe7daedd63431.png',
-				'mobile_img' => 'proposal/7c8ff7a4cb0034918f0b27a174d15e55.png',
+				'mobile_img' => 'proposal/33b6ea2f7636e430ec40c4b4c1d9684c.png',
 			],
 		];
 
+		// proposal/7c8ff7a4cb0034918f0b27a174d15e55.png
 			\DB::table('proposals')->insert($data);
     }
 }

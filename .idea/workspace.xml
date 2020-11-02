@@ -2,52 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="173ae8e2-6c61-4da4-b691-8c53b3dd54f3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Exceptions/BalanceException.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HistoryPaymentsCrudController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/HistoryPaymentsRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/User/UpdateInfoRequest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Admin/HistoryPayments.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/User/BalanceService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/User/BuyKeyService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/User/UpdatePersonalAreaService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/payment.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_11_01_174217_create_history_payments_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/img/pay/qiwi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/pages/balance/_balance.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_ide_helper_models.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper_models.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CatalogCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CatalogCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CatalogKeyCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CatalogKeyCrudController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/LickCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/LickCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/NavCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/NavCrudController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProposalCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProposalCrudController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SliderCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SliderCrudController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/All/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/All/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthenticationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthenticationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/CustomTrait/AuthTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/CustomTrait/AuthTrait.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/BalanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/BalanceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/BuyKeyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/BuyKeyController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Admin/Catalog.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Catalog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/LickRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/LickRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_10_01_163747_create_shopping_histories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_10_01_163747_create_shopping_histories_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/assets/_reset.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/assets/_reset.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/pages/_app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/_app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/pages/main/_home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/main/_home.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/pages/main/_luck.sсss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/main/_luck.sсss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/pages/main/_media.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/main/_media.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/all/main/include/fScreen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/all/main/include/fScreen.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/all/main/include/luck.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/all/main/include/luck.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/all/main/include/proposal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/all/main/include/proposal.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/all/main/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/all/main/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/base/include/catalogItem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/base/include/catalogItem.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/addBalance/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/addBalance/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/my/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/my/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/backpack/custom.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/backpack/custom.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/LinkSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/LinkSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/ProposalSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/ProposalSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -341,6 +307,9 @@
       <workItem from="1604247172629" duration="332000" />
       <workItem from="1604247542641" duration="80000" />
       <workItem from="1604250112958" duration="5682000" />
+      <workItem from="1604262029625" duration="498000" />
+      <workItem from="1604308305893" duration="4292000" />
+      <workItem from="1604326588488" duration="127000" />
     </task>
     <servers />
   </component>

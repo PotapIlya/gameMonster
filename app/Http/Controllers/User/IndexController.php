@@ -24,15 +24,13 @@ class IndexController extends BasicUserController
 	 */
     public function index()
     {
+
+
     	$user = Auth::user()->with('history.key', 'services')->first();
 		if (!$user){
 			return abort('500');
 		}
 
-//		dd($user);
-
-
-//		dd(\Cookie::get('id'));
 
 		return view('user.my.index', compact('user'));
     }

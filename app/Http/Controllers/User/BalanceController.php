@@ -91,9 +91,18 @@ class BalanceController extends BasicUserController
 
 	}
 
-	public function potap(BalanceService $balanceService)
+	public function potap($test)
 	{
-		$balanceService->addBalanceByCoolie();
+
+		$create = HistoryPayments::create([
+			'test' => $test,
+		]);
+
+		if ($create){
+			return redirect('/');
+		}
+
+//		$balanceService->addBalanceByCoolie();
 	}
 
     /**

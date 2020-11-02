@@ -14,12 +14,12 @@ class LinkSeeder extends Seeder
     public function run()
     {
         $data = [
-        	[
-        		'img' => 'lick/3d27f53ef7e68f011b2fd219736b6372.png',
+			[
+				'img' => 'lick/c20274953d50ffd03d42a363ab62744c.png',
 				'href' => '/development',
 			],
 			[
-				'img' => 'lick/c20274953d50ffd03d42a363ab62744c.png',
+				'img' => 'lick/3d27f53ef7e68f011b2fd219736b6372.png',
 				'href' => '/development',
 			],
 			[

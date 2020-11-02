@@ -46,11 +46,25 @@ class ProposalCrudController extends CrudController
 			'type' => 'image',
 			'prefix' => '/storage/',
 			// optional width/height if 25px is not ok with you
-			'height' => '80px',
-			'width' => '80px',
+			'width' => '150px',
+			'height' => 'auto',
+		]);
+		CRUD::addColumn([
+			'name' => 'mobile_img', // The db column name
+			'label' => "Картинка для телефона (от 992px)", // Table column heading
+			'type' => 'image',
+			'prefix' => '/storage/',
+			// optional width/height if 25px is not ok with you
+			'width' => '150px',
+			'height' => 'auto',
 		]);
 
-        CRUD::setFromDb(); // columns
+		CRUD::addColumn([
+			'name' => 'href',
+			'label' => 'Ссылка'
+		]);
+
+//        CRUD::setFromDb(); // columns
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:

@@ -47,11 +47,13 @@ class SliderCrudController extends CrudController
 			'type' => 'image',
 			 'prefix' => '/storage/',
 			// optional width/height if 25px is not ok with you
-			 'height' => '80px',
-			 'width' => '80px',
+			 'height' => '100px',
+			 'width' => 'auto',
 		]);
+    	CRUD::addColumn(['name' => 'title']);
+    	CRUD::addColumn(['name' => 'url']);
 
-        CRUD::setFromDb(); // columns
+//        CRUD::setFromDb(); // columns
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -80,6 +82,39 @@ class SliderCrudController extends CrudController
 			// optional:
 //			'temporary' => 10 // if using a service, such as S3, that requires you to make temporary URL's this will make a URL that is valid for the number of minutes specified
 		]);
+
+		CRUD::addField([
+			'name' => 'url',
+			'label' => 'Ссылка',
+			'type' => 'text'
+		]);
+
+		CRUD::addField([
+			'name' => 'title',
+			'label' => 'Заголовок',
+			'type' => 'text'
+		]);
+
+		CRUD::addField([
+			'name' => 'price',
+			'label' => 'Цена',
+			'type' => 'number',
+			 'prefix'     => "₽",
+		]);
+
+		CRUD::addField([
+			'name' => 'old_price',
+			'label' => 'Старая цена',
+			'type' => 'number',
+			'prefix'     => "₽",
+		]);
+		CRUD::addField([
+			'name' => 'discounts',
+			'label' => 'Скидка',
+			'type' => 'number',
+			'prefix'     => "%",
+		]);
+
 
         CRUD::setFromDb(); // fields
 
