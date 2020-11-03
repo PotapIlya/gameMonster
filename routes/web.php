@@ -50,8 +50,30 @@ Route::get('/development', function ()
 });
 
 
-Route::post('/qiwi', 'App\Http\Controllers\User\BalanceController@potap');
 
+Route::post('/qiwi', 'App\Http\Controllers\User\BalanceController@potap');
+//
+//
+//Route::get('/test', function ()
+//{
+//	return view('test');
+//});
+//Route::post('/testPost', function (\App\Http\Requests\TestRequest $testRequest)
+//{
+//	return 'potap';
+//	dd('potap');
+//
+//
+////	$validation = \Validator::make($request->all() ,[
+////		'number' => ['max:3'],
+////	]);
+////	if ($validation->fails())
+////	{
+////		dd($validation->errors());
+////	}
+//
+//	dd( $request->all() );
+//});
 
 
 

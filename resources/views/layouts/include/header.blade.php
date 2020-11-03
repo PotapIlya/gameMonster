@@ -74,7 +74,7 @@
             <div class="d-flex align-items-center justify-content-end col-4 col-md-3 col-xl-2 px-0">
 
                 @guest
-                    @if(Request::path() !== 'login' && Request::path() !== 'register')
+                    @if(Request::path() !== 'login' && Request::path() !== 'register' && Request::path() !== 'password/reset')
                         <modal-auth-component />
                     @endif
                 @else

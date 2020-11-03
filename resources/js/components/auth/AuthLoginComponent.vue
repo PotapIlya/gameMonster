@@ -4,7 +4,7 @@
 			<div class="modal-wrap">
 				
 				<form @submit.prevent="upload" method="POST" class="registration d-flex flex-column" style="background:transparent;">
-					<div class="registration__buttons d-flex justify-content-sm-start justify-content-center mb-3">
+					<div class="registration__buttons d-flex justify-content-start align-items-center mb-3">
 						<a href="/login" class="registration__sign-in modal_header_active_text">Вход</a>
 						<a href="/register" class="registration__sign-up">Регистрация</a>
 					</div>
@@ -42,12 +42,12 @@
 					</label>
 					
 					
-					<div class="forgot d-flex align-items-center">
+					<div class="forgot d-flex flex-row align-items-center">
 						<button type="submit" class="registration__enter">Войти</button>
 						<a href="/password/reset" class="registration__forgot">Забыли пароль?</a>
 					</div>
 					<a href="#" class="registration__enter-help">Войти с помощью</a>
-					<div class="registration__services d-flex align-items-center">
+					<div class="registration__services d-flex justify-content-start align-items-center">
 						<a href="/login/steam" class="service1">
 							<img src="/assets/static/img/services/steam.png" alt="steam">
 						</a>

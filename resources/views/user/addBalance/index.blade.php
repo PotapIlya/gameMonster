@@ -23,15 +23,16 @@
 
                        <input name="qiwi" class="" type="checkbox" id="qiwi">
                        <label for="qiwi">
-                           <div class="col-6">
+                           <span class="col-6">
                                <img class="w-100" src="/assets/static/img/pay/qiwi.png" alt="">
-                           </div>
+                           </span>
                        </label>
                    </div>
                     
                 </div>
                 
             </form>
+
 
         </div>
     </section>

@@ -4,19 +4,20 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\HistoryPayments;
+use App\Models\Test;
 use App\Services\User\BalanceService;
 use Cookie;
 use Illuminate\Http\Request;
 use Auth;
 
-class BalanceController extends BasicUserController
+class BalanceController extends Controller
 {
 
 
-	public function __construct()
-	{
-		parent::__construct();
-	}
+//	public function __construct()
+//	{
+//		parent::__construct();
+//	}
 
 	/**
      * Display a listing of the resource.
@@ -66,12 +67,13 @@ class BalanceController extends BasicUserController
 		$billId = $billPayments->generateId();
 
 //		dd($billPayments);
-		$response = $billPayments->createBill($billId, [
+		$response = $billPayments->createBill($billId,
+			[
 				'amount' => $request->input('money'),
 				'currency' => 'RUB',
 				'expirationDateTime' => $billPayments->getLifetimeByDay(1),
 				'account' => \Auth::id(),
-				'successUrl' => 'http://potap-test.fiery.host/qiwi'
+				'successUrl' => 'http://potap-test.fiery.host/',
 			]);
 
 		$create = HistoryPayments::create([
@@ -90,17 +92,27 @@ class BalanceController extends BasicUserController
 		}
 
 	}
-
-	public function potap($test)
+	public function mylog($data) {
+		$myFile = "./log.txt";
+		$fh = fopen($myFile, 'a') or die("can't open file");
+//		fwrite($fh, json_encode($data, JSON_PRETTY_PRINT));
+		fwrite($fh, implode(',', $data) );
+		fclose($fh);
+	}
+	public function potap(Request $request)
 	{
+//		dd(12);
+//		\Log::error($request);
+		$this->mylog($request->all());
 
-		$create = HistoryPayments::create([
-			'test' => $test,
-		]);
+//		dd(12);
 
-		if ($create){
-			return redirect('/');
-		}
+
+
+
+//		$create = Test::create([
+//			'name' => $_POST,
+//		]);
 
 //		$balanceService->addBalanceByCoolie();
 	}

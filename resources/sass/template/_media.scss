@@ -127,9 +127,7 @@
     }
 
 
-    .slide-group{
-        padding-bottom: 28%;
-    }
+
 
 }
 
@@ -231,6 +229,29 @@
 
 @media only screen and (max-width : 576px) {
 
+
+
+    .modal-auth .registration{
+        padding: 0;
+    }
+
+    .registration__enter-help{
+        text-align: left;
+    }
+    .modal-auth .registration{
+        padding: 0;
+    }
+    .modal {
+        .modal-wrap{
+            width: 100%;
+            padding-right: 0;
+            padding-left: 0;
+            height: 60vh;
+        }
+        .registration {
+            padding: 0;
+        }
+    }
 
     .mobile_menu-form .header__search input,
     .mobile_menu-form .header__search-res{

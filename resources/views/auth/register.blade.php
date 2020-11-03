@@ -4,7 +4,7 @@
 
 
 
-    <section class="auth">
+    <section class="auth" style="height: 52vh">
         <div class="container">
             <auth-register-component />
         </div>
