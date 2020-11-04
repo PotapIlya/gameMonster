@@ -27,7 +27,7 @@
                             </div>
                         </div>
                         <div class="swiper-container swiper-thumbs">
-                            <div class="swiper-wrapper cart-images__additional-image">
+                            <div class="swiper-wrapper cart-images__additional-image d-flex align-items-center">
 
                                 @foreach($item->img as $img)
                                     <div class="cart-images__additem swiper-slide">
@@ -136,21 +136,19 @@
 
 
             </div>
-            <div class="row2 row px-0 m-0 d-flex w-100">
-                <div class="game-description col-12 col-xl-7 px-0 mb-3 mb-md-5 mb-xl-0" id="showDescription">
-
-                        {!! $item->text !!}
-{{--                        {!! Str::limit($item->text, 500) !!}--}}
-{{--                    <span style="color:#F59502; text-decoration:none;">подробнее..</span>--}}
-
-                </div>
-
+            <div class="row2 row px-0 m-0 d-flex w-100 d-flex justify-content-end">
+                @if(!is_null($item->text) && $item->text)
+                    <div class="game-description col-12 col-xl-7 px-0 mb-3 mb-md-5 mb-xl-0" id="showDescription">
+                            {!! $item->text !!}
+    {{--                        {!! Str::limit($item->text, 500) !!}--}}
+                    </div>
+                @endif
 
                 <div class="originacc col-12 col-xl-5 px-0">
                     <div class="originacc-wrap ml-xl-5">
                         <div class="originacc-wrap__hd d-flex align-items-center justify-content-between">
                             <div class="d-flex align-items-center">
-                                <img class="mr-3" src="/assets/release/img/origin.png" alt="">
+                                <img class="mr-3" src="/assets/static/img/main/icon/origin.png" alt="">
                                 <div class="originacc-wrap__title">Origin аккаунт 3 игры</div>
                             </div>
                             <div class="originacc-wrap__price"><span style="color:#fff">179 </span>₽</div>

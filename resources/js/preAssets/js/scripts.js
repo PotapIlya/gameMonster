@@ -1,10 +1,7 @@
 "use strict";
 
-console.log(123);
-
 if (document.querySelector('.myCrutch')) {
   var myCrutch = document.querySelectorAll('.myCrutch');
-  console.log(myCrutch);
 
   var xx = function xx() {
     myCrutch.forEach(function (x) {
@@ -30,8 +27,9 @@ document.addEventListener('DOMContentLoaded', function () {
   } // в пользователе октрывается модалка с ключем от игры
 
 
-  if (document.querySelectorAll('.showCart')) {
+  if (document.querySelector('.showCart')) {
     var showCarts = document.querySelectorAll('.showCart');
+    console.log(showCarts);
     var email = document.getElementById('formEmail');
     var modal = document.querySelector('.modal.modal-key');
     var modalWrap = modal.querySelector('.global-wrap');
@@ -73,13 +71,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   if (document.getElementById('showDescription')) {
-    var showText = function showText() {
-      document.getElementById('showDescription').innerHTML = textInner;
-    };
-
     var text = document.getElementById('showDescription');
     var textInner = text.innerHTML;
-    text.innerHTML = text.innerHTML.substr(0, 500) + '</br><span onclick="showText()" style="color:#F59502; cursor: pointer; text-decoration:none;">Подробнее..</span>';
+
+    if (text.innerHTML.length > 500) {
+      text.innerHTML = text.innerHTML.substr(0, 500) + '</br><span id="showDescriptionClick" style="color:#F59502; cursor: pointer; text-decoration:none;">Подробнее...</span>';
+      document.getElementById('showDescriptionClick').addEventListener('click', function () {
+        document.getElementById('showDescription').innerHTML = textInner;
+      });
+    }
+  }
+
+  if (document.querySelector('.header__user')) {
+    var headerUser = document.querySelector('.header__user');
+    var headerUserMenu = document.querySelector('.header__user-menu');
+    headerUser.addEventListener('click', function () {
+      if (headerUserMenu.classList.contains('display')) {
+        headerUserMenu.classList.remove('display');
+        headerUserMenu.style.display = 'none';
+      } else {
+        headerUserMenu.classList.add('display');
+        headerUserMenu.style.display = 'block';
+      }
+    });
+    document.addEventListener('click', function (e) {
+      if (e.target !== headerUser && e.target.parentElement !== headerUser && e.target.parentElement.parentElement !== headerUser) {
+        headerUserMenu.classList.remove('d-block');
+      }
+    });
   } // if (document.querySelector('.modal'))
   // {
   //     const modal = document.querySelector('.modal-key')
@@ -123,3 +142,70 @@ document.addEventListener('DOMContentLoaded', function () {
   // }
 
 });
+"use strict";
+
+// main first screen
+if (document.querySelector('.swiper-home')) {
+  if (window.innerWidth > 992) {
+    document.querySelector('.swiper-home_pagination').remove();
+    var homeThumbs = new Swiper('.swiper-home_thumbs', {
+      spaceBetween: 15,
+      slidesPerView: 5,
+      loop: true,
+      centeredSlides: true,
+      slidesPerGroup: 1,
+      loopedSlides: 5
+    });
+    var homeTop = new Swiper('.swiper-home', {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      loopedSlides: 5,
+      loop: true,
+      // autoHeight: true,
+      thumbs: {
+        swiper: homeThumbs
+      }
+    });
+    homeTop.update();
+    homeThumbs.update();
+  } else {
+    document.querySelector('.swiper-home_thumbs').remove();
+
+    var _homeTop = new Swiper('.swiper-home', {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      loopedSlides: 5,
+      loop: true,
+      pagination: {
+        el: '.swiper-home_pagination',
+        type: 'bullets'
+      }
+    });
+
+    _homeTop.update();
+  }
+} // catalog show
+
+
+if (document.querySelector('.swiper-top')) {
+  var galleryThumbs = new Swiper('.swiper-thumbs', {
+    spaceBetween: 15,
+    slidesPerView: 6,
+    loop: true,
+    centeredSlides: true,
+    slidesPerGroup: 1,
+    loopedSlides: 5
+  });
+  var galleryTop = new Swiper('.swiper-top', {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    loopedSlides: 5,
+    loop: true,
+    autoHeight: true,
+    thumbs: {
+      swiper: galleryThumbs
+    }
+  });
+  galleryTop.update();
+  galleryThumbs.update();
+}

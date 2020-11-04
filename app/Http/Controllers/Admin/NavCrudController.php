@@ -96,8 +96,5 @@ class NavCrudController extends CrudController
         $this->setupCreateOperation();
     }
 
-//	public function moderate()
-//	{
-//		dd(12);
-//	}
+
 }

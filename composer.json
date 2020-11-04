@@ -9,8 +9,10 @@
     "license": "MIT",
     "require": {
         "php": "^7.3",
+        "ext-curl": "*",
         "backpack/crud": "4.1.*",
         "backpack/filemanager": "^1.1",
+        "consoletvs/charts": "6.*",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -23,8 +25,7 @@
         "qiwi/bill-payments-php-sdk": "^0.1.2",
         "socialiteproviders/facebook": "^1.0",
         "socialiteproviders/google": "^3.1",
-        "socialiteproviders/vkontakte": "^4.1",
-        "ext-curl": "*"
+        "socialiteproviders/vkontakte": "^4.1"
     },
     "require-dev": {
         "backpack/generators": "^3.1",

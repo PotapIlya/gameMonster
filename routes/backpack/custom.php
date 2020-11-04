@@ -39,10 +39,10 @@ Route::group(
 		}
 
 		// if not otherwise configured, setup the dashboard routes
-		if (config('backpack.base.setup_dashboard_routes')) {
-			Route::get('dashboard', 'AdminController@dashboard')->name('backpack.dashboard');
+//		if (config('backpack.base.setup_dashboard_routes')) {
+//			Route::get('dashboard', 'AdminController@dashboard')->name('backpack.dashboard');
 			Route::get('/', 'AdminController@redirect')->name('backpack');
-		}
+//		}
 
 		// if not otherwise configured, setup the "my account" routes
 		if (config('backpack.base.setup_my_account_routes')) {
@@ -70,6 +70,10 @@ Route::group([
     ),
     'namespace'  => 'App\Http\Controllers\Admin',
 ], function () { // custom admin routes
+
+    Route::get('/dashboard', 'InfoController@widgets')->name('backpack.dashboard');
+
+
     Route::crud('nav', 'NavCrudController');
     Route::crud('news', 'NewsCrudController');
     Route::crud('catalog', 'CatalogCrudController');
@@ -82,4 +86,5 @@ Route::group([
     Route::crud('lick', 'LickCrudController');
     Route::crud('proposal', 'ProposalCrudController');
     Route::crud('historypayments', 'HistoryPaymentsCrudController');
+//    Route::get('charts/weekly-users', 'Charts\WeeklyUsersChartController@response')->name('charts.weekly-users.index');
 }); // this should be the absolute last line of this file

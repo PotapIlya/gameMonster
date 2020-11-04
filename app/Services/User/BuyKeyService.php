@@ -4,6 +4,7 @@
 namespace App\Services\User;
 
 
+use App\Exceptions\BuyKeyException;
 use App\Models\Admin\Catalog;
 use App\Models\Admin\CatalogKey;
 use App\Models\User\ShoppingHistory;
@@ -13,6 +14,11 @@ use Auth;
 final class BuyKeyService
 {
 
+	/**
+	 * @param int $id
+	 * @return bool|\Illuminate\Http\RedirectResponse
+	 * @throws BuyKeyException
+	 */
 	public function BuyKey(int $id)
 	{
 
@@ -31,7 +37,8 @@ final class BuyKeyService
 
 			$newUserMoney = $userAbout->money - $item->price;
 			if ($newUserMoney < 0) {
-				throw new \Exception('no money');
+				return redirect()->back()->withErrors(['errors' => 'У вас недостаточно средств']);
+//				throw new \Exception('no money');
 			}
 			if (!UserAbout::where('user_id', Auth::id())->update(['money' => $newUserMoney])) {
 				throw new \Exception('money dont update');
@@ -53,7 +60,7 @@ final class BuyKeyService
 			}
 
 		} catch (\Throwable $e) {
-			dd($e);
+			throw new BuyKeyException();
 		}
 
 	}

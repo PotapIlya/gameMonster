@@ -3,8 +3,6 @@ if (document.querySelector('.myCrutch'))
 
     const myCrutch = document.querySelectorAll('.myCrutch');
 
-    console.log(myCrutch)
-
     let xx = () =>{
         myCrutch.forEach(x =>
         {
@@ -30,17 +28,18 @@ document.addEventListener('DOMContentLoaded', () =>
 {
 
 
-if (document.querySelector('.development'))
-{
-    const main = document.querySelector('main');
+    if (document.querySelector('.development'))
+    {
+        const main = document.querySelector('main');
 
-    main.style.paddingTop = 0;
-}
+        main.style.paddingTop = 0;
+    }
 
     // в пользователе октрывается модалка с ключем от игры
-    if (document.querySelectorAll('.showCart'))
+    if (document.querySelector('.showCart'))
     {
         const showCarts = document.querySelectorAll('.showCart');
+        console.log(showCarts)
         const email = document.getElementById('formEmail');
 
         const modal = document.querySelector('.modal.modal-key');
@@ -89,15 +88,45 @@ if (document.querySelector('.development'))
     }
 
 // в кариточке кнопка подробнее
-    if (document.getElementById('showDescription')) {
-        let text = document.getElementById('showDescription');
-        let textInner = text.innerHTML;
+    if (document.getElementById('showDescription'))
+    {
+        const text = document.getElementById('showDescription');
+        const textInner = text.innerHTML;
 
-        text.innerHTML = text.innerHTML.substr(0, 500) + '</br><span onclick="showText()" style="color:#F59502; cursor: pointer; text-decoration:none;">Подробнее..</span>';
+        if (text.innerHTML.length > 500)
+        {
+            text.innerHTML = text.innerHTML.substr(0, 500) + '</br><span id="showDescriptionClick" style="color:#F59502; cursor: pointer; text-decoration:none;">Подробнее...</span>';
 
-        function showText() {
-            document.getElementById('showDescription').innerHTML = textInner;
+            document.getElementById('showDescriptionClick').addEventListener('click', () =>
+            {
+                document.getElementById('showDescription').innerHTML = textInner;
+            });
         }
+    }
+
+
+    if ( document.querySelector('.header__user'))
+    {
+        const headerUser = document.querySelector('.header__user')
+        const headerUserMenu = document.querySelector('.header__user-menu')
+
+        headerUser.addEventListener('click', () =>
+        {
+            if (headerUserMenu.classList.contains('display'))
+            {
+                headerUserMenu.classList.remove('display')
+                headerUserMenu.style.display = 'none'
+            }
+            else{
+                headerUserMenu.classList.add('display')
+                headerUserMenu.style.display = 'block'
+            }
+        })
+        document.addEventListener('click', (e)=>{
+            if (e.target !== headerUser && e.target.parentElement !== headerUser && e.target.parentElement.parentElement !== headerUser){
+                headerUserMenu.classList.remove('d-block')
+            }
+        })
     }
 
 

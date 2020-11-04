@@ -3,7 +3,6 @@
 
 namespace App\Services\User;
 
-
 use App\Models\User;
 
 final class UpdatePersonalAreaService
@@ -17,7 +16,8 @@ final class UpdatePersonalAreaService
 	 */
 	public function updateInfoUser(int $userId, $request)
 	{
-		User::find($userId)->update([
+		// try - catch
+		User::findOrFail($userId)->update([
 			'login' => $request->input('login'),
 			'email' => $request->input('email'),
 			'phone' => $request->input('phone'),
@@ -40,7 +40,7 @@ final class UpdatePersonalAreaService
 
 		if (\Hash::check($request->input('oldPassword'), $user->password))
 		{
-			User::find($user->id)->update([
+			User::findOrFail($user->id)->update([
 				'password' => bcrypt($request->input('password'))
 			]);
 			return response()->json(['success' => 'success']);

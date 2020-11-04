@@ -5,8 +5,8 @@
  */
 
 require('./bootstrap');
-require('./script')
-require('./persone/scripts')
+// require('./script')
+// require('./persone/scripts')
 // require('./persone/swiper')
 
 window.Vue = require('vue');

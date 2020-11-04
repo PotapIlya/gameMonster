@@ -21,17 +21,18 @@ class BuyKeyController extends BasicUserController
 		parent::__construct();
 	}
 
+
 	/**
 	 * @param int $id
-	 * @param Request $request
 	 * @param BuyKeyService $buyKeyService
 	 * @return \Illuminate\Http\RedirectResponse
+	 * @throws \Exception
 	 */
-	public function buyKey(int $id, Request $request, BuyKeyService $buyKeyService)
+	public function buyKey(int $id, BuyKeyService $buyKeyService)
 	{
 		if ($buyKeyService->BuyKey($id))
 		{
-			return redirect()->back()->withInput(['success' => 'success']);
+			return redirect()->back()->with(['success' => 'Купленно']);
 		}
 
 

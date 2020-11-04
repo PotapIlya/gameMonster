@@ -6,7 +6,7 @@
                 <a href="/development" class="section__subtitle mb-2">Все игры</a>
             </div>
         </div>
-        <div class="row catalog__row pl-0 pl-sm-3 pl-xl-0 justify-content-center">
+        <div class="row catalog__row pl-0 pl-sm-3 pl-xl-0 ">
 
             @foreach($catalog as $item)
                 @include('base.include.catalogItem', ['item' => $item, 'show' => false])

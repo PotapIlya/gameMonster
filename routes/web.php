@@ -51,7 +51,25 @@ Route::get('/development', function ()
 
 
 
-Route::post('/qiwi', 'App\Http\Controllers\User\BalanceController@potap');
+Route::post('/payeer', function (Request $request)
+{
+	dd( $request );
+});
+
+Route::post('/error', function (Request $request)
+{
+	dd( $request );
+});
+
+
+Route::post('/status', function (Request $request)
+{
+	dd( $request );
+});
+
+
+
+Route::get('/qiwi', 'App\Http\Controllers\User\BalanceController@checkStatusBalance');
 //
 //
 //Route::get('/test', function ()

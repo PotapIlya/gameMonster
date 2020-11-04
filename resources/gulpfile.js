@@ -31,7 +31,10 @@ function modules (){
 
 
 function js (){
-    return src(["js/script.js"])
+    return src([
+        "js/script.js",
+        'js/swiper.js',
+    ])
         .pipe(babel({
             presets: ['@babel/env']
         }))

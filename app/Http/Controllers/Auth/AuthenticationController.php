@@ -60,6 +60,7 @@ class AuthenticationController extends Controller
 	{
 		if ($name === 'vk')
 		{
+			// try - catch
 			$user = Socialite::driver('vkontakte')->user();
 			return $this->AuthWithServices(
 				$user['id'],

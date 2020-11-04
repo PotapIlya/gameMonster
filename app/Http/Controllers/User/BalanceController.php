@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Exceptions\BalanceException;
+use App\Exceptions\BuyKeyException;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\User\BalanceRequest;
 use App\Models\Admin\HistoryPayments;
 use App\Models\Test;
 use App\Services\User\BalanceService;
 use Cookie;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -43,78 +47,84 @@ class BalanceController extends Controller
 
 
 	/**
-	 * @param Request $request
+	 * @param BalanceRequest $request
 	 * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+	 * @throws BuyKeyException
+	 * @throws \ErrorException
+	 * @throws \Qiwi\Api\BillPaymentsException
 	 */
-    public function store(Request $request)
+    public function store(BalanceRequest $request)
 	{
-		// rules
-		if (!is_null($request->input('qiwi')))
+		if ($request->input('name') === 'qiwi')
 		{
 			return $this->qiwi($request);
 		}
 
 
+
+		return redirect()->back();
 	}
 
 
+
+
+	/**
+	 * @param $request
+	 * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+	 * @throws BuyKeyException
+	 * @throws \ErrorException
+	 * @throws \Qiwi\Api\BillPaymentsException
+	 */
 	private function qiwi($request)
 	{
 
-		$key = 'eyJ2ZXJzaW9uIjoiUDJQIiwiZGF0YSI6eyJwYXlpbl9tZXJjaGFudF9zaXRlX3VpZCI6ImY4czdzdS0wMCIsInVzZXJfaWQiOiI3OTYxNDQwNTM5MCIsInNlY3JldCI6ImQ5MThhYTlhYzA2ZWIxMWE2YTQyZWYzN2Q3ZDdjOWRjNGIzNDFmOWY4NThlYTI5Mjg4ZDYxM2Q5YjgyMDNhMDkifX0=';
+		try
+		{
+			$billPayments = new \Qiwi\Api\BillPayments(config('payment.qiwi.secret_key'));
+			$billId = $billPayments->generateId();
 
-		$billPayments = new \Qiwi\Api\BillPayments($key);
-		$billId = $billPayments->generateId();
+			$response = $billPayments->createBill($billId,
+				[
+					'amount' => $request->input('money'),
+					'currency' => 'RUB',
+					'expirationDateTime' => $billPayments->getLifetimeByDay(1),
+					'account' => \Auth::id(),
+					'successUrl' => 'http://potap-test.fiery.host/',
+				]);
 
-//		dd($billPayments);
-		$response = $billPayments->createBill($billId,
-			[
-				'amount' => $request->input('money'),
-				'currency' => 'RUB',
-				'expirationDateTime' => $billPayments->getLifetimeByDay(1),
-				'account' => \Auth::id(),
-				'successUrl' => 'http://potap-test.fiery.host/',
+			$create = HistoryPayments::create([
+				'user_id' => Auth::id(),
+				'money' => $request->input('money'),
+				'billId' => $billId,
+				'type' => 'qiwi',
+				'status' => false,
 			]);
 
-		$create = HistoryPayments::create([
-			'user_id' => Auth::id(),
-			'money' => $request->input('money'),
-			'billId' => $billId,
-			'type' => 'qiwi',
-			'status' => false,
-		]);
+			if ($create)
+			{
+				return redirect($response['payUrl'])
+					->withCookie('billId', $billId)
+					->withCookie('id', Auth::id());
+			}
 
-		if ($create)
+
+		}
+		catch (ModelNotFoundException $exception)
 		{
-			return redirect($response['payUrl'])
-				->withCookie('billId', $billId)
-				->withCookie('id', \Auth::id());
+			throw new BuyKeyException();
 		}
 
 	}
-	public function mylog($data) {
-		$myFile = "./log.txt";
-		$fh = fopen($myFile, 'a') or die("can't open file");
-//		fwrite($fh, json_encode($data, JSON_PRETTY_PRINT));
-		fwrite($fh, implode(',', $data) );
-		fclose($fh);
-	}
-	public function potap(Request $request)
+
+	/**
+	 * @param BalanceService $balanceService
+	 * @throws \ErrorException
+	 * @throws \Qiwi\Api\BillPaymentsException
+	 * @throws BuyKeyException
+	 */
+	public function checkStatusBalance(BalanceService $balanceService)
 	{
-//		dd(12);
-//		\Log::error($request);
-		$this->mylog($request->all());
-
-//		dd(12);
-
-
-
-
-//		$create = Test::create([
-//			'name' => $_POST,
-//		]);
-
-//		$balanceService->addBalanceByCoolie();
+		$balanceService->addBalanceByCookie();
 	}
 
     /**

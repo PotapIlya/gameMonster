@@ -29,10 +29,10 @@ namespace App\Models\Admin{
  * @property int $early_access
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \App\Models\Admin\CatalogKey|null $allKey
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Admin\Category[] $category
  * @property-read int|null $category_count
- * @property-read \App\Models\Admin\CatalogKey|null $key
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Admin\CatalogKey[] $key
+ * @property-read int|null $key_count
  * @method static \Illuminate\Database\Eloquent\Builder|Catalog newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Catalog newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Catalog query()
@@ -98,6 +98,34 @@ namespace App\Models\Admin{
  * @method static \Illuminate\Database\Eloquent\Builder|Category whereUpdatedAt($value)
  */
 	class Category extends \Eloquent {}
+}
+
+namespace App\Models\Admin{
+/**
+ * App\Models\Admin\HistoryPayments
+ *
+ * @property int $id
+ * @property string|null $user_id
+ * @property string|null $money
+ * @property string|null $billId
+ * @property string|null $type
+ * @property int|null $status
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\User|null $person
+ * @method static \Illuminate\Database\Eloquent\Builder|HistoryPayments newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|HistoryPayments newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|HistoryPayments query()
+ * @method static \Illuminate\Database\Eloquent\Builder|HistoryPayments whereBillId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HistoryPayments whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HistoryPayments whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HistoryPayments whereMoney($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HistoryPayments whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HistoryPayments whereType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HistoryPayments whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HistoryPayments whereUserId($value)
+ */
+	class HistoryPayments extends \Eloquent {}
 }
 
 namespace App\Models\Admin{
@@ -286,6 +314,25 @@ namespace App\Models\Admin{
  * @method static \Illuminate\Database\Eloquent\Builder|Users whereUpdatedAt($value)
  */
 	class Users extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\Test
+ *
+ * @property int $id
+ * @property string $name
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Test newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Test newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Test query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Test whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Test whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Test whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Test whereUpdatedAt($value)
+ */
+	class Test extends \Eloquent {}
 }
 
 namespace App\Models{

@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="description">
     <meta name="gameMonster" content="gameMonster">
-
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <link href="{{ asset('/assets/css/modules.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets/css/app.css') }}" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-
 
 </head>
 <body>
@@ -84,77 +81,14 @@
 
     </div>
 
+    {{--    SWIPER  --}}
+    <script src="{{ asset('/assets/js/swiper-bundle.min.js') }}"></script>
 
-<script src="{{ asset('/assets/js/app.js') }}"></script>
-<script src="{{ asset('/assets/js/scripts.js') }}"></script>
+    {{--  VUE  --}}
+    <script src="{{ asset('/assets/js/app.js') }}"></script>
 
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <script>
-        if (document.querySelector('.swiper-top')){
-
-            const galleryThumbs = new Swiper('.swiper-thumbs', {
-                spaceBetween: 15,
-                slidesPerView: 6,
-                loop: true,
-                centeredSlides: true,
-                slidesPerGroup: 1,
-                loopedSlides: 5,
-            });
-            const galleryTop = new Swiper('.swiper-top', {
-                slidesPerView: 1,
-                spaceBetween: 10,
-                loopedSlides: 5,
-                loop:true,
-                thumbs: {
-                    swiper: galleryThumbs,
-                },
-            });
-            galleryTop.update();
-            galleryThumbs.update();
-        }
-
-        if (document.querySelector('.swiper-home')){
-            // console.log(window.innerWidth)
-            if (window.innerWidth > 992){
-                document.querySelector('.swiper-home_pagination').remove()
-                const homeThumbs = new Swiper('.swiper-home_thumbs', {
-                    spaceBetween: 15,
-                    slidesPerView: 5,
-                    loop: true,
-                    centeredSlides: true,
-                    slidesPerGroup: 1,
-                    loopedSlides: 5,
-
-                });
-                const homeTop = new Swiper('.swiper-home', {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    loopedSlides: 5,
-                    loop:true,
-                    thumbs: {
-                        swiper: homeThumbs,
-                    },
-                });
-                homeTop.update();
-                homeThumbs.update();
-            }else{
-                document.querySelector('.swiper-home_thumbs').remove()
-                const homeTop = new Swiper('.swiper-home', {
-                    slidesPerView: 1,
-                    spaceBetween: 10,
-                    loopedSlides: 5,
-                    loop:true,
-                    pagination: {
-                        el: '.swiper-home_pagination',
-                        type: 'bullets',
-                    },
-                });
-                homeTop.update();
-            }
-        }
-
-    </script>
+    {{--  CUSTOM SCRIPTS  --}}
+    <script src="{{ asset('/assets/js/scripts.js') }}"></script>
 
 
 </body>

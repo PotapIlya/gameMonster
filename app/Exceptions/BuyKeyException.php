@@ -4,7 +4,7 @@ namespace App\Exceptions;
 
 use Exception;
 
-class BalanceException extends Exception
+class BuyKeyException extends Exception
 {
 
 	/**
@@ -12,10 +12,7 @@ class BalanceException extends Exception
 	 */
 	public function render($request)
 	{
-
-		return abort(500);
+		return abort(503);
 //		dd($request);
-
 	}
-
 }

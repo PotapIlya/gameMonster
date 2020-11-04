@@ -4,7 +4,7 @@
 
         <div class="d-flex justify-content-between px-0 mx-0">
 
-            <div class="col-4 px-0 d-none d-lg-block">
+            <div class="col-4 px-0 d-none d-lg-block h-100">
                 <div>
                     <img class="home__img myCrutch" src="/assets/static/img/fScreen/head.png" alt=""/>
                 </div>
@@ -16,14 +16,14 @@
             <div class="col-12 col-lg-7 d-flex flex-column align-items-end px-0 px-sm-4 px-lg-0">
 
                 <div class="swiper-container swiper-home mb-auto mw-100">
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper d-flex align-items-center">
 
                         @foreach($slider as $item)
 {{--                            @dd($item)--}}
                             <a style="height: 550px" href="{{ $item->url }}" class="swiper-slide d-flex justify-content-end">
                                 <div class="w-100">
                                     <div class="swiper-slide-fixed"></div>
-                                    <img class="w-100" style="height: 100%"
+                                    <img class="w-100"
                                          src="/storage/{{ $item->img }}" alt="">
 {{--                                    <img class="w-100 d-block d-lg-none"--}}
 {{--                                         src="/storage/{{ $item->img }}" alt="">--}}
