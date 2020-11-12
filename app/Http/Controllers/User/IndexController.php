@@ -24,8 +24,6 @@ class IndexController extends BasicUserController
 	 */
     public function index()
     {
-
-
     	$user = Auth::user()->with('history.key', 'services')->first();
 		if (!$user){
 			return abort('500');

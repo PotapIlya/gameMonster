@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\User\BalanceRequest;
 use App\Models\Admin\HistoryPayments;
 use App\Models\Test;
+use App\Services\User\Balance\AddBalance;
+use App\Services\User\Balance\CheckBalance;
 use App\Services\User\BalanceService;
 use Cookie;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -53,11 +55,16 @@ class BalanceController extends Controller
 	 * @throws \ErrorException
 	 * @throws \Qiwi\Api\BillPaymentsException
 	 */
-    public function store(BalanceRequest $request)
+    public function store(BalanceRequest $request, AddBalance $addBalance)
 	{
+
 		if ($request->input('name') === 'qiwi')
 		{
-			return $this->qiwi($request);
+			return $addBalance->qiwi($request->all());
+		}
+		if ($request->input('name') === 'paypal')
+		{
+			return $addBalance->paypal($request->all());
 		}
 
 
@@ -67,64 +74,24 @@ class BalanceController extends Controller
 
 
 
-
 	/**
-	 * @param $request
-	 * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+	 * @param CheckBalance $checkBalance
 	 * @throws BuyKeyException
 	 * @throws \ErrorException
 	 * @throws \Qiwi\Api\BillPaymentsException
 	 */
-	private function qiwi($request)
+	public function checkStatusBalanceQiwi(CheckBalance $checkBalance)
 	{
-
-		try
-		{
-			$billPayments = new \Qiwi\Api\BillPayments(config('payment.qiwi.secret_key'));
-			$billId = $billPayments->generateId();
-
-			$response = $billPayments->createBill($billId,
-				[
-					'amount' => $request->input('money'),
-					'currency' => 'RUB',
-					'expirationDateTime' => $billPayments->getLifetimeByDay(1),
-					'account' => \Auth::id(),
-					'successUrl' => 'http://potap-test.fiery.host/',
-				]);
-
-			$create = HistoryPayments::create([
-				'user_id' => Auth::id(),
-				'money' => $request->input('money'),
-				'billId' => $billId,
-				'type' => 'qiwi',
-				'status' => false,
-			]);
-
-			if ($create)
-			{
-				return redirect($response['payUrl'])
-					->withCookie('billId', $billId)
-					->withCookie('id', Auth::id());
-			}
-
-
-		}
-		catch (ModelNotFoundException $exception)
-		{
-			throw new BuyKeyException();
-		}
-
+		$checkBalance->checkCookie();
 	}
 
 	/**
-	 * @param BalanceService $balanceService
-	 * @throws \ErrorException
-	 * @throws \Qiwi\Api\BillPaymentsException
-	 * @throws BuyKeyException
+	 * @param CheckBalance $checkBalance
 	 */
-	public function checkStatusBalance(BalanceService $balanceService)
+	public function checkStatusBalancePaypal(CheckBalance $checkBalance, Request $request)
 	{
-		$balanceService->addBalanceByCookie();
+		dd($request->all());
+		$checkBalance->checkCookie();
 	}
 
     /**

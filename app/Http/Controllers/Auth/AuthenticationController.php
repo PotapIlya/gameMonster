@@ -76,7 +76,6 @@ class AuthenticationController extends Controller
 			if ( $this->steam->validate() ) {
 
 				$user = $this->steam->getUserInfo();
-
 				return $this->AuthWithServices(
 					$user['steamID64'],
 					'steam',
@@ -89,7 +88,6 @@ class AuthenticationController extends Controller
 		if ($name === 'google')
 		{
 			$user = Socialite::driver('google')->user();
-
 			return $this->AuthWithServices(
 				(int) $user['sub'],
 				'google',

@@ -1,0 +1,662 @@
+
+
+//body{
+//    background: url("/assets/release/img/bg.jpg"), rgba(0,0,0,.9);
+//    background-blend-mode: multiply;
+//}
+
+.container{
+    @media only screen and (max-width:1500px){
+        padding: 0 28px;
+    }
+
+    @media only screen and (max-width:768px){
+        padding: 0 16px;
+    }
+}
+
+.swiper-container {
+
+    //width: 100%;
+}
+.swiper-slide {
+    //color: #000;
+    //text-align: center;
+    //font-size: 18px;
+    //background: #fff;
+}
+
+.cart{
+    margin-bottom: 1.5rem !important;
+}
+
+.cart-images{
+    width: 100%;
+
+    &__yellow{
+        color: $yellow;
+    }
+
+    &__additional-image{
+        padding-top: 13px;
+    }
+
+    &__main-image{
+        img{
+            width:  100%;
+            border-radius: 25px;
+            @media only screen and (max-width:768px){
+                border-radius: 20px;
+            }
+        }
+    }
+
+    &__additem{
+        max-width: 15.18%;
+        padding: 0;
+        img{
+            width: 100%;
+            border-radius: 10px;
+            @media only screen and (max-width:768px){
+                border-radius: 5px;
+            }
+        }
+
+    }
+}
+
+.game-description{
+    font-size: 18px;
+    line-height: 184%;
+}
+
+.right-wrap{
+    width: 100%;
+    padding-left: 54px;
+    @media only screen and (max-width:1200px){
+        padding-left: 0;
+    }
+    font-weight: 100;
+
+    &__title{
+        font-style: normal;
+        font-weight: bold;
+        font-size: 56px;
+        line-height: 106.69%;
+        margin-bottom: 15px;
+
+        @media only screen and (max-width:768px){
+            font-size: 33px;
+            line-height: 106.69%;
+        }
+    }
+
+
+    &__genre{
+        border-radius: 3.60038px;
+        //&:nth-child(2){
+        //    margin-left: 9px;
+        //    margin-right: 9px;
+        //}
+        //font-family: "Rubik";
+        font-size: 14px;
+        line-height: .75;
+        padding: 9px 15px;
+        background: $genre-bg;
+        color:$genre-color;
+    }
+
+    &__prices{
+        padding-top: 40px;
+        margin-bottom: 38px;
+        @media only screen and (max-width:768px){
+            padding-top: 15px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__get-keys{
+        margin-bottom: 27px;
+        @media only screen and (min-width:769px){
+            flex-direction: row !important;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__buy-key{
+        font-weight: 500;
+        font-size: 16px;
+        padding: 14px 24px;
+        background: $buy-key-bg;
+        border-radius: 6px;
+        color: $white;
+    }
+
+    &__random-key{
+        font-weight: 500;
+        font-size: 16px;
+        padding: 14px 24px;
+        background: $random-key;
+        border-radius: 6px;
+        color: $white;
+        margin-left: 17px;
+        @media only screen and (max-width:768px){
+            margin-left: 0;
+            margin-top: 10px;
+        }
+    }
+
+    &__actual{
+        font-weight: 500;
+        font-size: 38px;
+        line-height: 64.19%;
+
+        .current{
+            color: $opacityWhite;
+            font-weight: 100;
+        }
+    }
+
+    &__irrelevant{
+        text-decoration: line-through;
+        color:#A0A0A0;
+        font-weight: 300;
+        font-size: 29px;
+        line-height: 64.19%;
+        margin-left: 25px;
+    }
+
+    &__lists{
+        margin-bottom: 35px;
+        @media only screen and (max-width:768px){
+            margin-bottom: 10px;
+        }
+    }
+
+    &__tag{
+        font-size: 16px;
+        line-height: 200%;
+        text-align: right;
+        color:$tag-bg;
+    }
+
+    &__value{
+        padding-left: 26px;
+        font-size: 16px;
+        line-height: 200%;
+        text-align: left;
+        color:$white;
+
+        &-leng{
+            line-height: 20px;
+        }
+    }
+}
+
+.originacc{
+
+    &-wrap{
+        background: $black;
+        border-radius: 13px;
+
+        &__hd{
+            background: $originacc-hd-bg;
+            padding: 17px;
+            border-radius: 13px;
+            color: $origin-text;
+        }
+
+        &__title{
+            font-family: "Rubik";
+            font-size: 19px;
+            font-weight: 400;
+            //padding-left: 52px;
+            //background: url('/assets/release/img/origin.png') no-repeat 8% center;
+        }
+
+        &__price{
+            font-size: 21px;
+            font-weight: 300;
+            span{
+                font-size: 21px;
+                font-weight: 500;
+            }
+
+            &1{
+                font-size: 21px;
+                font-weight: 300;
+
+                span{
+                    font-size: 21px;
+                    font-weight: 500;
+                }
+
+                display: none;
+                @media only screen and (max-width:/* 768px */500px){
+                    display: block;
+                }
+            }
+
+            @media only screen and (max-width:/* 768px */500px){
+                display: none;
+            }
+            //padding-right: 25px;
+        }
+
+        &__games{
+            padding: 12px 28px 18px 52px;
+            @media only screen and (max-width:768px){
+                padding-left: 20px;
+            }
+        }
+
+        &__button{
+            font-family: "Rubik";
+            font-weight: 400;
+            transition: .3s;
+            cursor: pointer;
+
+            &.active{
+                color: $white;
+                font-weight: bold;
+                //border-bottom: 1px solid $white;
+                //font-weight: 700;
+            }
+
+            outline: none;
+            background: $transparent;
+            border: none;
+            color: $origin-text;
+            font-size: 19px;
+            line-height: 190.19%;
+        }
+
+        &__rent-acc{
+            color: $rent-acc;
+            font-weight: 500;
+            font-size: 19px;
+            line-height: 190.19%;
+            position: relative;
+            padding-right: 20px;
+
+            &:after{
+                content: url("/assets/release/img/rent-acc.png");
+                position: absolute;
+                top: 55%;
+                transform: translateY(-50%);
+                right: 3px;
+            }
+            //padding-right: 20px;
+        }
+    }
+}
+
+@media only screen and (min-width:1366px) and (max-width:1440px){
+    .originacc-wrap__button{
+        text-align: start;
+    }
+    .originacc-wrap__games{
+        flex-direction: column !important;
+    }
+}
+
+/* @media only screen and (width:1366px){
+    .originacc-wrap__games{
+        flex-direction: row !important;
+    }
+
+
+} */
+
+@media only screen and (max-width:1200px){
+    .right-wrap__title{
+        margin-top: 51px;
+        font-size: 56px;
+        line-height: 106.69%;
+    }
+}
+
+@media only screen and (width:768px){
+    .right-wrap__random-key{
+        margin-left: 17px;
+        margin-top: 0px;
+    }
+
+    .right-wrap__title{
+        width: 80%;
+    }
+
+    /* .originacc-wrap__games{
+        flex-direction: column !important;
+    } */
+}
+
+@media only screen and (max-width:767px){
+    .right-wrap__title{
+        margin-top: 11px;
+        font-size: 33px;
+        line-height: 106.69%;
+    }
+
+    .right-wrap__title{
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width:500px){
+    .right-wrap__title{
+        width: 87%;
+    }
+}
+
+@media only screen and (max-width:400px){
+    .right-wrap__title{
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///** OLD
+
+
+////body{
+////    background: url("/assets/release/img/bg.jpg"), rgba(0,0,0,.9);
+////    background-blend-mode: multiply;
+////}
+//
+//.container{
+//    @media only screen and (max-width:1500px){
+//        padding: 0 28px;
+//    }
+//
+//    @media only screen and (max-width:768px){
+//        padding: 0 16px;
+//    }
+//}
+//
+//.swiper-container {
+//
+//    //width: 100%;
+//}
+//.swiper-slide {
+//    //color: #000;
+//    //text-align: center;
+//    //font-size: 18px;
+//    //background: #fff;
+//}
+//
+//
+//.cart-images{
+//    width: 100%;
+//
+//    &__yellow{
+//        color: $yellow;
+//    }
+//
+//    &__additional-image{
+//        padding-top: 13px;
+//    }
+//
+//    &__main-image{
+//        img{
+//            width:  100%;
+//            border-radius: 25px;
+//            @media only screen and (max-width:768px){
+//                border-radius: 20px;
+//            }
+//        }
+//    }
+//
+//    &__additem{
+//        max-width: 15.18%;
+//        padding: 0;
+//        img{
+//            width: 100%;
+//            border-radius: 10px;
+//            @media only screen and (max-width:768px){
+//                border-radius: 5px;
+//            }
+//        }
+//
+//    }
+//}
+//
+//.game-description{
+//    font-size: 18px;
+//    line-height: 184%;
+//}
+//
+//.right-wrap{
+//    width: 100%;
+//    padding-left: 54px;
+//    @media only screen and (max-width:1200px){
+//        padding-left: 0;
+//    }
+//    font-weight: 100;
+//
+//    &__title{
+//        font-style: normal;
+//        font-weight: bold;
+//        font-size: 56px;
+//        line-height: 106.69%;
+//        margin-bottom: 15px;
+//
+//        @media only screen and (max-width:768px){
+//            font-size: 33px;
+//            line-height: 106.69%;
+//        }
+//    }
+//
+//
+//    &__genre{
+//        border-radius: 3.60038px;
+//        //&:nth-child(2){
+//        //    margin-left: 9px;
+//        //    margin-right: 9px;
+//        //}
+//        //font-family: "Rubik";
+//        font-size: 14px;
+//        line-height: .75;
+//        padding: 9px 15px;
+//        background: $genre-bg;
+//        color:$genre-color;
+//    }
+//
+//    &__prices{
+//        padding-top: 40px;
+//        margin-bottom: 38px;
+//        @media only screen and (max-width:768px){
+//            padding-top: 15px;
+//            margin-bottom: 20px;
+//        }
+//    }
+//
+//    &__get-keys{
+//        margin-bottom: 27px;
+//        @media only screen and (min-width:769px){
+//            flex-direction: row !important;
+//            margin-bottom: 10px;
+//        }
+//    }
+//
+//    &__buy-key{
+//        font-weight: 500;
+//        font-size: 16px;
+//        padding: 14px 24px;
+//        background: $buy-key-bg;
+//        border-radius: 6px;
+//        color: $white;
+//    }
+//
+//    &__random-key{
+//        font-weight: 500;
+//        font-size: 16px;
+//        padding: 14px 24px;
+//        background: $random-key;
+//        border-radius: 6px;
+//        color: $white;
+//        margin-left: 17px;
+//        @media only screen and (max-width:768px){
+//            margin-left: 0;
+//            margin-top: 10px;
+//        }
+//    }
+//
+//    &__actual{
+//        font-weight: 500;
+//        font-size: 38px;
+//        line-height: 64.19%;
+//
+//        .current{
+//            color: $opacityWhite;
+//            font-weight: 100;
+//        }
+//    }
+//
+//    &__irrelevant{
+//        text-decoration: line-through;
+//        color:#A0A0A0;
+//        font-weight: 300;
+//        font-size: 29px;
+//        line-height: 64.19%;
+//        margin-left: 25px;
+//    }
+//
+//    &__lists{
+//        margin-bottom: 35px;
+//        @media only screen and (max-width:768px){
+//            margin-bottom: 10px;
+//        }
+//    }
+//
+//    &__tag{
+//        font-size: 16px;
+//        line-height: 200%;
+//        text-align: right;
+//        color:$tag-bg;
+//    }
+//
+//    &__value{
+//        padding-left: 26px;
+//        font-size: 16px;
+//        line-height: 200%;
+//        text-align: left;
+//        color:$white;
+//
+//        &-leng{
+//            line-height: 20px;
+//        }
+//    }
+//}
+//
+//.originacc{
+//
+//    &-wrap{
+//        background: $black;
+//        border-radius: 13px;
+//
+//        &__hd{
+//            background: $originacc-hd-bg;
+//            padding: 17px;
+//            border-radius: 13px;
+//            color: $origin-text;
+//        }
+//
+//        &__title{
+//            font-family: "Rubik";
+//            font-size: 19px;
+//            font-weight: 400;
+//            //padding-left: 52px;
+//            //background: url('/assets/release/img/origin.png') no-repeat 8% center;
+//        }
+//
+//        &__price{
+//            font-size: 21px;
+//            font-weight: 300;
+//            span{
+//                font-size: 21px;
+//                font-weight: 500;
+//            }
+//
+//            &1{
+//                font-size: 21px;
+//                font-weight: 300;
+//
+//                span{
+//                font-size: 21px;
+//                font-weight: 500;
+//                }
+//
+//                display: none;
+//                @media only screen and (max-width:768px){
+//                    display: block;
+//                }
+//            }
+//
+//            @media only screen and (max-width:768px){
+//                display: none;
+//            }
+//            //padding-right: 25px;
+//        }
+//
+//        &__games{
+//            padding: 12px 28px 18px 52px;
+//            @media only screen and (max-width:768px){
+//                padding-left: 20px;
+//            }
+//        }
+//
+//        &__button{
+//            font-family: "Rubik";
+//            font-weight: 400;
+//            transition: .3s;
+//            cursor: pointer;
+//
+//            &.active{
+//                color: $white;
+//                font-weight: bold;
+//                //border-bottom: 1px solid $white;
+//                //font-weight: 700;
+//            }
+//
+//            outline: none;
+//            background: $transparent;
+//            border: none;
+//            color: $origin-text;
+//            font-size: 19px;
+//            line-height: 190.19%;
+//        }
+//
+//        &__rent-acc{
+//            color: $rent-acc;
+//            font-weight: 500;
+//            font-size: 19px;
+//            line-height: 190.19%;
+//            position: relative;
+//            padding-right: 20px;
+//
+//            &:after{
+//                content: url("/assets/release/img/rent-acc.png");
+//                position: absolute;
+//                top: 55%;
+//                transform: translateY(-50%);
+//                right: 3px;
+//            }
+//            //padding-right: 20px;
+//        }
+//    }
+//}

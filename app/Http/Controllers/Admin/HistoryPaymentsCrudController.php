@@ -50,6 +50,12 @@ class HistoryPaymentsCrudController extends CrudController
 			'attribute' => 'login', // foreign key attribute that is shown to user
 //			'model'     => "App\Models\Category", // foreign key model
 		]);
+//    	CRUD::addColumn([
+//    		'name' => 'created_at',
+//			'type'  => 'date',
+//			'label'  => 'Дата',
+//		 	'format' => 'H:m - d.m.Y', // us
+//		]);
 
 		CRUD::setFromDb(); // columns
 

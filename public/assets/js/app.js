@@ -2211,6 +2211,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SearchComponent",
   props: ['search'],
@@ -2218,7 +2220,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       searchInput: '',
       searchArray: [],
-      startArray: []
+      startArray: [],
+      showInput: false
     };
   },
   mounted: function mounted() {
@@ -2232,11 +2235,13 @@ __webpack_require__.r(__webpack_exports__);
 
       if (this.startArray.length && this.searchInput.length) {
         this.startArray.map(function (item) {
+          // console.log(item)
           if (item.title.toLowerCase().startsWith(_this.searchInput.toLowerCase())) {
             _this.searchArray.push(item);
           }
         });
-      }
+      } // console.log(this.searchArray)
+
     }
   },
   methods: {}
@@ -4028,31 +4033,57 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "header__search-label " }, [
-      _c("input", {
-        directives: [
-          {
-            name: "model",
-            rawName: "v-model",
-            value: _vm.searchInput,
-            expression: "searchInput"
-          }
-        ],
-        staticClass: "searchInput",
-        attrs: { type: "text", placeholder: "Поиск" },
-        domProps: { value: _vm.searchInput },
+    _c(
+      "div",
+      {
+        staticClass: "header__search-btn",
         on: {
-          input: function($event) {
-            if ($event.target.composing) {
-              return
-            }
-            _vm.searchInput = $event.target.value
+          click: function($event) {
+            _vm.showInput = true
           }
         }
-      })
-    ]),
+      },
+      [_c("button", { staticClass: "button" }, [_vm._v("Поиск")])]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: _vm.showInput,
+            expression: "showInput"
+          }
+        ],
+        staticClass: "header__search-label",
+        staticStyle: { display: "block" }
+      },
+      [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.searchInput,
+              expression: "searchInput"
+            }
+          ],
+          staticClass: "searchInput",
+          attrs: { type: "text", placeholder: "Поиск", autofocus: "" },
+          domProps: { value: _vm.searchInput },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.searchInput = $event.target.value
+            }
+          }
+        })
+      ]
+    ),
     _vm._v(" "),
     _c(
       "ul",
@@ -4141,7 +4172,7 @@ var render = function() {
               ]
             ),
             _vm._v(" "),
-            _vm._m(1, true)
+            _vm._m(0, true)
           ]
         )
       }),
@@ -4150,14 +4181,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "header__search-btn" }, [
-      _c("button", { staticClass: "button" }, [_vm._v("Поиск")])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

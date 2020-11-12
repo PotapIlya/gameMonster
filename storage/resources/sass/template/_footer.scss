@@ -1,0 +1,222 @@
+.footer{
+    .unit{
+        a{
+            font-family: "Rubik";
+        }
+    }
+
+    &__container{
+        max-width: 1440px !important;
+        background-color: rgb(0, 0, 0);
+        padding: 41px 32px;
+        border-radius: 36px;
+    }
+
+    ul{
+        list-style-type: none;
+        padding: 0;
+        margin-bottom: 0;
+
+        a{
+            color: #fff;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 125.69%;
+        }
+    }
+
+    &__element1{
+        margin-bottom: 28px;
+    }
+
+    &__element2{
+        li{
+            margin-bottom: 19px;
+        }
+    }
+
+    &__element3{
+        li{
+            margin-bottom: 19px;
+        }
+    }
+
+    &__element4{
+        li{
+            margin-bottom: 19px;
+        }
+    }
+
+    &__item-second{
+        margin-bottom: 22px;
+    }
+
+    &__element6{
+        .footer__search{
+            &-wrapper{
+                border-bottom: 1px solid #7C7C7C;
+                width: 180px;
+                height: 27px;
+            }
+
+            &-input{
+                &::placeholder{
+                    color: #CFCFCF !important;
+                }
+                outline: none;
+                background: #000;
+                border: none;
+                padding-bottom: 5px;
+            }
+        }
+    }
+
+    &__element7{
+        height: 35%;
+
+        .social__network{
+            margin-right: 18px;
+        }
+    }
+}
+
+@media only screen and (max-width:1920px){
+    .footer__row{
+        display: grid !important;
+        grid-template-columns: repeat(6, 1fr) ;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+                "e11 e3 e4 e5 e6 e7"
+                "e12 e3 e4 e5 e6 e7";
+
+        .element1{
+            grid-area: e11;
+        }
+        .element2{
+            grid-area: e12;
+        }
+        .element3{
+            grid-area: e3;
+        }
+        .element4{
+            grid-area: e4;
+        }
+        .element5{
+            grid-area: e5;
+        }
+        .element6{
+            grid-area: e6;
+            margin-left: 30px;
+        }
+        .element7{
+            grid-area: e7;
+        }
+    }
+}
+
+
+@media only screen and (max-width:1366px){
+    .footer__row{
+
+        .footer__element7{
+            width: 70%;
+            height: 35%;
+        }
+    }
+}
+
+
+
+
+@media only screen and (max-width:900px){
+    .footer__row{
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) ;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+                "a . d"
+                "b k e"
+                "c k f";
+
+        .element1{
+            grid-area: a;
+        }
+        .element2{
+            grid-area: b;
+        }
+        .element3{
+            grid-area: k;
+        }
+        .element4{
+            grid-area: c;
+        }
+        .element5{
+            grid-area: f;
+        }
+        .element6{
+            grid-area: e;
+            margin-left: 0;
+        }
+        .element7{
+            grid-area: d;
+            width: 100%;
+
+        }
+    }
+}
+@media only screen and (max-width:768px){
+    .footer__container{
+        padding: 53px 28px;
+    }
+}
+
+@media only screen and (max-width:650px){
+    .footer__container{
+        padding: 53px 16px;
+    }
+    .footer__row{
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) ;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas:
+                "a ."
+                "b c"
+                "d e"
+                "k k "
+                "f f ";
+
+        .element1{
+            grid-area: a;
+        }
+        .element2{
+            grid-area: b;
+        }
+        .element3{
+            grid-area: c;
+            margin-left: 30px;
+        }
+        .element4{
+            grid-area: d;
+            margin-top: -79px;
+        }
+        .element5{
+            grid-area: f;
+        }
+        .element6{
+            grid-area: k;
+            margin-bottom: 36px;
+        }
+        .element7{
+            grid-area: e;
+            margin-left: 30px !important;
+        }
+    }
+}
+
+
+
+
+
+
+
+

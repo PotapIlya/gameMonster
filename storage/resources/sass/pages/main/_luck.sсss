@@ -1,0 +1,102 @@
+.luck{
+	overflow: hidden;
+	&__item{
+		width: 430px;
+		height: 483px;
+		position: relative;
+
+		&:not(:last-child) {
+            margin-right: 73px;
+        }
+		&-img{
+			background-repeat: no-repeat;
+			height: 413px;
+			position: relative;
+			.rate{
+                position: absolute;
+                bottom: 10.65px;
+                left: 55%;
+                transform: translateX(-55%);
+                font-weight: normal;
+                padding: 7px 10px;
+            }
+
+			&-detail {
+                &_1 {
+                    top: -14px;
+                    left: -90px;
+                }
+                &_2 {
+                    top: -43px;
+                    left: -26px;
+                }
+                &_3 {
+                    top: -61px;
+                    left: -140px;
+                }
+            }
+        }
+		&-title, &-text, &-price, &-img-detail {
+            position: absolute;
+        }
+		&-title {
+                left: 28.5px;
+                bottom: 100px;
+            }
+		&-text {
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 23px;
+                left: 15.5px;
+                &:nth-child(3) {
+                    bottom: 46.5px
+                }
+                &:nth-child(2) {
+                    bottom: 82px
+                }
+                &:nth-child(1) {
+                    bottom: 117.5px
+                }
+            }
+            &-price {
+                left: 75%;
+                transform: translateX(-75%);
+                bottom: 22px;
+                display: flex;
+                white-space: nowrap;
+                align-items: center ;
+                .new {
+                    font-weight: bold;
+                    font-size: 29px;
+                    margin-right: 18px;
+                    line-height: 36px;
+                }
+                .old {
+                    font-size: 22px;
+                    color: #AAAAAA;
+                    line-height: 28px;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        width: 100%;
+                        height: 1px;
+                        background: #E3E3E3;
+                        border-radius: 100px;
+                        position: absolute;
+                        top: 50%;
+                        left: 0;
+                        transform: translateY(-50%);
+                    }
+                }
+            }
+
+    }
+	&__block{
+         margin-bottom: 38px;
+     }
+}
+
+.luck__item-img .rate {
+  z-index: 100
+}

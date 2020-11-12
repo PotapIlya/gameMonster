@@ -1,0 +1,73 @@
+$font-family-base: "Rubik", sans-serif, Arial, Helvetica;
+$grid-gutter-width: 24px !default;
+
+
+$pink: #B602F5;
+$black: #000;
+
+$transparent: transparent;
+
+$genre-bg: #1C1C1C;
+$random-key: #242424;
+$originacc-hd-bg: linear-gradient(0deg, #2B2B2B, #2B2B2B);
+$innput-text: #2c2c2c;
+$input-text: #2c2c2c;
+$greyBg: #161616;
+
+$blackModal: #0C0C0C;
+
+$buy-key-bg: linear-gradient(0deg, #F59502, #F59502);
+$rent-acc: #F59502;
+$yellow: #F59502;
+
+$orange: #F55902;
+$orangeButton: linear-gradient(108.47deg,#f59502 -.66%,#f55902 106.05%);
+
+$menu: #7C7C7C;
+
+$catalogColor: #D4D4D4;
+$white: #ffffff;
+$genre-color: #d5d5d5;
+$origin-text: #d0d0d0;
+$lightWhite: #eee;
+$opacityWhite: rgba(255, 255, 255, 0.8);
+$input-button: #bdb9b9;
+$innput-button: #bdb9b9;
+$tag-bg: #a0a0a0;
+$modal-bonus: rgba(193, 193, 193, 0.22);
+$footerSearch: #949494;
+
+$colorForgotPassword: #6A6A6A;
+
+$bgSearchLi: #101010;
+$colorSearchBtn: #c9c9c9;
+
+$colorFormLabel: #A5A5A5;
+
+$blue: #384CFF;
+
+
+$success: #0C9B2C;
+$error: #C21313;
+
+
+$btnMy: #757575;
+
+$catalogOldPrice: #AAAAAA;
+
+.blue{
+    color: $blue;
+}
+
+.pink{
+    background: $pink;
+}
+
+.black {
+    background: $black;
+}
+
+body {
+    background-color: #000205;
+    font-family: "Rubik", sans-serif;
+}

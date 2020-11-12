@@ -22,6 +22,7 @@
         "laravel/socialite": "^5.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.0",
+        "paypal/rest-api-sdk-php": "^1.14",
         "qiwi/bill-payments-php-sdk": "^0.1.2",
         "socialiteproviders/facebook": "^1.0",
         "socialiteproviders/google": "^3.1",
