@@ -2,146 +2,126 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="173ae8e2-6c61-4da4-b691-8c53b3dd54f3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Services/User/Balance/AddBalance.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/User/Balance/CheckBalance.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/static/img/pay/paypal.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/gulpfile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/js/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/js/components/auth/AuthLoginComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/js/components/auth/AuthRegisterComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/js/components/base/header/SearchComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/js/components/base/modal/ButtonsAuthComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/js/components/base/modal/ModelAuthComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/js/components/base/modal/include/LoginComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/js/components/base/modal/include/RegisterComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/js/components/user/my/AppComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/js/components/user/my/InfoComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/js/components/user/my/PasswordComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/js/persone/Modal.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/js/persone/scripts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/js/persone/swiper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/js/preAssets/js/scripts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/js/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/js/swiper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/lang/en/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/lang/en/pagination.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/lang/en/passwords.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/lang/en/validation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/lang/ru/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/lang/ru/pagination.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/lang/ru/passwords.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/lang/ru/validation-inline.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/lang/ru/validation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/app.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/assets/_app.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/assets/_custom-bootstrap.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/assets/_fonts.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/assets/_mixins.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/assets/_reset.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/assets/_tools.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/assets/_vars.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/modules/appModules.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/modules/bootstrap-grid.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/modules/swiper-bundle.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/pages/_app.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/pages/balance/_balance.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/pages/card/_cart.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/pages/main/_app.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/pages/main/_catalog.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/pages/main/_home.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/pages/main/_luck.sсss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/pages/main/_media.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/pages/main/_news.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/pages/main/_potapScss.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/pages/main/_proposal.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/pages/my/_my.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/template/_alert.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/template/_app.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/template/_development.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/template/_footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/template/_header.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/template/_media.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/sass/template/_modal.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/all/main/include/catalog.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/all/main/include/fScreen.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/all/main/include/luck.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/all/main/include/news.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/all/main/include/proposal.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/all/main/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/all/main/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/auth/login.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/auth/passwords/confirm.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/auth/passwords/email.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/auth/register.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/auth/verify.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/base/alert/error.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/base/alert/success.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/base/components/alert.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/base/include/catalogItem.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/base/modal/__modalBonus.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/base/modal/__modalForgotPassword.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/base/modal/modalAuth.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/base/modal/modalKey.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/errors/400.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/errors/401.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/errors/403.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/errors/404.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/errors/405.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/errors/408.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/errors/429.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/errors/500.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/errors/503.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/errors/development.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/errors/layout.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/layouts/include/footer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/layouts/include/header.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/user/addBalance/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/user/my/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/vendor/backpack/base/inc/topbar_left_content.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/vendor/backpack/base/inc/topbar_right_content.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/vendor/backpack/crud/buttons/moderate.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/vendor/backpack/crud/fields/test.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/ckeditor4.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/ckeditor4.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/common_scripts.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/common_styles.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/elfinder.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/elfinder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/filepicker.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/filepicker.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/standalonepopup.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/standalonepopup.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/tinymce.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/tinymce.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/tinymce4.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/tinymce4.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/tinymce5.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/tinymce5.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gameMonster.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gameMonster.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/HistoryPaymentsCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/HistoryPaymentsCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthenticationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthenticationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/BalanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/BalanceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/User/BalanceService.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/payment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/base/header/SearchComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/base/header/SearchComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/template/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/template/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/addBalance/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/addBalance/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/User/Balance/CheckBalance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/User/Balance/CheckBalance.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/gulpfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/js/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/js/components/auth/AuthLoginComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/js/components/auth/AuthRegisterComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/js/components/base/header/SearchComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/js/components/base/modal/ButtonsAuthComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/js/components/base/modal/ModelAuthComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/js/components/base/modal/include/LoginComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/js/components/base/modal/include/RegisterComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/js/components/user/my/AppComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/js/components/user/my/InfoComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/js/components/user/my/PasswordComponent.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/js/persone/Modal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/js/persone/scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/js/persone/swiper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/js/preAssets/js/scripts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/js/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/js/swiper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/lang/en/auth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/lang/en/pagination.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/lang/en/passwords.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/lang/en/validation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/lang/ru/auth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/lang/ru/pagination.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/lang/ru/passwords.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/lang/ru/validation-inline.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/lang/ru/validation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/app.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/assets/_app.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/assets/_custom-bootstrap.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/assets/_fonts.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/assets/_mixins.sass" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/assets/_reset.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/assets/_tools.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/assets/_vars.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/modules/appModules.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/modules/bootstrap-grid.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/modules/swiper-bundle.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/_app.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/balance/_balance.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/card/_cart.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/main/_app.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/main/_catalog.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/main/_home.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/main/_luck.sсss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/main/_media.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/main/_news.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/main/_potapScss.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/main/_proposal.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/my/_my.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/template/_alert.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/template/_app.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/template/_development.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/template/_footer.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/template/_header.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/template/_media.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/sass/template/_modal.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/all/main/include/catalog.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/all/main/include/fScreen.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/all/main/include/luck.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/all/main/include/news.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/all/main/include/proposal.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/all/main/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/all/main/show.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/auth/login.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/auth/passwords/confirm.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/auth/passwords/email.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/auth/passwords/reset.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/auth/register.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/auth/verify.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/base/alert/error.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/base/alert/success.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/base/components/alert.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/base/include/catalogItem.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/base/modal/__modalBonus.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/base/modal/__modalForgotPassword.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/base/modal/modalAuth.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/base/modal/modalKey.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/400.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/401.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/403.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/404.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/405.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/408.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/429.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/500.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/503.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/development.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/layout.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/layouts/app.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/layouts/include/footer.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/layouts/include/header.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/user/addBalance/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/user/my/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/backpack/base/inc/topbar_left_content.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/backpack/base/inc/topbar_right_content.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/backpack/crud/buttons/moderate.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/backpack/crud/fields/test.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/ckeditor4.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/ckeditor4.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/common_scripts.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/common_styles.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/elfinder.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/elfinder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/filepicker.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/filepicker.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/standalonepopup.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/standalonepopup.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/tinymce.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/tinymce.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/tinymce4.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/tinymce4.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/tinymce5.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/tinymce5.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -466,7 +446,8 @@
       <workItem from="1605121125495" duration="6044000" />
       <workItem from="1605182093403" duration="172000" />
       <workItem from="1605196240723" duration="4211000" />
-      <workItem from="1605202784290" duration="6162000" />
+      <workItem from="1605202784290" duration="10968000" />
+      <workItem from="1605253848555" duration="2341000" />
     </task>
     <servers />
   </component>

@@ -65,6 +65,13 @@ final class CheckBalance{
 //	}
 
 
+	/**
+	 * @param object $query
+	 * @return \Illuminate\Http\RedirectResponse
+	 * @throws BuyKeyException
+	 * @throws \ErrorException
+	 * @throws \Qiwi\Api\BillPaymentsException
+	 */
 	private function qiwi(object $query)
 	{
 
@@ -106,18 +113,35 @@ final class CheckBalance{
 		);
 		$paypal->setConfig(config('payment.paypal.settings'));
 
-
 		$paymentId = Cookie::get('billId');
-		$payerId = (int) Cookie::get('id');
-//		dd($paymentId, $payerId);
+		$payerId = Cookie::get('id');
+
+		$payment = Payment::get( Cookie::get('billId'), $paypal );
+		$execute = new PaymentExecution();
+		$execute->setPayerId($payerId);
+
+//		dd($payment->create($paypal)->getState());
+		try
+		{
+
+			dd($payment->create($paypal)->getState());
+		}
+		catch (\PayPal\Exception\PayPalConnectionException $ex) {
+
+//			dd( $ex->getCode() ); // Prints the Error Code
+			dd( $ex->getData(), 'getData' ); // Prints the detailed error message
+			die($ex);
+		} catch (\Exception $ex) {
+			dd($ex);
+		}
+		dd(12);
+
+		dd( $payment->execute($execute, $paypal) );
+
+
 
 		try{
-		    $payment = Payment::get($paymentId, $paypal);
 
-		    $execute = new PaymentExecution();
-		    $execute->setPayerId($payerId);
-
-		    dd( $payment->execute($execute, $paypal) );
 
 		    $result = $payment->execute($execute, $paypal);
 
@@ -137,70 +161,6 @@ final class CheckBalance{
 		       die($ex);
 		   }
 
-
-//		$ccToken->setCreditCardId(Cookie::get('billId'));
-
-//		$ccToken = Cookie::get('billId');
-//		$fi = new FundingInstrument();
-//		$fi->setCreditCardToken($ccToken);
-//
-//		$payer = new Payer();
-//		$payer->setPaymentMethod("credit_card");
-//		$payer->setFundingInstruments(array($fi));
-//
-//		// Specify the payment amount.
-//		$amount = new Amount();
-//		$amount->setCurrency('RUB');
-//		$amount->setTotal(10);
-//		// ###Transaction
-//		// A transaction defines the contract of a
-//		// payment - what is the payment for and who
-//		// is fulfilling it. Transaction is created with
-//		// a `Payee` and `Amount` types
-//		$transaction = new Transaction();
-//		$transaction->setAmount($amount);
-////		$transaction->setDescription($paymentDesc);
-//
-//		$payment = new Payment();
-//		$payment->setIntent("sale");
-//		$payment->setPayer($payer);
-//		$payment->setTransactions(array($transaction));
-
-//		try {
-//			dd( $payment->create($paypal) );
-//		} catch (PayPal\Exception\PayPalConnectionException $e) {
-//			echo $e->getData(); // This will print a JSON which has specific details about the error.
-//			exit;
-//		}
-//////////////////////////////////////////////////////////////////////////////////////////////////////
-///
-//		$payment_id = Cookie::get('billId');
-//
-//
-//		$payment = Payment::get($payment_id, $paypal);
-//
-//		dd($payment);
-
-//		$result = $payment->execute(new PaymentExecution(), $paypal);
-
-
-//		dd($payment->create($payment));
-//		dd(Payment::get($payment_id, $paypal));
-
-
-//		$payment = Payment::get($payment_id, $this->_api_context);
-//		$execution = new PaymentExecution();
-////		$execution->setPayerId($request->PayerID);
-//
-//		dd(12);
-//		/** Выполняем платёж **/
-//		$result = $payment->execute($execution, $this->_api_context);
-//
-//		if ($result->getState() == 'approved') {
-//			session()->flash('success', 'Платеж прошел успешно');
-//			return Redirect::route('/');
-//		}
-		dd(12);
 	}
 
 
