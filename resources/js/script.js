@@ -28,6 +28,24 @@ document.addEventListener('DOMContentLoaded', () =>
 {
 
 
+    if (document.querySelector('.mobile_menu'))
+    {
+        const btn = document.querySelector('.mobile_menu');
+        const menu = document.querySelector('.mobile_menu-form');
+
+        btn.addEventListener('click', () => {
+            if ( menu.classList.contains('grid') )
+            {
+                menu.style.display = 'none';
+            } else{
+                menu.style.display = 'grid';
+            }
+        })
+    }
+
+
+
+
     if (document.querySelector('.development'))
     {
         const main = document.querySelector('main');

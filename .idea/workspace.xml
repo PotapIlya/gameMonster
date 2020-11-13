@@ -2,126 +2,170 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="173ae8e2-6c61-4da4-b691-8c53b3dd54f3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/u0679512_test2.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/main/icon/fs.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/main/icon/inst.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/main/icon/telefram.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/main/icon/vk.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/main/icon/youtube.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/main/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/pay/gpay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/pay/iphonepay.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/pay/oval.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/pay/p.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/pay/visa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/pay/webmoney.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SliderCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SliderCrudController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/User/BalanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/User/BalanceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/User/Balance/AddBalance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/User/Balance/AddBalance.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/User/Balance/CheckBalance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/User/Balance/CheckBalance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/gulpfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/js/components/auth/AuthLoginComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/js/components/auth/AuthRegisterComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/js/components/base/header/SearchComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/js/components/base/modal/ButtonsAuthComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/js/components/base/modal/ModelAuthComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/js/components/base/modal/include/LoginComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/js/components/base/modal/include/RegisterComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/js/components/user/my/AppComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/js/components/user/my/InfoComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/js/components/user/my/PasswordComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/js/persone/Modal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/js/persone/scripts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/js/persone/swiper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/js/preAssets/js/scripts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/js/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/js/swiper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/lang/en/auth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/lang/en/pagination.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/lang/en/passwords.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/lang/en/validation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/lang/ru/auth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/lang/ru/pagination.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/lang/ru/passwords.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/lang/ru/validation-inline.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/lang/ru/validation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/app.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/assets/_app.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/assets/_custom-bootstrap.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/assets/_fonts.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/assets/_mixins.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/assets/_reset.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/assets/_tools.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/assets/_vars.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/modules/appModules.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/modules/bootstrap-grid.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/modules/swiper-bundle.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/_app.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/balance/_balance.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/card/_cart.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/main/_app.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/main/_catalog.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/main/_home.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/main/_luck.sсss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/main/_media.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/main/_news.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/main/_potapScss.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/main/_proposal.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/pages/my/_my.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/template/_alert.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/template/_app.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/template/_development.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/template/_footer.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/template/_header.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/template/_media.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/sass/template/_modal.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/all/main/include/catalog.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/all/main/include/fScreen.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/all/main/include/luck.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/all/main/include/news.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/all/main/include/proposal.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/all/main/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/all/main/show.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/auth/login.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/auth/passwords/confirm.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/auth/passwords/email.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/auth/passwords/reset.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/auth/register.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/auth/verify.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/base/alert/error.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/base/alert/success.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/base/components/alert.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/base/include/catalogItem.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/base/modal/__modalBonus.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/base/modal/__modalForgotPassword.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/base/modal/modalAuth.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/base/modal/modalKey.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/400.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/401.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/403.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/404.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/405.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/408.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/429.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/500.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/503.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/development.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/errors/layout.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/layouts/app.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/layouts/include/footer.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/layouts/include/header.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/user/addBalance/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/user/my/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/backpack/base/inc/topbar_left_content.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/backpack/base/inc/topbar_right_content.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/backpack/crud/buttons/moderate.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/backpack/crud/fields/test.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/ckeditor4.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/ckeditor4.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/common_scripts.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/common_styles.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/elfinder.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/elfinder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/filepicker.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/filepicker.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/standalonepopup.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/standalonepopup.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/tinymce.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/tinymce.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/tinymce4.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/tinymce4.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/tinymce5.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/resources/views/vendor/elfinder/tinymce5.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/img/pay/payeer.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/img/pay/payeer.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/apple.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/apple.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/arrow-down.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/arrow-down.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/bg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/bg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/card-image.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/card-image.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/facebook.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/facebook.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/game/PUBG.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/game/PUBG.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/game/Ubisoft.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/game/Ubisoft.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/game/bioshock.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/game/bioshock.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/game/crew.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/game/crew.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/game/csgo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/game/csgo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/game/daylight.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/game/daylight.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/game/doom.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/game/doom.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/game/farcry.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/game/farcry.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/game/fifa.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/game/fifa.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/game/nomansky.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/game/nomansky.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/game/steam.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/game/steam.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/game/titanfail.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/game/titanfail.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/game/watchdogs.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/game/watchdogs.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/game/witcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/game/witcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/google.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/google.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/gpay.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/gpay.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/header/avatar.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/header/avatar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/home/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/home/1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/home/11.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/home/11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/home/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/home/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/home/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/home/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/home/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/home/4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/home/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/home/5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/home/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/home/6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/home/7.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/home/7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/iphonepay.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/iphonepay.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/luck/common-title.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/luck/common-title.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/luck/common.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/luck/common.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/luck/common1.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/luck/common1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/luck/epic-title.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/luck/epic-title.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/luck/epic.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/luck/epic.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/luck/epic1.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/luck/epic1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/luck/legend-title.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/luck/legend-title.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/luck/legend.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/luck/legend.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/luck/legend1.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/luck/legend1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/mobileTest.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/mobileTest.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/news/Mask Group.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/news/Mask Group.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/news/arrow-right.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/news/arrow-right.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/news/division.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/news/division.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/news/flight.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/news/flight.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/news/flight1.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/news/flight1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/news/google-play.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/news/google-play.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/news/gotham.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/news/gotham.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/news/gotham2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/news/gotham2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/news/iphone.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/news/iphone.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/news/play.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/news/play.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/news/player.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/news/player.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/news/thumb.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/news/thumb.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/news/vedbmak.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/news/vedbmak.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/news/vedbmak1.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/news/vedbmak1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/news/video.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/news/video.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/news/witcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/news/witcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/origin.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/origin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/oval.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/oval.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/p.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/p.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/payeer.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/payeer.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/proposal/answer.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/proposal/answer.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/proposal/answer1.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/proposal/answer1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/proposal/bonus.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/proposal/bonus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/proposal/bonus1.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/proposal/bonus1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/proposal/button.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/proposal/button.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/proposal/referal.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/proposal/referal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/proposal/referal1.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/proposal/referal1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/rent-acc.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/rent-acc.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/search.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/search.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/static/copyKey.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/static/copyKey.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/static/developmentBg.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/static/developmentBg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/static/logoIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/static/logoIcon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/static/modalBonus.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/static/modalBonus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/steam.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/steam.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/test.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/test.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/visa.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/visa.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/vk.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/vk.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/assets/release/img/webmoney.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/assets/release/img/webmoney.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/arrow-down.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/arrow-down.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/bg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/card-image.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/card-image.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/game/PUBG.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/game/PUBG.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/game/Ubisoft.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/game/Ubisoft.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/game/bioshock.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/game/bioshock.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/game/crew.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/game/crew.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/game/csgo.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/game/csgo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/game/daylight.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/game/daylight.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/game/doom.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/game/doom.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/game/farcry.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/game/farcry.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/game/fifa.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/game/fifa.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/game/nomansky.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/game/nomansky.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/game/steam.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/game/steam.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/game/titanfail.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/game/titanfail.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/game/watchdogs.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/game/watchdogs.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/game/witcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/game/witcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/gpay.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/gpay.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/home/head.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/home/head.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/iphonepay.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/iphonepay.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/luck/common.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/luck/common.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/luck/epic.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/luck/epic.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/luck/legend.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/luck/legend.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/news/Mask Group.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/news/Mask Group.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/news/apple.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/news/apple.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/news/arrow-right.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/news/arrow-right.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/news/cosmos.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/news/cosmos.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/news/division.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/news/division.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/news/flight.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/news/flight.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/news/google-play.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/news/google-play.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/news/gotham.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/news/gotham.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/news/gotham2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/news/gotham2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/news/iphone.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/news/iphone.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/news/player.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/news/player.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/news/vebmack.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/news/vebmack.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/news/video.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/news/video.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/news/witcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/news/witcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/origin.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/origin.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/oval.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/oval.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/p.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/p.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/payeer.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/payeer.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/proposal/answer.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/proposal/answer.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/proposal/bonus.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/proposal/bonus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/proposal/mobileAnswer.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/proposal/mobileAnswer.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/proposal/mobileBonus.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/proposal/mobileBonus.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/proposal/mobileReferal.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/proposal/mobileReferal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/proposal/referal.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/proposal/referal.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/rent-acc.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/rent-acc.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/search.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/search.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/services/facebook.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/services/facebook.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/services/google.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/services/google.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/services/steam.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/services/steam.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/services/vk.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/services/vk.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/visa.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/visa.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/static/oldImage/img/webmoney.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/static/12/img/webmoney.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/preAssets/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/preAssets/js/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/pages/main/_home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/main/_home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/pages/main/_proposal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/main/_proposal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/include/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/include/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/include/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/include/header.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,24 +374,24 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/static/img/pay" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/static/img/main" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\gameMonster\public\assets\static\img\main" />
+      <recent name="C:\OpenServer\domains\gameMonster\public\assets\static\img\pay" />
+      <recent name="C:\OpenServer\domains\gameMonster\public\assets\static\img\main\icon" />
+      <recent name="C:\OpenServer\domains\gameMonster\docs" />
+      <recent name="C:\OpenServer\domains\gameMonster\public" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\OpenServer\domains\gameMonster\public" />
       <recent name="C:\OpenServer\domains\gameMonster\app\Models\Admin" />
       <recent name="C:\OpenServer\domains\gameMonster\app\Models\User" />
       <recent name="C:\OpenServer\domains\gameMonster\app\Http\Controllers\Auth\Trait" />
       <recent name="C:\OpenServer\domains\gameMonster\resources\js\components\base\modal" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\OpenServer\domains\gameMonster\public\assets\static\img\pay" />
-      <recent name="C:\OpenServer\domains\gameMonster\public" />
-      <recent name="C:\OpenServer\domains\gameMonster\public\assets\js" />
-      <recent name="C:\OpenServer\domains\gameMonster\public\assets\static\img\main\icon" />
-      <recent name="C:\OpenServer\domains\gameMonster\public\assets\static\img\main" />
     </key>
   </component>
   <component name="RunManager">
@@ -447,7 +491,10 @@
       <workItem from="1605182093403" duration="172000" />
       <workItem from="1605196240723" duration="4211000" />
       <workItem from="1605202784290" duration="10968000" />
-      <workItem from="1605253848555" duration="2341000" />
+      <workItem from="1605253848555" duration="2443000" />
+      <workItem from="1605260454450" duration="1253000" />
+      <workItem from="1605276409638" duration="3166000" />
+      <workItem from="1605302527367" duration="3197000" />
     </task>
     <servers />
   </component>
@@ -497,10 +544,10 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="795" y="478" key="NewPhpFileDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1605106837771" />
-    <state x="461" y="186" key="SettingsEditor" timestamp="1605205485027">
+    <state x="461" y="186" key="SettingsEditor" timestamp="1605277790412">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
-    <state x="461" y="186" key="SettingsEditor/0.30.1920.1050@0.30.1920.1050" timestamp="1605205485027" />
+    <state x="461" y="186" key="SettingsEditor/0.30.1920.1050@0.30.1920.1050" timestamp="1605277790412" />
     <state width="623" height="498" key="SwitcherDM" timestamp="1604252629097">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>

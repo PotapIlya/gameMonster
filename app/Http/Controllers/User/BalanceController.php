@@ -90,8 +90,7 @@ class BalanceController extends Controller
 	 */
 	public function checkStatusBalancePaypal(CheckBalance $checkBalance, Request $request)
 	{
-		dd($request->all());
-		$checkBalance->checkCookie();
+		$checkBalance->checkCookie($request->all());
 	}
 
     /**

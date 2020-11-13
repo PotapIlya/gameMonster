@@ -3,16 +3,26 @@
         <div class="footer__row">
 
             <div class="footer__element1 element1 unit">
-                <img src="/assets/static/oldImage/assets/release/img/logo.svg" alt="Game Monster"/>
+                <img src="/assets/static/img/main/logo.svg" alt="Game Monster"/>
             </div>
 
-            <ul class="footer__element2 element2 unit">
-                <li class="footer__item"><a class="footer__link" href="#!">Все товары</a></li>
-                <li class="footer__item"><a class="footer__link" href="#!">Рулетка</a></li>
-                <li class="footer__item"><a class="footer__link" href="#!">Акции</a></li>
-                <li class="footer__item"><a class="footer__link" href="#!">Гарантии</a></li>
-                <li class="footer__item"><a class="footer__link" href="#!">Контакты</a></li>
-            </ul>
+            @if($basic['nav'])
+
+                <ul class="footer__element2 element2 unit">
+
+                    @foreach($basic['nav'] as $li)
+
+                    <li class="footer__item"><a class="footer__link" href="{{ $li->url }}">{{ $li->name }}</a></li>
+
+                    @endforeach
+
+{{--                    <li class="footer__item"><a class="footer__link" href="#!">Рулетка</a></li>--}}
+{{--                    <li class="footer__item"><a class="footer__link" href="#!">Акции</a></li>--}}
+{{--                    <li class="footer__item"><a class="footer__link" href="#!">Гарантии</a></li>--}}
+{{--                    <li class="footer__item"><a class="footer__link" href="#!">Контакты</a></li>--}}
+                </ul>
+
+            @endif
             <ul class="footer__element3 element3 unit">
                 <li class="footer__item"><a class="footer__link" href="#!">Steam</a></li>
                 <li class="footer__item"><a class="footer__link" href="#!">Origin</a></li>
@@ -42,21 +52,19 @@
                 </div>
                 <div class="footer__icons-block footer__item-second">
                     <div class="d-flex align-items-center mb-3">
-                        <img class="mr-2" src="/assets/static/oldImage/img/webmoney.png" alt="Webmoney"/>
-                        <img class="mr-2" src="/assets/static/oldImage/img/p.png" alt="P"/>
-                        <img class="mr-2" src="/assets/static/oldImage/img/visa.png" alt="Visa"/>
-                        <img class="mr-2" src="/assets/static/oldImage/img/oval.png" alt=""/>
+                        <img class="mr-2" src="/assets/static/img/pay/webmoney.png" alt="Webmoney"/>
+                        <img class="mr-2" src="/assets/static/img/pay/p.png" alt="P"/>
+                        <img class="mr-2" src="/assets/static/img/pay/visa.png" alt="Visa"/>
+                        <img class="mr-2" src="/assets/static/img/pay/oval.png" alt=""/>
                     </div>
                     <div class="footer__icons">
-                        <img class="mr-2" src="/assets/static/oldImage/img/gpay.png" alt="G Pay"/>
-                        <img class="mr-2" src="/assets/static/oldImage/img/iphonepay.png" alt="Iphone Pay"/>
-                        <img class="mr-2" src="/assets/static/oldImage/img/payeer.png" alt="Payeer"/>
+                        <img class="mr-2" src="/assets/static/img/pay/gpay.png" alt="G Pay"/>
+                        <img class="mr-2" src="/assets/static/img/pay/iphonepay.png" alt="Iphone Pay"/>
+                        <img class="mr-2" src="/assets/static/img/pay/payeer.png" alt="Payeer"/>
                     </div>
                 </div>
                 <div class="footer__copy" style="color: #777777;">© 2020</div>
             </div>
-
-
 
 
             <ul class="footer__element6 element6 unit" style="color: #fff;">
@@ -95,27 +103,27 @@
             <div class="footer__element7 unit d-flex flex-wrap element7 align-items-center align-items-md-start ml-auto">
                 <div class="social__network">
                     <a href="#" class="service1">
-                        <img src="/assets/static/oldImage/img/services/steam.png" alt="steam">
+                        <img src="/assets/static/img/main/icon/fs.svg" alt="steam">
                     </a>
                 </div>
                 <div class="social__network">
                     <a href="#" class="service1">
-                        <img src="/assets/static/oldImage/img/services/steam.png" alt="steam">
+                        <img src="/assets/static/img/main/icon/vk.svg" alt="steam">
                     </a>
                 </div>
                 <div class="social__network">
                     <a href="#" class="service1">
-                        <img src="/assets/static/oldImage/img/services/steam.png" alt="steam">
+                        <img src="/assets/static/img/main/icon/inst.svg" alt="steam">
                     </a>
                 </div>
                 <div class="social__network">
                     <a href="#" class="service1">
-                        <img src="/assets/static/oldImage/img/services/steam.png" alt="steam">
+                        <img src="/assets/static/img/main/icon/youtube.svg" alt="steam">
                     </a>
                 </div>
                 <div class="social__network">
                     <a href="#" class="service1">
-                        <img src="/assets/static/oldImage/img/services/steam.png" alt="steam">
+                        <img src="/assets/static/img/main/icon/telefram.svg" alt="steam">
                     </a>
                 </div>
             </div>

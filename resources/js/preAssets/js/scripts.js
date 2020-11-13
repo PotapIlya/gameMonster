@@ -21,6 +21,18 @@ if (document.querySelector('.myCrutch')) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  if (document.querySelector('.mobile_menu')) {
+    var btn = document.querySelector('.mobile_menu');
+    var menu = document.querySelector('.mobile_menu-form');
+    btn.addEventListener('click', function () {
+      if (menu.classList.contains('grid')) {
+        menu.style.display = 'none';
+      } else {
+        menu.style.display = 'grid';
+      }
+    });
+  }
+
   if (document.querySelector('.development')) {
     var main = document.querySelector('main');
     main.style.paddingTop = 0;

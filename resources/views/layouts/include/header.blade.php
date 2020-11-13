@@ -12,7 +12,7 @@
 
                 </div>
                 <a href="/" class="header__logo">
-                    <img class="" src="/assets/static/oldImage/assets/release/img/logo.svg" alt="Game Monster"/>
+                    <img class="" src="/assets/static/img/main/logo.svg" alt="Game Monster"/>
                 </a>
             </div>
             <div class="d-xl-flex flex-row flex-wrap flex-xl-nowrap flex-column flex-xl-row align-items-center justify-content-between w-100 mobile_menu-form">

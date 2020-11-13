@@ -6,6 +6,7 @@ namespace App\Services\User\Balance;
 use App\Exceptions\BuyKeyException;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\HistoryPayments;
+use http\Params;
 use Illuminate\Http\Request;
 use PayPal\Api\FundingInstrument;
 use PayPal\Rest\ApiContext;
@@ -30,7 +31,7 @@ use Auth;
 final class CheckBalance{
 
 
-	public function checkCookie()
+	public function checkCookie(array $array = null)
 	{
 		if ( !is_null(Cookie::get('billId')) && Cookie::get('billId')
 			&&
@@ -44,7 +45,7 @@ final class CheckBalance{
 
 			if ($query && $query->type === 'paypal')
 			{
-				return $this->paypal($query);
+				return $this->paypal($query, $array);
 			}
 			if ($query && $query->type === 'qiwi')
 			{
@@ -104,8 +105,16 @@ final class CheckBalance{
 	}
 
 
-	private function paypal(object $query)
+	/**
+	 * @param object $query
+	 * @param array $array
+	 */
+	private function paypal(object $query, ?array $array)
 	{
+//		if ($array && is_null($array))
+//		{
+//			throw new BuyKeyException();
+//		}
 
 		$paypal = new ApiContext(new OAuthTokenCredential(
 				config('payment.paypal.client_id'),
@@ -118,19 +127,22 @@ final class CheckBalance{
 
 		$payment = Payment::get( Cookie::get('billId'), $paypal );
 		$execute = new PaymentExecution();
-		$execute->setPayerId($payerId);
+		$execute->setPayerId(Cookie::get('id'));
 
 //		dd($payment->create($paypal)->getState());
 		try
 		{
 
-			dd($payment->create($paypal)->getState());
+			$result = $payment->create($paypal)->getState();
+
+			dd($payment->create($paypal)->getState(), 12);
 		}
 		catch (\PayPal\Exception\PayPalConnectionException $ex) {
 
 //			dd( $ex->getCode() ); // Prints the Error Code
 			dd( $ex->getData(), 'getData' ); // Prints the detailed error message
-			die($ex);
+
+
 		} catch (\Exception $ex) {
 			dd($ex);
 		}

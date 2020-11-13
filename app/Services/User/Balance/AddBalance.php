@@ -30,6 +30,76 @@ final class AddBalance{
 	public function paypal(array $array)
 	{
 
+//		$paypal = new ApiContext(new OAuthTokenCredential(
+//				config('payment.paypal.client_id'),
+//				config('payment.paypal.secret'))
+//		);
+//		$paypal->setConfig(config('payment.paypal.settings'));
+//
+//		$amountToBePaid = 100;
+//		$payer = new Payer();
+//		$payer->setPaymentMethod('paypal');
+//
+//		$item_1 = new Item();
+//		$item_1->setName('Mobile Payment') /** название элемента **/
+//		->setCurrency('RUB')
+//			->setQuantity(1)
+//			->setPrice($amountToBePaid); /** цена **/
+//
+//		$item_list = new ItemList();
+//		$item_list->setItems(array($item_1));
+//
+//		$amount = new Amount();
+//		$amount->setCurrency('RUB')
+//			->setTotal($amountToBePaid);
+//
+//		$redirect_urls = new RedirectUrls();
+//		/** Укажите обратный URL **/
+//		$redirect_urls->setReturnUrl( route('statusPayment') )
+//			->setCancelUrl( route('statusPayment') );
+//
+//		$transaction = new Transaction();
+//		$transaction->setAmount($amount)
+//			->setItemList($item_list)
+//			->setDescription('Описание транзакции');
+//
+//		$payment = new Payment();
+//		$payment->setIntent('Sale')
+//			->setPayer($payer)
+//			->setRedirectUrls($redirect_urls)
+//			->setTransactions(array($transaction));
+//		try {
+//			$payment->create($paypal);
+//		} catch (\Exception $ex) {
+//			if (\Config::get('app.debug')) {
+//				\Session::put('error', 'Таймаут соединения');
+//				return Redirect::route('/');
+//			} else {
+//				\Session::put('error', 'Возникла ошибка, извините за неудобство');
+//				return Redirect::route('/');
+//			}
+//		}
+//
+//		foreach ($payment->getLinks() as $link) {
+//			if ($link->getRel() == 'approval_url') {
+//				$redirect_url = $link->getHref();
+////				dd($redirect_url);
+//				return redirect( $redirect_url );
+//			}
+//		}
+//
+//		/** добавляем ID платежа в сессию **/
+//		\Session::put('paypal_payment_id', $payment->getId());
+//
+//		if (isset($redirect_url)) {
+//			/** редиректим в paypal **/
+//			return Redirect::away($redirect_url);
+//		}
+//
+//		\Session::put('error', 'Произошла неизвестная ошибка');
+//		return Redirect::route('/');
+
+
 		$paypal = new ApiContext(new OAuthTokenCredential(
 				config('payment.paypal.client_id'),
 				config('payment.paypal.secret'))
