@@ -20,10 +20,10 @@ class BalanceController extends Controller
 {
 
 
-//	public function __construct()
-//	{
-//		parent::__construct();
-//	}
+	public function __construct()
+	{
+		parent::__construct();
+	}
 
 	/**
      * Display a listing of the resource.
@@ -66,6 +66,10 @@ class BalanceController extends Controller
 		{
 			return $addBalance->paypal($request->all());
 		}
+		if ($request->input('name') === 'payeer')
+		{
+			return $addBalance->payeer($request->all());
+		}
 
 
 
@@ -73,25 +77,20 @@ class BalanceController extends Controller
 	}
 
 
-
 	/**
+	 * @param $name
 	 * @param CheckBalance $checkBalance
+	 * @param Request $request
+	 * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|int|string|void
 	 * @throws BuyKeyException
 	 * @throws \ErrorException
 	 * @throws \Qiwi\Api\BillPaymentsException
 	 */
-	public function checkStatusBalanceQiwi(CheckBalance $checkBalance)
+	public function checkStatusBalance($name, CheckBalance $checkBalance, Request $request)
 	{
-		$checkBalance->checkCookie();
+		return $checkBalance->checkCookie($name, $request->all());
 	}
 
-	/**
-	 * @param CheckBalance $checkBalance
-	 */
-	public function checkStatusBalancePaypal(CheckBalance $checkBalance, Request $request)
-	{
-		$checkBalance->checkCookie($request->all());
-	}
 
     /**
      * Display the specified resource.

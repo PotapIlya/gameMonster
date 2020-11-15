@@ -69,11 +69,11 @@ Route::post('/status', function (Request $request)
 
 
 
-Route::get('/qiwi/status', 'App\Http\Controllers\User\BalanceController@checkStatusBalanceQiwi')->name('statusQiwi');
+//Route::get('/qiwi/status', 'App\Http\Controllers\User\BalanceController@checkStatusBalanceQiwi')->name('statusQiwi');
 
 
 //Route::post('/payment', ['as' => 'payment', 'uses' => 'PaymentController@payWithpaypal']);
-Route::get('/paypal/status', 'App\Http\Controllers\User\BalanceController@checkStatusBalancePaypal')->name('statusPayment');
+Route::get('/{name}/status', 'App\Http\Controllers\User\BalanceController@checkStatusBalance')->name('statusPayment');
 
 
 

@@ -4071,7 +4071,7 @@ var render = function() {
             }
           ],
           staticClass: "searchInput",
-          attrs: { type: "text", placeholder: "Поиск", autofocus: "" },
+          attrs: { type: "text", placeholder: "Seatch", autofocus: "" },
           domProps: { value: _vm.searchInput },
           on: {
             input: function($event) {

@@ -19,6 +19,10 @@ return [
 			'log.FileName' => storage_path() . '/logs/paypal.log',
 			'log.LogLevel' => 'ERROR'
 		]
+	],
+
+	'payeer' => [
+		'secret_key' => env('PAYEER_KEY')
 	]
 
 

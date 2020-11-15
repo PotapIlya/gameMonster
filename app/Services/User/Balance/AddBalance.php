@@ -19,8 +19,48 @@ use PayPal\Api\Payment;
 use Auth;
 
 
-final class AddBalance{
+final class AddBalance
+{
 
+
+	/**
+	 * @param array $array
+	 * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+	 * @throws BuyKeyException
+	 */
+	public function payeer(array $array)
+	{
+		$m_shop =  '1208424255';
+		$m_orderid = md5(rand(1, getrandmax()).date('d.m.Y:g:i').rand(1, getrandmax()));
+		$m_amount = number_format($array['money'], 2, '.', '');
+		$m_curr = 'RUB';
+		$m_desc = base64_encode('Пополнение баланса');
+		$m_key = config('payment.payeer.secret_key');
+
+
+		$sign = strtoupper(hash('sha256', implode(':', [
+			$m_shop,
+			$m_orderid,
+			$m_amount,
+			$m_curr,
+			$m_desc,
+			$m_key
+		])));
+
+		$link = 'https://payeer.com/merchant/?m_shop='.$m_shop.'&m_orderid='.$m_orderid.'&m_amount='.$m_amount.'&m_curr='.$m_curr.'&m_desc='.$m_desc.'&m_sign='.$sign;
+
+
+		if($m_amount !== 0)
+		{
+			if ( $this->createRecord( (int) $array['money'], $m_orderid, 'payeer' ) )
+			{
+//				dd($sign);
+				return redirect( $link )
+					->withCookie('billId', $m_orderid )
+					->withCookie('id', Auth::id());
+			}
+		}
+	}
 
 	/**
 	 * @param array $array
@@ -29,76 +69,6 @@ final class AddBalance{
 	 */
 	public function paypal(array $array)
 	{
-
-//		$paypal = new ApiContext(new OAuthTokenCredential(
-//				config('payment.paypal.client_id'),
-//				config('payment.paypal.secret'))
-//		);
-//		$paypal->setConfig(config('payment.paypal.settings'));
-//
-//		$amountToBePaid = 100;
-//		$payer = new Payer();
-//		$payer->setPaymentMethod('paypal');
-//
-//		$item_1 = new Item();
-//		$item_1->setName('Mobile Payment') /** название элемента **/
-//		->setCurrency('RUB')
-//			->setQuantity(1)
-//			->setPrice($amountToBePaid); /** цена **/
-//
-//		$item_list = new ItemList();
-//		$item_list->setItems(array($item_1));
-//
-//		$amount = new Amount();
-//		$amount->setCurrency('RUB')
-//			->setTotal($amountToBePaid);
-//
-//		$redirect_urls = new RedirectUrls();
-//		/** Укажите обратный URL **/
-//		$redirect_urls->setReturnUrl( route('statusPayment') )
-//			->setCancelUrl( route('statusPayment') );
-//
-//		$transaction = new Transaction();
-//		$transaction->setAmount($amount)
-//			->setItemList($item_list)
-//			->setDescription('Описание транзакции');
-//
-//		$payment = new Payment();
-//		$payment->setIntent('Sale')
-//			->setPayer($payer)
-//			->setRedirectUrls($redirect_urls)
-//			->setTransactions(array($transaction));
-//		try {
-//			$payment->create($paypal);
-//		} catch (\Exception $ex) {
-//			if (\Config::get('app.debug')) {
-//				\Session::put('error', 'Таймаут соединения');
-//				return Redirect::route('/');
-//			} else {
-//				\Session::put('error', 'Возникла ошибка, извините за неудобство');
-//				return Redirect::route('/');
-//			}
-//		}
-//
-//		foreach ($payment->getLinks() as $link) {
-//			if ($link->getRel() == 'approval_url') {
-//				$redirect_url = $link->getHref();
-////				dd($redirect_url);
-//				return redirect( $redirect_url );
-//			}
-//		}
-//
-//		/** добавляем ID платежа в сессию **/
-//		\Session::put('paypal_payment_id', $payment->getId());
-//
-//		if (isset($redirect_url)) {
-//			/** редиректим в paypal **/
-//			return Redirect::away($redirect_url);
-//		}
-//
-//		\Session::put('error', 'Произошла неизвестная ошибка');
-//		return Redirect::route('/');
-
 
 		$paypal = new ApiContext(new OAuthTokenCredential(
 				config('payment.paypal.client_id'),
@@ -129,8 +99,8 @@ final class AddBalance{
 
 
 		// create success url
-		$successRedirectUrls->setReturnUrl(route('statusPayment'))
-			->setCancelUrl(route('statusPayment'));
+		$successRedirectUrls->setReturnUrl(route('statusPayment', 'paypal'))
+			->setCancelUrl(route('statusPayment', 'paypal'));
 		//
 		$transaction->setAmount($amount)
 			->setItemList($item_list)
@@ -145,9 +115,7 @@ final class AddBalance{
 		try
 		{
 			$payment->create($paypal);
-//			dd($payment->create($paypal));
 
-//			dd($payment->getLinks());
 			foreach ($payment->getLinks() as $link)
 			{
 				if ($link->getRel() === 'approval_url')
@@ -192,20 +160,15 @@ final class AddBalance{
 					'successUrl' => config('payment.qiwi.success_url'),
 				]);
 
-//			$create = HistoryPayments::create([
-//				'user_id' => Auth::id(),
-//				'money' => $request['money'],
-//				'billId' => $billId,
-//				'type' => 'qiwi',
-//				'status' => false,
-//			]);
 
 			if ( $this->createRecord( (int) $request['money'], $billId, 'qiwi') )
 			{
 				return redirect($response['payUrl'])
 					->withCookie('billId', $billId)
 					->withCookie('id', Auth::id());
-			}
+			} else {
+				throw new BuyKeyException();
+			} 
 
 
 		}

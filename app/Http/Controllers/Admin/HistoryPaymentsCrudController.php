@@ -29,7 +29,10 @@ class HistoryPaymentsCrudController extends CrudController
         CRUD::setModel(\App\Models\Admin\HistoryPayments::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/historypayments');
         CRUD::setEntityNameStrings('historypayments', 'История пополнений');
+
     }
+
+
 
     /**
      * Define what happens when the List operation is loaded.
@@ -39,7 +42,6 @@ class HistoryPaymentsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-
     	CRUD::addColumn(['name' => 'id']);
 
     	CRUD::addColumn([
@@ -60,6 +62,7 @@ class HistoryPaymentsCrudController extends CrudController
 		CRUD::setFromDb(); // columns
 
 		CRUD::removeColumn('billId');
+
 
 		/**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -97,6 +100,8 @@ class HistoryPaymentsCrudController extends CrudController
      */
     protected function setupUpdateOperation()
     {
+
+
         $this->setupCreateOperation();
     }
 }

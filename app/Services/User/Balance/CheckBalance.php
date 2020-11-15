@@ -31,39 +31,97 @@ use Auth;
 final class CheckBalance{
 
 
-	public function checkCookie(array $array = null)
+	/**
+	 * @param string $name
+	 * @param array|null $array
+	 * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|int|void
+	 * @throws BuyKeyException
+	 * @throws \ErrorException
+	 * @throws \Qiwi\Api\BillPaymentsException
+	 */
+	public function checkCookie(string $name, array $array = null)
 	{
+
+
 		if ( !is_null(Cookie::get('billId')) && Cookie::get('billId')
 			&&
 			!is_null(Cookie::get('id')) && Cookie::get('id')
 			&&
 			(int) Cookie::get('id') === Auth::id() )
 		{
+
 			$query = HistoryPayments::where('billId', Cookie::get('billId'))
 				->where('status', 0)
 				->first();
 
-			if ($query && $query->type === 'paypal')
+			if ($query && $query->type === 'paypal') // $name === 'paypal'
 			{
 				return $this->paypal($query, $array);
 			}
-			if ($query && $query->type === 'qiwi')
+			else if ($query && $query->type === 'qiwi')
 			{
 				return $this->qiwi($query);
+			}
+			else if ($query && $query->type === 'payeer')
+			{
+				return$this->payeer($query, $array);
 			}
 
 			throw new BuyKeyException();
 		}
+		else
+		{
+			throw new BuyKeyException();
+		}
 
-		return redirect()->back();
 
 	}
 
 
-//	private function updateMoney()
-//	{
-//
-//	}
+	/**
+	 * @param object $query
+	 * @param array $array
+	 * @return \Illuminate\Http\RedirectResponse
+	 * @throws BuyKeyException
+	 */
+	public function payeer(object $query, array $array)
+	{
+		if (!count($array))
+		{
+			throw new BuyKeyException();
+		}
+
+		$m_key = config('payment.payeer.secret_key');
+		$arHash = [
+			$array['m_operation_id'],
+			$array['m_operation_ps'],
+			$array['m_operation_date'],
+			$array['m_operation_pay_date'],
+			$array['m_shop'],
+			$array['m_orderid'],
+			$array['m_amount'],
+			$array['m_curr'],
+			$array['m_desc'],
+			$array['m_status'],
+			$m_key
+		];
+		$sign_hash = strtoupper(hash('sha256', implode(':', $arHash)));
+
+		if ($array['m_sign'] === $sign_hash && $array['m_status'] === 'success')
+		{
+			$query->update(['status' => 1]);
+			$userAbout = Auth::user()->about;
+
+			$update = $userAbout->update([
+				'money' => explode('.', $array['m_amount'])[0] + $userAbout->money
+			]);
+			if ($update){
+				return redirect()->route('user.index')
+					->withCookie(Cookie::forget('billId'))
+					->withCookie(Cookie::forget('id'));
+			}
+		}
+	}
 
 
 	/**
@@ -75,7 +133,6 @@ final class CheckBalance{
 	 */
 	private function qiwi(object $query)
 	{
-
 		$billPayments = new \Qiwi\Api\BillPayments(config('payment.qiwi.secret_key'));
 		$status = $billPayments->getBillInfo( Cookie::get('billId') );
 
@@ -111,11 +168,6 @@ final class CheckBalance{
 	 */
 	private function paypal(object $query, ?array $array)
 	{
-//		if ($array && is_null($array))
-//		{
-//			throw new BuyKeyException();
-//		}
-
 		$paypal = new ApiContext(new OAuthTokenCredential(
 				config('payment.paypal.client_id'),
 				config('payment.paypal.secret'))

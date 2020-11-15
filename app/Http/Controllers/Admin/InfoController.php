@@ -15,7 +15,6 @@ class InfoController extends CrudController
 	public function widgets()
 	{
 		Widget::add([
-
 			'type'    => 'div',
 			'class'   => 'row',
 			'content' => [
@@ -42,7 +41,6 @@ class InfoController extends CrudController
 					]
 				],
 			],
-
 
 		]);
 
