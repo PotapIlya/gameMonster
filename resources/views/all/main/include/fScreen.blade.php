@@ -60,7 +60,11 @@
                     <div class="swiper-wrapper">
 
                         @foreach($slider as $item)
-                            <div class="swiper-slide">
+                            <div class="swiper-slide swiper-slide-bottom">
+
+                                <div class="swiper-slide-bottom1"></div>
+                                <div class="swiper-slide-bottom2"></div>
+
                                 <img class="mw-100" src="/storage/{{ $item->img }}" alt="">
                             </div>
                         @endforeach

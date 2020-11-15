@@ -18,10 +18,10 @@
             <div class="d-xl-flex flex-row flex-wrap flex-xl-nowrap flex-column flex-xl-row align-items-center justify-content-between w-100 mobile_menu-form">
                 <div class="header__translate order-5 order-xl-0 justify-content-end justify-content-sm-start">
                     <input id="en" type="radio" name="translate"/>
-                    <label for="en">En</label>
+                    <label for="en" class="activeText">En</label>
                     <div class="header__inclined">/</div>
                     <input id="ru" type="radio" name="translate" checked="checked"/>
-                    <label for="ru" class="activeText">Ru</label>
+                    <label for="ru" >Ru</label>
                 </div>
 
 

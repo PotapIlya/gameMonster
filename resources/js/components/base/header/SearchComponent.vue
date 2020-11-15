@@ -6,7 +6,7 @@
 		</div>
 		
 		<div v-show="showInput" class="header__search-label" style="display: block">
-			<input v-model="searchInput" type="text" placeholder="Поиск" class="searchInput" autofocus/>
+			<input v-model="searchInput" type="text" placeholder="Seatch" class="searchInput" autofocus/>
 		</div>
 		
 		

@@ -79,7 +79,7 @@
                 @endguest
                 <li class="footer__translate d-flex mb-4">
                     <input class="d-none" id="en" type="radio" name="translate"/>
-                    <label for="en">En</label>
+                    <label for="en" class="activeText">En</label>
                     <div class="footer__inclined mx-2">/</div>
                     <input class="d-none" id="ru" type="radio" name="translate" checked="checked"/>
                     <label for="ru" class="activeText">Ru</label>

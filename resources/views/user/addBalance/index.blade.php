@@ -51,6 +51,16 @@
                         </label>
                     </div>
 
+                    <div class="col-3 balance__item">
+
+                        <input name="name" value="payeer" class="" type="radio" id="payeer" required>
+                        <label for="payeer">
+                           <span class="col-6">
+                               <img class="w-100" src="/assets/static/img/pay/payeer.png" alt="">
+                           </span>
+                        </label>
+                    </div>
+
                 </div>
             </form>
 

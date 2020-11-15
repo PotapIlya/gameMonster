@@ -100,7 +100,7 @@
                                     </div>
                                 </label>
                                 <label for="">
-                                    <textarea placeholder="Сообщение" class="d-block " name="" id="" cols="30" rows="7"></textarea>
+                                    <textarea placeholder="Message" class="d-block " name="" id="" cols="30" rows="7"></textarea>
                                 </label>
                                 <span class="d-block d-lg-none proposal_item-title">
                                       {{ $proposal[2]->title ?? ''}}

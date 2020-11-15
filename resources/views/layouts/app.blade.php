@@ -12,6 +12,8 @@
     <link href="{{ asset('/assets/css/modules.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets/css/app.css') }}" rel="stylesheet">
 
+    @yield('header')
+
 </head>
 <body>
 
@@ -89,6 +91,9 @@
 
     {{--  CUSTOM SCRIPTS  --}}
     <script src="{{ asset('/assets/js/scripts.js') }}"></script>
+
+
+    @yield('footer')
 
 
 </body>
