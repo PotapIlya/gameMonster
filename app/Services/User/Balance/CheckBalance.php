@@ -6,7 +6,6 @@ namespace App\Services\User\Balance;
 use App\Exceptions\BuyKeyException;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\HistoryPayments;
-use http\Params;
 use Illuminate\Http\Request;
 use PayPal\Api\FundingInstrument;
 use PayPal\Rest\ApiContext;
@@ -153,6 +152,7 @@ final class CheckBalance{
 				}
 			}
 			else{
+//				throw new BuyKeyException('', 500);
 				throw new BuyKeyException();
 			}
 		}
@@ -198,7 +198,7 @@ final class CheckBalance{
 		} catch (\Exception $ex) {
 			dd($ex);
 		}
-		dd(12);
+
 
 		dd( $payment->execute($execute, $paypal) );
 

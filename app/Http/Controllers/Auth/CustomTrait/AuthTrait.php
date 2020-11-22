@@ -8,7 +8,8 @@ use Cookie;
 use Auth;
 
 
-trait AuthTrait{
+trait AuthTrait
+{
 
 	/**
 	 * @param int $authenticationId
@@ -18,7 +19,7 @@ trait AuthTrait{
 	 * @param $email
 	 * @return \Illuminate\Http\RedirectResponse
 	 */
-	protected function AuthWithServices(
+	public function AuthWithServices(
 		int $authenticationId,
 		string $type,
 		string $login,
@@ -26,7 +27,7 @@ trait AuthTrait{
 		$email
 	)
 	{
-		if (Auth::check())
+		if ( Auth::check() )
 		{
 			$findOrCreateUser = $this->findOrCreate(
 				Auth::id(),
@@ -34,7 +35,7 @@ trait AuthTrait{
 				$type,
 				$login,
 				$img,
-				$email,
+				$email
 			);
 
 			if ($findOrCreateUser) {
@@ -48,7 +49,8 @@ trait AuthTrait{
 			$findUser = UserServices::where('authentication_id',  $authenticationId)->first();
 			if ($findUser)
 			{
-				if ($this->AuthById($findUser->user->id)){
+				if ($this->AuthById( $findUser->user->id ))
+				{
 					return $this->redirect('success');
 				} else{
 					return $this->redirect('error');
@@ -97,7 +99,7 @@ trait AuthTrait{
 			'type' => $type,
 			'login' => $login,
 			'img' => $img,
-			'email' => $email,
+			'email' => $email
 		]);
 	}
 

@@ -2672,6 +2672,35 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -4906,41 +4935,86 @@ var render = function() {
   return _c("div", [
     _c("div", { staticClass: "my-private" }, [_vm._v("Личный кабинет")]),
     _vm._v(" "),
-    _c(
+    _c("div", { staticClass: "d-flex justify-content-between" }, [
+      _c("div", [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "my-form d-flex flex-column flex-md-row" },
+          [
+            _c("InfoComponent", {
+              attrs: { user_data: _vm.user_data },
+              on: { changeStatus: _vm.updateTitle }
+            }),
+            _vm._v(" "),
+            _vm.show
+              ? _c("PasswordComponent", {
+                  on: { changeStatus: _vm.updateTitle }
+                })
+              : _vm._e()
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _vm._m(1)
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
       "div",
       {
         staticClass:
           "my-title mb-4 d-flex align-items-center justify-content-between"
       },
-      [
-        _c("span", [_vm._v("\n\t\t\t\tАккаунт\n\t\t\t")]),
-        _vm._v(" "),
-        _vm.statusTitle
-          ? _c("span", { staticStyle: { background: "green" } }, [
-              _vm._v("\n\t\t\t\tОбновленно\n\t\t\t")
-            ])
-          : _vm._e()
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "my-form d-flex flex-column flex-md-row" },
-      [
-        _c("InfoComponent", {
-          attrs: { user_data: _vm.user_data },
-          on: { changeStatus: _vm.updateTitle }
-        }),
-        _vm._v(" "),
-        _vm.show
-          ? _c("PasswordComponent", { on: { changeStatus: _vm.updateTitle } })
-          : _vm._e()
-      ],
-      1
+      [_c("span", [_vm._v("\n\t\t\t\tАккаунт\n\t\t\t")])]
     )
-  ])
-}
-var staticRenderFns = []
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c(
+        "div",
+        {
+          staticClass:
+            "my-title mb-4 d-flex align-items-center justify-content-between"
+        },
+        [_c("span", [_vm._v("\n\t\t\t\tПривязанные аккаунты\n\t\t\t")])]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "my__socialNetwork" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "my__socialNetwork-item active d-flex align-items-center"
+          },
+          [
+            _c("div", [
+              _c("img", {
+                staticClass: "mw-100",
+                attrs: {
+                  src: "/assets/static/img/services/steam.png",
+                  alt: "steam"
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("span", [_vm._v("\n\t\t\t\t\tSteam\n\t\t\t\t")])
+          ]
+        )
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 

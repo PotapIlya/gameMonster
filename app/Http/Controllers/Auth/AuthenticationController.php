@@ -14,6 +14,7 @@ use Cookie;
 
 class AuthenticationController extends Controller
 {
+
 	use AuthTrait;
 
 	/**
@@ -58,19 +59,30 @@ class AuthenticationController extends Controller
 	 */
 	public function handleProviderCallback(string $name)
 	{
+		if ($name === 'facebook')
+		{
+			$user = Socialite::driver('facebook')->user();
+
+			return $this->AuthWithServices(
+				$user['id'],
+				'facebook',
+				$user->name,
+				$user->avatar,
+				$user->email
+			);
+		}
+
 		if ($name === 'vk')
 		{
-			// try - catch
 			$user = Socialite::driver('vkontakte')->user();
 			return $this->AuthWithServices(
 				$user['id'],
 				'vk',
 				$user['first_name'].'_'.$user['last_name'],
 				$user['photo_200'],
-				$user['email'],
+				$user['email']
 			);
 		}
-
 		if ($name === 'steam')
 		{
 			if ( $this->steam->validate() ) {
@@ -81,7 +93,7 @@ class AuthenticationController extends Controller
 					'steam',
 					$user['personaname'],
 					$user['avatar'],
-					null,
+					null
 				);
 			}
 		}
@@ -93,9 +105,18 @@ class AuthenticationController extends Controller
 				'google',
 				$user['given_name'].'_'.$user['family_name'],
 				$user['picture'],
-				$user['email'],
+				$user['email']
 			);
 		}
 
 	}
+
+
+
+
+
+
+
+
+
 }

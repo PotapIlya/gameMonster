@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,6 +50,7 @@ Route::get('/development', function ()
 	return view('errors.development');
 });
 
+//Route::view('errors.development', '/development');
 
 
 Route::post('/payeer', function (Request $request)

@@ -145,9 +145,10 @@ final class AddBalance
 	 */
 	public function qiwi(array $request)
 	{
-
+//		$balance = $qiwi->getBalance();
 		try
 		{
+			//
 			$billPayments = new \Qiwi\Api\BillPayments(config('payment.qiwi.secret_key'));
 			$billId = $billPayments->generateId();
 

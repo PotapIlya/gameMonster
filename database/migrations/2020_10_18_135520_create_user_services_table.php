@@ -18,9 +18,9 @@ class CreateUserServicesTable extends Migration
 
 			$table->unsignedBigInteger('user_id');
 			$table->string('authentication_id', 255)->default(null)->nullable();
-			$table->string('type');
+			$table->string('type', 20)->default(null)->nullable();
 			$table->string('login', 255)->default(null)->nullable();
-			$table->string('img')->default(null)->nullable();
+			$table->text('img')->default(null)->nullable();
 			$table->string('email', 255)->default(null)->nullable();
 
 			$table->timestamps();

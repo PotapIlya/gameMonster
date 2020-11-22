@@ -34,4 +34,16 @@ class Handler extends ExceptionHandler
     {
         //
     }
+
+//    public function render($request, Throwable $exception){
+//    	return response([], 500);
+
+//    	if($request->wantsJson()){
+//    		$message = $this->handleApiRequest();
+//
+//    		return response(['message' => 'Motherfucker, something went wrong!'], 500);
+//		}
+//
+//    	return parent::$render;
+//	}
 }

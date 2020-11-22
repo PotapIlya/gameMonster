@@ -1,28 +1,57 @@
 <template>
 	<div>
 		<div class="my-private">Личный кабинет</div>
-		<div class="my-title mb-4 d-flex align-items-center justify-content-between">
+		
+		<div class="d-flex justify-content-between">
+			<div>
+				<div class="my-title mb-4 d-flex align-items-center justify-content-between">
 				<span>
 					Аккаунт
 				</span>
-			<span v-if="statusTitle"
-				  style="background: green">
-					Обновленно
+					<!--			<span v-if="statusTitle"-->
+					<!--			  style="background: green">-->
+					<!--				Обновленно-->
+					<!--			</span>-->
+				</div>
+				<div class="my-form d-flex flex-column flex-md-row">
+					
+					<InfoComponent
+							:user_data="user_data"
+							@changeStatus = updateTitle
+					/>
+					
+					<PasswordComponent
+							v-if="show"
+							@changeStatus = updateTitle
+					/>
+				
+				</div>
+			</div>
+			
+			<div>
+				<div class="my-title mb-4 d-flex align-items-center justify-content-between">
+				<span>
+					Привязанные аккаунты
 				</span>
+				</div>
+				
+				<div class="my__socialNetwork">
+					
+					<div class="my__socialNetwork-item active d-flex align-items-center">
+						<div>
+							<img class="mw-100" src="/assets/static/img/services/steam.png" alt="steam">
+						</div>
+						<span>
+						Steam
+					</span>
+					</div>
+				
+				
+				</div>
+			
+			</div>
 		</div>
-		<div class="my-form d-flex flex-column flex-md-row">
-			
-			<InfoComponent
-					:user_data="user_data"
-					@changeStatus = updateTitle
-			/>
-			
-			<PasswordComponent
-					v-if="show"
-					@changeStatus = updateTitle
-			/>
 		
-		</div>
 	</div>
 </template>
 
