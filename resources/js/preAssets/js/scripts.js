@@ -25,9 +25,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var btn = document.querySelector('.mobile_menu');
     var menu = document.querySelector('.mobile_menu-form');
     btn.addEventListener('click', function () {
-      if (menu.classList.contains('grid')) {
+      if (menu.classList.contains('active')) {
         menu.style.display = 'none';
+        menu.classList.remove('active');
       } else {
+        menu.classList.add('active');
         menu.style.display = 'grid';
       }
     });
@@ -103,12 +105,35 @@ document.addEventListener('DOMContentLoaded', function () {
         headerUserMenu.style.display = 'none';
       } else {
         headerUserMenu.classList.add('display');
-        headerUserMenu.style.display = 'block';
+        headerUserMenu.style.display = 'block'; // document.addEventListener('click', (e)=>{
+        //     if (e.target !== headerUser && e.target.parentElement !== headerUser && e.target.parentElement.parentElement !== headerUser){
+        //         headerUserMenu.classList.remove('d-block')
+        //     }
+        // })
       }
     });
-    document.addEventListener('click', function (e) {
-      if (e.target !== headerUser && e.target.parentElement !== headerUser && e.target.parentElement.parentElement !== headerUser) {
-        headerUserMenu.classList.remove('d-block');
+  }
+
+  if (document.getElementById('addBalance')) {
+    var _btn = document.getElementById('addBalance');
+
+    var _modal = document.querySelector('.balance');
+
+    var _close = _modal.querySelector('.button-close');
+
+    var wrapper = _modal.querySelector('.global-wrap');
+
+    _btn.addEventListener('click', function () {
+      _modal.classList.add('d-block');
+    });
+
+    _close.addEventListener('click', function () {
+      _modal.classList.remove('d-block');
+    });
+
+    window.addEventListener('click', function (e) {
+      if (e.target === wrapper) {
+        _modal.classList.remove('d-block');
       }
     });
   } // if (document.querySelector('.modal'))

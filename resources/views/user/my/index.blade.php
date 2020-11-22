@@ -7,8 +7,8 @@
 
     <section class="my mb-5">
         <div class="container">
-           <div class="d-flex justify-content-between potap ">
-               <div>
+           <div class="d-flex justify-content-between ">
+               <div class="w-100">
                    <app-my-component
                            :user_data="{{ $user }}"
                    />

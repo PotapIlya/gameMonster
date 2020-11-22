@@ -77,7 +77,7 @@ class AuthenticationController extends Controller
 			$user = Socialite::driver('vkontakte')->user();
 			return $this->AuthWithServices(
 				$user['id'],
-				'vk',
+				'vkontakte',
 				$user['first_name'].'_'.$user['last_name'],
 				$user['photo_200'],
 				$user['email']

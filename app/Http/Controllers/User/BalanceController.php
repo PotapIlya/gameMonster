@@ -34,7 +34,7 @@ class BalanceController extends Controller
     {
 
 
-        return view('user.addBalance.index');
+//        return view('user.addBalance.index');
     }
 
     /**
@@ -50,14 +50,14 @@ class BalanceController extends Controller
 
 	/**
 	 * @param BalanceRequest $request
-	 * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+	 * @param AddBalance $addBalance
+	 * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
 	 * @throws BuyKeyException
 	 * @throws \ErrorException
 	 * @throws \Qiwi\Api\BillPaymentsException
 	 */
     public function store(BalanceRequest $request, AddBalance $addBalance)
 	{
-
 		if ($request->input('name') === 'qiwi')
 		{
 			return $addBalance->qiwi($request->all());
@@ -71,9 +71,7 @@ class BalanceController extends Controller
 			return $addBalance->payeer($request->all());
 		}
 
-
-
-		return redirect()->back();
+		return response()->json(['error' => 'error']);
 	}
 
 

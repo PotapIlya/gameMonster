@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth\CustomTrait;
 
+use App\Exceptions\BuyKeyException;
 use App\Models\User;
 use App\Models\User\UserServices;
 use Cookie;
@@ -76,7 +77,8 @@ trait AuthTrait
 			return redirect()->route('user.index');
 		}
 		else{
-			return redirect()->back();
+			throw new BuyKeyException();
+//			return redirect()->back();
 		}
 
 	}

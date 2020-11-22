@@ -2,8 +2,8 @@
 	<div>
 		<div class="my-private">Личный кабинет</div>
 		
-		<div class="d-flex justify-content-between">
-			<div>
+		<div class="row pl-3">
+			<div class="my_block_left">
 				<div class="my-title mb-4 d-flex align-items-center justify-content-between">
 				<span>
 					Аккаунт
@@ -28,26 +28,16 @@
 				</div>
 			</div>
 			
-			<div>
+			<div class="my_block_right">
 				<div class="my-title mb-4 d-flex align-items-center justify-content-between">
-				<span>
-					Привязанные аккаунты
-				</span>
-				</div>
-				
-				<div class="my__socialNetwork">
-					
-					<div class="my__socialNetwork-item active d-flex align-items-center">
-						<div>
-							<img class="mw-100" src="/assets/static/img/services/steam.png" alt="steam">
-						</div>
-						<span>
-						Steam
+					<span>
+						Привязанные аккаунты
 					</span>
-					</div>
-				
-				
 				</div>
+			
+				<SocialNetwork
+					:services="user_data.services"
+				/>
 			
 			</div>
 		</div>
@@ -58,10 +48,13 @@
 <script>
 	import InfoComponent from "./InfoComponent";
 	import PasswordComponent from "./PasswordComponent";
+	import SocialNetwork from "./SocialNetwork";
+	
     export default {
         name: "AppComponent",
 		props: ['user_data'],
 		components: {
+            SocialNetwork,
             InfoComponent,
             PasswordComponent
 		},
@@ -71,6 +64,7 @@
 		}),
 		mounted()
 		{
+            // console.log(this.user_data)
 		    if (this.user_data.authentication_id)
 			{
                 this.show = false;

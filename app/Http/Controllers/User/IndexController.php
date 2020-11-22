@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\User;
 
+use App\Exceptions\BuyKeyException;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\UpdateInfoRequest;
 use App\Models\User;
+use App\Models\User\UserServices;
 use App\Services\User\UpdatePersonalAreaService;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -134,10 +136,18 @@ class IndexController extends BasicUserController
 	}
 
 
+	/**
+	 * @param Request $request
+	 * @param UpdatePersonalAreaService $update
+	 * @return \Illuminate\Http\JsonResponse
+	 * @throws BuyKeyException
+	 */
+	public function deleteServices(Request $request, UpdatePersonalAreaService $update)
+	{
+		return $update->deleteServices( $request->all() );
+	}
 
     /**
-     * Remove the specified resource from storage.
-     *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */

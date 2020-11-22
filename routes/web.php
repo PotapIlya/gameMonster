@@ -161,7 +161,7 @@ Route::group(
 	function ()
 	{
 		Route::resource('/my', 'IndexController')->names('user');
-		Route::resource('/balance', 'BalanceController')->names('user.balance');
+//		Route::resource('/balance', 'BalanceController')->names('user.balance');
 		Route::patch('/buyKey/{id}', 'BuyKeyController@buyKey')->name('user.buyKey');
 
 
@@ -170,6 +170,9 @@ Route::group(
 
 		Route::post('/my/updateInfo', 'IndexController@updateInfo');
 		Route::post('/my/updatePassword', 'IndexController@updatePassword');
+		Route::post('/api/my/deleteServices', 'IndexController@deleteServices');
+
+		Route::post('/balance', 'BalanceController@store');
 
 	}
 );

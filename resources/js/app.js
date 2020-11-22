@@ -35,6 +35,7 @@ Vue.component('search-component', require('./components/base/header/SearchCompon
 /** Modal */
 
 Vue.component('modal-auth-component', require('./components/base/modal/ButtonsAuthComponent').default);
+Vue.component('modal-add-balance', require('./components/base/modal/ModalMyAddBalance').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

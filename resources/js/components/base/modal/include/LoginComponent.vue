@@ -47,7 +47,7 @@
 					<img src="/assets/static/img/services/google.png" alt="google">
 				</a>
 				<a href="/login/vkontakte" class="service3 mr-4 ml-2">
-					<img src="/assets/static/img/services/vk.png" alt="vk">
+					<img src="/assets/static/img/services/vkontakte.png" alt="vk">
 				</a>
 				<a href="/login/facebook" class="service4">
 					<img src="/assets/static/img/services/facebook.png" alt="facebook">

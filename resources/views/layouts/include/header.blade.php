@@ -97,9 +97,9 @@
 
                         <ul class="header__user-menu">
                             <li>
-                                <a href="{{ route('user.balance.index') }}">
+                                <span id="addBalance">
                                     Пополнить баланс
-                                </a>
+                                </span>
                             </li>
                             <li>
                                 <a href="{{ route('user.index') }}">

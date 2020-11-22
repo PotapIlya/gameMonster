@@ -22,11 +22,9 @@ use Auth;
 final class AddBalance
 {
 
-
 	/**
 	 * @param array $array
-	 * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-	 * @throws BuyKeyException
+	 * @return \Illuminate\Http\JsonResponse
 	 */
 	public function payeer(array $array)
 	{
@@ -54,17 +52,20 @@ final class AddBalance
 		{
 			if ( $this->createRecord( (int) $array['money'], $m_orderid, 'payeer' ) )
 			{
-//				dd($sign);
-				return redirect( $link )
+				return response()->json(['success' => $link])
 					->withCookie('billId', $m_orderid )
 					->withCookie('id', Auth::id());
+//				return redirect( $link )
+//					->withCookie('billId', $m_orderid )
+//					->withCookie('id', Auth::id());
 			}
 		}
 	}
 
+
 	/**
 	 * @param array $array
-	 * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+	 * @return \Illuminate\Http\JsonResponse
 	 * @throws BuyKeyException
 	 */
 	public function paypal(array $array)
@@ -122,9 +123,12 @@ final class AddBalance
 				{
 					if ( $this->createRecord( (int) $array['money'], $payment->getId(), 'paypal' ) )
 					{
-						return redirect( $link->getHref() )
+						return response()->json(['success' => $link->getHref() ])
 							->withCookie('billId', $payment->getId() )
 							->withCookie('id', Auth::id());
+//						return redirect( $link->getHref() )
+//							->withCookie('billId', $payment->getId() )
+//							->withCookie('id', Auth::id());
 					}
 				}
 			}
@@ -138,7 +142,7 @@ final class AddBalance
 
 	/**
 	 * @param array $request
-	 * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+	 * @return \Illuminate\Http\JsonResponse
 	 * @throws BuyKeyException
 	 * @throws \ErrorException
 	 * @throws \Qiwi\Api\BillPaymentsException
@@ -164,13 +168,16 @@ final class AddBalance
 
 			if ( $this->createRecord( (int) $request['money'], $billId, 'qiwi') )
 			{
-				return redirect($response['payUrl'])
+				return response()
+					->json(['success' => $response['payUrl']])
 					->withCookie('billId', $billId)
-					->withCookie('id', Auth::id());
+					->withCookie('id', Auth::id() );
+//				return redirect($response['payUrl'])
+//					->withCookie('billId', $billId)
+//					->withCookie('id', Auth::id());
 			} else {
 				throw new BuyKeyException();
-			} 
-
+			}
 
 		}
 		catch (ModelNotFoundException $exception)
