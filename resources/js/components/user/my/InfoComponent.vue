@@ -67,7 +67,7 @@
         ],
         data: () => ({
             user: {},
-            url: '/my/updateInfo',
+            url: '/api/my/updateInfo',
 
             login: '',
             email: '',
@@ -76,8 +76,6 @@
             errorsLogin: [],
             errorsEmail: [],
             errorsPhone: [],
-
-
         }),
         mounted() {
             this.user = this.user_data
@@ -85,9 +83,6 @@
             this.login = this.user.login
             this.email = this.user.email
             this.phone = this.user.phone
-
-
-            console.log(this.user.phone)
         },
         methods: {
 
@@ -103,29 +98,25 @@
                     phone: this.phone,
 
                 })
-                    .then(repsonse =>
-                    {
-                        if (repsonse.data.success)
-                        {
-                           this.$emit('changeStatus')
-
-                        }
-                        if (repsonse.data.errors)
-                        {
-                            if (repsonse.data.errors.login){
-                                this.errorsLogin.push(repsonse.data.errors.login)
-                            }
-                            if (repsonse.data.errors.email){
-                                this.errorsEmail.push(repsonse.data.errors.email)
-                            }
-                            if (repsonse.data.errors.phone){
-                                this.errorsPhone.push(repsonse.data.errors.phone)
-                            }
-                        }
-                    })
-                    .catch(error => {
-                        console.log(error)
-                    })
+				.then(response =>
+				{
+					if (response.data.success)
+					{
+					   this.$emit('changeStatus');
+					}
+				})
+				.catch(error =>
+				{
+					if (error.response.data.errors.login){
+						this.errorsLogin.push(error.response.data.errors.login)
+					}
+					if (error.response.data.errors.email){
+						this.errorsEmail.push(error.response.data.errors.email)
+					}
+					if (error.response.data.errors.phone){
+						this.errorsPhone.push(error.response.data.errors.phone)
+					}
+				})
             }
 
         }

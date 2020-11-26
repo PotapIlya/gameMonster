@@ -1,4 +1,4 @@
-<div class="balance modal modal-balance d-block">
+<div class="balance modal modal-balance">
     <div class="global-wrap">
         <modal-add-balance />
     </div>

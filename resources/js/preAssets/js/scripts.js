@@ -22,15 +22,14 @@ if (document.querySelector('.myCrutch')) {
 
 document.addEventListener('DOMContentLoaded', function () {
   if (document.querySelector('.mobile_menu')) {
+    var header = document.querySelector('.header');
     var btn = document.querySelector('.mobile_menu');
     var menu = document.querySelector('.mobile_menu-form');
     btn.addEventListener('click', function () {
-      if (menu.classList.contains('active')) {
-        menu.style.display = 'none';
-        menu.classList.remove('active');
+      if (header.classList.contains('active')) {
+        header.classList.remove('active');
       } else {
-        menu.classList.add('active');
-        menu.style.display = 'grid';
+        header.classList.add('active');
       }
     });
   }
@@ -43,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (document.querySelector('.showCart')) {
     var showCarts = document.querySelectorAll('.showCart');
-    console.log(showCarts);
     var email = document.getElementById('formEmail');
     var modal = document.querySelector('.modal.modal-key');
     var modalWrap = modal.querySelector('.global-wrap');

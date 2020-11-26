@@ -62,14 +62,13 @@
 			    if (this.startArray.length && this.searchInput.length)
 				{
                     this.startArray.map( item =>{
-                        // console.log(item)
                         if (item.title.toLowerCase().startsWith(this.searchInput.toLowerCase()))
                         {
                             this.searchArray.push(item);
                         }
 					})
                 }
-                // console.log(this.searchArray)
+            
 			}
 		},
 		methods: {

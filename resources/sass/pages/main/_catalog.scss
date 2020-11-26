@@ -2,6 +2,52 @@
 
     &__wrapper{
 
+
+        .test{
+
+            .catalog__price{
+                margin-top: 5px !important;
+            }
+
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background:#101010;
+            border-radius: 15px 0 0 0;
+            padding: 0 !important;
+
+
+            &::before{
+                content: '';
+                top: -30px;
+                right: -61px;
+                position: absolute;
+                width: 90px;
+                height: 90px;
+                background: #000;
+                background: linear-gradient(135deg,transparent 35px,#000 0) top left;
+                background-size: 34% 34%;
+                background-repeat: no-repeat;
+                background-image: radial-gradient(circle at 0 0,rgba(204,0,0,0) 30px,#101010 35px);
+            }
+
+            &::after{
+                content: '';
+                top: 30px;
+                left: -31px;
+                /* display: block; */
+                /* overflow: hidden; */
+                position: absolute;
+                /* margin: 10px; */
+                width: 90px;
+                height: 90px;
+                background: linear-gradient(135deg,transparent 35px,#000 0) top left;
+                background-size: 34% 34%;
+                background-repeat: no-repeat;
+                background-image: radial-gradient(circle at 0 0,rgba(204,0,0,0) 30px,#101010 35px);
+            }
+
+        }
     }
     &__img{
         position: relative;

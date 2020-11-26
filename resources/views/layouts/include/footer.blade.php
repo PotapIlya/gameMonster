@@ -100,33 +100,45 @@
             </ul>
 
 
-            <div class="footer__element7 unit d-flex flex-wrap element7 align-items-center align-items-md-start ml-auto">
-                <div class="social__network">
-                    <a href="#" class="service1">
-                        <img src="/assets/static/img/main/icon/fs.svg" alt="steam">
-                    </a>
+
+            @if(count($basic['socialNetworks']) && $basic['socialNetworks'])
+
+
+
+                <div class="footer__element7 unit d-flex flex-wrap element7 align-items-center align-items-md-start ml-auto">
+
+                    @foreach($basic['socialNetworks'] as $item)
+
+                        <div class="social__network">
+                            <a href="{{ $item->href }}" class="service1">
+                                {!! $item->icon !!}
+                            </a>
+                        </div>
+
+                    @endforeach
+{{--                    <div class="social__network">--}}
+{{--                        <a href="#" class="service1">--}}
+{{--                            <img src="/assets/static/img/main/icon/vk.svg" alt="steam">--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                    <div class="social__network">--}}
+{{--                        <a href="#" class="service1">--}}
+{{--                            <img src="/assets/static/img/main/icon/inst.svg" alt="steam">--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                    <div class="social__network">--}}
+{{--                        <a href="#" class="service1">--}}
+{{--                            <img src="/assets/static/img/main/icon/youtube.svg" alt="steam">--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                    <div class="social__network">--}}
+{{--                        <a href="#" class="service1">--}}
+{{--                            <img src="/assets/static/img/main/icon/telefram.svg" alt="steam">--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
                 </div>
-                <div class="social__network">
-                    <a href="#" class="service1">
-                        <img src="/assets/static/img/main/icon/vk.svg" alt="steam">
-                    </a>
-                </div>
-                <div class="social__network">
-                    <a href="#" class="service1">
-                        <img src="/assets/static/img/main/icon/inst.svg" alt="steam">
-                    </a>
-                </div>
-                <div class="social__network">
-                    <a href="#" class="service1">
-                        <img src="/assets/static/img/main/icon/youtube.svg" alt="steam">
-                    </a>
-                </div>
-                <div class="social__network">
-                    <a href="#" class="service1">
-                        <img src="/assets/static/img/main/icon/telefram.svg" alt="steam">
-                    </a>
-                </div>
-            </div>
+
+            @endif
 
 
 

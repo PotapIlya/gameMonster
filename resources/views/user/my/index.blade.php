@@ -4,6 +4,7 @@
 
 @section('content')
 
+{{--    @dd( $user )--}}
 
     <section class="my mb-5">
         <div class="container">

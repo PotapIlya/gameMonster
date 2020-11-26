@@ -30,17 +30,16 @@ document.addEventListener('DOMContentLoaded', () =>
 
     if (document.querySelector('.mobile_menu'))
     {
+        const header = document.querySelector('.header');
         const btn = document.querySelector('.mobile_menu');
         const menu = document.querySelector('.mobile_menu-form');
 
         btn.addEventListener('click', () => {
-            if ( menu.classList.contains('active') )
+            if ( header.classList.contains('active') )
             {
-                menu.style.display = 'none';
-                menu.classList.remove('active')
+                header.classList.remove('active')
             } else{
-                menu.classList.add('active')
-                menu.style.display = 'grid';
+                header.classList.add('active')
             }
         })
     }
@@ -59,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () =>
     if (document.querySelector('.showCart'))
     {
         const showCarts = document.querySelectorAll('.showCart');
-        console.log(showCarts)
+
         const email = document.getElementById('formEmail');
 
         const modal = document.querySelector('.modal.modal-key');

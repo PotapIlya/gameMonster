@@ -335,6 +335,13 @@
 
 
 @media only screen and (max-width: 992px){
+
+    .my{
+        .modal .modal-wrap .button-close{
+            right: -23px;
+        }
+    }
+
     .modal .modal-wrap{
         width: 75%;
 
@@ -443,6 +450,47 @@
     }
 }
 
+@media only screen and (max-width: 580px){
+
+
+    .my .modal-wrap {
+        height: auto;
+        width: 80% !important;
+
+        .button-close{
+            //right: 35px;
+        }
+        .modal__wrap-title{
+            font-size: 28px !important;
+
+            br{
+                display: none;
+            }
+        }
+    }
+
+    .modal.modal-key{
+        .modal-wrap{
+            height: auto;
+            //height: 30vh;
+            padding: 35px 30px;
+        }
+        .modal__wrap-group{
+            //margin: 0 auto;
+        }
+    }
+
+
+}
+
+@media only screen and (max-width: 576px){
+    .my .modal .modal-wrap{
+        height: auto !important;
+    }
+}
+
+
+
 @media only screen and (max-width:550px){
 
 
@@ -513,12 +561,27 @@
 
 @media only screen and (max-width:500px){
 
-
-
-
     .modal .modal-wrap{
         background-position: 70% center;
     }
+
+
+    .my__modal .modal-wrap {
+        width: 95% !important;
+
+        .modal__wrap-title {
+            font-size: 20px !important;
+        }
+    }
+    .my .modal .modal-wrap .button-close{
+        right: 30px;
+    }
+
+
+
+
+
+
 }
 
 @media only screen and (max-width:430px){
@@ -541,6 +604,13 @@
 @media only screen and (max-width:400px){
 
 
+    //.modal .modal-wrap{
+    //    top: 40%;
+    //}
+    //.modal-auth .registration__enter-help{
+    //    margin-top: 10px !important;
+    //    text-align: center !important;
+    //}
 
     .modal .modal-wrap .modal__wrap-title{
         font-size: 26px;

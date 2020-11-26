@@ -8,9 +8,19 @@
     width: 100%;
     z-index: 1000;
 
-    &__logo{
-        .mw-100{
-            
+    &.active{
+        .mobile_menu-form{
+            display: grid !important;
+        }
+
+        .mobile_menu .nav-item{
+            &:before{
+                top: 0;
+                transform: rotate(45deg);
+            }
+            &:after{
+                transform: rotate(-45deg);
+            }
         }
     }
 

@@ -228,6 +228,23 @@
 }
 
 
+@media only screen and (max-width: 380px){
+
+
+    .balance__btn{
+        margin-top: 16px;
+    }
+    .my__btn{
+        margin-right: 0;
+    }
+    .my__modal .modal-wrap {
+        padding: 30px 40px;
+    }
+
+}
+
+
+
 @media only screen and (max-width:320px){
     .my-private{
         margin-bottom: 24px;

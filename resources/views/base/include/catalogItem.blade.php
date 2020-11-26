@@ -14,7 +14,8 @@
                 </div>
                 <div class="catalog__text test">
                     @if($item->discounts)
-                        <div class="d-flex justify-content-end">
+{{--                        <div class="d-flex justify-content-end">--}}
+                        <div class="d-flex justify-content-end" style="position: absolute; top: -40px; right: 10px;">
                             <div class="rate"> -{{ $item->discounts }}% </div>
                         </div>
                     @endif

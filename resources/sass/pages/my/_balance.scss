@@ -68,18 +68,51 @@
 
 
 
+
+@media only screen and (max-width: 992px){
+
+    .balance.modal {
+        .button-close {
+            right: -23px;
+        }
+        .modal-wrap{
+            height: auto;
+        }
+    }
+
+
+}
+
+
+
+
 @media only screen and (max-width: 576px){
 
     .balance {
         &__list {
             padding: 0 !important;
         }
-        &.modal .modal-wrap{
-            height: 70vh;
-        }
     }
 
 }
+
+
+@media only screen and (max-width: 500px){
+
+    .balance.modal{
+
+        .modal__wrap-title{
+            font-size: 30px;
+        }
+
+        .balance__text{
+            font-size: 14px;
+        }
+
+    }
+
+}
+
 
 @media only screen and (max-width: 460px){
 
@@ -96,6 +129,19 @@
 
 }
 
+@media only screen and (max-width: 400px){
+
+    .balance.modal {
+        .modal-wrap {
+            padding: 30px 35px;
+        }
+        .modal__wrap-title {
+            font-size: 22px;
+        }
+
+    }
+
+}
 
 @media only screen and (max-width: 380px){
 
@@ -104,9 +150,6 @@
         margin-bottom: 22px;
     }
 
-    .balance__btn{
-        margin-top: 16px;
-    }
 
 }
 

@@ -60,26 +60,29 @@
 				.then(response =>{
 				    if (response.data.success)
 					{
-                        console.log(13)
                         this.$emit('changeStatus')
-						
+					
 						this.oldPassword = '';
 						this.password = '';
 						this.password_confirmation = '';
 					}
-				    if (response.data.errors)
+					if (response.data.errors)
 					{
                         console.log(response.data.errors)
-						if (response.data.errors.oldPassword){
-                            this.errorsOldPassword.push(response.data.errors.oldPassword)
-                        }
-                        if (response.data.errors.password){
-                            this.errorsPassword.push(response.data.errors.password)
-						}
 					}
+				 
 				})
-				.catch(error => {
-                    console.log(error)
+				.catch(error =>
+				{
+					
+                    if (error.response.data.errors.oldPassword)
+                    {
+                        this.errorsOldPassword.push(error.response.data.errors.oldPassword)
+                    }
+                    if (error.response.data.errors.password)
+                    {
+                        this.errorsPassword.push(error.response.data.errors.password)
+                    }
 				})
 			}
 		}
