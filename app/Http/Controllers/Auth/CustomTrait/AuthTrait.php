@@ -12,13 +12,15 @@ use Auth;
 trait AuthTrait
 {
 
+
 	/**
 	 * @param int $authenticationId
 	 * @param string $type
 	 * @param string $login
 	 * @param string $img
 	 * @param $email
-	 * @return \Illuminate\Http\RedirectResponse
+	 * @return \Illuminate\Http\RedirectResponse|void
+	 * @throws BuyKeyException
 	 */
 	public function AuthWithServices(
 		int $authenticationId,
@@ -30,6 +32,12 @@ trait AuthTrait
 	{
 		if ( Auth::check() )
 		{
+
+			if (UserServices::where('authentication_id', $authenticationId)->first())
+			{
+				return abort(500);
+			}
+
 			$findOrCreateUser = $this->findOrCreate(
 				Auth::id(),
 				$authenticationId,

@@ -62,6 +62,7 @@ class LoginController extends Controller
 		if ($validation->fails())  {
 			return response()->json(['errors' => $validation->errors()]);
 		}
+
 		if (Auth::attempt($request->only(['email', 'password']), $request->has('remember')))
 		{
 			return response()->json(['success' => 'success']);

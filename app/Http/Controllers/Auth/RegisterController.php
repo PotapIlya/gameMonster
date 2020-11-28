@@ -83,10 +83,7 @@ class RegisterController extends Controller
 			return response()->json(['errors' => $validation->errors()]);
 		}
 
-//		return response()->json(['test' => 'potap']);
-		$user = $this->create($request->all());
-
-		if ($user)
+		if ( $this->create($request->all()) )
 		{
 			if (Auth::attempt($request->only(['email', 'password'])))
 			{

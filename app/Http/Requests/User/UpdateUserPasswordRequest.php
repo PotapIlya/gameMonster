@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\User;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -13,7 +13,7 @@ class UpdateUserPasswordRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class UpdateUserPasswordRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+			'oldPassword' => ['required', 'string'],
+			'password' => ['required', 'string', 'min:8', 'confirmed'],
         ];
     }
 }

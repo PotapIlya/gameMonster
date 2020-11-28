@@ -59,54 +59,54 @@ class AuthenticationController extends Controller
 	 */
 	public function handleProviderCallback(string $name)
 	{
-		if ($name === 'facebook')
+		switch ($name)
 		{
-			$user = Socialite::driver('facebook')->user();
-
-			return $this->AuthWithServices(
-				$user['id'],
-				'facebook',
-				$user->name,
-				$user->avatar,
-				$user->email
-			);
-		}
-
-		if ($name === 'vk')
-		{
-			$user = Socialite::driver('vkontakte')->user();
-			return $this->AuthWithServices(
-				$user['id'],
-				'vkontakte',
-				$user['first_name'].'_'.$user['last_name'],
-				$user['photo_200'],
-				$user['email']
-			);
-		}
-		if ($name === 'steam')
-		{
-			if ( $this->steam->validate() ) {
-
-				$user = $this->steam->getUserInfo();
+			case 'facebook':
+				$user = Socialite::driver('facebook')->user();
 				return $this->AuthWithServices(
-					$user['steamID64'],
-					'steam',
-					$user['personaname'],
-					$user['avatar'],
-					null
+					$user['id'],
+					'facebook',
+					$user->name,
+					$user->avatar,
+					$user->email
 				);
-			}
-		}
-		if ($name === 'google')
-		{
-			$user = Socialite::driver('google')->user();
-			return $this->AuthWithServices(
-				(int) $user['sub'],
-				'google',
-				$user['given_name'].'_'.$user['family_name'],
-				$user['picture'],
-				$user['email']
-			);
+				break;
+
+			case 'vk':
+				$user = Socialite::driver('vkontakte')->user();
+				return $this->AuthWithServices(
+					$user['id'],
+					'vkontakte',
+					$user['first_name'].'_'.$user['last_name'],
+					$user['photo_200'],
+					$user['email']
+				);
+				break;
+
+			case 'steam':
+				if ( $this->steam->validate() )
+				{
+					$user = $this->steam->getUserInfo();
+					return $this->AuthWithServices(
+						$user['steamID64'],
+						'steam',
+						$user['personaname'],
+						$user['avatar'],
+						null
+					);
+				}
+				break;
+
+			case 'google':
+				$user = Socialite::driver('google')->user();
+				return $this->AuthWithServices(
+					(int) $user['sub'],
+					'google',
+					$user['given_name'].'_'.$user['family_name'],
+					$user['picture'],
+					$user['email']
+				);
+				break;
 		}
 
 	}

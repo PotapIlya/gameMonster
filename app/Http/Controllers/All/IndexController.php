@@ -14,7 +14,6 @@ use Illuminate\Http\Request;
 class IndexController extends BasicAllController
 {
 
-
 	public function __construct()
 	{
 		parent::__construct();
@@ -27,14 +26,9 @@ class IndexController extends BasicAllController
      */
     public function index(Request $request)
     {
-//		$catalog = Catalog::limit(16)->with('category')->get();
-//		$slider = Slider::all();
-//		$link = Lick::all();
-//		$proposal = Proposal::all();
 
-
-
-    	return view('all.main.index', [
+    	return view('all.main.index',
+		[
     		'catalog' => Catalog::limit(16)->with('category')->get(),
     		'slider' => Slider::all(),
     		'link' => Lick::all(),
@@ -68,33 +62,33 @@ class IndexController extends BasicAllController
 
 
 	/**
-	 * @param string $id
+	 * @param string $url
 	 * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|void
 	 */
-    public function show(string $id)
+    public function show(string $url)
     {
-    	$item = Catalog::with('category')->with('key', function ($query)
-		{
+    	$item = Catalog::with('category', 'developer', 'languages', 'operatingSystem')->with('key', function ($query) {
 			$query->where('status', 1)->first();
 		})
-			->where('url', $id)
+			->where('url', $url)
 			->first();
-
 
     	if (!$item){
     		return abort(404);
-//    		dd( 'IndexController show' );
 		};
 
-    	// беерем категории у родителей и от связи в категория берем схожие
 
-		// переписать, тк берет только первую к	атегорию
-    	$otherGame = Category::whereIn('name', $item->category->pluck('name')) // получаю все категории родителя
-			->with('catalog')
-			->limit(1)
-			->get()
-			->pluck('catalog')->first();
+//		$item->category->pluck('name'); // массив категорий товара (steam, origin)
 
+		// ищу от категрий к товарам
+		$otherGame = Category::whereIn('name', $item->category->pluck('name'))
+			->with('catalog', function ($query) use ($url)
+			{
+				// чтобы не выводился товар, на котором уже нахоидимся
+				$query->where('url', '!=', $url)
+					->limit(4);
+			})
+			->get();
 
 
     	return view('all.main.show', compact('item', 'otherGame'));

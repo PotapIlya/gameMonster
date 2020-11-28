@@ -162,13 +162,13 @@ Route::group(
 	{
 		Route::resource('/my', 'IndexController')->names('user');
 //		Route::resource('/balance', 'BalanceController')->names('user.balance');
-		Route::patch('/buyKey/{id}', 'BuyKeyController@buyKey')->name('user.buyKey');
+		Route::patch('/buyKey/{url}', 'BuyKeyController@buyKey')->name('user.buyKey');
 
 
 
 		/** API */
 
-		Route::post('/my/updateInfo', 'IndexController@updateInfo');
+		Route::post('/api/my/updateInfo', 'IndexController@updateInfo');
 		Route::post('/my/updatePassword', 'IndexController@updatePassword');
 		Route::post('/api/my/deleteServices', 'IndexController@deleteServices');
 

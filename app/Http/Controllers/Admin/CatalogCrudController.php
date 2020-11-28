@@ -18,7 +18,7 @@ class CatalogCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
 //    use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\CloneOperation;
+//    use \Backpack\CRUD\app\Http\Controllers\Operations\CloneOperation;
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
@@ -177,6 +177,51 @@ class CatalogCrudController extends CrudController
 			'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
 			// 'select_all' => true, // show Select All and Clear buttons?
 		]);
+
+		CRUD::addField([
+			'label'     => "Дата выпуска",
+			'type'      => 'date',
+			'name'      => 'created_at', // the method that defines the relationship in your Model
+		]);
+		CRUD::addField([
+			'label'     => "Разработчик",
+			'type'      => 'select2',
+			'name'      => 'developers_id', // the db column for the foreign key
+
+			// optional
+			'entity'    => 'developer', // the method that defines the relationship in your Model
+			'model'     => "App\Models\Admin\Developers", // foreign key model
+			'attribute' => 'name', // foreign key attribute that is shown to user
+//			'default'   => 2, // set the default value of the select2
+		]);
+
+		CRUD::addField([
+			'label'     => "Языки",
+			'type'      => 'select2_multiple',
+			'name'      => 'languages', // the method that defines the relationship in your Model
+
+			// optional
+			'entity'    => 'languages', // the method that defines the relationship in your Model
+//			'model'     => "App\Models\Admin\Category", // foreign key model
+			'attribute' => 'name', // foreign key attribute that is shown to user
+			'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
+			// 'select_all' => true, // show Select All and Clear buttons?
+		]);
+
+		CRUD::addField([
+			'label'     => "ОС",
+			'type'      => 'select2_multiple',
+			'name'      => 'operatingSystem', // the method that defines the relationship in your Model
+
+			// optional
+			'entity'    => 'operatingSystem', // the method that defines the relationship in your Model
+//			'model'     => "App\Models\Admin\Category", // foreign key model
+			'attribute' => 'name', // foreign key attribute that is shown to user
+			'pivot'     => true, // on create&update, do you need to add/delete pivot table entries?
+			// 'select_all' => true, // show Select All and Clear buttons?
+		]);
+
+
 
 		CRUD::setFromDb(); // fields
 

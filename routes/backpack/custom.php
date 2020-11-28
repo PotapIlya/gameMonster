@@ -87,4 +87,8 @@ Route::group([
     Route::crud('proposal', 'ProposalCrudController');
     Route::crud('historypayments', 'HistoryPaymentsCrudController');
 //    Route::get('charts/weekly-users', 'Charts\WeeklyUsersChartController@response')->name('charts.weekly-users.index');
+    Route::crud('socialnetworks', 'SocialNetworksCrudController');
+    Route::crud('developers', 'DevelopersCrudController');
+    Route::crud('languages', 'LanguagesCrudController');
+    Route::crud('operatingsystem', 'OperatingSystemCrudController');
 }); // this should be the absolute last line of this file

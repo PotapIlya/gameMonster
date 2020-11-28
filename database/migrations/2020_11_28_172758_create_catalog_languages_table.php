@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSocialNetworksTable extends Migration
+class CreateCatalogLanguagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateSocialNetworksTable extends Migration
      */
     public function up()
     {
-        Schema::create('social_networks', function (Blueprint $table) {
+        Schema::create('catalog_languages', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name', 20)->default(null)->nullable();
-			$table->string('href', 255)->default(null)->nullable();
-			$table->text('icon')->default(null)->nullable();
+			$table->unsignedBigInteger('catalog_id');
+			$table->unsignedBigInteger('language_id');
+
 
 			$table->timestamps();
         });
@@ -31,6 +31,6 @@ class CreateSocialNetworksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('social_networks');
+        Schema::dropIfExists('catalog_languages');
     }
 }

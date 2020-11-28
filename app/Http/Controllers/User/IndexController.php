@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Exceptions\BuyKeyException;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\UpdateInfoRequest;
+use App\Http\Requests\User\UpdateUserPasswordRequest;
 use App\Models\User;
 use App\Models\User\UserServices;
 use App\Services\User\UpdatePersonalAreaService;
@@ -26,11 +27,11 @@ class IndexController extends BasicUserController
 	 */
     public function index()
     {
-    	$user = Auth::user()->with('history.key', 'services')->first();
+		$user = User::with('history.key', 'services')->find(Auth::id());
+
 		if (!$user){
 			return abort('500');
 		}
-
 
 		return view('user.my.index', compact('user'));
     }
@@ -88,51 +89,30 @@ class IndexController extends BasicUserController
      */
     public function update(Request $request, $id)
     {
-
+    	//
     }
+
 
 	/**
 	 * @param UpdateInfoRequest $request
 	 * @param UpdatePersonalAreaService $update
 	 * @return \Illuminate\Http\JsonResponse
+	 * @throws BuyKeyException
 	 */
     public function updateInfo(UpdateInfoRequest $request, UpdatePersonalAreaService $update)
 	{
-		$userId = Auth::id();
-
-		$validation = \Validator::make($request->all() ,[
-			'login' => ['required', 'string', 'max:255', Rule::unique('users')->ignore($userId)],
-			'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($userId)],
-			'phone' => ['required', 'max:255'],
-		]);
-		if ($validation->fails())
-		{
-			return response()->json(['errors' => $validation->errors()]);
-		}
-
-		return $update->updateInfoUser($userId, $request);
+		return $update->updateInfoUser($request->all());
 	}
 
 
 	/**
-	 * @param Request $request
+	 * @param UpdateUserPasswordRequest $request
 	 * @param UpdatePersonalAreaService $update
 	 * @return \Illuminate\Http\JsonResponse
 	 */
-	public function updatePassword(Request $request, UpdatePersonalAreaService $update)
+	public function updatePassword(UpdateUserPasswordRequest $request, UpdatePersonalAreaService $update)
 	{
-		$user = Auth::user();
-
-		$validation = \Validator::make($request->all() ,[
-			'oldPassword' => ['required', 'string'],
-			'password' => ['required', 'string', 'min:8', 'confirmed'],
-		]);
-		if ($validation->fails()) {
-			return response()->json(['errors' => $validation->errors()]);
-		}
-
-		return $update->updatePassword($user, $request);
-
+		return $update->updatePassword( $request->all() );
 	}
 
 

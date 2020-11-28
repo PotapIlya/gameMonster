@@ -34,8 +34,6 @@ class BuyKeyController extends BasicUserController
 		{
 			return redirect()->back()->with(['success' => 'Купленно']);
 		}
-
-
 	}
 
 

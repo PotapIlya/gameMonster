@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Admin\Catalog;
 use App\Models\Admin\Role;
 use App\Models\User\ShoppingHistory;
+use App\Models\User\UserServices;
 use Backpack\CRUD\app\Notifications\ResetPasswordNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -17,7 +18,6 @@ class User extends Authenticatable
 	use HasApiTokens;
     use HasFactory;
     use Notifiable;
-
 
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Admin;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
@@ -28,6 +28,8 @@ class SocialNetworks extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+
+
 
     /*
     |--------------------------------------------------------------------------

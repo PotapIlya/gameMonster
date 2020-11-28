@@ -7,7 +7,6 @@ use App\Exceptions\BuyKeyException;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\BalanceRequest;
 use App\Models\Admin\HistoryPayments;
-use App\Models\Test;
 use App\Services\User\Balance\AddBalance;
 use App\Services\User\Balance\CheckBalance;
 use App\Services\User\BalanceService;
@@ -58,20 +57,24 @@ class BalanceController extends Controller
 	 */
     public function store(BalanceRequest $request, AddBalance $addBalance)
 	{
-		if ($request->input('name') === 'qiwi')
-		{
-			return $addBalance->qiwi($request->all());
-		}
-		if ($request->input('name') === 'paypal')
-		{
-			return $addBalance->paypal($request->all());
-		}
-		if ($request->input('name') === 'payeer')
-		{
-			return $addBalance->payeer($request->all());
-		}
 
-		return response()->json(['error' => 'error']);
+		switch ($request->input('name'))
+		{
+			case 'qiwi':
+				return $addBalance->qiwi($request->all());
+				break;
+
+			case 'paypal':
+				return $addBalance->paypal($request->all());
+				break;
+
+			case 'payeer':
+				return $addBalance->payeer($request->all());
+				break;
+
+			default:
+				return response()->json(['error' => 'error']);
+		}
 	}
 
 

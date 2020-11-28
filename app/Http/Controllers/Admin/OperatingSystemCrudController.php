@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\SocialNetworksRequest;
+use App\Http\Requests\OperatingSystemRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class SocialNetworksCrudController
+ * Class OperatingSystemCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class SocialNetworksCrudController extends CrudController
+class OperatingSystemCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
-//    use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
+    use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
     /**
@@ -26,9 +26,9 @@ class SocialNetworksCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Admin\SocialNetworks::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/socialnetworks');
-        CRUD::setEntityNameStrings('socialnetworks', 'Соц Сети');
+        CRUD::setModel(\App\Models\Admin\OperatingSystem::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/operatingsystem');
+        CRUD::setEntityNameStrings('ОС', 'ОС');
     }
 
     /**
@@ -39,9 +39,7 @@ class SocialNetworksCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-    	CRUD::addColumn(['name' => 'name']);
-
-		CRUD::setFromDb(); // columns
+        CRUD::setFromDb(); // columns
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -58,7 +56,7 @@ class SocialNetworksCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(SocialNetworksRequest::class);
+        CRUD::setValidation(OperatingSystemRequest::class);
 
         CRUD::setFromDb(); // fields
 

@@ -58,3 +58,7 @@
         <li class='nav-item'><a class='nav-link' href='{{ backpack_url('socialnetworks') }}'><i class='nav-icon la la-file-o'></i> Соц сети</a></li>
     </ul>
 </li>
+
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('developers') }}'><i class='nav-icon la la-question'></i> Developers</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('languages') }}'><i class='nav-icon la la-question'></i> Languages</a></li>
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('operatingsystem') }}'><i class='nav-icon la la-question'></i> OperatingSystems</a></li>

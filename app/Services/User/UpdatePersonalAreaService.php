@@ -20,7 +20,6 @@ final class UpdatePersonalAreaService
 	{
 		if ( Auth::id() === UserServices::findOrFail($array['id'])['user_id'] && !is_null($array['id']) )
 		{
-//			UserServices::destroy($array['id'])
 			if ( UserServices::destroy($array['id']) )
 			{
 				return response()->json(['success' => 'success']);
@@ -32,47 +31,47 @@ final class UpdatePersonalAreaService
 		}
 	}
 
+
 	/**
-	 * @param int $userId
-	 * @param $request
+	 * @param array $array
 	 * @return \Illuminate\Http\JsonResponse
 	 * @throws BuyKeyException
 	 */
-	public function updateInfoUser(int $userId, $request)
+	public function updateInfoUser(array $array)
 	{
-		// try - catch
-		$update = User::findOrFail($userId)->update([
-			'login' => $request->input('login'),
-			'email' => $request->input('email'),
-			'phone' => $request->input('phone'),
+		$update = User::findOrFail( Auth::id() )->update([
+			'login' => $array['login'],
+			'email' => $array['email'],
+			'phone' => $array['phone'],
 		]);
 		if ($update)
 		{
 			return response()->json(['success' => 'success']);
 		} else{
-			throw new BuyKeyException();
+			return response()->json(['success' => '1234']);
 		}
 	}
 
 
 	/**
-	 * @param object $user
-	 * @param $request
+	 * @param array $array
 	 * @return \Illuminate\Http\JsonResponse
 	 */
-	public function updatePassword(object $user, $request)
+	public function updatePassword(array $array)
 	{
-		if ($request->input('oldPassword') === $request->input('password'))
+		if ( $array['oldPassword'] === $array['password'] )
 		{
-			return response()->json(['errors' => ['oldPassword' => ['Старый и новый пароль совпадает']]]);
+			return response()->json(['errors' => 'Старый и новый пароль совпадает']);
 		}
 
-		if (\Hash::check($request->input('oldPassword'), $user->password))
+		if (\Hash::check($array['oldPassword'], Auth::user()->password ))
 		{
-			User::findOrFail($user->id)->update([
-				'password' => bcrypt($request->input('password'))
+			$update = User::findOrFail( Auth::id() )->update([
+				'password' => bcrypt($array['password'])
 			]);
-			return response()->json(['success' => 'success']);
+			if ($update){
+				return response()->json(['success' => 'success']);
+			}
 		}
 		else
 		{

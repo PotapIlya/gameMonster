@@ -12,7 +12,10 @@
             position: absolute;
             bottom: 0;
             right: 0;
-            background:#101010;
+            background: #111;
+            //background: url(/assets/static/img/main/bg.jpg),rgba(0,0,0,.88);
+            //background-blend-mode: multiply;
+            //background: #111010;
             border-radius: 15px 0 0 0;
             padding: 0 !important;
 

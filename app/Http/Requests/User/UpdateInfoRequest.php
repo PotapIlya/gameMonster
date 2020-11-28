@@ -25,10 +25,11 @@ class UpdateInfoRequest extends FormRequest
      */
     public function rules()
     {
+    	$id = Auth::id();
         return [
-			'login' => ['required', 'string', 'max:255', Rule::unique('users')->ignore(Auth::id())],
-			'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore(Auth::id())],
-			'phone' => ['required', 'max:255'],
+			'login' => ['required', 'string', 'max:255', Rule::unique('users')->ignore($id)],
+			'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($id)],
+			'phone' => ['required', 'max:20'],
         ];
     }
 }

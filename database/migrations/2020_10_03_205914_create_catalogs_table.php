@@ -30,6 +30,7 @@ class CreateCatalogsTable extends Migration
 			$table->boolean('exclusive')->default(false);
 			$table->boolean('pre_order')->default(false);
 			$table->boolean('early_access')->default(false);
+			$table->string('developers_id', 255)->default(null)->nullable();
 
             $table->timestamps();
         });

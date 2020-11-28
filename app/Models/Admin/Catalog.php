@@ -44,10 +44,23 @@ class Catalog extends Model
 	{
 		return $this->belongsToMany(Category::class, 'category_product', 'category_id','product_id');
 	}
+	public function languages()
+	{
+		return $this->belongsToMany(Languages::class, 'catalog_languages', 'catalog_id','language_id');
+	}
+	public function operatingSystem()
+	{
+		return $this->belongsToMany(OperatingSystem::class, 'catalog_operating_system', 'catalog_id','operating_system');
+	}
 
 	public function key()
 	{
 		return $this->hasMany(CatalogKey::class, 'catalog_id', 'id');
+	}
+
+	public function developer()
+	{
+		return $this->hasOne(Developers::class, 'id', 'developers_id');
 	}
 
 //	public function allKey()

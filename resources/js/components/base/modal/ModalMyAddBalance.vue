@@ -117,7 +117,8 @@
 					    if (response.data.success)
 						{
 						    this.loader = false;
-                            window.location.href = response.data.success;
+                            window.open(response.data.success, '_blank');
+                            // window.location.href = response.data.success;
 						}
                         if (response.data.error)
                         {

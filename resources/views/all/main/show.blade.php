@@ -112,22 +112,59 @@
                                 @include('base.alert.error')
                         </div>
 
-
                         <div class="right-wrap1">
                             <div class="right-wrap__lists d-flex">
                                 <ul class="right-wrap__tag">
-                                    <li>Дата выпуска</li>
-                                    <li>Разработчик</li>
-                                    <li>ОС</li>
-                                    <li>Язык</li>
+
+
+                                    @if($item->created_at)
+                                        <li>Дата выпуска</li>
+                                    @endif
+                                    @if(!is_null($item->developer) && $item->developer)
+                                        <li>Разработчик</li>
+                                    @endif
+                                    @if(count($item->operatingSystem) && $item->operatingSystem)
+                                        <li>ОС</li>
+                                    @endif
+                                    @if(count($item->languages) && $item->languages)
+                                        <li>Язык</li>
+                                    @endif
                                 </ul>
                                 <ul class="right-wrap__value">
-                                    <li>12 августа 2012</li>
-                                    <li><span class="cart-images__yellow">Valve</span></li>
-                                    <li><span class="cart-images__yellow">Windows</span> / <span class="cart-images__yellow">Mac</span></li>
-                                    <li class="d-flex flex-column mt-1">
-                                        <span class="right-wrap__value-leng">русский</span>
-                                        <span>английский</span>
+
+                                    @if($item->created_at)
+                                        <li>
+                                            {{ $item->created_at->format('d m Y') }}
+                                        </li>
+                                    @endif
+                                    @if(!is_null($item->developer) && $item->developer)
+                                        <li>
+                                            <span class="cart-images__yellow">
+                                                {{ $item->developer->name }}
+                                            </span>
+                                        </li>
+                                    @endif
+
+                                    @if(count($item->operatingSystem) && $item->operatingSystem)
+                                        <li>
+                                            @foreach($item->operatingSystem as $system)
+                                                <span class="cart-images__yellow">
+                                                    {{ $system->name }} <br>
+                                                </span>
+                                            @endforeach
+                                        </li>
+                                    @endif
+
+                                    @if(count($item->languages) && $item->languages)
+                                        <li>
+                                            @foreach($item->languages as $lang)
+                                                <span class="">
+                                                    {{ $lang->name }} <br>
+                                                </span>
+                                            @endforeach
+                                        </li>
+                                    @endisset
+
                                 </ul>
                             </div>
                         </div>
@@ -183,8 +220,10 @@
                 </div>
                 <div class="row">
 
-                    @foreach($otherGame as $item)
-                        @include('base.include.catalogItem', ['item' => $item, 'show' => false])
+                    @foreach($otherGame as $wrapper)
+                        @foreach($wrapper->catalog as $item)
+                            @include('base.include.catalogItem', ['item' => $item, 'show' => false])
+                        @endforeach
                     @endforeach
 
                 </div>

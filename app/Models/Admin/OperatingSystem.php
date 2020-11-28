@@ -5,7 +5,7 @@ namespace App\Models\Admin;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class OperatingSystem extends Model
 {
     use CrudTrait;
 
@@ -15,20 +15,13 @@ class Category extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'categories';
+    protected $table = 'operating_system';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
     // protected $fillable = [];
     // protected $hidden = [];
     // protected $dates = [];
-
-
-
-	public function catalog()
-	{
-		return $this->belongsToMany(Catalog::class, 'category_product', 'product_id','category_id');
-	}
 
     /*
     |--------------------------------------------------------------------------

@@ -7,6 +7,7 @@ use App\Exceptions\BuyKeyException;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\HistoryPayments;
 use Illuminate\Http\Request;
+use Mockery\Exception;
 use PayPal\Api\FundingInstrument;
 use PayPal\Rest\ApiContext;
 use PayPal\Auth\OAuthTokenCredential;
@@ -27,7 +28,8 @@ use Cookie;
 use Auth;
 
 
-final class CheckBalance{
+final class CheckBalance
+{
 
 
 	/**
@@ -108,8 +110,10 @@ final class CheckBalance{
 
 		if ($array['m_sign'] === $sign_hash && $array['m_status'] === 'success')
 		{
-			$query->update(['status' => 1]);
 			$userAbout = Auth::user()->about;
+			if ($userAbout){
+				$query->update(['status' => 1]);
+			}
 
 			$update = $userAbout->update([
 				'money' => explode('.', $array['m_amount'])[0] + $userAbout->money
@@ -164,161 +168,61 @@ final class CheckBalance{
 
 	/**
 	 * @param object $query
-	 * @param array $array
+	 * @param array|null $array
+	 * @return \Illuminate\Http\RedirectResponse
+	 * @throws BuyKeyException
 	 */
 	private function paypal(object $query, ?array $array)
 	{
-		$paypal = new ApiContext(new OAuthTokenCredential(
-				config('payment.paypal.client_id'),
-				config('payment.paypal.secret'))
-		);
-		$paypal->setConfig(config('payment.paypal.settings'));
-
-		$paymentId = Cookie::get('billId');
-		$payerId = Cookie::get('id');
-
-		$payment = Payment::get( Cookie::get('billId'), $paypal );
-		$execute = new PaymentExecution();
-		$execute->setPayerId(Cookie::get('id'));
-
-//		dd($payment->create($paypal)->getState());
 		try
 		{
+			$paypal = new ApiContext(new OAuthTokenCredential(
+					config('payment.paypal.client_id'),
+					config('payment.paypal.secret'))
+			);
+			$paypal->setConfig(config('payment.paypal.settings'));
 
-			$result = $payment->create($paypal)->getState();
+			$paymentId = Cookie::get('billId');
+			$payerId = Cookie::get('id');
 
-			dd($payment->create($paypal)->getState(), 12);
+			$payment = Payment::get(Cookie::get('billId'), $paypal);
+			$execute = new PaymentExecution();
+			$execute->setPayerId(Cookie::get('id'));
+
+
+			/** Выполняем платёж **/
+			$result = $payment->execute($execute, $paypal);
+
+			if ($result->getState() === 'approved')
+			{
+				$userAbout = Auth::user()->about;
+				if ($userAbout){
+					$query->update(['status' => 1]);
+				}else{
+					throw new BuyKeyException();
+				}
+
+				$update = $userAbout->update([
+					'money' =>  $query['money'] + $userAbout->money,
+				]);
+				if ($update){
+					return redirect()->route('user.index')
+						->withCookie(Cookie::forget('billId'))
+						->withCookie(Cookie::forget('id'));
+				} else{
+					throw new BuyKeyException();
+				}
+			} else{
+				throw new BuyKeyException();
+			}
 		}
-		catch (\PayPal\Exception\PayPalConnectionException $ex) {
-
-//			dd( $ex->getCode() ); // Prints the Error Code
-			dd( $ex->getData(), 'getData' ); // Prints the detailed error message
-
-
-		} catch (\Exception $ex) {
-			dd($ex);
+		catch (Exception $e)
+		{
+			throw new BuyKeyException();
 		}
 
-
-		dd( $payment->execute($execute, $paypal) );
-
-
-
-		try{
-
-
-		    $result = $payment->execute($execute, $paypal);
-
-
-
-		   $transactions = $payment->getTransactions();
-		   $resources = $transactions[0]->getRelatedResources();
-
-		   $sale = $resources[0]->getSale();
-		   $saleID = $sale->getId();
-		   }catch(PayPalConnectionException $e){
-			dd(12);
-		       echo $e->getCode(); // Prints the Error Code
-		       echo $e->getData();
-		       die($e);
-		   }catch (Exception $ex) {
-		       die($ex);
-		   }
 
 	}
-
-
-
-
-
-
-
-
-
-
-//	/**
-//	 * @param Payment $payment
-//	 * @param Request $request
-//	 * @return \Illuminate\Http\RedirectResponse
-//	 */
-//	public function paypal(Payment $payment)
-//	{
-//		dd(12);
-//		/** Получаем ID платежа до очистки сессии **/
-//		$payment_id = Session::get('paypal_payment_id');
-//		/** Очищаем ID платежа **/
-//		Session::forget('paypal_payment_id');
-//
-//		if (empty($request->PayerID) || empty($request->token)) {
-//			session()->flash('error', 'Payment failed');
-//			return Redirect::route('/');
-//		}
-//
-//		$payment = Payment::get($payment_id, $this->_api_context);
-//		$execution = new PaymentExecution();
-//		$execution->setPayerId($request->PayerID);
-//
-//		/** Выполняем платёж **/
-//		$result = $payment->execute($execution, $this->_api_context);
-//
-//		if ($result->getState() == 'approved') {
-//			session()->flash('success', 'Платеж прошел успешно');
-//			return Redirect::route('/');
-//		}
-//
-//		session()->flash('error', 'Платеж не прошел');
-//		return Redirect::route('/');
-//	}
-//
-//
-//	/**
-//	 * @return \Illuminate\Http\RedirectResponse
-//	 * @throws \ErrorException
-//	 * @throws \Qiwi\Api\BillPaymentsException
-//	 */
-//	public function qiwi()
-//	{
-//
-//		if ( !is_null(Cookie::get('billId')) && Cookie::get('billId')
-//			&&
-//			!is_null(Cookie::get('id')) && Cookie::get('id')
-//			&&
-//			(int) Cookie::get('id') === Auth::id() )
-//		{
-//			$billPayments = new \Qiwi\Api\BillPayments(config('payment.qiwi.secret_key'));
-//			$status = $billPayments->getBillInfo( Cookie::get('billId') );
-//
-//			// DB
-//			$query = HistoryPayments::where('billId', Cookie::get('billId'))->first();
-//			if ( $query && !$query->status )
-//			{
-//				if ($status && $status['status']['value'] === 'PAID')
-//				{
-//
-//					$query->update(['status' => 1]);
-//					$userAbout = Auth::user()->about;
-//
-//					$update = $userAbout->update([
-//						'money' => explode('.', $status['amount']['value'])[0] + $userAbout->money
-//					]);
-//					if ($update){
-//						return redirect()->route('user.index')
-//							->withCookie(\Cookie::forget('billId'))
-//							->withCookie(\Cookie::forget('id'));
-//					}
-//				}
-//				else{
-//					throw new BuyKeyException();
-//				}
-//			}
-//			else{
-//				throw new BuyKeyException();
-//			}
-//		}
-//
-//		throw new BuyKeyException();
-//
-//	}
 
 }
 
