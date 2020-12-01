@@ -29,6 +29,10 @@
             <hr>
         </li>
         <li class='nav-item'><a class='nav-link' href='{{ backpack_url('category') }}'><i class='nav-icon la la-file-o'></i> Категории</a></li>
+
+        <li class='nav-item'><a class='nav-link' href='{{ backpack_url('developers') }}'><i class='nav-icon la la-file-o'></i> Разработчики</a></li>
+        <li class='nav-item'><a class='nav-link' href='{{ backpack_url('languages') }}'><i class='nav-icon la la-file-o'></i> Языки</a></li>
+        <li class='nav-item'><a class='nav-link' href='{{ backpack_url('operatingsystem') }}'><i class='nav-icon la la-file-o'></i> ОС</a></li>
     </ul>
 </li>
 
@@ -41,6 +45,9 @@
 
         <li class='nav-item'><a class='nav-link' href='{{ backpack_url('users') }}'><i class='nav-icon la la-group'></i> Пользователи</a></li>
         <li class='nav-item'><a class='nav-link' href='{{ backpack_url('historypayments') }}'><i class='nav-icon la la-info-circle'></i> Пополнения</a></li>
+
+        <li class='nav-item'><a class='nav-link' href='{{ backpack_url('buykey') }}'><i class='nav-icon la la-info-circle'></i> Покупки</a></li>
+
     </ul>
 </li>
 
@@ -58,7 +65,3 @@
         <li class='nav-item'><a class='nav-link' href='{{ backpack_url('socialnetworks') }}'><i class='nav-icon la la-file-o'></i> Соц сети</a></li>
     </ul>
 </li>
-
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('developers') }}'><i class='nav-icon la la-question'></i> Developers</a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('languages') }}'><i class='nav-icon la la-question'></i> Languages</a></li>
-<li class='nav-item'><a class='nav-link' href='{{ backpack_url('operatingsystem') }}'><i class='nav-icon la la-question'></i> OperatingSystems</a></li>

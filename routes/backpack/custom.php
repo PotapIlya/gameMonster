@@ -91,4 +91,5 @@ Route::group([
     Route::crud('developers', 'DevelopersCrudController');
     Route::crud('languages', 'LanguagesCrudController');
     Route::crud('operatingsystem', 'OperatingSystemCrudController');
+    Route::crud('buykey', 'BuyKeyCrudController');
 }); // this should be the absolute last line of this file
