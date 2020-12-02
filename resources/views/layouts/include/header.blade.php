@@ -51,22 +51,24 @@
                 @endif
 
                 <div class="header__search order-1 order-xl-0 mb-3 mb-xl-0 mb-2 mb-xl-0">
-                    <search-component
+                    <header-search-component
                             :search="{{ json_encode($basic['search']) }}"
                     />
                 </div>
 
                 <div class="header__money order-4 order-xl-0 flex-column mb-2 mb-xl-0">
-                    <div class="header__increase-balance d-none d-sm-block d-xl-none">
-                        <a href="#" class="mb-2">Пополнить баланс</a>
-                    </div>
+                    @auth
+                        <div class="header__increase-balance d-none d-sm-block d-xl-none">
+                            <a href="#" class="mb-2">Пополнить баланс</a>
+                        </div>
+                    @endauth
                     <div class="header__money-currency d-flex align-items-center justify-content-end justify-content-sm-start  pt-3 pt-sm-0">
                         <input id="dollar" type="radio" name="money"/>
-                        <label for="dollar">$</label>
+                        <label for="dollar" class="activeText">$</label>
                         <input id="euro" type="radio" name="money"/>
                         <label for="euro">€</label>
                         <input id="rub" type="radio" name="money" checked="checked"/>
-                        <label for="rub" class="activeText">₽</label>
+                        <label for="rub" >₽</label>
                     </div>
                 </div>
             </div>
@@ -75,12 +77,12 @@
 
                 @guest
                     @if(Request::path() !== 'login' && Request::path() !== 'register' && Request::path() !== 'password/reset')
-                        <modal-auth-component />
+                        <header-modal-auth-component />
                     @endif
                 @else
                     <div class="header__user d-flex align-items-center">
                         <span class="mr-3 header__user-money">{{ \Auth::user()->about->money }} ₽</span>
-                        <div class="d-flex align-items-center">
+                        <div class="header__user-item d-flex align-items-center">
                             <div>
 
                                 @if(!is_null(\Auth::user()->img))
@@ -98,20 +100,20 @@
                         <ul class="header__user-menu">
                             <li>
                                 <span id="addBalance">
-                                    Пополнить баланс
+                                    Add balance
                                 </span>
                             </li>
                             <li>
-                                <a href="{{ route('user.index') }}">
-                                    Личный кабинет
+                                <a class="d-block" href="{{ route('user.index') }}">
+                                    Personal Area
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('logout') }}"
+                                <a class="d-block" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();"
                                 >
-                                    Выйти
+                                    Logout
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>

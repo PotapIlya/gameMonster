@@ -4,7 +4,7 @@
 			<div class="modal-wrap modal__wrap d-flex flex-column">
 				
 				<h1 class="modal__wrap-title">
-					Отвязать аккаунт<br>
+					Unlink account<br>
 					{{ item.type }}?
 				</h1>
 				
@@ -12,11 +12,11 @@
 					<button @click="send" class="my__btn my__btn-untie">
 						<PulseLoader v-if="loader" />
 						<span v-else>
-							Отвязать
+							Unlink
 						</span>
 					</button>
 					<button @click="ChangeShow" class="my__btn">
-						Отмена
+						Cancel
 					</button>
 				</div>
 				

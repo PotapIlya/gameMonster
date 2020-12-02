@@ -1,8 +1,12 @@
 .footer{
     .unit{
         a{
-            font-family: "Rubik";
+
         }
+    }
+    &__translate,
+    &__money{
+        color: $menu;
     }
 
     &__container{
@@ -53,6 +57,13 @@
 
     &__element6{
         .footer__search{
+            position: relative;
+
+            .header__search-res{
+                background: #000;
+                left: -20px;
+            }
+
             &-wrapper{
                 border-bottom: 1px solid #7C7C7C;
                 width: 180px;
@@ -80,6 +91,20 @@
     }
 }
 
+@media only screen and (max-width:1365px){
+
+    .footer__element6 .footer__search .header__search-res{
+        width: 180%;
+    }
+
+}
+@media only screen and (max-width: 900px){
+
+    .footer__element6 .footer__search .header__search-res{
+        width: 100%;
+    }
+
+}
 @media only screen and (max-width:1920px){
     .footer__row{
         display: grid !important;

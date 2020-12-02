@@ -155,7 +155,7 @@
 
         .modal-wrap{
             width: 50%;
-            background: url("/assets/release/img/static/modalBonus.png") no-repeat center center;
+            background: url("/assets/static/img/bonus/modalBonus.png") no-repeat center center;
             background-size: contain;
             position: relative;
 
@@ -253,6 +253,21 @@
     color: $colorFormLabel;
 }
 
+
+//
+//@media only screen and (min-width: 1800px){
+//
+//    .modal-bonus .modal-wrap{
+//        padding: 61px 223px 47px 150px;
+//    }
+//}
+
+@media only screen and (min-width: 1650px){
+
+    .modal-bonus .modal-wrap{
+        padding: 61px 223px 47px 135px;
+    }
+}
 
 
 @media only screen and (min-width:1530px){
@@ -487,6 +502,16 @@
     .my .modal .modal-wrap{
         height: auto !important;
     }
+
+    .modal.modal-bonus .global-wrap {
+        width: 95%;
+        margin: 0 auto;
+
+        .modal-wrap {
+            height: auto;
+        }
+    }
+
 }
 
 
@@ -561,9 +586,24 @@
 
 @media only screen and (max-width:500px){
 
+
+    .modal-bonus .modal-wrap .modal__wrap-input{
+        width: 85%;
+    }
+    .modal .modal-wrap .getCash{
+        width: 85%;
+    }
+    .modal.modal-bonus .global-wrap .modal-wrap{
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+
+
     .modal .modal-wrap{
         background-position: 70% center;
     }
+
 
 
     .my__modal .modal-wrap {

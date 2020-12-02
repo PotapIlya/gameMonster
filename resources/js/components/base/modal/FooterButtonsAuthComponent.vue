@@ -1,24 +1,17 @@
 <template>
 	<div class="header__auth">
-		<div class="d-none d-xl-flex align-items-center">
+		<div class="d-flex align-items-center">
 			<div class="header__auth-item openAuth"
 				@click="changeModal('login')"
 			>
-				Вход
+				Sign in
 			</div>
 			<div class="header__inclined mx-1">/</div>
 			<div class="header__auth-item openAuth"
 				 @click="changeModal('register')"
 			>
-				Регистрация
+				Registration
 			</div>
-		</div>
-		<div class="d-block d-xl-none">
-			<button class="btn_mobile openAuth"
-				@click="changeModal('login')"
-			>
-				Войти
-			</button>
 		</div>
 		
 		<ModelAuthComponent
@@ -41,9 +34,12 @@
 			statusModal: '',
             statusClose: false,
 		}),
-		mounted() {
+		watch: {
         
         },
+        mounted() {
+			
+                  },
         methods:{
             changeModal(name)
 			{

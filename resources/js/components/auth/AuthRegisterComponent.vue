@@ -6,8 +6,8 @@
 				<form @submit.prevent="upload" method="POST" class="registration d-flex flex-column p-0" style="background:transparent;">
 				
 					<div class="registration__buttons d-flex justify-content-sm-start justify-content-center mb-3">
-						<a href="/login" class="registration__sign-in">Вход</a>
-						<a href="/register" class="registration__sign-up modal_header_active_text">Регистрация</a>
+						<a href="/login" class="registration__sign-in">Sign in</a>
+						<a href="/register" class="registration__sign-up modal_header_active_text">Registration</a>
 					</div>
 					
 					
@@ -34,7 +34,7 @@
 								type="password"
 								v-model="password"
 						>
-						<span class="modal-auth-span">Пароль</span>
+						<span class="modal-auth-span">Password</span>
 						<ul v-if="errorPassword.length">
 							<li v-for="error in errorPassword">
 								{{ error[0] }}
@@ -45,19 +45,19 @@
 						<input
 								v-model="password_confirmation"
 								name="password_confirmation"
-								placeholder="Password"
+								placeholder="Repeat password"
 								type="password"
 						>
-						<span class="modal-auth-span">Повторите пароль</span>
+						<span class="modal-auth-span">Repeat password</span>
 					</label>
 					
 					
 					
 					<div class="forgot d-flex align-items-center">
-						<button type="submit" class="registration__enter">Войти</button>
-						<a href="#" class="registration__forgot">Забыли пароль?</a>
+						<button type="submit" class="registration__enter">Registration</button>
+<!--						<a href="#" class="registration__forgot">Забыли пароль?</a>-->
 					</div>
-					<a href="#" class="registration__enter-help">Войти с помощью</a>
+					<a href="#" class="registration__enter-help">Login with</a>
 					<div class="registration__services d-flex justify-content-start align-items-center">
 						<a href="/login/steam" class="service1">
 							<img src="/assets/static/img/services/steam.png" alt="steam">
@@ -103,7 +103,7 @@
                     password_confirmation: this.password_confirmation,
                 })
 				.then(response =>{
-                    console.log(response.data)
+                    // console.log(response.data)
 					if (response.data.success)
 					{
 						document.location.href = '/my';

@@ -118,16 +118,16 @@
 
 
                                     @if($item->created_at)
-                                        <li>Дата выпуска</li>
+                                        <li>Release date</li>
                                     @endif
                                     @if(!is_null($item->developer) && $item->developer)
-                                        <li>Разработчик</li>
+                                        <li>Developer:</li>
                                     @endif
                                     @if(count($item->operatingSystem) && $item->operatingSystem)
-                                        <li>ОС</li>
+                                        <li>Operating system</li>
                                     @endif
                                     @if(count($item->languages) && $item->languages)
-                                        <li>Язык</li>
+                                        <li>Language</li>
                                     @endif
                                 </ul>
                                 <ul class="right-wrap__value">
@@ -173,7 +173,7 @@
 
 
             </div>
-            <div class="row2 row px-0 m-0 d-flex w-100 d-flex justify-content-end">
+            <div class="row px-0 m-0 d-flex w-100 d-flex justify-content-end">
                 @if(!is_null($item->text) && $item->text)
                     <div class="game-description col-12 col-xl-7 px-0 mb-3 mb-md-5 mb-xl-0" id="showDescription">
                             {!! $item->text !!}
@@ -210,13 +210,14 @@
         </div>
     </section>
 
+{{--@dd($otherGame)--}}
 
     @if(!is_null($otherGame) && $otherGame && count($otherGame))
         <section class="d-none d-sm-block">
             <div class="container">
                 <div class="section__text news__text d-flex justify-content-between justify-content-lg-start d-block">
-                    <h3 class="section__title news__title">Похожие игры</h3>
-                    <p class="section__subtitle">Все игры</p>
+                    <h3 class="section__title news__title">Similar games</h3>
+                    <p class="section__subtitle">View more</p>
                 </div>
                 <div class="row">
 

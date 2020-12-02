@@ -27,10 +27,11 @@
 
                     <div class="registration__buttons d-flex flex-column justify-content-sm-start justify-content-center mb-3">
                         <span class="registration__sign-in">
-                            Восстановление пароля
+                            Reset Password
                         </span>
                         <span class="mt-3 mb-1">
-                            На ваш e-mail будет направлена ссылка для восстановления доступа
+                            A link to restore access will be sent to your e-mail
+{{--                            На ваш e-mail будет направлена ссылка для восстановления доступа--}}
                         </span>
                     </div>
 
@@ -44,11 +45,11 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
-
+                        #noty_layout__topRight
                     </label>
 
                     <div class="forgot d-flex align-items-center">
-                        <button style="color: #fff; cursor: pointer" type="submit" class="registration__enter">Продолжить</button>
+                        <button style="color: #fff; cursor: pointer" type="submit" class="registration__enter">Proceed</button>
                     </div>
                 </form>
             </div>

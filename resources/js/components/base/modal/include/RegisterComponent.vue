@@ -4,10 +4,10 @@
 			<div class="registration__buttons d-flex justify-content-sm-start justify-content-center mb-3">
 				<span class="registration__sign-in"
 					  @click="changeTitle('login')"
-				>Вход</span>
+				>Sign in</span>
 				<span class="registration__sign-up modal_header_active_text"
 					  @click="changeTitle('register')"
-				>Регистрация</span>
+				>Registration</span>
 			</div>
 			
 			<label for="" class="modal-auth-input">
@@ -22,7 +22,7 @@
 			
 			<label for="" class="modal-auth-input">
 				<input v-model="password" name="password" placeholder="Password" type="password">
-				<span class="modal-auth-span">Пароль</span>
+				<span class="modal-auth-span">Password</span>
 				<ul v-if="errorPassword.length">
 					<li v-for="error in errorPassword">
 						{{ error[0] }}
@@ -31,14 +31,14 @@
 			</label>
 			
 			<label for="" class="modal-auth-input">
-				<input v-model="password_confirmation" name="password" placeholder="Password" type="password">
-				<span class="modal-auth-span">Повторите пароль</span>
+				<input v-model="password_confirmation" name="password" placeholder="Repeat password" type="password">
+				<span class="modal-auth-span">Repeat password</span>
 			</label>
 			
 			<div class="forgot d-flex align-items-center">
-				<button type="submit" class="registration__enter" style="cursor: pointer; color: #fff;">Зарегистрироваться</button>
+				<button type="submit" class="registration__enter" style="cursor: pointer; color: #fff;">Registration</button>
 			</div>
-			<a href="#" class="registration__enter-help">Войти с помощью</a>
+			<a href="#" class="registration__enter-help">Login with</a>
 			<div class="registration__services d-flex align-items-center">
 				<a href="/login/steam" class="service1">
 					<img src="/assets/static/img/services/steam.png" alt="steam">

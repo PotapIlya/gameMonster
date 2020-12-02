@@ -9,6 +9,21 @@ body {
     font-weight: 400;
     overflow-x: hidden;
     overflow-y: visible;
+    //background-color: #000205;
+    font-family: "Rubik", sans-serif !important;
+}
+*{
+    font-family: "Rubik", sans-serif !important;
+}
+
+.container{
+    @media only screen and (max-width:1500px){
+        padding: 0 28px;
+    }
+
+    @media only screen and (max-width:768px){
+        padding: 0 16px;
+    }
 }
 
 h1,

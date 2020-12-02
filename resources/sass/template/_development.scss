@@ -1,12 +1,9 @@
 .development{
-    background: url("/assets/release/img/static/developmentBg.png") no-repeat 100% center;
+    background: url("/assets/static/img/main/error.png") no-repeat 100% center;
     background-size: contain;
     width: 100%;
     height: 100vh;
 
-    &__wrap{
-        //padding-right: 43%;
-    }
 
     &__title{
         padding-top: 120px;
@@ -51,6 +48,10 @@
     .development{
         background-size: cover;
         background-position: 70% center;
+
+        &__wrap{
+            padding-left: 50px !important;
+        }
     }
 }
 

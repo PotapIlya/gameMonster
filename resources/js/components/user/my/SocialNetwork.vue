@@ -71,7 +71,7 @@
 		mounted() {
             this.service = this.services
 
-            console.log(this.service)
+            // console.log(this.service)
 			
             this.service.forEach(x => {
 			    if ( this.array.indexOf(x.type) !== -1 ) {

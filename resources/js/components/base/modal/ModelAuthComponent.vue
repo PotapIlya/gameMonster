@@ -46,9 +46,28 @@
 			{
 			    this.status = true;
 			},
+            statusModal(name){
+                this.statusModals = name
+			}
 		},
 		mounted() {
             this.statusModals = this.statusModal
+
+
+            window.addEventListener('click', (e) => {
+
+                if (this.status)
+                {
+                    const wrapper = document.querySelector('.modal.modal-auth')
+                    const modal = wrapper.querySelector('.global-wrap')
+					
+                    if (e.target === modal){
+                        this.closeModal();
+                    }
+                }
+            })
+
+
         },
         methods: {
             changeModal(data)

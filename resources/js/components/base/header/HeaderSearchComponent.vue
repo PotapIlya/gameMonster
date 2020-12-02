@@ -1,12 +1,17 @@
 <template>
-	<div>
+	<div :class="{'headerStatusActive': headerStatusActive }">
 		
-		<div @click="showInput = true" class="header__search-btn">
-			<button class="button">Поиск</button>
+		<div @click="showInputFunc" class="header__search-btn">
+			<button class="button">Search</button>
 		</div>
 		
-		<div v-show="showInput" class="header__search-label" style="display: block">
-			<input v-model="searchInput" type="text" placeholder="Seatch" class="searchInput" autofocus/>
+		<div v-show="showInput" class="header__search-label">
+			<input
+				   v-model="searchInput"
+				   type="text"
+				   placeholder="Search"
+				   class="searchInput"
+				   />
 		</div>
 		
 		
@@ -50,14 +55,26 @@
             searchInput: '',
             searchArray: [],
 			startArray: [],
-            showInput: false
+            showInput: false,
+			
+			headerStatusActive: false
 		}),
         mounted() {
-            this.startArray = this.search
+            this.startArray = this.search;
+			
+			window.addEventListener('click', (e) => {
+                if (e.target.closest('.headerStatusActive') === null) {
+                    this.searchInput = '';
+                }
+			})
+			
+      
         },
 		
 		watch:{
-            searchInput() {
+            searchInput()
+			{
+			    
                 this.searchArray.length = 0;
 			    if (this.startArray.length && this.searchInput.length)
 				{
@@ -72,7 +89,11 @@
 			}
 		},
 		methods: {
-  
+            showInputFunc()
+			{
+			    this.showInput = true;
+			    this.headerStatusActive = true;
+			}
 		}
     }
 </script>

@@ -1,12 +1,14 @@
 <template>
 	<div>
-		<div class="my-private">Личный кабинет</div>
+		<div class="my-private">
+			Personal Area
+		</div>
 		
 		<div class="row pl-3">
 			<div class="my_block_left">
 				<div class="my-title mb-4 d-flex align-items-center justify-content-between">
 				<span>
-					Аккаунт
+					Account
 				</span>
 					<!--			<span v-if="statusTitle"-->
 					<!--			  style="background: green">-->
@@ -31,7 +33,7 @@
 			<div class="my_block_right">
 				<div class="my-title mb-4 d-flex align-items-center justify-content-between">
 					<span>
-						Привязанные аккаунты
+Linked accounts
 					</span>
 				</div>
 			

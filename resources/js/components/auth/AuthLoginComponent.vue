@@ -5,8 +5,8 @@
 				
 				<form @submit.prevent="upload" method="POST" class="registration d-flex flex-column" style="background:transparent;">
 					<div class="registration__buttons d-flex justify-content-start align-items-center mb-3">
-						<a href="/login" class="registration__sign-in modal_header_active_text">Вход</a>
-						<a href="/register" class="registration__sign-up">Регистрация</a>
+						<a href="/login" class="registration__sign-in modal_header_active_text">Sign in</a>
+						<a href="/register" class="registration__sign-up">Registration</a>
 					</div>
 					
 					<label for="" class="modal-auth-input">
@@ -17,7 +17,7 @@
 								type="text"
 								v-model="email"
 						>
-						<span class="modal-auth-span">Логин</span>
+						<span class="modal-auth-span">Email</span>
 						<ul v-if="errorEmail.length">
 							<li v-for="error in errorEmail">
 								{{ error[0] }}
@@ -33,7 +33,7 @@
 								placeholder="Password"
 								type="password"
 						>
-						<span class="modal-auth-span">Пароль</span>
+						<span class="modal-auth-span">Registration</span>
 						<ul v-if="errorPassword.length">
 							<li v-for="error in errorPassword">
 								{{ error[0] }}
@@ -43,10 +43,10 @@
 					
 					
 					<div class="forgot d-flex flex-row align-items-center">
-						<button type="submit" class="registration__enter">Войти</button>
-						<a href="/password/reset" class="registration__forgot">Забыли пароль?</a>
+						<button type="submit" class="registration__enter">Sign in</button>
+						<a href="/password/reset" class="registration__forgot">Forgot your password?</a>
 					</div>
-					<a href="#" class="registration__enter-help">Войти с помощью</a>
+					<a href="#" class="registration__enter-help">Login with</a>
 					<div class="registration__services d-flex justify-content-start align-items-center">
 						<a href="/login/steam" class="service1">
 							<img src="/assets/static/img/services/steam.png" alt="steam">

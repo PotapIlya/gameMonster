@@ -43,8 +43,60 @@
 
 
 
+    @include('base.modal.modalBonus')
 
 {{--    @include('base.modal.modalAuth')--}}
 
+
+@endsection
+
+
+@section('footer')
+
+
+
+    <script>
+        if (document.querySelector('.modal-bonus'))
+        {
+            const modal = document.querySelector('.modal-bonus')
+            const open = document.getElementById('bonus');
+
+            const modalWrap = modal.querySelector('.global-wrap')
+            const close = modal.querySelector('.close')
+
+            const cash = modal.querySelector('.getCash')
+
+
+
+            cash.addEventListener('click', () => {
+                if (modal.classList.contains('d-block'))
+                {
+                    const input = cash.parentElement.querySelector('input');
+                    input.removeAttribute('disabled');
+
+                    input.select();
+                    document.execCommand("copy");
+
+                    input.setAttribute('disabled', 'disabled');
+                }
+            })
+
+
+            open.addEventListener('click', () => {
+                modal.classList.add('d-block')
+            })
+
+            window.addEventListener('click', (e) => {
+                if (e.target === modalWrap )
+                {
+                    modal.classList.remove('d-block')
+                }
+            })
+            close.addEventListener('click', () => {
+                modal.classList.remove('d-block')
+            })
+
+        }
+    </script>
 
 @endsection

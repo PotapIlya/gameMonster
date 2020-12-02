@@ -42,6 +42,11 @@ document.addEventListener('DOMContentLoaded', () =>
                 header.classList.add('active')
             }
         })
+        window.addEventListener('click', (e) => {
+            if (e.target.closest('.header.active') === null){
+                header.classList.remove('active')
+            }
+        })
     }
 
 
@@ -114,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () =>
 
         if (text.innerHTML.length > 500)
         {
-            text.innerHTML = text.innerHTML.substr(0, 500) + '</br><span id="showDescriptionClick" style="color:#F59502; cursor: pointer; text-decoration:none;">Подробнее...</span>';
+            text.innerHTML = text.innerHTML.substr(0, 500) + '</br><span id="showDescriptionClick" style="color:#F59502; cursor: pointer; text-decoration:none;">Learn more...</span>';
 
             document.getElementById('showDescriptionClick').addEventListener('click', () =>
             {
@@ -126,25 +131,32 @@ document.addEventListener('DOMContentLoaded', () =>
 
     if ( document.querySelector('.header__user'))
     {
-        const headerUser = document.querySelector('.header__user')
+        const headerUser = document.querySelector('.header__user-item')
         const headerUserMenu = document.querySelector('.header__user-menu')
 
         headerUser.addEventListener('click', () =>
         {
             if (headerUserMenu.classList.contains('display'))
             {
-                headerUserMenu.classList.remove('display')
-                headerUserMenu.style.display = 'none'
+                headerUserMenu.classList.remove(    'display');
+                headerUserMenu.style.display = 'none';
+
+                headerUser.classList.remove('active');
             }
             else{
-                headerUserMenu.classList.add('display')
-                headerUserMenu.style.display = 'block'
+                headerUserMenu.classList.add('display');
+                headerUserMenu.style.display = 'block';
 
-                // document.addEventListener('click', (e)=>{
-                //     if (e.target !== headerUser && e.target.parentElement !== headerUser && e.target.parentElement.parentElement !== headerUser){
-                //         headerUserMenu.classList.remove('d-block')
-                //     }
-                // })
+                headerUser.classList.add('active');
+            }
+        })
+        window.addEventListener('click', (e) =>
+        {
+            if (e.target !== headerUserMenu && e.target.closest('.active') === null)
+            {
+                headerUserMenu.classList.remove('display');
+                headerUserMenu.style.display = 'none';
+                headerUser.classList.remove('active');
             }
         })
 

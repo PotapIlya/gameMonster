@@ -66,7 +66,7 @@ exports.default = series(css, js, browserify_js, img);
 
 exports.watch = function() {
     watch(["sass/**/*.+(css|sass|scss)"], css);
-    watch(["js/**/*.js"], js);
-    watch('preassets/js/scripts.js', browserify_js);
+    // watch(["js/**/*.js"], js);
+    // watch('preassets/js/scripts.js', browserify_js);
     // watch(["img/**/*.+(jpg|png|jpeg|gif|svg)"], img)
 };

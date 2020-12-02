@@ -6,10 +6,10 @@
 					v-model="login"
 					class="personal-data"
 					type="text"
-					placeholder="Логин"
+					placeholder="Login"
 					required>
 			<span>
-				Никнейм
+				Login
 			</span>
 			<ul v-if="errorsLogin.length">
 				<li v-for="error in errorsLogin">
@@ -40,10 +40,10 @@
 					v-model="phone"
 					class="personal-data"
 					type="number"
-					placeholder="Телефон"
+					placeholder="Phone"
 					required>
 			<span>
-				Телефон
+				Phone
 			</span>
 			<ul v-if="errorsPhone.length">
 				<li v-for="error in errorsPhone">
@@ -52,7 +52,7 @@
 			</ul>
 		</label>
 		<div>
-			<input class="button" type="submit" value="Сохранить изменения">
+			<input class="button" type="submit" value="Save">
 		</div>
 	</form>
 	

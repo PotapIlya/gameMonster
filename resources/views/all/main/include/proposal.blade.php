@@ -11,7 +11,7 @@
                     <img class="myCrutch d-none d-lg-block" src="/storage/{{ $proposal[0]->img }}" alt="">
                     <img class="d-block d-lg-none" src="/storage/{{ $proposal[0]->mobile_img }}" alt="">
                 </div>
-                <div class="proposal_item__wrapper proposal_item__wrapper-1 d-flex flex-column justify-content-between">
+                <div id="bonus" class="proposal_item__wrapper proposal_item__wrapper-1 d-flex flex-column justify-content-between">
                     <div class="proposal_item-title">
                         {{ $proposal[0]->title ?? ''}}
 {{--                        Система <br>--}}
@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="proposal_item__wrapper proposal_item__wrapper-3 d-flex justify-content-center justify-content-sm-start align-items-end col-12 col-lg-10 col-xl-8">
-                    <div class="proposal_item-title d-none d-lg-block">
+                    <div class="proposal_item-title d-none d-lg-block col-xl-6">
                         {{ $proposal[2]->title ?? ''}}
 {{--                        Остались вопросы?--}}
                     </div>

@@ -29,12 +29,15 @@ Vue.component('app-my-component', require('./components/user/my/AppComponent').d
 
 /** Header */
 
-Vue.component('search-component', require('./components/base/header/SearchComponent').default);
+Vue.component('header-search-component', require('./components/base/header/HeaderSearchComponent').default);
+Vue.component('footer-search-component', require('./components/base/header/FooterSearchComponent').default);
 
 
 /** Modal */
 
-Vue.component('modal-auth-component', require('./components/base/modal/ButtonsAuthComponent').default);
+Vue.component('header-modal-auth-component', require('./components/base/modal/HeaderButtonsAuthComponent').default);
+Vue.component('footer-modal-auth-component', require('./components/base/modal/FooterButtonsAuthComponent').default);
+
 Vue.component('modal-add-balance', require('./components/base/modal/ModalMyAddBalance').default);
 
 /**

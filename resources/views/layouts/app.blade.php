@@ -9,6 +9,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <link rel="icon" href="/assets/static/img/main/iconHead.png" sizes="16x16">
+
     <link href="{{ asset('/assets/css/modules.css') }}" rel="stylesheet">
     <link href="{{ asset('/assets/css/app.css') }}" rel="stylesheet">
 

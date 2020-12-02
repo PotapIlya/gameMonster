@@ -2,18 +2,18 @@
 	<div class="modal-wrap modal__wrap d-flex flex-column">
 		
 		<h1 class="modal__wrap-title">
-			Пополнение счета
+			Add balance
 		</h1>
 		<span class="balance__text">
-			Платежи принимаются через платежную<br>
-			систему РобоКасса
+			Payments are accepted through payment card <br>
+RoboKassa system
 		</span>
 		
 		<div>
 			
 			<div class="d-flex align-items-center">
 				<label for="" class="balance__label">
-					<input v-model="money" placeholder="Введите цену" type="number" class="mr-2" name="money" required>
+					<input v-model="money" placeholder="Enter the price" type="number" class="mr-2" name="money" required>
 					<ul v-if="errorMoney.length"
 						v-for="item in errorMoney">
 						<li>{{ item[0] }}</li>
@@ -69,7 +69,7 @@
 			<div class="">
 				<button @click="send" class="balance__btn">
 					<PulseLoader v-if="loader" />
-					<span v-else>Продолжить</span>
+					<span v-else>Proceed</span>
 				</button>
 			</div>
 		

@@ -32,6 +32,7 @@
     &__list,
     &__auth,
     &__translate {
+        white-space: nowrap;
         display: flex;
         align-items: center;
     }
@@ -104,7 +105,7 @@
             }
         }
         &-label{
-            //display: none;
+            display: block;
             position: absolute;
             z-index: 10;
             width: 350px;

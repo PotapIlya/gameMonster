@@ -27,22 +27,26 @@
                 <div class="catalog__tags">
                     @if($item->novelty)
                         <span class="catalog__tags-item pink mr-2">
-                            Новинка
+{{--                            Новинка--}}
+                            New
                         </span>
                     @endif
                     @if($item->exclusive)
                         <span class="catalog__tags-item pink mr-2">
-                            Эксклюзив
+{{--                            Эксклюзив--}}
+                            Exclusive
                         </span>
                     @endif
                     @if($item->pre_order)
                         <span class="catalog__tags-item black mr-2">
-                            Предзаказ
+{{--                            Предзаказ--}}
+                            Pre-order
                         </span>
                     @endif
                     @if($item->early_access)
                         <span class="catalog__tags-item black mr-2">
-                            Ранний доступ
+{{--                            Ранний доступ--}}
+                            Early access
                         </span>
                     @endif
                 </div>
@@ -80,7 +84,7 @@
              data-key="{{ $item->pivot->key }}"
         >
             <span>
-                Показать товар
+Show product
             </span>
         </div>
     @endif

@@ -4,7 +4,7 @@
 		<label for="">
 			<input
 					v-model="oldPassword"
-					class="personal-data" type="password" placeholder="Старый пароль" >
+					class="personal-data" type="password" placeholder="Old password" >
 			<ul v-if="errorsOldPassword.length">
 				<li v-for="error in errorsOldPassword">
 					{{ error[0] }}
@@ -14,7 +14,7 @@
 		<label for="">
 			<input
 					v-model="password"
-					class="personal-data" type="password" placeholder="Новый пароль" >
+					class="personal-data" type="password" placeholder="New password" >
 			<ul v-if="errorsPassword.length">
 				<li v-for="error in errorsPassword">
 					{{ error[0] }}
@@ -24,10 +24,10 @@
 		<label for="">
 			<input
 					v-model="password_confirmation "
-					class="personal-data" type="password" placeholder="Повторите пароль" >
+					class="personal-data" type="password" placeholder="Repeat password" >
 		</label>
 		<div>
-			<input class="button" type="submit" value="Обновить пароль">
+			<input class="button" type="submit" value="Update password">
 		</div>
 	</form>
 </template>

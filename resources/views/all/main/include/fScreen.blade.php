@@ -9,7 +9,7 @@
                     <img class="home__img myCrutch" src="/assets/static/img/fScreen/head.png" alt=""/>
                 </div>
                 <div class="home__title d-flex align-items-end">
-                    Страшные скидки в честь открытия
+                    Opening. Best deals
                 </div>
             </div>
 
