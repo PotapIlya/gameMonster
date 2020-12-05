@@ -6,10 +6,10 @@
 					v-model="login"
 					class="personal-data"
 					type="text"
-					placeholder="Login"
+					:placeholder="translate.login"
 					required>
 			<span>
-				Login
+				{{ translate.login }}
 			</span>
 			<ul v-if="errorsLogin.length">
 				<li v-for="error in errorsLogin">
@@ -40,10 +40,10 @@
 					v-model="phone"
 					class="personal-data"
 					type="number"
-					placeholder="Phone"
+					:placeholder="translate.phone"
 					required>
 			<span>
-				Phone
+				{{ translate.phone }}
 			</span>
 			<ul v-if="errorsPhone.length">
 				<li v-for="error in errorsPhone">
@@ -52,7 +52,10 @@
 			</ul>
 		</label>
 		<div>
-			<input class="button" type="submit" value="Save">
+			<button class="button" type="submit">
+				{{ translate.btnSave }}
+			</button>
+<!--			<input class="button" type="submit" :value="{{ this.translate.btnSave }}">-->
 		</div>
 	</form>
 	
@@ -63,7 +66,7 @@
     export default {
         name: "InfoComponent",
         props: [
-            'user_data'
+            'user_data', 'translate'
         ],
         data: () => ({
             user: {},

@@ -23,6 +23,7 @@ final class BuyKeyService
 	{
 
 		try {
+
 			$userAbout = Auth::user()->about;
 
 			$item = Catalog::where('id', $id)
@@ -36,16 +37,16 @@ final class BuyKeyService
 			}
 
 			$newUserMoney = $userAbout->money - $item->price;
-			if ($newUserMoney < 0) {
-				return redirect()->back()->withErrors(['errors' => 'У вас недостаточно средств']);
-//				throw new \Exception('no money');
+			if ($newUserMoney < 0)
+			{
+				return redirect()->back()->withErrors(['errors' => "You don't have enough funds"]);
 			}
+
 			if (!UserAbout::where('user_id', Auth::id())->update(['money' => $newUserMoney])) {
 				throw new \Exception('money dont update');
 			}
-
 			if (!$item->key->first()->update(['status' => 0])) {
-				throw new \Exception('ket dont update');
+				throw new \Exception('key dont update');
 			}
 
 			$createHistory = ShoppingHistory::create([
@@ -53,9 +54,12 @@ final class BuyKeyService
 				'catalog_id' => $item->id,
 				'key' => $item->key->first()->key,
 			]);
-			if ($createHistory) {
-				return true;
-			} else {
+			if ($createHistory)
+			{
+				return redirect()->back()->with(['success' => 'Buy']);
+			}
+			else
+			{
 				throw new \Exception('history dont create');
 			}
 

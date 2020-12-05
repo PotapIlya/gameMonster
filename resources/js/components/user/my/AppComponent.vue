@@ -1,14 +1,14 @@
 <template>
 	<div>
 		<div class="my-private">
-			Personal Area
+			{{ translate.title }}
 		</div>
 		
 		<div class="row pl-3">
 			<div class="my_block_left">
 				<div class="my-title mb-4 d-flex align-items-center justify-content-between">
 				<span>
-					Account
+					{{ translate.titleForm }}
 				</span>
 					<!--			<span v-if="statusTitle"-->
 					<!--			  style="background: green">-->
@@ -19,11 +19,16 @@
 					
 					<InfoComponent
 							:user_data="user_data"
+							:translate="translate"
+							
 							@changeStatus = updateTitle
 					/>
 					
 					<PasswordComponent
 							v-if="show"
+							
+							:translate="translate"
+							
 							@changeStatus = updateTitle
 					/>
 				
@@ -33,7 +38,7 @@
 			<div class="my_block_right">
 				<div class="my-title mb-4 d-flex align-items-center justify-content-between">
 					<span>
-Linked accounts
+						{{ translate.titleSocialNetwork }}
 					</span>
 				</div>
 			
@@ -54,7 +59,7 @@ Linked accounts
 	
     export default {
         name: "AppComponent",
-		props: ['user_data'],
+		props: ['user_data', 'translate'],
 		components: {
             SocialNetwork,
             InfoComponent,
@@ -66,6 +71,7 @@ Linked accounts
 		}),
 		mounted()
 		{
+            // console.log(this.translate)
             // console.log(this.user_data)
 		    if (this.user_data.authentication_id)
 			{

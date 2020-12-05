@@ -232,6 +232,15 @@
 }
 
 
+@media only screen and (max-width : 1000px) and (orientation: landscape) {
+
+    .modal .button-close{
+        top: 70px;
+    }
+
+}
+
+
 @media only screen and (max-width : 576px) {
 
     .header__user-menu{
@@ -240,7 +249,7 @@
     }
 
     .modal .button-close{
-        top: 20px;
+        top: 35px;
         right: 25px;
     }
 

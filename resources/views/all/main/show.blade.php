@@ -74,12 +74,12 @@
                             <div class="right-wrap__prices d-flex align-items-center">
                                 <div class="right-wrap__actual">
                                     @if($item->price)
-                                        {{ $item->price }} <span class="current">₽</span>
+                                        {{ $item->price }} <span class="current">$</span>
                                     @endif
                                 </div>
                                 <div class="right-wrap__irrelevant d-flex">
                                     @if($item->old_price)
-                                        {{ $item->old_price }} ₽
+                                        {{ $item->old_price }} $
                                     @endif
                                 </div>
                             </div>
@@ -87,8 +87,9 @@
                                 @guest
                                     <a href="{{ route('login') }}"
                                        class="right-wrap__buy-key"
-                                       style="cursor:pointer;"
-                                    >Войти в аккаунт</a>
+                                    >
+                                        @lang('all/showCatalog.loginAccount')
+                                    </a>
                                 @else
 
                                     @if(count($item->key) && !is_null($item->key))
@@ -98,13 +99,18 @@
                                             <button
                                                     type="submit"
                                                     class="right-wrap__buy-key"
-                                                    style="cursor:pointer;"
-                                            >Купить ключ</button>
+                                            >
+                                                @lang('all/showCatalog.buyKey')
+                                            </button>
                                         </form>
                                     @else
-                                        <button class="right-wrap__buy-key" style="cursor:pointer;">Нет ключа</button>
+                                        <button class="right-wrap__buy-key">
+                                            @lang('all/showCatalog.noKey')
+                                        </button>
                                     @endif
-                                        <a href="/development" class="right-wrap__random-key" style="cursor:pointer;">Выбить в рандоме</a>
+                                        <a href="/development" class="right-wrap__random-key" style="cursor:pointer;">
+                                            @lang('all/showCatalog.knockRandom')
+                                        </a>
                                 @endguest
 
                             </div>
@@ -118,16 +124,24 @@
 
 
                                     @if($item->created_at)
-                                        <li>Release date</li>
+                                        <li>
+                                            @lang('all/showCatalog.data')
+                                        </li>
                                     @endif
                                     @if(!is_null($item->developer) && $item->developer)
-                                        <li>Developer:</li>
+                                        <li>
+                                            @lang('all/showCatalog.developer')
+                                        </li>
                                     @endif
                                     @if(count($item->operatingSystem) && $item->operatingSystem)
-                                        <li>Operating system</li>
+                                        <li>
+                                            @lang('all/showCatalog.operatingSystem')
+                                        </li>
                                     @endif
                                     @if(count($item->languages) && $item->languages)
-                                        <li>Language</li>
+                                        <li>
+                                            @lang('all/showCatalog.language')
+                                        </li>
                                     @endif
                                 </ul>
                                 <ul class="right-wrap__value">
@@ -146,10 +160,10 @@
                                     @endif
 
                                     @if(count($item->operatingSystem) && $item->operatingSystem)
-                                        <li>
+                                        <li class="d-flex">
                                             @foreach($item->operatingSystem as $system)
                                                 <span class="cart-images__yellow">
-                                                    {{ $system->name }} <br>
+                                                    {{ $system->name }}<span class="cart-images__white"> /  </span>
                                                 </span>
                                             @endforeach
                                         </li>
@@ -158,7 +172,7 @@
                                     @if(count($item->languages) && $item->languages)
                                         <li>
                                             @foreach($item->languages as $lang)
-                                                <span class="">
+                                                <span class="cart-images__lang">
                                                     {{ $lang->name }} <br>
                                                 </span>
                                             @endforeach
@@ -188,7 +202,7 @@
                                 <img class="mr-3" src="/assets/static/img/main/icon/origin.png" alt="">
                                 <div class="originacc-wrap__title">Origin аккаунт 3 игры</div>
                             </div>
-                            <div class="originacc-wrap__price"><span style="color:#fff">179 </span>₽</div>
+                            <div class="originacc-wrap__price"><span>179 </span>₽</div>
                         </div>
                         <div class="originacc-wrap__games d-flex flex-column flex-md-row justify-content-between">
                             <ul class="originacc-wrap__games-list">
@@ -216,8 +230,12 @@
         <section class="d-none d-sm-block">
             <div class="container">
                 <div class="section__text news__text d-flex justify-content-between justify-content-lg-start d-block">
-                    <h3 class="section__title news__title">Similar games</h3>
-                    <p class="section__subtitle">View more</p>
+                    <h3 class="section__title news__title">
+                        @lang('all/showCatalog.similarGames')
+                    </h3>
+                    <p class="section__subtitle">
+                        @lang('all/showCatalog.allGames')
+                    </p>
                 </div>
                 <div class="row">
 

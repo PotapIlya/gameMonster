@@ -14,9 +14,24 @@ use Illuminate\Http\Request;
 class IndexController extends BasicAllController
 {
 
+
+
 	public function __construct()
 	{
 		parent::__construct();
+	}
+
+
+	/**
+	 * @param string $locale
+	 * @return \Illuminate\Http\RedirectResponse
+	 */
+	public function changeLocale(string $locale)
+	{
+		if ($locale && in_array($locale, self::LOCALE) ){
+			session(['locale' => $locale]);
+		}
+		return redirect()->back();
 	}
 
 	/**

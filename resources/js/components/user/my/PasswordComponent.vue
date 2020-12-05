@@ -4,7 +4,7 @@
 		<label for="">
 			<input
 					v-model="oldPassword"
-					class="personal-data" type="password" placeholder="Old password" >
+					class="personal-data" type="password" :placeholder="translate.oldPassword" >
 			<ul v-if="errorsOldPassword.length">
 				<li v-for="error in errorsOldPassword">
 					{{ error[0] }}
@@ -14,7 +14,7 @@
 		<label for="">
 			<input
 					v-model="password"
-					class="personal-data" type="password" placeholder="New password" >
+					class="personal-data" type="password" :placeholder="translate.newPassword" >
 			<ul v-if="errorsPassword.length">
 				<li v-for="error in errorsPassword">
 					{{ error[0] }}
@@ -24,10 +24,11 @@
 		<label for="">
 			<input
 					v-model="password_confirmation "
-					class="personal-data" type="password" placeholder="Repeat password" >
+					class="personal-data" type="password" :placeholder="translate.repeatPassword" >
 		</label>
 		<div>
-			<input class="button" type="submit" value="Update password">
+			<button type="submit" class="button">{{ translate.repeatPassword }}</button>
+<!--			<input class="button" type="submit" value="Update password">-->
 		</div>
 	</form>
 </template>
@@ -36,6 +37,7 @@
     import axios from "axios";
     export default {
         name: "PasswordComponent",
+		props: ['translate'],
         data: () => ({
             url: '/my/updatePassword',
 

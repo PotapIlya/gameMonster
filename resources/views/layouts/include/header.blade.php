@@ -17,11 +17,18 @@
             </div>
             <div class="d-xl-flex flex-row flex-wrap flex-xl-nowrap flex-column flex-xl-row align-items-center justify-content-between w-100 mobile_menu-form">
                 <div class="header__translate order-5 order-xl-0 justify-content-end justify-content-sm-start">
-                    <input id="en" type="radio" name="translate"/>
-                    <label for="en" class="activeText">En</label>
+{{--                    <input id="en" type="radio" name="translate"/>--}}
+{{--                    <label for="en" class="activeText">En</label>--}}
+
+                    <a class="@if(session('locale') === 'en') activeText @endif" href="{{ route('locale', 'en') }}">En</a>
                     <div class="header__inclined">/</div>
-                    <input id="ru" type="radio" name="translate" checked="checked"/>
-                    <label for="ru" >Ru</label>
+                    <a class="@if(session('locale') === 'ru') activeText @endif" href="{{ route('locale', 'ru') }}">Ru</a>
+{{--                    <input id="ru" type="radio" name="translate" checked="checked"/>--}}
+{{--                    <label for="ru" >Ru</label>--}}
+
+{{--                    <a href="{{ route('locale', 'ru') }}">RU</a>--}}
+{{--                    <a href="{{ route('locale', 'en') }}">EN</a>--}}
+
                 </div>
 
 
@@ -100,12 +107,12 @@
                         <ul class="header__user-menu">
                             <li>
                                 <span id="addBalance">
-                                    Add balance
+                                    @lang('template/header.userDropdown.addBalance')
                                 </span>
                             </li>
                             <li>
                                 <a class="d-block" href="{{ route('user.index') }}">
-                                    Personal Area
+                                    @lang('template/header.userDropdown.personalArea')
                                 </a>
                             </li>
                             <li>
@@ -113,7 +120,7 @@
                                    onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();"
                                 >
-                                    Logout
+                                    @lang('template/header.userDropdown.logout')
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>

@@ -30,10 +30,7 @@ class BuyKeyController extends BasicUserController
 	 */
 	public function buyKey(int $id, BuyKeyService $buyKeyService)
 	{
-		if ($buyKeyService->BuyKey($id))
-		{
-			return redirect()->back()->with(['success' => 'Купленно']);
-		}
+		return $buyKeyService->BuyKey($id);
 	}
 
 

@@ -137,6 +137,7 @@ Route::group(
 
 
 
+
 /** All */
 
 Route::group(
@@ -145,6 +146,9 @@ Route::group(
 	],
 	function ()
 	{
+		Route::get('locale/{locale}', 'IndexController@changeLocale')->name('locale');
+
+
 		Route::resource('/', 'IndexController')->names('main');
 		Route::get('/key/{name}', 'IndexController@show')->name('mainShow');
 });

@@ -9,7 +9,8 @@
                     <img class="home__img myCrutch" src="/assets/static/img/fScreen/head.png" alt=""/>
                 </div>
                 <div class="home__title d-flex align-items-end">
-                    Opening. Best deals
+                    @lang('all/main.fScreen.title')
+{{--                    Opening. Best deals--}}
                 </div>
             </div>
 
@@ -39,14 +40,14 @@
                                     <div class="slide-group">
                                         <div class="d-flex align-items-center mb-1">
                                             @if(!is_null($item->price) && $item->price)
-                                                <div class="slide-new mr-4">{{ $item->price }}P</div>
+                                                <div class="slide-new mr-4">{{ $item->price }}$</div>
                                             @endif
                                             @if(!is_null($item->discounts) && $item->discounts)
                                                 <div class="slide-rate">-{{ $item->discounts }}%</div>
                                             @endif
                                         </div>
                                         @if(!is_null($item->old_price) && $item->old_price)
-                                            <div class="slide-old">{{ $item->old_price }}P</div>
+                                            <div class="slide-old">{{ $item->old_price }}$</div>
                                         @endif
                                     </div>
                                 </div>

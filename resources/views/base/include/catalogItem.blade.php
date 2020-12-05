@@ -20,8 +20,8 @@
                         </div>
                     @endif
                     <div class="catalog__price">
-                        @if($item->price)<div class="new">{{ $item->price }} ₽</div>@endif
-                        @if($item->old_price)<div class="old">{{ $item->old_price }} ₽</div>@endif
+                        @if($item->price)<div class="new">{{ $item->price }} $</div>@endif
+                        @if($item->old_price)<div class="old">{{ $item->old_price }} $</div>@endif
                     </div>
                 </div>
                 <div class="catalog__tags">

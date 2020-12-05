@@ -27,16 +27,23 @@ namespace App\Models\Admin{
  * @property int $exclusive
  * @property int $pre_order
  * @property int $early_access
+ * @property string|null $developers_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Admin\Category[] $category
  * @property-read int|null $category_count
+ * @property-read \App\Models\Admin\Developers|null $developer
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Admin\CatalogKey[] $key
  * @property-read int|null $key_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Admin\Languages[] $languages
+ * @property-read int|null $languages_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Admin\OperatingSystem[] $operatingSystem
+ * @property-read int|null $operating_system_count
  * @method static \Illuminate\Database\Eloquent\Builder|Catalog newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Catalog newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Catalog query()
  * @method static \Illuminate\Database\Eloquent\Builder|Catalog whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Catalog whereDevelopersId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Catalog whereDiscounts($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Catalog whereEarlyAccess($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Catalog whereExclusive($value)
@@ -102,6 +109,25 @@ namespace App\Models\Admin{
 
 namespace App\Models\Admin{
 /**
+ * App\Models\Admin\Developers
+ *
+ * @property int $id
+ * @property string|null $name
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Developers newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Developers newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Developers query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Developers whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Developers whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Developers whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Developers whereUpdatedAt($value)
+ */
+	class Developers extends \Eloquent {}
+}
+
+namespace App\Models\Admin{
+/**
  * App\Models\Admin\HistoryPayments
  *
  * @property int $id
@@ -126,6 +152,50 @@ namespace App\Models\Admin{
  * @method static \Illuminate\Database\Eloquent\Builder|HistoryPayments whereUserId($value)
  */
 	class HistoryPayments extends \Eloquent {}
+}
+
+namespace App\Models\Admin{
+/**
+ * App\Models\Admin\HistoryShopping
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property int $catalog_id
+ * @property string|null $key
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\Admin\Catalog|null $catalog
+ * @property-read \App\Models\User|null $users
+ * @method static \Illuminate\Database\Eloquent\Builder|HistoryShopping newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|HistoryShopping newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|HistoryShopping query()
+ * @method static \Illuminate\Database\Eloquent\Builder|HistoryShopping whereCatalogId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HistoryShopping whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HistoryShopping whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HistoryShopping whereKey($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HistoryShopping whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HistoryShopping whereUserId($value)
+ */
+	class HistoryShopping extends \Eloquent {}
+}
+
+namespace App\Models\Admin{
+/**
+ * App\Models\Admin\Languages
+ *
+ * @property int $id
+ * @property string|null $name
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Languages newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Languages newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Languages query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Languages whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Languages whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Languages whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Languages whereUpdatedAt($value)
+ */
+	class Languages extends \Eloquent {}
 }
 
 namespace App\Models\Admin{
@@ -209,6 +279,25 @@ namespace App\Models\Admin{
 
 namespace App\Models\Admin{
 /**
+ * App\Models\Admin\OperatingSystem
+ *
+ * @property int $id
+ * @property string|null $name
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|OperatingSystem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|OperatingSystem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|OperatingSystem query()
+ * @method static \Illuminate\Database\Eloquent\Builder|OperatingSystem whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OperatingSystem whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OperatingSystem whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OperatingSystem whereUpdatedAt($value)
+ */
+	class OperatingSystem extends \Eloquent {}
+}
+
+namespace App\Models\Admin{
+/**
  * App\Models\Admin\Proposal
  *
  * @property int $id
@@ -280,6 +369,29 @@ namespace App\Models\Admin{
  * @method static \Illuminate\Database\Eloquent\Builder|Slider whereUrl($value)
  */
 	class Slider extends \Eloquent {}
+}
+
+namespace App\Models\Admin{
+/**
+ * App\Models\Admin\SocialNetworks
+ *
+ * @property int $id
+ * @property string|null $name
+ * @property string|null $href
+ * @property string|null $icon
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|SocialNetworks newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|SocialNetworks newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|SocialNetworks query()
+ * @method static \Illuminate\Database\Eloquent\Builder|SocialNetworks whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SocialNetworks whereHref($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SocialNetworks whereIcon($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SocialNetworks whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SocialNetworks whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SocialNetworks whereUpdatedAt($value)
+ */
+	class SocialNetworks extends \Eloquent {}
 }
 
 namespace App\Models\Admin{

@@ -10,9 +10,12 @@
 
                 <ul class="footer__element2 element2 unit">
 
-                    @foreach($basic['nav'] as $li)
+                    @foreach($basic['nav'] as $index=>$li)
 
-                    <li class="footer__item"><a class="footer__link" href="{{ $li->url }}">{{ $li->name }}</a></li>
+                        @if($index+1 !== count($basic['nav']))
+                            <li class="footer__item"><a class="footer__link" href="{{ $li->url }}">{{ $li->name }}</a></li>
+                        @endif
+
 
                     @endforeach
                 </ul>
@@ -73,11 +76,15 @@
                     </li>
                 @endguest
                 <li class="footer__translate d-flex mb-4">
-                    <input class="d-none" id="en" type="radio" name="translate"/>
-                    <label for="en" class="activeText">En</label>
-                    <div class="footer__inclined mx-2">/</div>
-                    <input class="d-none" id="ru" type="radio" name="translate" checked="checked"/>
-                    <label for="ru" class="">Ru</label>
+                    <a class="@if(session('locale') === 'en') activeText @endif" href="{{ route('locale', 'en') }}">En</a>
+                    <div class="header__inclined">/</div>
+                    <a class="@if(session('locale') === 'ru') activeText @endif" href="{{ route('locale', 'ru') }}">Ru</a>
+
+{{--                    <input class="d-none" id="en" type="radio" name="translate"/>--}}
+{{--                    <label for="en" class="activeText">En</label>--}}
+{{--                    <div class="footer__inclined mx-2">/</div>--}}
+{{--                    <input class="d-none" id="ru" type="radio" name="translate" checked="checked"/>--}}
+{{--                    <label for="ru" class="">Ru</label>--}}
                 </li>
                 <li class="footer__money mb-4">
                     <input class="d-none" id="dollar" type="radio" name="money"/>

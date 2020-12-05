@@ -12,6 +12,20 @@
 
     &__yellow{
         color: $yellow;
+
+        &:last-child{
+            .cart-images__white{
+                color: transparent;
+            }
+        }
+    }
+
+    &__white{
+        color: $white;
+    }
+    &__lang{
+        font-weight: 400;
+        font-size: 16px;
     }
 
     &__additional-image{
@@ -111,6 +125,7 @@
         background: $buy-key-bg;
         border-radius: 6px;
         color: $white;
+        cursor: pointer;
     }
 
     &__random-key{
@@ -196,6 +211,7 @@
         }
 
         &__price{
+            color: #fff;
             font-size: 21px;
             font-weight: 300;
             span{

@@ -61,7 +61,7 @@ final class UpdatePersonalAreaService
 	{
 		if ( $array['oldPassword'] === $array['password'] )
 		{
-			return response()->json(['errors' => 'Старый и новый пароль совпадает']);
+			return response()->json(['errors' => 'Old and new password are the same']);
 		}
 
 		if (\Hash::check($array['oldPassword'], Auth::user()->password ))
@@ -75,7 +75,7 @@ final class UpdatePersonalAreaService
 		}
 		else
 		{
-			return response()->json(['errors' => 'Вы ввели не верный старый пароль']);
+			return response()->json(['errors' => 'You entered an invalid old password']);
 		}
 	}
 

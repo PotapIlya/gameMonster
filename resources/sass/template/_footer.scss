@@ -9,6 +9,14 @@
         color: $menu;
     }
 
+    &__translate a{
+        color: #7c7c7c !important;
+
+        &.activeText{
+            color: #fff !important;
+        }
+    }
+
     &__container{
         max-width: 1440px !important;
         background-color: rgb(0, 0, 0);

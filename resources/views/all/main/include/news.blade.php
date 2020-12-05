@@ -3,8 +3,12 @@
     <div class="container">
         <div class="col-12 col-10 col-xl mx-auto">
             <div class="section__text news__text d-flex justify-content-between justify-content-lg-start">
-                <h3 class="section__title news__title">Game news</h3>
-                <a href="#" class="section__subtitle">View more</a>
+                <h3 class="section__title news__title">
+                    @lang('all/main.news.title')
+                </h3>
+                <a href="#" class="section__subtitle">
+                    @lang('all/main.news.subTitle')
+                </a>
             </div>
         </div>
 

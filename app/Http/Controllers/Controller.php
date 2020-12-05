@@ -16,6 +16,8 @@ class Controller extends BaseController
     const SAVE = 'Обновленно';
     const ERRORS_REGISTER = 'Зарегистрируйтесь и привяжите аккаунт';
 
+	const LOCALE = ['ru', 'en'];
+
     public function __construct()
 	{
 

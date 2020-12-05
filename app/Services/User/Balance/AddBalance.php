@@ -22,6 +22,10 @@ use Auth;
 final class AddBalance
 {
 
+	const CURRENT = 'USD';
+	const CURRENT_RUB = 'RUB';
+
+
 	/**
 	 * @param array $array
 	 * @return \Illuminate\Http\JsonResponse
@@ -31,8 +35,8 @@ final class AddBalance
 		$m_shop =  '1208424255';
 		$m_orderid = md5(rand(1, getrandmax()).date('d.m.Y:g:i').rand(1, getrandmax()));
 		$m_amount = number_format($array['money'], 2, '.', '');
-		$m_curr = 'RUB';
-		$m_desc = base64_encode('Пополнение баланса');
+		$m_curr = self::CURRENT;
+		$m_desc = base64_encode('Add balance');
 		$m_key = config('payment.payeer.secret_key');
 
 
@@ -89,13 +93,13 @@ final class AddBalance
 		$payer->setPaymentMethod('paypal');
 
 		$item_1->setName('Mobile Payment')
-			->setCurrency('RUB')
+			->setCurrency(self::CURRENT)
 			->setQuantity(1)
 			->setPrice($array['money']);
 
 		$item_list->setItems([$item_1]);
 
-		$amount->setCurrency('RUB')
+		$amount->setCurrency(self::CURRENT)
 			->setTotal($array['money']);
 
 
@@ -159,7 +163,7 @@ final class AddBalance
 			$response = $billPayments->createBill($billId,
 				[
 					'amount' => $request['money'],
-					'currency' => 'RUB',
+					'currency' => self::CURRENT_RUB,
 					'expirationDateTime' => $billPayments->getLifetimeByDay(1),
 					'account' => \Auth::id(),
 					'successUrl' => config('payment.qiwi.success_url'),

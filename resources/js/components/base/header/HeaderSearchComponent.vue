@@ -65,6 +65,7 @@
 			window.addEventListener('click', (e) => {
                 if (e.target.closest('.headerStatusActive') === null) {
                     this.searchInput = '';
+                    this.showInput = false;
                 }
 			})
 			

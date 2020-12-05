@@ -23,7 +23,7 @@ class InfoController extends CrudController
 					'class'       => 'w-100 card text-white bg-info mb-2',
 					'value'       => User::count(),
 					'description' => 'Зарегистрированных пользователей',
-					'progress'    => 57, // integer
+					'progress'    => 50, // integer
 //					'hint'        => '8544 more until next milestone.',
 					'wrapper' => [
 						'class' => 'col-sm-6',
@@ -34,7 +34,7 @@ class InfoController extends CrudController
 					'class'       => 'w-100 card text-white bg-dark mb-2',
 					'value'       => Catalog::count(),
 					'description' => 'Кол-во товаров',
-					'progress'    => 57, // integer
+					'progress'    => 50, // integer
 //					'hint'        => '8544 more until next milestone.',
 					'wrapper' => [
 						'class' => 'col-sm-6',
@@ -45,19 +45,19 @@ class InfoController extends CrudController
 		]);
 
 
-		Widget::add([
-			'type'       => 'chart',
-			'controller' => \App\Http\Controllers\Admin\Charts\WeeklyUsersChartController::class,
-
-			// OPTIONALS
-
-			 'class'   => 'card mb-2',
-			 'wrapper' => ['class'=> 'col-md-6 pl-0'],
-			 'content' => [
-				 'header' => 'Ключи',
-			 ],
-
-		]);
+//		Widget::add([
+//			'type'       => 'chart',
+//			'controller' => \App\Http\Controllers\Admin\Charts\WeeklyUsersChartController::class,
+//
+//			// OPTIONALS
+//
+//			 'class'   => 'card mb-2',
+//			 'wrapper' => ['class'=> 'col-md-6 pl-0'],
+//			 'content' => [
+//				 'header' => 'Ключи',
+//			 ],
+//
+//		]);
 
 		return view(backpack_view('blank'));
 	}

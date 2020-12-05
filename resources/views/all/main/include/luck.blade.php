@@ -3,7 +3,10 @@
 <section class="luck d-block d-md-none d-xl-block">
     <div class="container">
         <div>
-            <h3 class="section__title">Try your luck</h3>
+            <h3 class="section__title">
+                @lang('all/main.luck.title')
+{{--                Try your luck--}}
+            </h3>
         </div>
 
         <div class="d-flex flex-column flex-md-row align-items-center luck__block">

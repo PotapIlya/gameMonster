@@ -2,18 +2,17 @@
 	<div class="modal-wrap modal__wrap d-flex flex-column">
 		
 		<h1 class="modal__wrap-title">
-			Add balance
+			{{ translate.title }}
 		</h1>
-		<span class="balance__text">
-			Payments are accepted through payment card <br>
-RoboKassa system
+		<span v-html="translate.text" class="balance__text">
+		
 		</span>
 		
 		<div>
 			
 			<div class="d-flex align-items-center">
 				<label for="" class="balance__label">
-					<input v-model="money" placeholder="Enter the price" type="number" class="mr-2" name="money" required>
+					<input v-model="money" :placeholder="translate.placeholderInput" type="number" class="mr-2" name="money" required>
 					<ul v-if="errorMoney.length"
 						v-for="item in errorMoney">
 						<li>{{ item[0] }}</li>
@@ -69,7 +68,7 @@ RoboKassa system
 			<div class="">
 				<button @click="send" class="balance__btn">
 					<PulseLoader v-if="loader" />
-					<span v-else>Proceed</span>
+					<span v-else>{{ translate.btn }}</span>
 				</button>
 			</div>
 		
@@ -87,6 +86,9 @@ RoboKassa system
         components:{
             PulseLoader
 		},
+		props: [
+            'translate'
+		],
 	    data: () => ({
             money: null,
             name: null,
@@ -97,7 +99,7 @@ RoboKassa system
 			errorPay: [],
 		}),
 		mounted() {
-	       
+            // console.log(this.translate)
         },
 		methods: {
 	        send()
