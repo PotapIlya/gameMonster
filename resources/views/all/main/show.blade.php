@@ -52,13 +52,12 @@
                    </div>
                 @endif
 
-
-
-
                 <div class="cart-description-price col-12 col-xl-5 px-0 pl-xl-5">
-                    <div class="right-wrap__title">
-                        {{ $item->title ?? '' }}
-                    </div>
+                    @if($item->title)
+                        <div class="right-wrap__title">
+                            {{ json_decode($item->title, true)[session('locale')] ?? '' }}
+                        </div>
+                    @endif
                     <div class="right-wrap12 d-flex flex-column flex-sm-row flex-xl-column justify-content-between">
                         <div class="right-wrap1">
                             @if(count($item->category))
@@ -184,13 +183,13 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
+
             <div class="row px-0 m-0 d-flex w-100 d-flex justify-content-end">
-                @if(!is_null($item->text) && $item->text)
+
+            @if(!is_null($item->text) && $item->text)
                     <div class="game-description col-12 col-xl-7 px-0 mb-3 mb-md-5 mb-xl-0" id="showDescription">
-                            {!! $item->text !!}
+                            {!! json_decode($item->text, true)[session('locale')] !!}
     {{--                        {!! Str::limit($item->text, 500) !!}--}}
                     </div>
                 @endif

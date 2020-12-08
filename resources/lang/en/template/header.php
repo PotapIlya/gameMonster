@@ -9,6 +9,8 @@ return [
 		'personalArea' => 'Personal Area',
 		'logout' => 'Logout',
 
+		'search' => 'Search'
+
 	]
 
 ];

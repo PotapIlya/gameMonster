@@ -22,6 +22,10 @@ return [
 		'subTitle' => 'View more'
 	],
 
+	'proposal' => [
+		'textAreaPlaceholder' => 'Message',
+	]
+
 
 
 

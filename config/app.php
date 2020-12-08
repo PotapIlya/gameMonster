@@ -166,6 +166,8 @@ return [
          * Package Service Providers...
          */
 
+//		Spatie\Geocoder\GeocoderServiceProvider::class;
+
         /*
          * Application Service Providers...
          */

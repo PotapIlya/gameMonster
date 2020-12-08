@@ -2217,20 +2217,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SearchComponent",
-  props: ['search'],
+  props: ['search', 'locale', 'translate'],
   data: function data() {
     return {
       searchInput: '',
       searchArray: [],
       startArray: [],
       showInput: false,
-      status: false
+      status: false,
+      lang: 'en'
     };
   },
   mounted: function mounted() {
     var _this = this;
 
     this.startArray = this.search;
+    this.lang = this.locale;
     window.addEventListener('click', function (e) {
       if (e.target.closest('.footer__search') === null) {
         _this.searchInput = '';
@@ -2245,7 +2247,7 @@ __webpack_require__.r(__webpack_exports__);
 
       if (this.startArray.length && this.searchInput.length) {
         this.startArray.map(function (item) {
-          if (item.title.toLowerCase().startsWith(_this2.searchInput.toLowerCase())) {
+          if (JSON.parse(item.title)[_this2.lang].toLowerCase().startsWith(_this2.searchInput.toLowerCase())) {
             if (_this2.searchArray.length !== 2) {
               _this2.searchArray.push(item);
             }
@@ -2324,13 +2326,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SearchComponent",
-  props: ['search'],
+  props: ['search', 'locale', 'translate'],
   data: function data() {
     return {
       searchInput: '',
       searchArray: [],
       startArray: [],
       showInput: false,
+      lang: 'en',
       headerStatusActive: false
     };
   },
@@ -2338,6 +2341,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     this.startArray = this.search;
+    this.lang = this.locale;
     window.addEventListener('click', function (e) {
       if (e.target.closest('.headerStatusActive') === null) {
         _this.searchInput = '';
@@ -2353,7 +2357,7 @@ __webpack_require__.r(__webpack_exports__);
 
       if (this.startArray.length && this.searchInput.length) {
         this.startArray.map(function (item) {
-          if (item.title.toLowerCase().startsWith(_this2.searchInput.toLowerCase())) {
+          if (JSON.parse(item.title)[_this2.lang].toLowerCase().startsWith(_this2.searchInput.toLowerCase())) {
             _this2.searchArray.push(item);
           }
         });
@@ -4942,7 +4946,7 @@ var staticRenderFns = [
       "div",
       {
         staticClass:
-          "registration__buttons d-flex justify-content-start align-items-center mb-3"
+          "registration__buttons d-flex flex-column flex-sm-row justify-content-start align-items-start align-items-sm-center mb-3"
       },
       [
         _c(
@@ -5406,7 +5410,7 @@ var render = function() {
           }
         ],
         staticClass: "searchInput footer__search-input",
-        attrs: { type: "text", placeholder: "Search" },
+        attrs: { type: "text", placeholder: _vm.translate },
         domProps: { value: _vm.searchInput },
         on: {
           input: function($event) {
@@ -5465,7 +5469,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", [
                   _c("h6", { staticClass: "header__search-res-title" }, [
-                    _vm._v(_vm._s(item.title))
+                    _vm._v(_vm._s(JSON.parse(item.title)[_vm.lang]))
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "header__search-res-price my-1" }, [
@@ -5551,7 +5555,7 @@ var render = function() {
     _c(
       "div",
       { staticClass: "header__search-btn", on: { click: _vm.showInputFunc } },
-      [_c("button", { staticClass: "button" }, [_vm._v("Search")])]
+      [_c("button", { staticClass: "button" }, [_vm._v(_vm._s(_vm.translate))])]
     ),
     _vm._v(" "),
     _c(
@@ -5638,7 +5642,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", [
                   _c("h6", { staticClass: "header__search-res-title" }, [
-                    _vm._v(_vm._s(item.title))
+                    _vm._v(_vm._s(JSON.parse(item.title)[_vm.lang]))
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "header__search-res-price my-1" }, [

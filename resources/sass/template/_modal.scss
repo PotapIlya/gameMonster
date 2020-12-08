@@ -1,13 +1,20 @@
 .modal{
+    z-index: 10;
     display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 100000000;
+    //z-index: 100000000;
 
     background: rgba(0,0,0, .9);
     //background: red;
+
+
+    &.modal-bonus,
+    &.modal-balance{
+        z-index: 1000000000;
+    }
 
     .global-wrap{
         width: 100%;
@@ -503,12 +510,21 @@
         height: auto !important;
     }
 
+    .modal.modal-bonus .global-wrap .modal-wrap{
+        padding: 20px 80px;
+    }
+
     .modal.modal-bonus .global-wrap {
         width: 95%;
         margin: 0 auto;
 
         .modal-wrap {
             height: auto;
+        }
+    }
+    .modal.resetEmail{
+        .registration{
+            padding: 20px;
         }
     }
 
@@ -587,12 +603,12 @@
 @media only screen and (max-width:500px){
 
 
-    .modal-bonus .modal-wrap .modal__wrap-input{
-        width: 85%;
-    }
-    .modal .modal-wrap .getCash{
-        width: 85%;
-    }
+    //.modal-bonus .modal-wrap .modal__wrap-input{
+    //    //width: 85%;
+    //}
+    //.modal .modal-wrap .getCash{
+    //    width: 85%;
+    //}
     .modal.modal-bonus .global-wrap .modal-wrap{
         padding-right: 20px;
         padding-left: 20px;

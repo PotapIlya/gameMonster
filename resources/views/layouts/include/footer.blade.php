@@ -13,7 +13,11 @@
                     @foreach($basic['nav'] as $index=>$li)
 
                         @if($index+1 !== count($basic['nav']))
-                            <li class="footer__item"><a class="footer__link" href="{{ $li->url }}">{{ $li->name }}</a></li>
+                            <li class="footer__item">
+                                <a class="footer__link" href="{{ $li->url }}">
+                                    {{ json_decode($li->name, true)[session('locale')] }}
+                                </a>
+                            </li>
                         @endif
 
 
@@ -79,12 +83,6 @@
                     <a class="@if(session('locale') === 'en') activeText @endif" href="{{ route('locale', 'en') }}">En</a>
                     <div class="header__inclined">/</div>
                     <a class="@if(session('locale') === 'ru') activeText @endif" href="{{ route('locale', 'ru') }}">Ru</a>
-
-{{--                    <input class="d-none" id="en" type="radio" name="translate"/>--}}
-{{--                    <label for="en" class="activeText">En</label>--}}
-{{--                    <div class="footer__inclined mx-2">/</div>--}}
-{{--                    <input class="d-none" id="ru" type="radio" name="translate" checked="checked"/>--}}
-{{--                    <label for="ru" class="">Ru</label>--}}
                 </li>
                 <li class="footer__money mb-4">
                     <input class="d-none" id="dollar" type="radio" name="money"/>
@@ -97,6 +95,8 @@
                 <li class="footer__search">
                     <footer-search-component
                             :search="{{ json_encode($basic['search']) }}"
+                            :locale="{{ json_encode(session('locale')) }}"
+                            :translate="{{ json_encode(trans('template/header.userDropdown.search')) }}"
                     />
 
                 </li>

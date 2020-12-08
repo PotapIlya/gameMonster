@@ -13,20 +13,17 @@
                 </div>
                 <div id="bonus" class="proposal_item__wrapper proposal_item__wrapper-1 d-flex flex-column justify-content-between">
                     <div class="proposal_item-title">
-                        {{ $proposal[0]->title ?? ''}}
-{{--                        Система <br>--}}
-{{--                        рефералов--}}
+                        {{ json_decode($proposal[0]->title, true)[session('locale')] ?? ''}}
                     </div>
-                    <div class="proposal_item-text">
-                        {{ $proposal[0]->text ?? '' }}
-{{--                        Приглашайте друзей<br>--}}
-{{--                        и получайте бонусы--}}
-                    </div>
+                    @if($proposal[0]->text)
+                        <div class="proposal_item-text">
+                            {{ json_decode($proposal[0]->text, true)[session('locale')] ?? '' }}
+                        </div>
+                    @endif
                     <div>
                         @if(!is_null($proposal[0]->button) && $proposal[0]->button)
                             <button class="proposal_item-btn">
-                                {{ $proposal[0]->button ?? '' }}
-{{--                                Подробнее--}}
+                                {{ json_decode($proposal[0]->button, true)[session('locale')] ?? '' }}
                             </button>
                         @endif
                     </div>
@@ -39,17 +36,13 @@
 
                 <div class="proposal_item__wrapper proposal_item__wrapper-2 d-flex flex-column justify-content-between">
                     <div class="proposal_item-title">
-                        {{ $proposal[1]->title ?? ''}}
-{{--                        Уникальные<br class="d-none d   -md-block">--}}
-{{--                        скидки<br>--}}
-{{--                        и бонусы--}}
+                        {{ json_decode($proposal[1]->title, true)[session('locale')] ?? ''}}
                     </div>
-                    <div class="proposal_item-text">
-                        {{ $proposal[1]->text ?? ''}}
-{{--                        При подписке<br>--}}
-{{--                        на новости<br>--}}
-{{--                        сервиса--}}
-                    </div>
+                    @if($proposal[1]->text)
+                        <div class="proposal_item-text">
+                            {{ json_decode($proposal[1]->text, true)[session('locale')] ?? ''}}
+                        </div>
+                    @endif
                     @if(!is_null($proposal[1]->button) && $proposal[1]->button)
                         <form class="d-flex justify-content-between  align-items-center">
                             <label for="" class="w-100 mb-0 mb-xl-0 mr-0 mr-sm-4 mr-lg-0 mr-xl-4">
@@ -57,8 +50,7 @@
                             </label>
                             <div class="ml-3">
                                 <button class="proposal_item-btn mt-2 mt-sm-0">
-                                    {{ $proposal[1]->button ?? '' }}
-    {{--                                Подписаться--}}
+                                    {{ json_decode($proposal[1]->button, true)[session('locale')] ?? '' }}
                                 </button>
                             </div>
                         </form>
@@ -77,15 +69,13 @@
 
                 <div class="proposal_item__wrapper proposal_item__wrapper-3 d-flex justify-content-center justify-content-sm-start align-items-end col-12 col-lg-10 col-xl-8">
                     <div class="proposal_item-title d-none d-lg-block col-xl-6">
-                        {{ $proposal[2]->title ?? ''}}
-{{--                        Остались вопросы?--}}
+                        {{ json_decode($proposal[2]->title, true)[session('locale')] ?? ''}}
                     </div>
                     @if(!is_null($proposal[2]->button) && $proposal[2]->button)
                         <form class="d-flex flex-column-reverse flex-sm-row-reverse flex-lg-row align-items-end justify-content-end align-items-center align-items-sm-end">
                             <div class=" mr-0 mr-lg-4 ml-0 ml-sm-4 ml-lg-0 mt-2 mt-sm-0 d-none d-lg-block">
                                 <button class="proposal_item-btn">
-                                    {{ $proposal[2]->button ?? '' }}
-    {{--                                Отправить--}}
+                                    {{ json_decode($proposal[2]->button, true)[session('locale')] ?? '' }}
                                 </button>
                             </div>
                             <div class="d-flex flex-lg-column flex-column-reverse mx-auto">
@@ -95,17 +85,14 @@
                                     <div class=" mr-0 mr-lg-4 ml-0 ml-sm-4 ml-lg-0 mt-2 mt-sm-0 d-block d-lg-none">
                                         <button class="proposal_item-btn">
                                             {{ $proposal[2]->button ?? '' }}
-    {{--                                        Отправить--}}
                                         </button>
                                     </div>
                                 </label>
                                 <label for="">
-                                    <textarea placeholder="Message" class="d-block " name="" id="" cols="30" rows="7"></textarea>
+                                    <textarea placeholder="{{ trans('all/main.proposal.textAreaPlaceholder') }}" class="d-block " name="" id="" cols="30" rows="7"></textarea>
                                 </label>
                                 <span class="d-block d-lg-none proposal_item-title">
                                       {{ $proposal[2]->title ?? ''}}
-    {{--                                Остались--}}
-    {{--                                вопросы?--}}
                                 </span>
                             </div>
                         </form>

@@ -15,8 +15,8 @@ const {series, parallel, src, dest, watch} = require('gulp'),
 function css (){
     return src(["sass/**/[^_]*.+(css|sass|scss)"])
         .pipe(sass({outputStyle: 'expanded'}))
-        .pipe(autoprefixer())
-        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(autoprefixer('last 2 versions'))
+        // .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(concat('app.css'))
         .pipe(dest('../public/assets/css'));
 }

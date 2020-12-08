@@ -29,7 +29,7 @@
                         <input class="w-100 development__input " type="email" placeholder="E-mail">
                     </label>
 
-                    <div class="col-10 col-sm">
+                    <div class="col-10 col-sm px-0">
                         <button type="submit" class="button development__button">
                             Subscribe
 {{--                            Подписаться--}}

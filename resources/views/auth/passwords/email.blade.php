@@ -4,7 +4,7 @@
 
 
 
-    <div class="modal d-block" style="position: relative; background:transparent;">
+    <div class="modal resetEmail d-block" style="position: relative; background:transparent;">
         <div class="global-wrap" style="height: 48vh">
             <div class="modal-wrap">
 
@@ -45,11 +45,11 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
-                        #noty_layout__topRight
+{{--                        #noty_layout__topRight--}}
                     </label>
 
                     <div class="forgot d-flex align-items-center">
-                        <button style="color: #fff; cursor: pointer" type="submit" class="registration__enter">Proceed</button>
+                        <button style="color: #fff; cursor: pointer" type="submit" class="registration__enter mr-auto">Proceed</button>
                     </div>
                 </form>
             </div>

@@ -9,6 +9,9 @@ return [
 		'personalArea' => 'Личный кабинет',
 		'logout' => 'Выйти',
 
+
+		'search' => 'Поиск'
+
 	]
 
 ];

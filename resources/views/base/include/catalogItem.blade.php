@@ -1,5 +1,7 @@
 
+{{--@dd(session('locale'))--}}
 
+{{--@dd( $item->getTranslations()['title'][session('locale')] )--}}
 
 <div class="col-10 col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4">
     <a href="{{ route('mainShow', $item->url) }}" class="w-100">
@@ -14,7 +16,6 @@
                 </div>
                 <div class="catalog__text test">
                     @if($item->discounts)
-{{--                        <div class="d-flex justify-content-end">--}}
                         <div class="d-flex justify-content-end" style="position: absolute; top: -40px; right: 10px;">
                             <div class="rate"> -{{ $item->discounts }}% </div>
                         </div>
@@ -53,9 +54,10 @@
             </div>
             <div class="mt-1">
                 <div class="d-flex align-items-center justify-content-between">
-                    @if($item->title)
+
+                    @if( $item->title)
                         <div class="catalog__title">
-                            {{ $item->title ?? '' }}
+                            {{ json_decode($item->title, true)[session('locale')] ?? '' }}
                         </div>
                     @endif
                     <div class="catalog__playground mr-0 mr-lg-4">

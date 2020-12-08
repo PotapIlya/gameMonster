@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
               input.select();
               document.execCommand("copy");
               input.setAttribute('disabled', 'disabled');
+              modal.classList.remove('d-block');
             }
           });
         });
@@ -144,48 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
         _modal.classList.remove('d-block');
       }
     });
-  } // if (document.querySelector('.modal'))
-  // {
-  //     const modal = document.querySelector('.modal-key')
-  //     const open = document.getElementById('key');
-  //
-  //     const modalWrap = modal.querySelector('.global-wrap')
-  //     const close = modal.querySelector('.close')
-  //
-  //     const btnsCash = modal.querySelectorAll('.getCash')
-  //
-  //     btnsCash.forEach(cash =>{
-  //         cash.addEventListener('click', () => {
-  //             if (modal.classList.contains('d-block'))
-  //             {
-  //                 const input = cash.parentElement.querySelector('input');
-  //                 input.removeAttribute('disabled');
-  //
-  //                 input.select();
-  //                 document.execCommand("copy");
-  //
-  //                 input.setAttribute('disabled', 'disabled');
-  //             }
-  //         })
-  //     })
-  //
-  //
-  //     open.addEventListener('click', () => {
-  //         modal.classList.add('d-block')
-  //     })
-  //
-  //     window.addEventListener('click', (e) => {
-  //         if (e.target === modalWrap )
-  //         {
-  //             modal.classList.remove('d-block')
-  //         }
-  //     })
-  //     close.addEventListener('click', () => {
-  //         modal.classList.remove('d-block')
-  //     })
-  //
-  // }
-
+  }
 });
 "use strict";
 

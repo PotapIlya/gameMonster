@@ -5,7 +5,7 @@
 			<input
 				   v-model="searchInput"
 				   type="text"
-				   placeholder="Search"
+				   :placeholder="translate"
 				   class="searchInput footer__search-input"
 				   />
 		</div>
@@ -22,7 +22,7 @@
 						<img v-else class="mw-100" src="/assets/static/img/main/no-image.png" alt="">
 					</div>
 					<div>
-						<h6 class="header__search-res-title">{{ item.title }}</h6>
+						<h6 class="header__search-res-title">{{ JSON.parse(item.title)[lang] }}</h6>
 						<div class="header__search-res-price my-1">
 							<span class="new mr-1">{{ item.price }}</span>
 							<span class="old">{{ item.old_price }}</span>
@@ -46,16 +46,22 @@
 <script>
     export default {
         name: "SearchComponent",
-		props: ['search'],
+		props: [
+		    'search',
+            'locale',
+			'translate'
+		],
 		data: () => ({
             searchInput: '',
             searchArray: [],
 			startArray: [],
             showInput: false,
 			status: false,
+            lang: 'en'
 		}),
         mounted() {
             this.startArray = this.search;
+            this.lang = this.locale;
             
             window.addEventListener('click', (e) => {
                 if (e.target.closest('.footer__search') === null) {
@@ -71,7 +77,7 @@
 			    if (this.startArray.length && this.searchInput.length)
 				{
                     this.startArray.map( item =>{
-                        if (item.title.toLowerCase().startsWith(this.searchInput.toLowerCase()))
+                        if (JSON.parse(item.title)[this.lang].toLowerCase().startsWith(this.searchInput.toLowerCase()))
                         {
                             if (this.searchArray.length !== 2)
 							{

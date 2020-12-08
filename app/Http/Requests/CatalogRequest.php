@@ -25,13 +25,14 @@ class CatalogRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-             'title' => 'required',
-
-             'price' => 'required',
-             'url' => 'required',
-
-        ];
+    	return [];
+//        return [
+////             'title' => 'required',
+////
+////             'price' => 'required',
+////             'url' => 'required',
+//
+//        ];
     }
 
     /**

@@ -20,6 +20,8 @@ class CatalogCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 //    use \Backpack\CRUD\app\Http\Controllers\Operations\CloneOperation;
 
+
+
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
      *
@@ -53,10 +55,10 @@ class CatalogCrudController extends CrudController
 			'height' => 'auto'
 		]);
 
-    	CRUD::addColumn([
-    		'name' => 'title',
-			'label' => 'Заголовок'
-		]);
+//    	CRUD::addColumn([
+//    		'name' => 'title',
+//			'label' => 'Заголовок'
+//		]);
 
 		CRUD::addColumn([
 			'name' => 'url',
@@ -87,17 +89,38 @@ class CatalogCrudController extends CrudController
     {
         CRUD::setValidation(CatalogRequest::class);
 
+		CRUD::addField([
+			'name'            => 'title',
+			'label'           => "Заголовок",
+			'type'            => 'translateText',
+
+
+//			'val' => $this->crud->getCurrentEntry() ? $this->crud->getCurrentEntry()->getTranslations()['title'] : null,
+		]);
+
+
+
+		CRUD::addField([
+			'name' => 'text',
+			'label' => 'Описание',
+			'type' => 'translateTextarea',
+
+		]);
+
+//		dd($this->crud->getCurrentEntry()->getTranslations()['text']);
+
+
 
 		CRUD::addField([
 			'label'     => "Url (указывать на английском, без пробеллов)",
 			'type'      => 'text',
 			'name'      => 'url',
 		]);
-		CRUD::addField([
-			'label'     => "Заголовок",
-			'type'      => 'text',
-			'name'      => 'title',
-		]);
+//		CRUD::addField([
+//			'label'     => "Заголовок",
+//			'type'      => 'text',
+//			'name'      => 'title',
+//		]);
 		CRUD::addField([
 			'name' => 'price',
 			'label' => 'Цена',
@@ -137,11 +160,11 @@ class CatalogCrudController extends CrudController
 //			'temporary' => 10 // if using a service, such as S3, that requires you to make temporary URL's this will make a URL that is valid for the number of minutes specified
 		]);
 
-		CRUD::addField([
-			'name' => 'text',
-			'label' => 'Описание',
-			'type' => 'tinymce',
-		]);
+//		CRUD::addField([
+//			'name' => 'text',
+//			'label' => 'Описание',
+//			'type' => 'tinymce',
+//		]);
 
 		CRUD::addField([
 			'name'  => 'novelty',

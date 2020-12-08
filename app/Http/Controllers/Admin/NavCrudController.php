@@ -67,9 +67,10 @@ class NavCrudController extends CrudController
 
         CRUD::addField([
         	'name' => 'name',
-			'type' => 'text',
-			'label' => 'Название'
+			'label' => 'Название',
+			'type' => 'translateText',
 		]);
+
 		CRUD::addField([
 			'name' => 'url',
 			'type' => 'text',

@@ -38,7 +38,7 @@
                             @if($index === 0)
                                 <li class="header__list-item">
                                     <a class="header__list-link" href="{{ $nav->url }}">
-                                        {{ $nav->name }}
+                                        {{ json_decode($nav->name, true)[session('locale')] }}
                                         <div class="header__list-arrow">
                                             <img src="/assets/static/img/header/arrow-down.svg" alt=""/>
                                         </div>
@@ -46,11 +46,15 @@
                                 </li>
                             @elseif($index+1 === count($basic['nav']))
                                 <li class="header__list-item">
-                                    <a class="header__list-link gradient__orange-yellow" href="{{ $nav->url }}">{{ $nav->name }}</a>
+                                    <a class="header__list-link gradient__orange-yellow" href="{{ $nav->url }}">
+                                        {{ json_decode($nav->name, true)[session('locale')] }}
+                                    </a>
                                 </li>
                             @else
                                 <li class="header__list-item">
-                                    <a class="header__list-link" href="{{ $nav->url }}">{{ $nav->name }}</a>
+                                    <a class="header__list-link" href="{{ $nav->url }}">
+                                        {{ json_decode($nav->name, true)[session('locale')] }}
+                                    </a>
                                 </li>
                             @endif
                         @endforeach
@@ -58,8 +62,11 @@
                 @endif
 
                 <div class="header__search order-1 order-xl-0 mb-3 mb-xl-0 mb-2 mb-xl-0">
+
                     <header-search-component
                             :search="{{ json_encode($basic['search']) }}"
+                            :locale="{{ json_encode(session('locale')) }}"
+                            :translate="{{ json_encode(trans('template/header.userDropdown.search')) }}"
                     />
                 </div>
 

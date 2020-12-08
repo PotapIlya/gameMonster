@@ -87,7 +87,8 @@ document.addEventListener('DOMContentLoaded', () =>
                 const btnsCash = modal.querySelectorAll('.getCash')
                 btnsCash.forEach(cash => {
                     cash.addEventListener('click', () => {
-                        if (modal.classList.contains('d-block')) {
+                        if (modal.classList.contains('d-block'))
+                        {
                             const input = cash.parentElement.querySelector('input');
                             input.removeAttribute('disabled');
 
@@ -95,6 +96,8 @@ document.addEventListener('DOMContentLoaded', () =>
                             document.execCommand("copy");
 
                             input.setAttribute('disabled', 'disabled');
+
+                            modal.classList.remove('d-block');
                         }
                     })
                 })
@@ -111,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () =>
         })
     }
 
-// в кариточке кнопка подробнее
+    // в кариточке кнопка подробнее
     if (document.getElementById('showDescription'))
     {
         const text = document.getElementById('showDescription');
@@ -181,56 +184,6 @@ document.addEventListener('DOMContentLoaded', () =>
             }
         })
     }
-
-
-
-
-// if (document.querySelector('.modal'))
-// {
-//     const modal = document.querySelector('.modal-key')
-//     const open = document.getElementById('key');
-//
-//     const modalWrap = modal.querySelector('.global-wrap')
-//     const close = modal.querySelector('.close')
-//
-//     const btnsCash = modal.querySelectorAll('.getCash')
-//
-//     btnsCash.forEach(cash =>{
-//         cash.addEventListener('click', () => {
-//             if (modal.classList.contains('d-block'))
-//             {
-//                 const input = cash.parentElement.querySelector('input');
-//                 input.removeAttribute('disabled');
-//
-//                 input.select();
-//                 document.execCommand("copy");
-//
-//                 input.setAttribute('disabled', 'disabled');
-//             }
-//         })
-//     })
-//
-//
-//     open.addEventListener('click', () => {
-//         modal.classList.add('d-block')
-//     })
-//
-//     window.addEventListener('click', (e) => {
-//         if (e.target === modalWrap )
-//         {
-//             modal.classList.remove('d-block')
-//         }
-//     })
-//     close.addEventListener('click', () => {
-//         modal.classList.remove('d-block')
-//     })
-//
-// }
-
-
-
-
-
 
 
 

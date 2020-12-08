@@ -42,7 +42,7 @@ class IndexController extends BasicAllController
     public function index(Request $request)
     {
 
-    	return view('all.main.index',
+		return view('all.main.index',
 		[
     		'catalog' => Catalog::limit(16)->with('category')->get(),
     		'slider' => Slider::all(),

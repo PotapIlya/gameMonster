@@ -19,6 +19,7 @@ class ProposalCrudController extends CrudController
 //    use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
+
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
      * 
@@ -102,6 +103,26 @@ class ProposalCrudController extends CrudController
 			// optional:
 //			'temporary' => 10 // if using a service, such as S3, that requires you to make temporary URL's this will make a URL that is valid for the number of minutes specified
 		]);
+
+		CRUD::addField([
+			'name' => 'title',
+			'label' => 'Заголовок',
+			'type' => 'translateText',
+
+		]);
+
+		CRUD::addField([
+			'name' => 'text',
+			'label' => 'Описание',
+			'type' => 'translateText',
+
+		]);
+		CRUD::addField([
+			'name' => 'button',
+			'label' => 'Кнопка',
+			'type' => 'translateText',
+		]);
+
         CRUD::setFromDb(); // fields
 
         /**

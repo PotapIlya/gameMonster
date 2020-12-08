@@ -243,6 +243,11 @@
 
 @media only screen and (max-width : 576px) {
 
+
+    .header__money{
+        margin-right: 0;
+    }
+
     .header__user-menu{
         width: 240% !important;
         left: -120px !important;
@@ -269,7 +274,15 @@
             width: 100%;
             padding-right: 0;
             padding-left: 0;
-            height: 60vh;
+            height: 100%;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &>div{
+                width: 100%;
+            }
         }
         .registration {
             padding: 0;

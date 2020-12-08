@@ -4,7 +4,7 @@
 			<div class="modal-wrap">
 				
 				<form @submit.prevent="upload" method="POST" class="registration d-flex flex-column" style="background:transparent;">
-					<div class="registration__buttons d-flex justify-content-start align-items-center mb-3">
+					<div class="registration__buttons d-flex flex-column flex-sm-row justify-content-start align-items-start align-items-sm-center mb-3">
 						<a href="/login" class="registration__sign-in modal_header_active_text">Sign in</a>
 						<a href="/register" class="registration__sign-up">Registration</a>
 					</div>

@@ -2,18 +2,39 @@ html {
     font-size: 16px;
 }
 body {
+
     background: url("/assets/static/img/main/bg.jpg"), rgba(0, 0, 0, .88);
     background-blend-mode: multiply;
+
     color: $white;
     position: relative;
     font-weight: 400;
     overflow-x: hidden;
     overflow-y: visible;
-    //background-color: #000205;
     font-family: "Rubik", sans-serif !important;
 }
 *{
     font-family: "Rubik", sans-serif !important;
+}
+
+@media only screen and (max-width: 992px){
+
+    body{
+        background: #101010 !important;
+    }
+
+    .catalog .test {
+        background: #101010 !important;
+
+        &::before {
+            background-image: radial-gradient(circle at 0 0, transparent 30px, #101010 35px) !important;
+        }
+        &::after{
+            background-image: radial-gradient(circle at 0 0, transparent 30px, #101010 35px) !important;
+        }
+
+    }
+
 }
 
 .container{

@@ -22,6 +22,9 @@ return [
 		'subTitle' => 'Все материалы'
 	],
 
+	'proposal' => [
+		'textAreaPlaceholder' => 'Сообщение',
+	]
 
 
 

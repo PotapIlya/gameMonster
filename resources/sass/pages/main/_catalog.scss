@@ -12,7 +12,7 @@
             position: absolute;
             bottom: 0;
             right: 0;
-            background: #111;
+            background: #101010;
             //background: url(/assets/static/img/main/bg.jpg),rgba(0,0,0,.88);
             //background-blend-mode: multiply;
             //background: #111010;
@@ -27,11 +27,11 @@
                 position: absolute;
                 width: 90px;
                 height: 90px;
-                background: #000;
-                background: linear-gradient(135deg,transparent 35px,#000 0) top left;
+                background: #101010;
+                background: linear-gradient(135deg, #101010 35px,#101010 0) top left;
                 background-size: 34% 34%;
                 background-repeat: no-repeat;
-                background-image: radial-gradient(circle at 0 0,rgba(204,0,0,0) 30px,#101010 35px);
+                background-image: radial-gradient(circle at 0 0, #101010 30px,#101010 35px);
             }
 
             &::after{
@@ -44,10 +44,11 @@
                 /* margin: 10px; */
                 width: 90px;
                 height: 90px;
-                background: linear-gradient(135deg,transparent 35px,#000 0) top left;
+                background: #101010;
+                background: linear-gradient(135deg, #101010 35px,#101010 0) top left;
                 background-size: 34% 34%;
                 background-repeat: no-repeat;
-                background-image: radial-gradient(circle at 0 0,rgba(204,0,0,0) 30px,#101010 35px);
+                background-image: radial-gradient(circle at 0 0, #101010 30px,#101010 35px);
             }
 
         }
@@ -78,11 +79,11 @@
             position: absolute;
             width: 90px;
             height: 90px;
-            background: #000;
-            background: linear-gradient(135deg,transparent 35px,#000 0) top left;
+            background: #101010;
+            background: linear-gradient(135deg, transparent 35px,#101010 0) top left;
             background-size: 34% 34%;
             background-repeat: no-repeat;
-            background-image: radial-gradient(circle at 0 0,rgba(204,0,0,0) 30px,#101010 35px);
+            background-image: radial-gradient(circle at 0 0, transparent 30px,#101010 35px);
         }
 
         &::after{
@@ -95,10 +96,11 @@
             /* margin: 10px; */
             width: 90px;
             height: 90px;
-            background: linear-gradient(135deg,transparent 35px,#000 0) top left;
+            background: #101010;
+            background: linear-gradient(135deg,transparent 35px, #101010 0) top left;
             background-size: 34% 34%;
             background-repeat: no-repeat;
-            background-image: radial-gradient(circle at 0 0,rgba(204,0,0,0) 30px,#101010 35px);
+            background-image: radial-gradient(circle at 0 0, transparent 30px,#101010 35px);
         }
 
     }
@@ -377,7 +379,7 @@
     .catalog .test {
 
         &:after{
-            top: 44px;
+            top: 58px;
         }
     }
 

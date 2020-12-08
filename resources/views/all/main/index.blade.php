@@ -78,6 +78,8 @@
                     document.execCommand("copy");
 
                     input.setAttribute('disabled', 'disabled');
+
+                    modal.classList.remove('d-block');
                 }
             })
 

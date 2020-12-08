@@ -4,11 +4,13 @@ namespace App\Models\Admin;
 
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
+//use Spatie\Translatable\HasTranslations;
 
 class Catalog extends Model
 {
     use CrudTrait;
-
+//	use HasTranslations;
+//	public $translatable = ['title', 'text'];
     /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES

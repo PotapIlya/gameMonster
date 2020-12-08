@@ -95,23 +95,22 @@
 
 @media only screen and (max-width:576px){
     
-    .development__title{
-        font-size: 35px;
-        //text-align: center;
-    }
+    .development {
 
-    .development__subtitle{
-        font-size: 18px;
-        //margin-bottom: 20px;
-        //text-align: center;
+        &__wrap{
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+        &__title {
+            font-size: 35px;
+        }
+        &__subtitle{
+            font-size: 18px;
+        }
+        &__button{
+            width: 100%;
+        }
     }
-
-    .development__button{
-        width: 100%;
-    }
-    //.development__form{
-    //    flex-direction: column !important;
-    //}
 }
 
    
