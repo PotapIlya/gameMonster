@@ -9,7 +9,11 @@ return [
 	],
 
 	'luck' => [
-		'title' => 'Try your luck'
+		'title' => 'Try your luck',
+
+		'games' => 'games',
+		'profit' => 'profit',
+		'gamesFrom' => 'games from',
 	],
 
 	'catalog' => [

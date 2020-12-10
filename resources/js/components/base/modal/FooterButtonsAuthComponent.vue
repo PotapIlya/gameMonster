@@ -4,13 +4,13 @@
 			<div class="header__auth-item openAuth"
 				@click="changeModal('login')"
 			>
-				Sign in
+				{{ translate.btnLogin }}
 			</div>
 			<div class="header__inclined mx-1">/</div>
 			<div class="header__auth-item openAuth"
 				 @click="changeModal('register')"
 			>
-				Registration
+				{{ translate.btnRegister }}
 			</div>
 		</div>
 		
@@ -18,6 +18,7 @@
 			v-if="statusModal.length"
 			:statusModal="statusModal"
 			:statusClose="statusClose"
+			:translate="translate"
 		/>
 		
 	</div>
@@ -26,7 +27,7 @@
 <script>
 	import ModelAuthComponent from "./ModelAuthComponent";
     export default {
-        name: "ButtonsAuthComponent",
+        props: ['translate'],
 		components: {
             ModelAuthComponent
 		},
@@ -38,8 +39,8 @@
         
         },
         mounted() {
-			
-                  },
+   
+		},
         methods:{
             changeModal(name)
 			{

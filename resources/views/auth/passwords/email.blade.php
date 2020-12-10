@@ -27,11 +27,10 @@
 
                     <div class="registration__buttons d-flex flex-column justify-content-sm-start justify-content-center mb-3">
                         <span class="registration__sign-in">
-                            Reset Password
+                            @lang('template/modal.auth.resetTitle')
                         </span>
                         <span class="mt-3 mb-1">
-                            A link to restore access will be sent to your e-mail
-{{--                            На ваш e-mail будет направлена ссылка для восстановления доступа--}}
+                           @lang('template/modal.auth.resetPubTitle')
                         </span>
                     </div>
 
@@ -45,11 +44,13 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
-{{--                        #noty_layout__topRight--}}
+
                     </label>
 
                     <div class="forgot d-flex align-items-center">
-                        <button style="color: #fff; cursor: pointer" type="submit" class="registration__enter mr-auto">Proceed</button>
+                        <button style="color: #fff; cursor: pointer" type="submit" class="registration__enter mr-auto">
+                            @lang('template/modal.auth.resetBtn')
+                        </button>
                     </div>
                 </form>
             </div>

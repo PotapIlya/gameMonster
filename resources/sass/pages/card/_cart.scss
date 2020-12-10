@@ -1,8 +1,5 @@
 
 
-
-
-
 .cart{
     margin-bottom: 1.5rem !important;
 }
@@ -269,6 +266,7 @@
         }
 
         &__rent-acc{
+            white-space: nowrap;
             color: $rent-acc;
             font-weight: 500;
             font-size: 19px;
@@ -277,7 +275,7 @@
             padding-right: 20px;
 
             &:after{
-                content: url("/assets/release/img/rent-acc.png");
+                content: url("/assets/static/img/main/rent-acc.png");
                 position: absolute;
                 top: 55%;
                 transform: translateY(-50%);

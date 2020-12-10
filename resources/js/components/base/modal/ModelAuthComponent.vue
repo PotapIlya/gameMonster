@@ -8,6 +8,8 @@
 					<LoginComponent
 						@changeModal="changeModal"
 						@closeModal="closeModal"
+						
+						:translate="translate"
 					/>
 				</div>
 			
@@ -15,6 +17,8 @@
 					<RegisterComponent
 						@changeModal="changeModal"
 						@closeModal="closeModal"
+						
+						:translate="translate"
 					/>
 				</div>
 				
@@ -28,14 +32,14 @@
 	import LoginComponent from "./include/LoginComponent";
 	import RegisterComponent from "./include/RegisterComponent";
     export default {
-        name: "ModelAuthComponent",
 		components: {
             LoginComponent,
             RegisterComponent
 		},
 		props: [
 		    'statusModal',
-			'statusClose'
+			'statusClose',
+			'translate'
 		],
 		data: () => ({
             statusModals: '',
@@ -47,6 +51,7 @@
 			    this.status = true;
 			},
             statusModal(name){
+                console.log( name )
                 this.statusModals = name
 			}
 		},

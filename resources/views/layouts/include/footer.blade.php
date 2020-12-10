@@ -74,7 +74,9 @@
                     <li class="footer__auth mb-4">
 
                         @if(Request::path() !== 'login' && Request::path() !== 'register' && Request::path() !== 'password/reset')
-                            <footer-modal-auth-component />
+                            <footer-modal-auth-component
+                                :translate="{{ json_encode(trans('template/modal.auth')) }}"
+                            />
                         @endif
 
                     </li>

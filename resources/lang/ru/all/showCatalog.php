@@ -20,4 +20,8 @@ return[
 	'allGames' => 'Все игры',
 
 
+	'showProduct' => 'Показать',
+
+	'rentAccount' => 'Арендовать аккаунт'
+
 ];

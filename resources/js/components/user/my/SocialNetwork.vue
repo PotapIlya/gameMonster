@@ -45,6 +45,8 @@
 			:item="item"
 			:index="index"
 			
+			:translate="translate"
+			
 			@ChangeShow="ChangeShow"
 			@ChangeShowSuccess="ChangeShowSuccess"
 		/>
@@ -58,7 +60,10 @@
         components:{
             ModalDeleteServices
 		},
-        props: ['services'],
+        props: [
+            'services',
+            'translate'
+		],
 		data: () => ({
 			show: false,
             item: null,

@@ -1,9 +1,9 @@
 .footer{
-    .unit{
-        a{
 
-        }
+    .modal{
+        z-index: 1000;
     }
+
     &__translate,
     &__money{
         color: $menu;

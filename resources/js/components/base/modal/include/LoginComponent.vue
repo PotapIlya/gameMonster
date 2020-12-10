@@ -4,10 +4,10 @@
 			<div class="registration__buttons d-flex justify-content-sm-start justify-content-center mb-3">
 				<span class="registration__sign-in modal_header_active_text"
 				  @click="changeTitle('login')"
-				>Sign in</span>
+				>{{ translate.btnLogin }}</span>
 				<span class="registration__sign-up"
 				   @click="changeTitle('register')"
-				>Registration</span>
+				>{{ translate.btnRegister }}</span>
 			</div>
 			
 			<label for="" class="modal-auth-input">
@@ -33,26 +33,12 @@
 			
 			
 			<div class="forgot d-flex align-items-center">
-				<button type="submit" style="cursor: pointer; color: #fff;" class="registration__enter">Sign in</button>
-				<a href="/password/reset" class="registration__forgot">Forgot your password?</a>
+				<button type="submit" style="cursor: pointer; color: #fff;" class="registration__enter">{{ translate.btnLogin }}</button>
+				<a href="/password/reset" class="registration__forgot">{{ translate.forgotPassword }}</a>
 			</div>
 			
 			
-			<a href="#" class="registration__enter-help">Login with</a>
-			<div class="registration__services d-flex align-items-center">
-				<a href="/login/steam" class="service1">
-					<img src="/assets/static/img/services/steam.png" alt="steam">
-				</a>
-				<a href="/login/google" class="service2 mr-2 ml-4">
-					<img src="/assets/static/img/services/google.png" alt="google">
-				</a>
-				<a href="/login/vkontakte" class="service3 mr-4 ml-2">
-					<img src="/assets/static/img/services/vkontakte.png" alt="vk">
-				</a>
-				<a href="/login/facebook" class="service4">
-					<img src="/assets/static/img/services/facebook.png" alt="facebook">
-				</a>
-			</div>
+			<LoginWithComponent :translate="translate" />
 		</form>
 		
 		<button @click="closeModal" class="button-close close">&#10006;</button>
@@ -60,9 +46,15 @@
 </template>
 
 <script>
+    import LoginWithComponent from "./LoginWithComponent";
     import axios from "axios";
     export default {
-        name: "LoginComponent",
+        components: {
+            LoginWithComponent
+		},
+        props: [
+            'translate'
+		],
 		data: () => ({
             email: '',
             password: '',

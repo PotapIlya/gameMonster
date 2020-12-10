@@ -44,6 +44,7 @@
 			
 				<SocialNetwork
 					:services="user_data.services"
+					:translate="translate"
 				/>
 			
 			</div>

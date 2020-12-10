@@ -68,9 +68,11 @@
                 </div>
 
                 <div class="proposal_item__wrapper proposal_item__wrapper-3 d-flex justify-content-center justify-content-sm-start align-items-end col-12 col-lg-10 col-xl-8">
-                    <div class="proposal_item-title d-none d-lg-block col-xl-6">
-                        {{ json_decode($proposal[2]->title, true)[session('locale')] ?? ''}}
-                    </div>
+                    @if($proposal[2]->title)
+                        <div class="proposal_item-title d-none d-lg-block col-xl-6">
+                            {{ json_decode($proposal[2]->title, true)[session('locale')] ?? ''}}
+                        </div>
+                    @endif
                     @if(!is_null($proposal[2]->button) && $proposal[2]->button)
                         <form class="d-flex flex-column-reverse flex-sm-row-reverse flex-lg-row align-items-end justify-content-end align-items-center align-items-sm-end">
                             <div class=" mr-0 mr-lg-4 ml-0 ml-sm-4 ml-lg-0 mt-2 mt-sm-0 d-none d-lg-block">
@@ -84,7 +86,7 @@
                                     <input placeholder="E-mail" class="w-100" type="text">
                                     <div class=" mr-0 mr-lg-4 ml-0 ml-sm-4 ml-lg-0 mt-2 mt-sm-0 d-block d-lg-none">
                                         <button class="proposal_item-btn">
-                                            {{ $proposal[2]->button ?? '' }}
+                                            {{ json_decode($proposal[2]->button, true)[session('locale')] ?? '' }}
                                         </button>
                                     </div>
                                 </label>
@@ -92,7 +94,7 @@
                                     <textarea placeholder="{{ trans('all/main.proposal.textAreaPlaceholder') }}" class="d-block " name="" id="" cols="30" rows="7"></textarea>
                                 </label>
                                 <span class="d-block d-lg-none proposal_item-title">
-                                      {{ $proposal[2]->title ?? ''}}
+                                      {{ json_decode($proposal[2]->title, true)[session('locale')] ?? ''}}
                                 </span>
                             </div>
                         </form>

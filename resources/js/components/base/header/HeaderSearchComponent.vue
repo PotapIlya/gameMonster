@@ -1,5 +1,7 @@
 <template>
-	<div :class="{'headerStatusActive': headerStatusActive }">
+	<div
+			:class="{'headerStatusActive': headerStatusActive, 'headerArrayActive': searchArray.length }"
+	>
 		
 		<div @click="showInputFunc" class="header__search-btn">
 			<button class="button">{{ translate }}</button>
@@ -9,7 +11,7 @@
 			<input
 				   v-model="searchInput"
 				   type="text"
-				   placeholder="Search"
+				   :placeholder="translate"
 				   class="searchInput"
 				   />
 		</div>

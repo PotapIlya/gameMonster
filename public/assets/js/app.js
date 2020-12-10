@@ -1979,9 +1979,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Login",
+  props: ['translate'],
   data: function data() {
     return {
       email: '',
@@ -1990,6 +1998,8 @@ __webpack_require__.r(__webpack_exports__);
       errorPassword: [],
       errorEmail: []
     };
+  },
+  mounted: function mounted() {// console.log(this.translate)
   },
   methods: {
     upload: function upload() {
@@ -2114,9 +2124,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "AuthComponent",
+  props: ['translate'],
   data: function data() {
     return {
       email: '',
@@ -2126,6 +2146,9 @@ __webpack_require__.r(__webpack_exports__);
       errorEmail: [],
       errorPassword: []
     };
+  },
+  mounted: function mounted() {
+    console.log(this.translate);
   },
   methods: {
     upload: function upload() {
@@ -2324,6 +2347,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "SearchComponent",
   props: ['search', 'locale', 'translate'],
@@ -2409,9 +2434,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "ButtonsAuthComponent",
+  props: ['translate'],
   components: {
     ModelAuthComponent: _ModelAuthComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
@@ -2475,9 +2501,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "ButtonsAuthComponent",
+  props: ['translate'],
   components: {
     ModelAuthComponent: _ModelAuthComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
@@ -2686,15 +2714,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "ModelAuthComponent",
   components: {
     LoginComponent: _include_LoginComponent__WEBPACK_IMPORTED_MODULE_0__["default"],
     RegisterComponent: _include_RegisterComponent__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
-  props: ['statusModal', 'statusClose'],
+  props: ['statusModal', 'statusClose', 'translate'],
   data: function data() {
     return {
       statusModals: '',
@@ -2706,6 +2737,7 @@ __webpack_require__.r(__webpack_exports__);
       this.status = true;
     },
     statusModal: function statusModal(name) {
+      console.log(name);
       this.statusModals = name;
     }
   },
@@ -2745,22 +2777,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var _LoginWithComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LoginWithComponent */ "./resources/js/components/base/modal/include/LoginWithComponent.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -2809,8 +2828,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "LoginComponent",
+  components: {
+    LoginWithComponent: _LoginWithComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  props: ['translate'],
   data: function data() {
     return {
       email: '',
@@ -2832,7 +2855,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.errorPassword.length = 0;
       this.errorEmail.length = 0;
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(this.url, {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(this.url, {
         email: this.email,
         password: this.password
       }).then(function (response) {
@@ -2858,6 +2881,41 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/base/modal/include/LoginWithComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/base/modal/include/LoginWithComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['translate']
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/base/modal/include/RegisterComponent.vue?vue&type=script&lang=js&":
 /*!***********************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/base/modal/include/RegisterComponent.vue?vue&type=script&lang=js& ***!
@@ -2867,20 +2925,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var _LoginWithComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LoginWithComponent */ "./resources/js/components/base/modal/include/LoginWithComponent.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -2931,8 +2978,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "RegisterComponent",
+  components: {
+    LoginWithComponent: _LoginWithComponent__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  props: ['translate'],
   data: function data() {
     return {
       email: '',
@@ -2956,7 +3007,7 @@ __webpack_require__.r(__webpack_exports__);
 
       this.errorPassword.length = 0;
       this.errorEmail.length = 0;
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(this.url, {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(this.url, {
         email: this.email,
         password: this.password,
         password_confirmation: this.password_confirmation
@@ -2995,6 +3046,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _InfoComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InfoComponent */ "./resources/js/components/user/my/InfoComponent.vue");
 /* harmony import */ var _PasswordComponent__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PasswordComponent */ "./resources/js/components/user/my/PasswordComponent.vue");
 /* harmony import */ var _SocialNetwork__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SocialNetwork */ "./resources/js/components/user/my/SocialNetwork.vue");
+//
 //
 //
 //
@@ -3379,12 +3431,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     ModalDeleteServices: _modal_ModalDeleteServices__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  props: ['services'],
+  props: ['services', 'translate'],
   data: function data() {
     return {
       show: false,
@@ -3476,7 +3530,7 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     PulseLoader: vue_spinner_src_PulseLoader_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
-  props: ['show', 'item', 'index'],
+  props: ['show', 'item', 'index', 'translate'],
   data: function data() {
     return {
       url: '/api/my/deleteServices',
@@ -4811,7 +4865,45 @@ var render = function() {
                 }
               },
               [
-                _vm._m(0),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "registration__buttons d-flex flex-column flex-sm-row justify-content-start align-items-start align-items-sm-center mb-3"
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "registration__sign-in modal_header_active_text",
+                        attrs: { href: "/login" }
+                      },
+                      [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(_vm.translate.btnLogin) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "registration__sign-up",
+                        attrs: { href: "/register" }
+                      },
+                      [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(_vm.translate.btnRegister) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ]
+                    )
+                  ]
+                ),
                 _vm._v(" "),
                 _c(
                   "label",
@@ -4881,7 +4973,7 @@ var render = function() {
                       attrs: {
                         id: "password",
                         name: "password",
-                        placeholder: "Password",
+                        placeholder: _vm.translate.inputPassword,
                         type: "password"
                       },
                       domProps: { value: _vm.password },
@@ -4896,7 +4988,11 @@ var render = function() {
                     }),
                     _vm._v(" "),
                     _c("span", { staticClass: "modal-auth-span" }, [
-                      _vm._v("Registration")
+                      _vm._v(
+                        "\n\t\t\t\t\t\t" +
+                          _vm._s(_vm.translate.inputPassword) +
+                          "\n\t\t\t\t\t"
+                      )
                     ]),
                     _vm._v(" "),
                     _vm.errorPassword.length
@@ -4917,18 +5013,39 @@ var render = function() {
                   ]
                 ),
                 _vm._v(" "),
-                _vm._m(1),
-                _vm._v(" "),
                 _c(
-                  "a",
-                  {
-                    staticClass: "registration__enter-help",
-                    attrs: { href: "#" }
-                  },
-                  [_vm._v("Login with")]
+                  "div",
+                  { staticClass: "forgot d-flex flex-row align-items-center" },
+                  [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "registration__enter",
+                        attrs: { type: "submit" }
+                      },
+                      [_vm._v(_vm._s(_vm.translate.btnLogin))]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "registration__forgot",
+                        attrs: { href: "/password/reset" }
+                      },
+                      [_vm._v(_vm._s(_vm.translate.forgotPassword))]
+                    )
+                  ]
                 ),
                 _vm._v(" "),
-                _vm._m(2)
+                _c("span", { staticClass: "registration__enter-help" }, [
+                  _vm._v(
+                    "\n\t\t\t\t\t" +
+                      _vm._s(_vm.translate.loginWith) +
+                      "\n\t\t\t\t"
+                  )
+                ]),
+                _vm._v(" "),
+                _vm._m(0)
               ]
             )
           ])
@@ -4938,62 +5055,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "registration__buttons d-flex flex-column flex-sm-row justify-content-start align-items-start align-items-sm-center mb-3"
-      },
-      [
-        _c(
-          "a",
-          {
-            staticClass: "registration__sign-in modal_header_active_text",
-            attrs: { href: "/login" }
-          },
-          [_vm._v("Sign in")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "registration__sign-up",
-            attrs: { href: "/register" }
-          },
-          [_vm._v("Registration")]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "forgot d-flex flex-row align-items-center" },
-      [
-        _c(
-          "button",
-          { staticClass: "registration__enter", attrs: { type: "submit" } },
-          [_vm._v("Sign in")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "registration__forgot",
-            attrs: { href: "/password/reset" }
-          },
-          [_vm._v("Forgot your password?")]
-        )
-      ]
-    )
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -5109,7 +5170,45 @@ var render = function() {
                 }
               },
               [
-                _vm._m(0),
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "registration__buttons d-flex justify-content-sm-start justify-content-center mb-3"
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "registration__sign-in",
+                        attrs: { href: "/login" }
+                      },
+                      [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t\t" +
+                            _vm._s(_vm.translate.btnLogin) +
+                            "\n\t\t\t\t\t\t"
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass:
+                          "registration__sign-up modal_header_active_text",
+                        attrs: { href: "/register" }
+                      },
+                      [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t\t" +
+                            _vm._s(_vm.translate.btnRegister) +
+                            "\n\t\t\t\t\t\t"
+                        )
+                      ]
+                    )
+                  ]
+                ),
                 _vm._v(" "),
                 _c(
                   "label",
@@ -5177,7 +5276,7 @@ var render = function() {
                       ],
                       attrs: {
                         name: "password",
-                        placeholder: "Password",
+                        placeholder: _vm.translate.inputPassword,
                         type: "password"
                       },
                       domProps: { value: _vm.password },
@@ -5192,7 +5291,11 @@ var render = function() {
                     }),
                     _vm._v(" "),
                     _c("span", { staticClass: "modal-auth-span" }, [
-                      _vm._v("Password")
+                      _vm._v(
+                        "\n\t\t\t\t\t\t\t" +
+                          _vm._s(_vm.translate.inputPassword) +
+                          "\n\t\t\t\t\t\t"
+                      )
                     ]),
                     _vm._v(" "),
                     _vm.errorPassword.length
@@ -5228,7 +5331,7 @@ var render = function() {
                       ],
                       attrs: {
                         name: "password_confirmation",
-                        placeholder: "Repeat password",
+                        placeholder: _vm.translate.inputResetPassword,
                         type: "password"
                       },
                       domProps: { value: _vm.password_confirmation },
@@ -5243,23 +5346,37 @@ var render = function() {
                     }),
                     _vm._v(" "),
                     _c("span", { staticClass: "modal-auth-span" }, [
-                      _vm._v("Repeat password")
+                      _vm._v(_vm._s(_vm.translate.inputResetPassword))
                     ])
                   ]
                 ),
                 _vm._v(" "),
-                _vm._m(1),
+                _c("div", { staticClass: "forgot d-flex align-items-center" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "registration__enter",
+                      attrs: { type: "submit" }
+                    },
+                    [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t\t" +
+                          _vm._s(_vm.translate.btnRegister) +
+                          "\n\t\t\t\t\t\t"
+                      )
+                    ]
+                  )
+                ]),
                 _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    staticClass: "registration__enter-help",
-                    attrs: { href: "#" }
-                  },
-                  [_vm._v("Login with")]
-                ),
+                _c("span", { staticClass: "registration__enter-help" }, [
+                  _vm._v(
+                    "\n\t\t\t\t\t\t" +
+                      _vm._s(_vm.translate.loginWith) +
+                      "\n\t\t\t\t\t"
+                  )
+                ]),
                 _vm._v(" "),
-                _vm._m(2)
+                _vm._m(0)
               ]
             )
           ])
@@ -5269,46 +5386,6 @@ var render = function() {
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "registration__buttons d-flex justify-content-sm-start justify-content-center mb-3"
-      },
-      [
-        _c(
-          "a",
-          { staticClass: "registration__sign-in", attrs: { href: "/login" } },
-          [_vm._v("Sign in")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "registration__sign-up modal_header_active_text",
-            attrs: { href: "/register" }
-          },
-          [_vm._v("Registration")]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "forgot d-flex align-items-center" }, [
-      _c(
-        "button",
-        { staticClass: "registration__enter", attrs: { type: "submit" } },
-        [_vm._v("Registration")]
-      )
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -5551,145 +5628,165 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { class: { headerStatusActive: _vm.headerStatusActive } }, [
-    _c(
-      "div",
-      { staticClass: "header__search-btn", on: { click: _vm.showInputFunc } },
-      [_c("button", { staticClass: "button" }, [_vm._v(_vm._s(_vm.translate))])]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.showInput,
-            expression: "showInput"
-          }
-        ],
-        staticClass: "header__search-label"
-      },
-      [
-        _c("input", {
+  return _c(
+    "div",
+    {
+      class: {
+        headerStatusActive: _vm.headerStatusActive,
+        headerArrayActive: _vm.searchArray.length
+      }
+    },
+    [
+      _c(
+        "div",
+        { staticClass: "header__search-btn", on: { click: _vm.showInputFunc } },
+        [
+          _c("button", { staticClass: "button" }, [
+            _vm._v(_vm._s(_vm.translate))
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
           directives: [
             {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.searchInput,
-              expression: "searchInput"
+              name: "show",
+              rawName: "v-show",
+              value: _vm.showInput,
+              expression: "showInput"
             }
           ],
-          staticClass: "searchInput",
-          attrs: { type: "text", placeholder: "Search" },
-          domProps: { value: _vm.searchInput },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.searchInput = $event.target.value
-            }
-          }
-        })
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "ul",
-      {
-        directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.searchArray.length,
-            expression: "searchArray.length"
-          }
-        ],
-        staticClass: "header__search-res py-2 px-3"
-      },
-      _vm._l(_vm.searchArray, function(item) {
-        return _c(
-          "li",
-          { staticClass: "d-flex justify-content-between mb-3" },
-          [
-            _c(
-              "a",
+          staticClass: "header__search-label"
+        },
+        [
+          _c("input", {
+            directives: [
               {
-                staticClass: "d-flex align-items-center",
-                attrs: { href: "/key/" + item.url }
-              },
-              [
-                _c(
-                  "div",
-                  { staticClass: "header__search-res-img col-3 mr-2 px-0" },
-                  [
-                    item.preloader !== null
-                      ? _c("img", {
-                          staticClass: "mw-100",
-                          attrs: { src: "/storage/" + item.preloader, alt: "" }
-                        })
-                      : _c("img", {
-                          staticClass: "mw-100",
-                          attrs: {
-                            src: "/assets/static/img/main/no-image.png",
-                            alt: ""
-                          }
-                        })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", [
-                  _c("h6", { staticClass: "header__search-res-title" }, [
-                    _vm._v(_vm._s(JSON.parse(item.title)[_vm.lang]))
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "header__search-res-price my-1" }, [
-                    _c("span", { staticClass: "new mr-1" }, [
-                      _vm._v(_vm._s(item.price))
-                    ]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "old" }, [
-                      _vm._v(_vm._s(item.old_price))
-                    ])
-                  ]),
-                  _vm._v(" "),
+                name: "model",
+                rawName: "v-model",
+                value: _vm.searchInput,
+                expression: "searchInput"
+              }
+            ],
+            staticClass: "searchInput",
+            attrs: { type: "text", placeholder: _vm.translate },
+            domProps: { value: _vm.searchInput },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.searchInput = $event.target.value
+              }
+            }
+          })
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "ul",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.searchArray.length,
+              expression: "searchArray.length"
+            }
+          ],
+          staticClass: "header__search-res py-2 px-3"
+        },
+        _vm._l(_vm.searchArray, function(item) {
+          return _c(
+            "li",
+            { staticClass: "d-flex justify-content-between mb-3" },
+            [
+              _c(
+                "a",
+                {
+                  staticClass: "d-flex align-items-center",
+                  attrs: { href: "/key/" + item.url }
+                },
+                [
                   _c(
                     "div",
-                    {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: item.category.length,
-                          expression: "item.category.length"
-                        }
-                      ],
-                      staticClass: "header__search-res-category"
-                    },
-                    _vm._l(item.category, function(cat) {
-                      return _c("span", [
-                        _vm._v(
-                          "\n\t\t\t\t\t\t\t" +
-                            _vm._s(cat.name) +
-                            "\n\t\t\t\t\t\t"
-                        )
-                      ])
-                    }),
-                    0
-                  )
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _vm._m(0, true)
-          ]
-        )
-      }),
-      0
-    )
-  ])
+                    { staticClass: "header__search-res-img col-3 mr-2 px-0" },
+                    [
+                      item.preloader !== null
+                        ? _c("img", {
+                            staticClass: "mw-100",
+                            attrs: {
+                              src: "/storage/" + item.preloader,
+                              alt: ""
+                            }
+                          })
+                        : _c("img", {
+                            staticClass: "mw-100",
+                            attrs: {
+                              src: "/assets/static/img/main/no-image.png",
+                              alt: ""
+                            }
+                          })
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("h6", { staticClass: "header__search-res-title" }, [
+                      _vm._v(_vm._s(JSON.parse(item.title)[_vm.lang]))
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "header__search-res-price my-1" },
+                      [
+                        _c("span", { staticClass: "new mr-1" }, [
+                          _vm._v(_vm._s(item.price))
+                        ]),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "old" }, [
+                          _vm._v(_vm._s(item.old_price))
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        directives: [
+                          {
+                            name: "show",
+                            rawName: "v-show",
+                            value: item.category.length,
+                            expression: "item.category.length"
+                          }
+                        ],
+                        staticClass: "header__search-res-category"
+                      },
+                      _vm._l(item.category, function(cat) {
+                        return _c("span", [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t" +
+                              _vm._s(cat.name) +
+                              "\n\t\t\t\t\t\t"
+                          )
+                        ])
+                      }),
+                      0
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _vm._m(0, true)
+            ]
+          )
+        }),
+        0
+      )
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
@@ -5739,7 +5836,7 @@ var render = function() {
               }
             }
           },
-          [_vm._v("\n\t\t\tSign in\n\t\t")]
+          [_vm._v("\n\t\t\t" + _vm._s(_vm.translate.btnLogin) + "\n\t\t")]
         ),
         _vm._v(" "),
         _c("div", { staticClass: "header__inclined mx-1" }, [_vm._v("/")]),
@@ -5754,7 +5851,7 @@ var render = function() {
               }
             }
           },
-          [_vm._v("\n\t\t\tRegistration\n\t\t")]
+          [_vm._v("\n\t\t\t" + _vm._s(_vm.translate.btnRegister) + "\n\t\t")]
         )
       ]),
       _vm._v(" "),
@@ -5762,7 +5859,8 @@ var render = function() {
         ? _c("ModelAuthComponent", {
             attrs: {
               statusModal: _vm.statusModal,
-              statusClose: _vm.statusClose
+              statusClose: _vm.statusClose,
+              translate: _vm.translate
             }
           })
         : _vm._e()
@@ -5807,7 +5905,7 @@ var render = function() {
               }
             }
           },
-          [_vm._v("\n\t\t\tSign in\n\t\t")]
+          [_vm._v("\n\t\t\t" + _vm._s(_vm.translate.btnLogin) + "\n\t\t")]
         ),
         _vm._v(" "),
         _c("div", { staticClass: "header__inclined mx-1" }, [_vm._v("/")]),
@@ -5822,7 +5920,7 @@ var render = function() {
               }
             }
           },
-          [_vm._v("\n\t\t\tRegistration\n\t\t")]
+          [_vm._v("\n\t\t\t" + _vm._s(_vm.translate.btnRegister) + "\n\t\t")]
         )
       ]),
       _vm._v(" "),
@@ -5837,7 +5935,7 @@ var render = function() {
               }
             }
           },
-          [_vm._v("\n\t\t\tSign in\n\t\t")]
+          [_vm._v("\n\t\t\t" + _vm._s(_vm.translate.btnLogin) + "\n\t\t")]
         )
       ]),
       _vm._v(" "),
@@ -5845,7 +5943,8 @@ var render = function() {
         ? _c("ModelAuthComponent", {
             attrs: {
               statusModal: _vm.statusModal,
-              statusClose: _vm.statusClose
+              statusClose: _vm.statusClose,
+              translate: _vm.translate
             }
           })
         : _vm._e()
@@ -6167,6 +6266,7 @@ var render = function() {
                   "div",
                   [
                     _c("LoginComponent", {
+                      attrs: { translate: _vm.translate },
                       on: {
                         changeModal: _vm.changeModal,
                         closeModal: _vm.closeModal
@@ -6182,6 +6282,7 @@ var render = function() {
                   "div",
                   [
                     _c("RegisterComponent", {
+                      attrs: { translate: _vm.translate },
                       on: {
                         changeModal: _vm.changeModal,
                         closeModal: _vm.closeModal
@@ -6250,7 +6351,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Sign in")]
+              [_vm._v(_vm._s(_vm.translate.btnLogin))]
             ),
             _vm._v(" "),
             _c(
@@ -6263,7 +6364,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Registration")]
+              [_vm._v(_vm._s(_vm.translate.btnRegister))]
             )
           ]
         ),
@@ -6352,16 +6453,30 @@ var render = function() {
             : _vm._e()
         ]),
         _vm._v(" "),
-        _vm._m(0),
+        _c("div", { staticClass: "forgot d-flex align-items-center" }, [
+          _c(
+            "button",
+            {
+              staticClass: "registration__enter",
+              staticStyle: { cursor: "pointer", color: "#fff" },
+              attrs: { type: "submit" }
+            },
+            [_vm._v(_vm._s(_vm.translate.btnLogin))]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "registration__forgot",
+              attrs: { href: "/password/reset" }
+            },
+            [_vm._v(_vm._s(_vm.translate.forgotPassword))]
+          )
+        ]),
         _vm._v(" "),
-        _c(
-          "a",
-          { staticClass: "registration__enter-help", attrs: { href: "#" } },
-          [_vm._v("Login with")]
-        ),
-        _vm._v(" "),
-        _vm._m(1)
-      ]
+        _c("LoginWithComponent", { attrs: { translate: _vm.translate } })
+      ],
+      1
     ),
     _vm._v(" "),
     _c(
@@ -6371,32 +6486,39 @@ var render = function() {
     )
   ])
 }
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/base/modal/include/LoginWithComponent.vue?vue&type=template&id=b8d80d8c&":
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/base/modal/include/LoginWithComponent.vue?vue&type=template&id=b8d80d8c& ***!
+  \****************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "a",
+      { staticClass: "registration__enter-help d-block", attrs: { href: "#" } },
+      [_vm._v(_vm._s(_vm.translate.loginWith))]
+    ),
+    _vm._v(" "),
+    _vm._m(0)
+  ])
+}
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "forgot d-flex align-items-center" }, [
-      _c(
-        "button",
-        {
-          staticClass: "registration__enter",
-          staticStyle: { cursor: "pointer", color: "#fff" },
-          attrs: { type: "submit" }
-        },
-        [_vm._v("Sign in")]
-      ),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "registration__forgot",
-          attrs: { href: "/password/reset" }
-        },
-        [_vm._v("Forgot your password?")]
-      )
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -6514,7 +6636,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Sign in")]
+              [_vm._v(_vm._s(_vm.translate.btnLogin))]
             ),
             _vm._v(" "),
             _c(
@@ -6527,7 +6649,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Registration")]
+              [_vm._v(_vm._s(_vm.translate.btnRegister))]
             )
           ]
         ),
@@ -6581,7 +6703,7 @@ var render = function() {
             ],
             attrs: {
               name: "password",
-              placeholder: "Password",
+              placeholder: _vm.translate.inputPassword,
               type: "password"
             },
             domProps: { value: _vm.password },
@@ -6595,7 +6717,9 @@ var render = function() {
             }
           }),
           _vm._v(" "),
-          _c("span", { staticClass: "modal-auth-span" }, [_vm._v("Password")]),
+          _c("span", { staticClass: "modal-auth-span" }, [
+            _vm._v(_vm._s(_vm.translate.inputPassword))
+          ]),
           _vm._v(" "),
           _vm.errorPassword.length
             ? _c(
@@ -6622,7 +6746,7 @@ var render = function() {
             ],
             attrs: {
               name: "password",
-              placeholder: "Repeat password",
+              placeholder: _vm.translate.inputResetPassword,
               type: "password"
             },
             domProps: { value: _vm.password_confirmation },
@@ -6637,20 +6761,25 @@ var render = function() {
           }),
           _vm._v(" "),
           _c("span", { staticClass: "modal-auth-span" }, [
-            _vm._v("Repeat password")
+            _vm._v(_vm._s(_vm.translate.inputResetPassword))
           ])
         ]),
         _vm._v(" "),
-        _vm._m(0),
+        _c("div", { staticClass: "forgot d-flex align-items-center" }, [
+          _c(
+            "button",
+            {
+              staticClass: "registration__enter",
+              staticStyle: { cursor: "pointer", color: "#fff" },
+              attrs: { type: "submit" }
+            },
+            [_vm._v(_vm._s(_vm.translate.btnRegister))]
+          )
+        ]),
         _vm._v(" "),
-        _c(
-          "a",
-          { staticClass: "registration__enter-help", attrs: { href: "#" } },
-          [_vm._v("Login with")]
-        ),
-        _vm._v(" "),
-        _vm._m(1)
-      ]
+        _c("LoginWithComponent", { attrs: { translate: _vm.translate } })
+      ],
+      1
     ),
     _vm._v(" "),
     _c(
@@ -6660,88 +6789,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "forgot d-flex align-items-center" }, [
-      _c(
-        "button",
-        {
-          staticClass: "registration__enter",
-          staticStyle: { cursor: "pointer", color: "#fff" },
-          attrs: { type: "submit" }
-        },
-        [_vm._v("Registration")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "registration__services d-flex align-items-center" },
-      [
-        _c("a", { staticClass: "service1", attrs: { href: "/login/steam" } }, [
-          _c("img", {
-            attrs: {
-              src: "/assets/static/img/services/steam.png",
-              alt: "steam"
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "service2 mr-2 ml-4",
-            attrs: { href: "/login/google" }
-          },
-          [
-            _c("img", {
-              attrs: {
-                src: "/assets/static/img/services/google.png",
-                alt: "google"
-              }
-            })
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass: "service3 mr-4 ml-2",
-            attrs: { href: "/login/vkontakte" }
-          },
-          [
-            _c("img", {
-              attrs: {
-                src: "/assets/static/img/services/vkontakte.png",
-                alt: "vk"
-              }
-            })
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          { staticClass: "service4", attrs: { href: "/login/facebook" } },
-          [
-            _c("img", {
-              attrs: {
-                src: "/assets/static/img/services/facebook.png",
-                alt: "facebook"
-              }
-            })
-          ]
-        )
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -6826,7 +6874,12 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _c("SocialNetwork", { attrs: { services: _vm.user_data.services } })
+          _c("SocialNetwork", {
+            attrs: {
+              services: _vm.user_data.services,
+              translate: _vm.translate
+            }
+          })
         ],
         1
       )
@@ -7282,7 +7335,12 @@ var render = function() {
       _vm._v(" "),
       _vm.show
         ? _c("ModalDeleteServices", {
-            attrs: { show: _vm.show, item: _vm.item, index: _vm.index },
+            attrs: {
+              show: _vm.show,
+              item: _vm.item,
+              index: _vm.index,
+              translate: _vm.translate
+            },
             on: {
               ChangeShow: _vm.ChangeShow,
               ChangeShowSuccess: _vm.ChangeShowSuccess
@@ -7325,7 +7383,7 @@ var render = function() {
           { staticClass: "modal-wrap modal__wrap d-flex flex-column" },
           [
             _c("h1", { staticClass: "modal__wrap-title" }, [
-              _vm._v("\n\t\t\t\tUnlink account"),
+              _vm._v("\n\t\t\t\t" + _vm._s(_vm.translate.modalTitle)),
               _c("br"),
               _vm._v("\n\t\t\t\t" + _vm._s(_vm.item.type) + "?\n\t\t\t")
             ]),
@@ -7340,7 +7398,13 @@ var render = function() {
                 [
                   _vm.loader
                     ? _c("PulseLoader")
-                    : _c("span", [_vm._v("\n\t\t\t\t\t\tUnlink\n\t\t\t\t\t")])
+                    : _c("span", [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t" +
+                            _vm._s(_vm.translate.modalBtnUnlink) +
+                            "\n\t\t\t\t\t"
+                        )
+                      ])
                 ],
                 1
               ),
@@ -7348,7 +7412,13 @@ var render = function() {
               _c(
                 "button",
                 { staticClass: "my__btn", on: { click: _vm.ChangeShow } },
-                [_vm._v("\n\t\t\t\t\tCancel\n\t\t\t\t")]
+                [
+                  _vm._v(
+                    "\n\t\t\t\t\t" +
+                      _vm._s(_vm.translate.modalBtnCancel) +
+                      "\n\t\t\t\t"
+                  )
+                ]
               )
             ]),
             _vm._v(" "),
@@ -20335,6 +20405,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LoginComponent_vue_vue_type_template_id_c1743440___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LoginComponent_vue_vue_type_template_id_c1743440___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/base/modal/include/LoginWithComponent.vue":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/base/modal/include/LoginWithComponent.vue ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _LoginWithComponent_vue_vue_type_template_id_b8d80d8c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./LoginWithComponent.vue?vue&type=template&id=b8d80d8c& */ "./resources/js/components/base/modal/include/LoginWithComponent.vue?vue&type=template&id=b8d80d8c&");
+/* harmony import */ var _LoginWithComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./LoginWithComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/base/modal/include/LoginWithComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _LoginWithComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _LoginWithComponent_vue_vue_type_template_id_b8d80d8c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _LoginWithComponent_vue_vue_type_template_id_b8d80d8c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/base/modal/include/LoginWithComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/base/modal/include/LoginWithComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/components/base/modal/include/LoginWithComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LoginWithComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./LoginWithComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/base/modal/include/LoginWithComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_LoginWithComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/base/modal/include/LoginWithComponent.vue?vue&type=template&id=b8d80d8c&":
+/*!**********************************************************************************************************!*\
+  !*** ./resources/js/components/base/modal/include/LoginWithComponent.vue?vue&type=template&id=b8d80d8c& ***!
+  \**********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LoginWithComponent_vue_vue_type_template_id_b8d80d8c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./LoginWithComponent.vue?vue&type=template&id=b8d80d8c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/base/modal/include/LoginWithComponent.vue?vue&type=template&id=b8d80d8c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LoginWithComponent_vue_vue_type_template_id_b8d80d8c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LoginWithComponent_vue_vue_type_template_id_b8d80d8c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

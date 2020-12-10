@@ -89,25 +89,33 @@ class CatalogCrudController extends CrudController
     {
         CRUD::setValidation(CatalogRequest::class);
 
+
+
+
+
+		CRUD::addField([
+			'name' => 'price',
+			'label' => 'Цена',
+			'type' => 'currency',
+		]);
+		CRUD::addField([
+			'name' => 'old_price',
+			'type' => 'currency',
+			'label' => 'Старая цена',
+		]);
+
+
 		CRUD::addField([
 			'name'            => 'title',
 			'label'           => "Заголовок",
 			'type'            => 'translateText',
-
-
-//			'val' => $this->crud->getCurrentEntry() ? $this->crud->getCurrentEntry()->getTranslations()['title'] : null,
 		]);
-
-
 
 		CRUD::addField([
 			'name' => 'text',
 			'label' => 'Описание',
 			'type' => 'translateTextarea',
-
 		]);
-
-//		dd($this->crud->getCurrentEntry()->getTranslations()['text']);
 
 
 
@@ -121,20 +129,20 @@ class CatalogCrudController extends CrudController
 //			'type'      => 'text',
 //			'name'      => 'title',
 //		]);
-		CRUD::addField([
-			'name' => 'price',
-			'label' => 'Цена',
-			'type' => 'number',
-			'prefix'     => "P",
-			// 'suffix'     => ".00",
-		]);
-		CRUD::addField([
-			'name' => 'old_price',
-			'label' => 'Старая цена',
-			'type' => 'number',
-			'prefix'     => "P",
-			// 'suffix'     => ".00",
-		]);
+//		CRUD::addField([
+//			'name' => 'price',
+//			'label' => 'Цена',
+//			'type' => 'number',
+//			'prefix'     => "P",
+//			// 'suffix'     => ".00",
+//		]);
+//		CRUD::addField([
+//			'name' => 'old_price',
+//			'label' => 'Старая цена',
+//			'type' => 'number',
+//			'prefix'     => "P",
+//			// 'suffix'     => ".00",
+//		]);
 		CRUD::addField([
 			'name' => 'discounts',
 			'label' => 'Скидка',

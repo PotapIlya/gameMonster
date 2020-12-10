@@ -45,13 +45,14 @@
             display: none;
         }
 
-        label {
+        a {
+            color: #7C7C7C;
             cursor: pointer;
         }
 
-        input: checked + label {
-            color: $white;
-        }
+        //input: checked + label {
+        //    color: $white;
+        //}
     }
 
     &__inclined {
@@ -88,6 +89,7 @@
             cursor: pointer;
 
             button{
+                white-space: nowrap;
                 padding: 8px 40px 8px 8px;
                 background: transparent;
                 font-size: 16px;
@@ -173,15 +175,6 @@
         }
 
 
-        //&-active{
-        //    background: $bgSearchLi;
-        //   input{
-        //       border-radius: 9px 9px 0 0 ;
-        //       width: 280px;
-        //   }
-        //}
-
-
         label {
             color: #C9C9C9;
             cursor: pointer;
@@ -201,7 +194,7 @@
 
     &__money {
         display: flex;
-        label:not(:last-child) {
+        .label:not(:last-child) {
             margin-right: 8px;
         }
     }
@@ -317,6 +310,6 @@
 }
 
 .activeText{
-    color: $white;
+    color: $white !important;
 }
 

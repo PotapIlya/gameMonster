@@ -73,12 +73,34 @@
                             <div class="right-wrap__prices d-flex align-items-center">
                                 <div class="right-wrap__actual">
                                     @if($item->price)
-                                        {{ $item->price }} <span class="current">$</span>
+                                        {{ json_decode($item->price, true)[session('currency')] }}
+                                        <span class="current">
+                                           @switch(session('currency'))
+                                                @case('ruble')
+                                                    ₽
+                                                    @break
+                                                @case('euro')
+                                                    €
+                                                    @break
+                                                @default
+                                                    $
+                                            @endswitch
+                                        </span>
                                     @endif
                                 </div>
                                 <div class="right-wrap__irrelevant d-flex">
                                     @if($item->old_price)
-                                        {{ $item->old_price }} $
+                                        {{ json_decode($item->old_price, true)[session('currency')] }}
+                                        @switch(session('currency'))
+                                            @case('ruble')
+                                                ₽
+                                                @break
+                                            @case('euro')
+                                                €
+                                                @break
+                                            @default
+                                                $
+                                        @endswitch
                                     @endif
                                 </div>
                             </div>
@@ -212,7 +234,9 @@
                             <div class="originacc-wrap__price1"><span style="color:#fff">179</span>₽</div>
 
                             <div class="originacc-wrap__rent d-flex align-items-end">
-                                <a href="/development" class="originacc-wrap__rent-acc" >Aрендовать аккаунт</a>
+                                <a href="/development" class="originacc-wrap__rent-acc" >
+                                    @lang('all/showCatalog.rentAccount')
+                                </a>
                             </div>
                         </div>
                     </div>

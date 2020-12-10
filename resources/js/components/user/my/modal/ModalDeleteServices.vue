@@ -4,7 +4,7 @@
 			<div class="modal-wrap modal__wrap d-flex flex-column">
 				
 				<h1 class="modal__wrap-title">
-					Unlink account<br>
+					{{ translate.modalTitle }}<br>
 					{{ item.type }}?
 				</h1>
 				
@@ -12,11 +12,11 @@
 					<button @click="send" class="my__btn my__btn-untie">
 						<PulseLoader v-if="loader" />
 						<span v-else>
-							Unlink
+							{{ translate.modalBtnUnlink }}
 						</span>
 					</button>
 					<button @click="ChangeShow" class="my__btn">
-						Cancel
+						{{ translate.modalBtnCancel }}
 					</button>
 				</div>
 				
@@ -36,7 +36,8 @@
         props: [
             'show',
 			'item',
-			'index'
+			'index',
+			'translate'
 		],
         data: () => ({
 			url: '/api/my/deleteServices',

@@ -4,10 +4,10 @@
 			<div class="registration__buttons d-flex justify-content-sm-start justify-content-center mb-3">
 				<span class="registration__sign-in"
 					  @click="changeTitle('login')"
-				>Sign in</span>
+				>{{ translate.btnLogin }}</span>
 				<span class="registration__sign-up modal_header_active_text"
 					  @click="changeTitle('register')"
-				>Registration</span>
+				>{{ translate.btnRegister }}</span>
 			</div>
 			
 			<label for="" class="modal-auth-input">
@@ -21,8 +21,8 @@
 			</label>
 			
 			<label for="" class="modal-auth-input">
-				<input v-model="password" name="password" placeholder="Password" type="password">
-				<span class="modal-auth-span">Password</span>
+				<input v-model="password" name="password" :placeholder="translate.inputPassword" type="password">
+				<span class="modal-auth-span">{{ translate.inputPassword }}</span>
 				<ul v-if="errorPassword.length">
 					<li v-for="error in errorPassword">
 						{{ error[0] }}
@@ -31,28 +31,16 @@
 			</label>
 			
 			<label for="" class="modal-auth-input">
-				<input v-model="password_confirmation" name="password" placeholder="Repeat password" type="password">
-				<span class="modal-auth-span">Repeat password</span>
+				<input v-model="password_confirmation" name="password" :placeholder="translate.inputResetPassword" type="password">
+				<span class="modal-auth-span">{{ translate.inputResetPassword }}</span>
 			</label>
 			
 			<div class="forgot d-flex align-items-center">
-				<button type="submit" class="registration__enter" style="cursor: pointer; color: #fff;">Registration</button>
+				<button type="submit" class="registration__enter" style="cursor: pointer; color: #fff;">{{ translate.btnRegister }}</button>
 			</div>
-			<a href="#" class="registration__enter-help">Login with</a>
-			<div class="registration__services d-flex align-items-center">
-				<a href="/login/steam" class="service1">
-					<img src="/assets/static/img/services/steam.png" alt="steam">
-				</a>
-				<a href="/login/google" class="service2 mr-2 ml-4">
-					<img src="/assets/static/img/services/google.png" alt="google">
-				</a>
-				<a href="/login/vkontakte" class="service3 mr-4 ml-2">
-					<img src="/assets/static/img/services/vkontakte.png" alt="vk">
-				</a>
-				<a href="/login/facebook" class="service4">
-					<img src="/assets/static/img/services/facebook.png" alt="facebook">
-				</a>
-			</div>
+			
+			<LoginWithComponent :translate="translate" />
+		
 		</form>
 		
 		<button @click="closeModal" class="button-close close">&#10006;</button>
@@ -60,10 +48,14 @@
 </template>
 
 <script>
+	import LoginWithComponent from "./LoginWithComponent";
     import axios from "axios";
 
     export default {
-        name: "RegisterComponent",
+        components:{
+            LoginWithComponent
+		},
+        props: ['translate'],
 		data: () => ({
             email: '',
             password: '',

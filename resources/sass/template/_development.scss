@@ -2,8 +2,9 @@
     background: url("/assets/static/img/main/error.png") no-repeat 100% center;
     background-size: contain;
     width: 100%;
-    height: 100vh;
+    //height: 100vh;
 
+    min-height: 1050px;
 
     &__title{
         padding-top: 120px;

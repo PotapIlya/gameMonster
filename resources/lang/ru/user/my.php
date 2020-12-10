@@ -25,6 +25,11 @@ return [
 	'btnUpdate' => 'Обновить пароль',
 
 
+	'modalTitle' => 'Отвязать аккаунт',
+	'modalBtnUnlink' => 'Отзявать',
+	'modalBtnCancel' => 'Отмена',
+
+
 
 	'purchases' => 'Покупки',
 

@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class BasicAllController extends Controller
 {
+
+	const LOCALE = ['ru', 'en'];
+	const CURRENCY = ['ruble', 'dollar', 'euro'];
+
 	public function __construct()
 	{
 		$this->middleware('locale');

@@ -17,20 +17,12 @@
             </div>
             <div class="d-xl-flex flex-row flex-wrap flex-xl-nowrap flex-column flex-xl-row align-items-center justify-content-between w-100 mobile_menu-form">
                 <div class="header__translate order-5 order-xl-0 justify-content-end justify-content-sm-start">
-{{--                    <input id="en" type="radio" name="translate"/>--}}
-{{--                    <label for="en" class="activeText">En</label>--}}
 
                     <a class="@if(session('locale') === 'en') activeText @endif" href="{{ route('locale', 'en') }}">En</a>
                     <div class="header__inclined">/</div>
                     <a class="@if(session('locale') === 'ru') activeText @endif" href="{{ route('locale', 'ru') }}">Ru</a>
-{{--                    <input id="ru" type="radio" name="translate" checked="checked"/>--}}
-{{--                    <label for="ru" >Ru</label>--}}
-
-{{--                    <a href="{{ route('locale', 'ru') }}">RU</a>--}}
-{{--                    <a href="{{ route('locale', 'en') }}">EN</a>--}}
 
                 </div>
-
 
                 @if(count($basic['nav']))
                     <ul class="header__list d-flex align-items-start align-items-xl-center flex-column flex-xl-row order-2 order-xl-0 mr-0 mr-xl-5">
@@ -71,18 +63,22 @@
                 </div>
 
                 <div class="header__money order-4 order-xl-0 flex-column mb-2 mb-xl-0">
+
                     @auth
                         <div class="header__increase-balance d-none d-sm-block d-xl-none">
                             <a href="#" class="mb-2">Пополнить баланс</a>
                         </div>
                     @endauth
+
                     <div class="header__money-currency d-flex align-items-center justify-content-end justify-content-sm-start  pt-3 pt-sm-0">
-                        <input id="dollar" type="radio" name="money"/>
-                        <label for="dollar" class="activeText">$</label>
-                        <input id="euro" type="radio" name="money"/>
-                        <label for="euro">€</label>
-                        <input id="rub" type="radio" name="money" checked="checked"/>
-                        <label for="rub" >₽</label>
+
+                        <a href="{{ route('currency', 'dollar') }}"
+                           class="label d-block @if(session('currency') === 'dollar') activeText @endif">$</a>
+                        <a href="{{ route('currency', 'euro') }}"
+                           class="label d-block @if(session('currency') === 'euro') activeText @endif">€</a>
+                        <a href="{{ route('currency', 'ruble') }}"
+                           class="label d-block @if(session('currency') === 'ruble') activeText @endif">₽</a>
+
                     </div>
                 </div>
             </div>
@@ -91,7 +87,9 @@
 
                 @guest
                     @if(Request::path() !== 'login' && Request::path() !== 'register' && Request::path() !== 'password/reset')
-                        <header-modal-auth-component />
+                        <header-modal-auth-component
+                                :translate="{{ json_encode(trans('template/modal.auth')) }}"
+                        />
                     @endif
                 @else
                     <div class="header__user d-flex align-items-center">

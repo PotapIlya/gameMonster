@@ -20,34 +20,63 @@
                             <div class="rate"> -{{ $item->discounts }}% </div>
                         </div>
                     @endif
+
+{{--@dd(session('current'))--}}
+
                     <div class="catalog__price">
-                        @if($item->price)<div class="new">{{ $item->price }} $</div>@endif
-                        @if($item->old_price)<div class="old">{{ $item->old_price }} $</div>@endif
+                        @if($item->price)
+                            <div class="new">
+                                {{ json_decode($item->price, true)[session('currency')] }}
+                                @switch(session('currency'))
+                                    @case('ruble')
+                                        ₽
+                                        @break
+                                    @case('euro')
+                                        €
+                                        @break
+                                    @default
+                                        $
+                                @endswitch
+
+                            </div>
+                        @endif
+                        @if($item->old_price)
+                            <div class="old">
+                                {{ json_decode($item->old_price, true)[session('currency')] }}
+                                @switch(session('currency'))
+                                    @case('ruble')
+                                        ₽
+                                        @break
+                                    @case('euro')
+                                        €
+                                        @break
+                                    @default
+                                        $
+                                @endswitch
+
+                            </div>
+                        @endif
                     </div>
                 </div>
                 <div class="catalog__tags">
                     @if($item->novelty)
                         <span class="catalog__tags-item pink mr-2">
-{{--                            Новинка--}}
-                            New
+                            @lang('template/base.catalogItem.new')
                         </span>
                     @endif
                     @if($item->exclusive)
                         <span class="catalog__tags-item pink mr-2">
-{{--                            Эксклюзив--}}
-                            Exclusive
+                            @lang('template/base.catalogItem.exclusive')
                         </span>
                     @endif
                     @if($item->pre_order)
                         <span class="catalog__tags-item black mr-2">
-{{--                            Предзаказ--}}
-                            Pre-order
+                            @lang('template/base.catalogItem.preOrder')
                         </span>
                     @endif
                     @if($item->early_access)
                         <span class="catalog__tags-item black mr-2">
-{{--                            Ранний доступ--}}
-                            Early access
+                            @lang('template/base.catalogItem.earlyAccess')
                         </span>
                     @endif
                 </div>
@@ -86,7 +115,7 @@
              data-key="{{ $item->pivot->key }}"
         >
             <span>
-Show product
+                @lang('all/showCatalog.showProduct')
             </span>
         </div>
     @endif

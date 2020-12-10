@@ -72,7 +72,7 @@
                     enInput.value = parse.en;
                     ruInput.value = parse.ru;
 
-                    console.log(parse)
+                    // console.log(parse)
 
                     const resInput = (lang, langInput) =>
                     {

@@ -506,12 +506,30 @@
 }
 
 @media only screen and (max-width: 576px){
+
+
     .my .modal .modal-wrap{
         height: auto !important;
     }
 
     .modal.modal-bonus .global-wrap .modal-wrap{
-        padding: 20px 80px;
+        padding: 20px 50px;
+        align-items: flex-start;
+        background-size: contain;
+
+        .modal__wrap-title{
+            font-size: 18px;
+            margin-bottom: 15px !important;
+        }
+        .modal__wrap-text{
+            font-size: 10px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        & > div{
+            width: 85%;
+        }
     }
 
     .modal.modal-bonus .global-wrap {
@@ -658,6 +676,35 @@
 }
 
 @media only screen and (max-width:400px){
+
+    .proposal_item__wrapper-1 .proposal_item-btn{
+        white-space: nowrap;
+    }
+
+    .modal.modal-bonus .global-wrap .modal-wrap{
+        padding: 20px 50px;
+        align-items: flex-start;
+        background-size: contain;
+
+        .modal__wrap-title{
+            font-size: 12px;
+            margin-bottom: 10px !important;
+        }
+
+        .modal__wrap-input{
+            font-size: 10px;
+            padding: 10px;
+            max-height: 32px;
+            margin-bottom: 5px !important;
+        }
+        .getCash{
+            padding: 8px;
+        }
+        & > div{
+            width: 85%;
+        }
+    }
+
 
 
     //.modal .modal-wrap{

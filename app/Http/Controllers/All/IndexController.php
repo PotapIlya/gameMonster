@@ -14,8 +14,6 @@ use Illuminate\Http\Request;
 class IndexController extends BasicAllController
 {
 
-
-
 	public function __construct()
 	{
 		parent::__construct();
@@ -35,13 +33,23 @@ class IndexController extends BasicAllController
 	}
 
 	/**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
+	 * @param string $currency
+	 */
+	public function changeCurrency(string $currency)
+	{
+		if ($currency && in_array($currency, self::CURRENCY) ){
+			session(['currency' => $currency]);
+		}
+		return redirect()->back();
+	}
+
+
+	/**
+	 * @param Request $request
+	 * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+	 */
     public function index(Request $request)
     {
-
 		return view('all.main.index',
 		[
     		'catalog' => Catalog::limit(16)->with('category')->get(),

@@ -25,6 +25,10 @@ return [
 	'btnUpdate' => 'Repeat password',
 
 
+	'modalTitle' => 'Unlink account',
+	'modalBtnUnlink' => 'Unlink',
+	'modalBtnCancel' => 'Cancel',
+
 
 
 	'purchases' => 'Purchases',

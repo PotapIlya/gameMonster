@@ -17,4 +17,35 @@ return[
 
 
 
+	'auth' => [
+
+		// login and register
+
+		'btnLogin' => 'Вход',
+		'btnRegister' => 'Регистрация',
+
+		'inputPassword' => 'Пароль',
+		'inputResetPassword' => 'Повторите пароль',
+		'forgotPassword' => 'Забыли пароль?',
+
+		'loginWith' => 'Войти с помощью',
+
+		// reset password
+
+		'resetTitle' => 'Сброс пароля',
+		'resetPubTitle' => 'На ваш e-mail будет направлена ссылка для восстановления доступа',
+		'resetBtn' => 'Отправить',
+
+
+		'resetPassword' => 'Пароль',
+		'resetPasswordReset' => 'Повторите пароль',
+		'resetBtnPassword' => 'Изменить пароль',
+
+
+	]
+
+
+
+
+
 ];

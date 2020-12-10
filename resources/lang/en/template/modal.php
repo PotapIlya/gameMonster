@@ -16,5 +16,32 @@ return[
 	],
 
 
+	'auth' => [
+
+
+		// login and register
+		'btnLogin' => 'Sign in',
+		'btnRegister' => 'Registration',
+
+		'inputPassword' => 'Password',
+		'inputResetPassword' => 'Reset password',
+
+		'forgotPassword' => 'Forgot your password?',
+		'loginWith' => 'Login with',
+
+
+		// reset password
+
+		'resetTitle' => 'Reset Password',
+		'resetPubTitle' => 'A link to restore access will be sent to your e-mail',
+		'resetBtn' => 'Proceed',
+
+		'resetPassword' => 'Password',
+		'resetPasswordReset' => 'Password reset',
+		'resetBtnPassword' => 'Change password',
+
+	]
+
+
 
 ];

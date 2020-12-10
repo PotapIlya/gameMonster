@@ -6,8 +6,12 @@
 				<form @submit.prevent="upload" method="POST" class="registration d-flex flex-column p-0" style="background:transparent;">
 				
 					<div class="registration__buttons d-flex justify-content-sm-start justify-content-center mb-3">
-						<a href="/login" class="registration__sign-in">Sign in</a>
-						<a href="/register" class="registration__sign-up modal_header_active_text">Registration</a>
+						<a href="/login" class="registration__sign-in">
+							{{ translate.btnLogin }}
+						</a>
+						<a href="/register" class="registration__sign-up modal_header_active_text">
+							{{ translate.btnRegister }}
+						</a>
 					</div>
 					
 					
@@ -30,11 +34,13 @@
 					<label for="" class="modal-auth-input">
 						<input
 								name="password"
-								placeholder="Password"
+								:placeholder="translate.inputPassword"
 								type="password"
 								v-model="password"
 						>
-						<span class="modal-auth-span">Password</span>
+						<span class="modal-auth-span">
+							{{ translate.inputPassword }}
+						</span>
 						<ul v-if="errorPassword.length">
 							<li v-for="error in errorPassword">
 								{{ error[0] }}
@@ -45,19 +51,23 @@
 						<input
 								v-model="password_confirmation"
 								name="password_confirmation"
-								placeholder="Repeat password"
+								:placeholder="translate.inputResetPassword"
 								type="password"
 						>
-						<span class="modal-auth-span">Repeat password</span>
+						<span class="modal-auth-span">{{ translate.inputResetPassword }}</span>
 					</label>
 					
 					
 					
 					<div class="forgot d-flex align-items-center">
-						<button type="submit" class="registration__enter">Registration</button>
+						<button type="submit" class="registration__enter">
+							{{ translate.btnRegister }}
+						</button>
 <!--						<a href="#" class="registration__forgot">Забыли пароль?</a>-->
 					</div>
-					<a href="#" class="registration__enter-help">Login with</a>
+					<span class="registration__enter-help">
+						{{ translate.loginWith }}
+					</span>
 					<div class="registration__services d-flex justify-content-start align-items-center">
 						<a href="/login/steam" class="service1">
 							<img src="/assets/static/img/services/steam.png" alt="steam">
@@ -81,7 +91,7 @@
 <script>
 	import axios from 'axios'
     export default {
-        name: "AuthComponent",
+	    props: ['translate'],
 		data: () => ({
             email: '',
             password: '',
@@ -91,7 +101,10 @@
             errorEmail: [],
             errorPassword: [],
 		}),
-		methods: {
+		mounted() {
+            console.log(this.translate)
+        },
+        methods: {
             upload()
             {
                 this.errorPassword.length = 0;

@@ -5,7 +5,6 @@
         <div>
             <h3 class="section__title">
                 @lang('all/main.luck.title')
-{{--                Try your luck--}}
             </h3>
         </div>
 
@@ -26,14 +25,15 @@
                         <img class="luck__item-img-detail luck__item-img-detail_{{ $i+1 }}" src="/storage/{{ $item->img }}" alt=""/>
                     </div>
                     <div class="luck__item-text-block">
+
                         @if(!is_null($item->games) && $item->games)
-                            <div class="luck__item-text">{{ $item->games }} игр</div>
+                            <div class="luck__item-text">{{ $item->games }} @lang('all/main.luck.games')</div>
                         @endif
                         @if(!is_null($item->profit) && $item->profit)
-                            <div class="luck__item-text">{{ $item->profit }}% профит</div>
+                            <div class="luck__item-text">{{ $item->profit }}% @lang('all/main.luck.profit')</div>
                         @endif
                         @if(!is_null($item->games_form) && $item->games_form)
-                            <div class="luck__item-text">игры от $ {{ $item->games_form }}</div>
+                            <div class="luck__item-text">@lang('all/main.luck.gamesFrom') $ {{ $item->games_form }}</div>
                         @endif
                     </div>
                     <div class="luck__item-price">

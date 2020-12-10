@@ -1,7 +1,6 @@
 <?php
 
 
-
 return[
 
 	'loginAccount' => 'Log into account',
@@ -18,6 +17,12 @@ return[
 
 	'similarGames' => 'Similar games',
 	'allGames' => 'View more',
+
+	'showProduct' => 'Show product',
+
+
+	'rentAccount' => 'Rent an account'
+
 
 
 ];

@@ -45,11 +45,6 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/development', function ()
-{
-	return view('errors.development');
-});
-
 //Route::view('errors.development', '/development');
 
 
@@ -105,10 +100,15 @@ Route::get('/{name}/status', 'App\Http\Controllers\User\BalanceController@checkS
 
 
 
+Route::view('/development', 'errors.development')->middleware('locale');
+
 Route::group(
 	[
 		'namespace' => 'App\Http\Controllers\Auth',
-	], function ()
+		'middleware' => 'locale'
+
+	],
+	function ()
 	{
 		// Authentication Routes...
 		Route::get('login', 'LoginController@showLoginForm')->name('login');
@@ -147,10 +147,12 @@ Route::group(
 	function ()
 	{
 		Route::get('locale/{locale}', 'IndexController@changeLocale')->name('locale');
+		Route::get('currency/{currency}', 'IndexController@changeCurrency')->name('currency');
 
 
 		Route::resource('/', 'IndexController')->names('main');
 		Route::get('/key/{name}', 'IndexController@show')->name('mainShow');
+
 });
 
 

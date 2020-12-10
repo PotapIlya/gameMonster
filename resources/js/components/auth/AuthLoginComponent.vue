@@ -5,8 +5,12 @@
 				
 				<form @submit.prevent="upload" method="POST" class="registration d-flex flex-column" style="background:transparent;">
 					<div class="registration__buttons d-flex flex-column flex-sm-row justify-content-start align-items-start align-items-sm-center mb-3">
-						<a href="/login" class="registration__sign-in modal_header_active_text">Sign in</a>
-						<a href="/register" class="registration__sign-up">Registration</a>
+						<a href="/login" class="registration__sign-in modal_header_active_text">
+							{{ translate.btnLogin }}
+						</a>
+						<a href="/register" class="registration__sign-up">
+							{{ translate.btnRegister }}
+						</a>
 					</div>
 					
 					<label for="" class="modal-auth-input">
@@ -30,10 +34,12 @@
 								v-model="password"
 								id="password"
 								name="password"
-								placeholder="Password"
+								:placeholder="translate.inputPassword"
 								type="password"
 						>
-						<span class="modal-auth-span">Registration</span>
+						<span class="modal-auth-span">
+							{{ translate.inputPassword }}
+						</span>
 						<ul v-if="errorPassword.length">
 							<li v-for="error in errorPassword">
 								{{ error[0] }}
@@ -43,10 +49,12 @@
 					
 					
 					<div class="forgot d-flex flex-row align-items-center">
-						<button type="submit" class="registration__enter">Sign in</button>
-						<a href="/password/reset" class="registration__forgot">Forgot your password?</a>
+						<button type="submit" class="registration__enter">{{ translate.btnLogin }}</button>
+						<a href="/password/reset" class="registration__forgot">{{ translate.forgotPassword }}</a>
 					</div>
-					<a href="#" class="registration__enter-help">Login with</a>
+					<span class="registration__enter-help">
+						{{ translate.loginWith }}
+					</span>
 					<div class="registration__services d-flex justify-content-start align-items-center">
 						<a href="/login/steam" class="service1">
 							<img src="/assets/static/img/services/steam.png" alt="steam">
@@ -70,7 +78,7 @@
 <script>
     import axios from "axios";
     export default {
-        name: "Login",
+        props: ['translate'],
         data: () => ({
             email: '',
             password: '',
@@ -79,6 +87,9 @@
             errorPassword: [],
             errorEmail: [],
         }),
+		mounted() {
+            // console.log(this.translate)
+        },
         methods: {
             upload()
             {

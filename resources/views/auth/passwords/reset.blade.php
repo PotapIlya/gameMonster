@@ -28,7 +28,7 @@
 
                     <div class="registration__buttons d-flex flex-column justify-content-sm-start justify-content-center mb-3">
                         <span class="registration__sign-in">
-                            Reset password
+                            @lang('template/modal.auth.resetTitle')
                         </span>
                     </div>
 
@@ -45,8 +45,8 @@
                     </label>
 
                     <label for="" class="modal-auth-input">
-                        <input name="password" placeholder="Password" type="password" required>
-                        <span class="modal-auth-span">Password</span>
+                        <input name="password" placeholder="{{ trans('template/modal.auth.resetPassword') }}" type="password" required>
+                        <span class="modal-auth-span">@lang('template/modal.auth.resetPassword')</span>
 
                         @error('password')
                         <span class="invalid-feedback d-block my-2" role="alert">
@@ -56,12 +56,14 @@
 
                     </label>
                     <label for="" class="modal-auth-input">
-                        <input name="password_confirmation" placeholder="Password confirmation" type="password" required>
-                        <span class="modal-auth-span">Password confirmation</span>
+                        <input name="password_confirmation" placeholder="{{ trans('template/modal.auth.resetPasswordReset') }}" type="password" required>
+                        <span class="modal-auth-span">@lang('template/modal.auth.resetPasswordReset')</span>
                     </label>
 
                     <div class="forgot d-flex align-items-center">
-                        <button style="color: #fff; cursor: pointer" type="submit" class="registration__enter mr-auto">Change password</button>
+                        <button style="color: #fff; cursor: pointer" type="submit" class="registration__enter mr-auto">
+                            @lang('template/modal.auth.resetBtnPassword')
+                        </button>
                     </div>
                 </form>
 
