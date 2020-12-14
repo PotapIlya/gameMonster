@@ -4,15 +4,13 @@
             <div class="col-md-12 col-xl pl-4 pl-xl-2 d-flex justify-content-between align-items-center justify-content-lg-start">
                 <h3 class="section__title">
                     @lang('all/main.catalog.title')
-{{--                    Most popular--}}
                 </h3>
                 <a href="/development" class="section__subtitle mb-2">
                     @lang('all/main.catalog.subTitle')
-{{--                    View more--}}
                 </a>
             </div>
         </div>
-        <div class="row catalog__row pl-0 pl-sm-3 pl-xl-0 ">
+        <div class="row catalog__row pl-0 pl-sm-3 pl-xl-0 justify-content-center justify-content-sm-start ">
 
             @foreach($catalog as $item)
                 @include('base.include.catalogItem', ['item' => $item, 'show' => false])

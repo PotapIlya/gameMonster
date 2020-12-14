@@ -15,6 +15,10 @@
 
 @media only screen and (max-width : 1450px) {
 
+    .header__logo{
+        margin-right: 12px;
+    }
+
     .header__money{
         margin-right: 20px;
     }
@@ -80,9 +84,9 @@
                 text-align: left;
                 margin-bottom: 20px;
 
-                &:first-child {
-                    display: none;
-                }
+                //&:first-child {
+                //    display: none;
+                //}
             }
         }
 
@@ -243,6 +247,10 @@
 
 @media only screen and (max-width : 576px) {
 
+    .mobile_menu-form{
+        top: 65px;
+        border-radius: 0;
+    }
 
     .header__money{
         margin-right: 0;

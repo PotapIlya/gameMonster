@@ -5,7 +5,7 @@ namespace App\Models\Admin;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class Lick extends Model
+class Currency extends Model
 {
     use CrudTrait;
 
@@ -15,7 +15,7 @@ class Lick extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'licks';
+    protected $table = 'currencies';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
@@ -28,17 +28,6 @@ class Lick extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
-
-	public function setImgAttribute($value)
-	{
-		$attribute_name = "img";
-		$disk = "public";
-		$destination_path = "lick";
-
-		$this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
-
-		// return $this->attributes[{$attribute_name}]; // uncomment if this is a translatable field
-	}
 
     /*
     |--------------------------------------------------------------------------

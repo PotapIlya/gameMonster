@@ -5,6 +5,7 @@ namespace App\Services\User\Balance;
 
 use App\Exceptions\BuyKeyException;
 use App\Http\Controllers\Controller;
+use App\Models\Admin\Currency;
 use App\Models\Admin\HistoryPayments;
 use Illuminate\Http\Request;
 use Mockery\Exception;
@@ -146,8 +147,11 @@ final class CheckBalance
 				$query->update(['status' => 1]);
 				$userAbout = Auth::user()->about;
 
+				$currencyUsd = Currency::where('name', 'USD')->first()->count;
+
+				$qiwiMoney = explode('.', $status['amount']['value'])[0] / $currencyUsd;
 				$update = $userAbout->update([
-					'money' => explode('.', $status['amount']['value'])[0] + $userAbout->money
+					'money' => $qiwiMoney + $userAbout->money,
 				]);
 				if ($update){
 					return redirect()->route('user.index')
@@ -156,8 +160,9 @@ final class CheckBalance
 				}
 			}
 			else{
+				return redirect()->back();
 //				throw new BuyKeyException('', 500);
-				throw new BuyKeyException();
+//				throw new BuyKeyException();
 			}
 		}
 		else{

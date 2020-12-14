@@ -9,7 +9,8 @@ return [
 		'personalArea' => 'Personal Area',
 		'logout' => 'Logout',
 
-		'search' => 'Search in Game Monster'
+		'searchHeader' => 'Search',
+		'searchFooter' => 'Search in Game Monster'
 
 	]
 

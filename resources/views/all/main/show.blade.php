@@ -44,7 +44,7 @@
 
                 @elseif( !is_null($item->preloader) && $item->preloader )
                     <div class="cart-images col-12 col-xl-7 px-0">
-                        <img src="/storage/{{ $item->preloader }}" alt="main-image" class="mw-100">
+                        <img src="/storage/{{ $item->preloader }}" alt="main-image" class="w-100">
                     </div>
                 @else
                     <div class="cart-images col-12 col-xl-7 px-0">
@@ -72,35 +72,17 @@
 
                             <div class="right-wrap__prices d-flex align-items-center">
                                 <div class="right-wrap__actual">
-                                    @if($item->price)
+                                    @if(!is_null($item->price) && $item->price)
                                         {{ json_decode($item->price, true)[session('currency')] }}
                                         <span class="current">
-                                           @switch(session('currency'))
-                                                @case('ruble')
-                                                    ₽
-                                                    @break
-                                                @case('euro')
-                                                    €
-                                                    @break
-                                                @default
-                                                    $
-                                            @endswitch
+                                          {{ session('currencyIcon') }}
                                         </span>
                                     @endif
                                 </div>
                                 <div class="right-wrap__irrelevant d-flex">
-                                    @if($item->old_price)
+                                    @if(!is_null($item->old_price) && $item->old_price)
                                         {{ json_decode($item->old_price, true)[session('currency')] }}
-                                        @switch(session('currency'))
-                                            @case('ruble')
-                                                ₽
-                                                @break
-                                            @case('euro')
-                                                €
-                                                @break
-                                            @default
-                                                $
-                                        @endswitch
+                                        {{ session('currencyIcon') }}
                                     @endif
                                 </div>
                             </div>

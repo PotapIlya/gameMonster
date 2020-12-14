@@ -13,7 +13,7 @@
     <ul class="nav-dropdown-items">
 
         <li class='nav-item'><a class='nav-link' href='{{ backpack_url('slider') }}'><i class='nav-icon la la-file-o'></i> Слайдер</a></li>
-        <li class='nav-item'><a class='nav-link' href='{{ backpack_url('lick') }}'><i class='nav-icon la la-file-o'></i> Licks</a></li>
+        <li class='nav-item'><a class='nav-link' href='{{ backpack_url('luck') }}'><i class='nav-icon la la-file-o'></i> Испытай удачу</a></li>
         <li class='nav-item'><a class='nav-link' href='{{ backpack_url('proposal') }}'><i class='nav-icon la la-file-o'></i> Proposals</a></li>
     </ul>
 </li>
@@ -65,3 +65,5 @@
         <li class='nav-item'><a class='nav-link' href='{{ backpack_url('socialnetworks') }}'><i class='nav-icon la la-file-o'></i> Соц сети</a></li>
     </ul>
 </li>
+
+<li class='nav-item'><a class='nav-link' href='{{ backpack_url('currency') }}'><i class='nav-icon la la-question'></i> Currencies</a></li>

@@ -7,7 +7,15 @@
     <meta name="gameMonster" content="gameMonster">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+
+
+    <title>
+        @if(Request::path() === '/')
+            GAME MONSTER - №1 Best for Gamer! Marketplace and Game Community
+        @else
+            {{ config('app.name', 'Laravel') }}
+        @endif
+    </title>
 
     <link rel="icon" href="/assets/static/img/main/iconHead.png" sizes="16x16">
 
@@ -26,6 +34,7 @@
         </main>
 
         @includeWhen(Auth::check(), 'base.modal.myAddBalance')
+        @include('base.modal.modalBonus', ['items' => $basic['socialNetworks']])
 
         @include('layouts.include.footer')
 

@@ -8,6 +8,8 @@
                 Invite friends<br class="d-none d-sm-block">
                 and get bonuses
 			</h1>
+
+
 			<p class="modal__wrap-text">
                 For each participant brought in you <br class="d-none d-sm-block">
                 get 500 rubles to your account one time, and 20% off <br class="d-none d-sm-block">
@@ -16,6 +18,16 @@
 {{--				получите 500р на счет единоразово, и 20% от<br class="d-none d-sm-block">--}}
 {{--				покупок реферала на протяжение 3-х месяцев--}}
 			</p>
+
+            <div class="mb-sm-3 mb-2 d-flex align-items-center">
+                @foreach($items as $item)
+                    <div class="social__network mr-3">
+                        <a href="{{ $item->href }}" class="service1">
+                            {!! $item->icon !!}
+                        </a>
+                    </div>
+                @endforeach
+            </div>
 
 			<div class="modal__wrap-group">
 				<label for="" class="d-flex align-items-start align-items-sm-center flex-column flex-lg-row">

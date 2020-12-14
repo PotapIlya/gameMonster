@@ -23,7 +23,6 @@ final class AddBalance
 {
 
 	const CURRENT = 'USD';
-	const CURRENT_RUB = 'RUB';
 
 
 	/**
@@ -163,7 +162,7 @@ final class AddBalance
 			$response = $billPayments->createBill($billId,
 				[
 					'amount' => $request['money'],
-					'currency' => self::CURRENT_RUB,
+					'currency' => 'RUB',
 					'expirationDateTime' => $billPayments->getLifetimeByDay(1),
 					'account' => \Auth::id(),
 					'successUrl' => config('payment.qiwi.success_url'),

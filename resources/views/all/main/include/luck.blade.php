@@ -33,15 +33,25 @@
                             <div class="luck__item-text">{{ $item->profit }}% @lang('all/main.luck.profit')</div>
                         @endif
                         @if(!is_null($item->games_form) && $item->games_form)
-                            <div class="luck__item-text">@lang('all/main.luck.gamesFrom') $ {{ $item->games_form }}</div>
+                            <div class="luck__item-text">
+                                @lang('all/main.luck.gamesFrom')
+                                {{ session('currencyIcon')  }}
+                                {{ json_decode($item->games_form, true)[session('currency')] }}
+                            </div>
                         @endif
                     </div>
                     <div class="luck__item-price">
                         @if(!is_null($item->new_price) &&$item->new_price)
-                            <div class="new">$ {{ $item->new_price }}</div>
+                            <div class="new">
+                                {{ session('currencyIcon')  }}
+                                {{ json_decode($item->new_price, true)[session('currency')] }}
+                            </div>
                         @endif
                         @if(!is_null($item->old_price) &&$item->old_price)
-                            <div class="old">$ {{ $item->old_price }}</div>
+                            <div class="old">
+                                {{ session('currencyIcon')  }}
+                                {{ json_decode($item->old_price, true)[session('currency')] }}
+                            </div>
                         @endif
                     </div>
                 </a>

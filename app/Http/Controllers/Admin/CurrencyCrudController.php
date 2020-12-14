@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\NavRequest;
+use App\Http\Requests\CurrencyRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class NavCrudController
+ * Class CurrencyCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class NavCrudController extends CrudController
+class CurrencyCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
+//    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
+//    use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
     /**
@@ -26,14 +26,10 @@ class NavCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Admin\Nav::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/nav');
-        CRUD::setEntityNameStrings('Меню', 'Меню');
-//		$this->crud->addButtonFromView('line', 'moderate', 'moderate', 'beginning');
+        CRUD::setModel(\App\Models\Admin\Currency::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/currency');
+        CRUD::setEntityNameStrings('currency', 'Валюты');
     }
-
-
-
 
     /**
      * Define what happens when the List operation is loaded.
@@ -43,12 +39,7 @@ class NavCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-		CRUD::addColumn(['name' => 'id']);
-
         CRUD::setFromDb(); // columns
-
-
-		CRUD::removeColumn('url');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -65,38 +56,7 @@ class NavCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(NavRequest::class);
-
-//		$this->crud->addField([
-//			'name'            => 'select_from_array',
-//			'label'           => "Select from array",
-//			'type'            => 'select_from_array',
-//			'options'         => ['one' => 'One', 'two' => 'Two', 'three' => 'Three'],
-//			'allows_null'     => false,
-//			'allows_multiple' => true,
-//			'tab'             => 'Tab name here',
-//		]);
-
-
-        CRUD::addField([
-        	'name' => 'name_desc',
-			'label' => 'Название',
-			'type' => 'translateText',
-			'tab'  => 'Desktop',
-		]);
-
-		CRUD::addField([
-			'name' => 'name_mobile',
-			'label' => 'Название',
-			'type' => 'translateText',
-			'tab'  => 'Mobile',
-		]);
-
-		CRUD::addField([
-			'name' => 'url',
-			'type' => 'text',
-			'label' => 'Ссылка'
-		]);
+        CRUD::setValidation(CurrencyRequest::class);
 
         CRUD::setFromDb(); // fields
 
@@ -117,6 +77,4 @@ class NavCrudController extends CrudController
     {
         $this->setupCreateOperation();
     }
-
-
 }

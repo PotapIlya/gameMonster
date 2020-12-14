@@ -98,9 +98,14 @@
     
     .development {
 
+        min-height: 100vh;
+
         &__wrap{
             padding-left: 0 !important;
             padding-right: 0 !important;
+        }
+        &__form label{
+            padding: 0 !important;
         }
         &__title {
             font-size: 35px;

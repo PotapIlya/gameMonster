@@ -28,6 +28,9 @@
         align-items: center;
         justify-content: space-between;
     }
+    &__logo{
+        margin-right: 35px;
+    }
 
     &__list,
     &__auth,
@@ -193,6 +196,7 @@
     }
 
     &__money {
+        margin-right: 30px;
         display: flex;
         .label:not(:last-child) {
             margin-right: 8px;

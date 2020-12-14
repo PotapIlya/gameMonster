@@ -4,7 +4,7 @@
         <div class="d-flex align-items-center justify-content-between header__block">
 
 
-            <div class="d-flex align-items-center mr-0 mr-sm-5">
+            <div class="d-flex align-items-center mr-0 mr-sm-3">
                 <div class="mobile_menu d-xl-none mr-0 mr-sm-1">
                     <div>
                         <span class="d-flex nav-item"></span>
@@ -25,32 +25,61 @@
                 </div>
 
                 @if(count($basic['nav']))
-                    <ul class="header__list d-flex align-items-start align-items-xl-center flex-column flex-xl-row order-2 order-xl-0 mr-0 mr-xl-5">
+                    <ul class="header__list d-none d-xl-flex align-items-start align-items-xl-center flex-column flex-xl-row order-2 order-xl-0 mr-0 mr-xl-5">
                         @foreach($basic['nav'] as $index=>$nav)
-                            @if($index === 0)
+                            @if($index <= 4)
+                                @if($index === 0)
+                                    <li class="header__list-item">
+                                        <a class="header__list-link" href="{{ $nav->url }}">
+                                            {{ json_decode($nav->name_desc, true)[session('locale')] }}
+                                            <div class="header__list-arrow">
+                                                <img src="/assets/static/img/header/arrow-down.svg" alt=""/>
+                                            </div>
+                                        </a>
+                                    </li>
+                                @elseif($index === 4)
+                                    <li class="header__list-item">
+                                        <a class="header__list-link gradient__orange-yellow" href="{{ $nav->url }}">
+                                            {{ json_decode($nav->name_desc, true)[session('locale')] }}
+                                        </a>
+                                    </li>
+                                @else
+                                    <li class="header__list-item">
+                                        <a class="header__list-link" href="{{ $nav->url }}">
+                                            {{ json_decode($nav->name_desc, true)[session('locale')] }}
+                                        </a>
+                                    </li>
+                                @endif
+                            @endif
+                        @endforeach
+                    </ul>
+
+{{--                    mobile--}}
+
+
+                    <ul class="header__list d-flex d-xl-none align-items-start align-items-xl-center flex-column flex-xl-row order-2 order-xl-0 mr-0 mr-xl-5">
+                        @foreach($basic['nav'] as $index=>$nav)
+
+                            @if($index !== 8)
                                 <li class="header__list-item">
                                     <a class="header__list-link" href="{{ $nav->url }}">
-                                        {{ json_decode($nav->name, true)[session('locale')] }}
-                                        <div class="header__list-arrow">
-                                            <img src="/assets/static/img/header/arrow-down.svg" alt=""/>
-                                        </div>
-                                    </a>
-                                </li>
-                            @elseif($index+1 === count($basic['nav']))
-                                <li class="header__list-item">
-                                    <a class="header__list-link gradient__orange-yellow" href="{{ $nav->url }}">
-                                        {{ json_decode($nav->name, true)[session('locale')] }}
+                                        {{ json_decode($nav->name_mobile, true)[session('locale')] }}
                                     </a>
                                 </li>
                             @else
                                 <li class="header__list-item">
-                                    <a class="header__list-link" href="{{ $nav->url }}">
-                                        {{ json_decode($nav->name, true)[session('locale')] }}
+                                    <a class="header__list-link gradient__orange-yellow" href="{{ $nav->url }}">
+                                        {{ json_decode($nav->name_mobile, true)[session('locale')] }}
                                     </a>
                                 </li>
                             @endif
+
+
+
                         @endforeach
                     </ul>
+
+
                 @endif
 
                 <div class="header__search order-1 order-xl-0 mb-3 mb-xl-0 mb-2 mb-xl-0">
@@ -58,7 +87,7 @@
                     <header-search-component
                             :search="{{ json_encode($basic['search']) }}"
                             :locale="{{ json_encode(session('locale')) }}"
-                            :translate="{{ json_encode(trans('template/header.userDropdown.search')) }}"
+                            :translate="{{ json_encode(trans('template/header.userDropdown.searchHeader')) }}"
                     />
                 </div>
 
@@ -72,12 +101,12 @@
 
                     <div class="header__money-currency d-flex align-items-center justify-content-end justify-content-sm-start  pt-3 pt-sm-0">
 
-                        <a href="{{ route('currency', 'dollar') }}"
-                           class="label d-block @if(session('currency') === 'dollar') activeText @endif">$</a>
-                        <a href="{{ route('currency', 'euro') }}"
-                           class="label d-block @if(session('currency') === 'euro') activeText @endif">€</a>
-                        <a href="{{ route('currency', 'ruble') }}"
-                           class="label d-block @if(session('currency') === 'ruble') activeText @endif">₽</a>
+                        <a href="{{ route('currency', 'USD') }}"
+                           class="label d-block @if(session('currency') === 'USD') activeText @endif">$</a>
+                        <a href="{{ route('currency', 'EUR') }}"
+                           class="label d-block @if(session('currency') === 'EUR') activeText @endif">€</a>
+                        <a href="{{ route('currency', 'RUB') }}"
+                           class="label d-block @if(session('currency') === 'RUB') activeText @endif">₽</a>
 
                     </div>
                 </div>
@@ -92,8 +121,28 @@
                         />
                     @endif
                 @else
+
                     <div class="header__user d-flex align-items-center">
-                        <span class="mr-3 header__user-money">{{ \Auth::user()->about->money }} ₽</span>
+
+                        @if($basic['currency'])
+                            @foreach($basic['currency'] as $currency)
+                                @if($currency->name === session('currency'))
+
+                                    @if(session('currency') === 'USD')
+                                        <span class="mr-3 header__user-money">
+                                            {{ Auth::user()->about->money }}
+                                            {{ session('currencyIcon') }}
+                                        </span>
+                                    @else
+                                        <span class="mr-3 header__user-money">
+                                            {{ Auth::user()->about->money * $currency->count }}
+                                            {{ session('currencyIcon') }}
+                                        </span>
+                                    @endif
+                                @endif
+                            @endforeach
+                        @endif
+
                         <div class="header__user-item d-flex align-items-center">
                             <div>
 
@@ -136,8 +185,6 @@
 
                 @endguest
             </div>
-
-
 
 
         </div>

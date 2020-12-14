@@ -7,11 +7,11 @@ use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class LickCrudController
+ * Class LuckCrudController
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class LickCrudController extends CrudController
+class LuckCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
 //    use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class LickCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Admin\Lick::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/lick');
-        CRUD::setEntityNameStrings('lick', 'Испытай удачу');
+        CRUD::setModel(\App\Models\Admin\Luck::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/luck');
+        CRUD::setEntityNameStrings('luck', 'Испытай удачу');
     }
 
     /**
@@ -103,17 +103,17 @@ class LickCrudController extends CrudController
 		CRUD::addField([
 			'name' => 'games_form',
 			'label' => 'Игры от',
-			'type' => 'number',
+			'type' => 'currency',
 		]);
 		CRUD::addField([
 			'name' => 'new_price',
 			'label' => 'Новая цена',
-			'type' => 'number',
+			'type' => 'currency',
 		]);
 		CRUD::addField([
 			'name' => 'old_price',
 			'label' => 'Старая цена',
-			'type' => 'number',
+			'type' => 'currency',
 		]);
 
 		CRUD::addField([

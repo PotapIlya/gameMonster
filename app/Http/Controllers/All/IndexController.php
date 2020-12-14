@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Admin\Catalog;
 use App\Models\Admin\CatalogKey;
 use App\Models\Admin\Category;
-use App\Models\Admin\Lick;
+use App\Models\Admin\Luck;
 use App\Models\Admin\Proposal;
 use App\Models\Admin\Slider;
 use Illuminate\Http\Request;
@@ -39,6 +39,18 @@ class IndexController extends BasicAllController
 	{
 		if ($currency && in_array($currency, self::CURRENCY) ){
 			session(['currency' => $currency]);
+
+			switch ( session('currency') )
+			{
+				case('RUB'):
+					session(['currencyIcon' => '₽']);
+					break;
+				case('EUR'):
+					session(['currencyIcon' => '€']);
+					break;
+				default:
+					session(['currencyIcon' => '$']);
+			}
 		}
 		return redirect()->back();
 	}
@@ -54,7 +66,7 @@ class IndexController extends BasicAllController
 		[
     		'catalog' => Catalog::limit(16)->with('category')->get(),
     		'slider' => Slider::all(),
-    		'link' => Lick::all(),
+    		'link' => Luck::all(),
     		'proposal' => Proposal::all()
 		]);
 //    	return view('all.main.index', compact('catalog', 'slider', 'link', 'proposal'));

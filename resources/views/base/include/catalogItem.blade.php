@@ -21,39 +21,17 @@
                         </div>
                     @endif
 
-{{--@dd(session('current'))--}}
-
                     <div class="catalog__price">
-                        @if($item->price)
+                        @if(!is_null($item->price) && $item->price)
                             <div class="new">
                                 {{ json_decode($item->price, true)[session('currency')] }}
-                                @switch(session('currency'))
-                                    @case('ruble')
-                                        ₽
-                                        @break
-                                    @case('euro')
-                                        €
-                                        @break
-                                    @default
-                                        $
-                                @endswitch
-
+                                {{ session('currencyIcon') }}
                             </div>
                         @endif
-                        @if($item->old_price)
+                        @if(!is_null($item->old_price) && $item->old_price)
                             <div class="old">
                                 {{ json_decode($item->old_price, true)[session('currency')] }}
-                                @switch(session('currency'))
-                                    @case('ruble')
-                                        ₽
-                                        @break
-                                    @case('euro')
-                                        €
-                                        @break
-                                    @default
-                                        $
-                                @endswitch
-
+                                {{ session('currencyIcon') }}
                             </div>
                         @endif
                     </div>
@@ -86,7 +64,7 @@
 
                     @if( $item->title)
                         <div class="catalog__title">
-                            {{ json_decode($item->title, true)[session('locale')] ?? '' }}
+                            {{ $item->title }}
                         </div>
                     @endif
                     <div class="catalog__playground mr-0 mr-lg-4">

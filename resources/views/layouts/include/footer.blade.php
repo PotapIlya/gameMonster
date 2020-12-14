@@ -11,16 +11,19 @@
                 <ul class="footer__element2 element2 unit">
 
                     @foreach($basic['nav'] as $index=>$li)
+                        @if($index <= 6)
 
-                        @if($index+1 !== count($basic['nav']))
-                            <li class="footer__item">
-                                <a class="footer__link" href="{{ $li->url }}">
-                                    {{ json_decode($li->name, true)[session('locale')] }}
-                                </a>
-                            </li>
+                            @if($index === 3 || $index === 4)
+
+                            @else
+                                <li class="footer__item">
+                                    <a class="footer__link" href="{{ $li->url }}">
+                                        {{ json_decode($li->name_desc, true)[session('locale')] }}
+                                    </a>
+                                </li>
+                            @endif
+
                         @endif
-
-
                     @endforeach
                 </ul>
 
@@ -86,19 +89,21 @@
                     <div class="header__inclined">/</div>
                     <a class="@if(session('locale') === 'ru') activeText @endif" href="{{ route('locale', 'ru') }}">Ru</a>
                 </li>
-                <li class="footer__money mb-4">
-                    <input class="d-none" id="dollar" type="radio" name="money"/>
-                    <label for="dollar" class="activeText">$</label>
-                    <input class="d-none" id="euro" type="radio" name="money"/>
-                    <label for="euro" class="mx-1">€</label>
-                    <input class="d-none" id="rub" type="radio" name="money" checked="checked"/>
-                    <label for="rub" class="">₽</label>
+                <li class="footer__money d-flex mb-4">
+
+                    <a href="{{ route('currency', 'USD') }}"
+                       class="label d-block @if(session('currency') === 'USD') activeText @endif">$</a>
+                    <a href="{{ route('currency', 'EUR') }}"
+                       class="label d-block @if(session('currency') === 'EUR') activeText @endif">€</a>
+                    <a href="{{ route('currency', 'RUB') }}"
+                       class="label d-block @if(session('currency') === 'RUB') activeText @endif">₽</a>
+
                 </li>
                 <li class="footer__search">
                     <footer-search-component
                             :search="{{ json_encode($basic['search']) }}"
                             :locale="{{ json_encode(session('locale')) }}"
-                            :translate="{{ json_encode(trans('template/header.userDropdown.search')) }}"
+                            :translate="{{ json_encode(trans('template/header.userDropdown.searchFooter')) }}"
                     />
 
                 </li>

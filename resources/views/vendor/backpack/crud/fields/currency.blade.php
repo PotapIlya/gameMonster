@@ -4,13 +4,13 @@
 
 @php
 
-    $field['default'] = '{"dollar": 100,"ruble": 100, "euro": 100}';
+    $field['default'] = '{"USD": 100,"RUB": 100, "EUR": 100}';
 
 @endphp
 
 
 <div class="wrapperCustomItemsCurrent">
-    <input
+    <input style="background: grey;"
             class="mainInput form-control"
             type="text"
             name="{{ $field['name'] }}"
@@ -73,9 +73,9 @@
                     {
                         let parse = JSON.parse(mainInput.value);
 
-                        dollar.value = parse.dollar;
-                        ruble.value = parse.ruble;
-                        euro.value = parse.euro;
+                        dollar.value = parse.USD;
+                        ruble.value = parse.RUB;
+                        euro.value = parse.EUR;
 
                         const resInput = (current, currentInput) =>
                         {
@@ -84,9 +84,9 @@
                             mainInput.value = JSON.stringify(parse)
                         }
 
-                        dollar.addEventListener('input', () => resInput('dollar', dollar));
-                        ruble.addEventListener('input', () => resInput('ruble', ruble));
-                        euro.addEventListener('input', () => resInput('euro', euro));
+                        dollar.addEventListener('input', () => resInput('USD', dollar));
+                        ruble.addEventListener('input', () => resInput('RUB', ruble));
+                        euro.addEventListener('input', () => resInput('EUR', euro));
                     }
                 })
             }

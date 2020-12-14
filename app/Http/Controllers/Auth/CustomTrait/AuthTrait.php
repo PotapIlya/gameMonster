@@ -35,7 +35,7 @@ trait AuthTrait
 
 			if (UserServices::where('authentication_id', $authenticationId)->first())
 			{
-				return abort(500);
+				return abort(500, 'Данную соц сеть вы уже привязывали');
 			}
 
 			$findOrCreateUser = $this->findOrCreate(

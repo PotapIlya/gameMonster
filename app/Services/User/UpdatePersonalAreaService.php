@@ -18,7 +18,8 @@ final class UpdatePersonalAreaService
 	 */
 	public function deleteServices(array $array)
 	{
-		if ( Auth::id() === UserServices::findOrFail($array['id'])['user_id'] && !is_null($array['id']) )
+
+		if ( !is_null($array['id']) && Auth::id() === (int) UserServices::findOrFail($array['id'])['user_id'] )
 		{
 			if ( UserServices::destroy($array['id']) )
 			{

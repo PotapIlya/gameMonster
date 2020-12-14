@@ -43,7 +43,7 @@
 
 
 
-    @include('base.modal.modalBonus')
+{{--    @include('base.modal.modalBonus')--}}
 
 {{--    @include('base.modal.modalAuth')--}}
 

@@ -32,11 +32,14 @@ final class BuyKeyService
 				})
 				->first();
 
+
 			if (is_null($item)) {
 				throw new \Exception('item is null');
 			}
 
-			$newUserMoney = $userAbout->money - $item->price;
+//			dd(json_decode($item->price, true)['USD']);
+
+			$newUserMoney = $userAbout->money - json_decode($item->price, true)['USD'];
 			if ($newUserMoney < 0)
 			{
 				return redirect()->back()->withErrors(['errors' => "You don't have enough funds"]);

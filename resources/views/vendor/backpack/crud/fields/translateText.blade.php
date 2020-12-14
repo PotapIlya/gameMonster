@@ -10,7 +10,7 @@
 
 
 <div class="wrapperCustomItems">
-    <input
+    <input style="background: grey;"
             class="translateText form-control"
             type="text"
             name="{{ $field['name'] }}"

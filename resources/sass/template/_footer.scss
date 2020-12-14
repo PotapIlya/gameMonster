@@ -7,6 +7,15 @@
     &__translate,
     &__money{
         color: $menu;
+
+        a{
+            color: $menu !important;
+            margin-right: 8px;
+
+            &.activeText{
+                color: $white !important;
+            }
+        }
     }
 
     &__translate a{

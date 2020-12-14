@@ -10,7 +10,8 @@ return [
 		'logout' => 'Выйти',
 
 
-		'search' => 'Поиск'
+		'searchHeader' => 'Поиск',
+		'searchFooter' => 'Поиск Game Monster'
 
 	]
 

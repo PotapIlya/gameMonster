@@ -10,7 +10,9 @@ class LocaleMiddleware
 {
 
 	const DEFAULT_LOCALE = 'en';
-	const DEFAULT_CURRENCY = 'dollar';
+	const DEFAULT_CURRENCY = 'USD';
+	const DEFAULT_CURRENCY_ICON = '$';
+
 
 	/**
 	 * @param Request $request
@@ -23,9 +25,8 @@ class LocaleMiddleware
     	if ( is_null(session('currency')) )
 		{
 			session(['currency' => self::DEFAULT_CURRENCY]);
+			session(['currencyIcon' => self::DEFAULT_CURRENCY_ICON]);
 		}
-//    	dd(session('currency'));
-
     	if (is_null( session('locale') ))
     	{
 			session(['locale' => self::DEFAULT_LOCALE]);

@@ -150,9 +150,12 @@ Route::group(
 		Route::get('currency/{currency}', 'IndexController@changeCurrency')->name('currency');
 
 
+		// MAIN
 		Route::resource('/', 'IndexController')->names('main');
 		Route::get('/key/{name}', 'IndexController@show')->name('mainShow');
 
+		// GAMES
+		Route::resource('/games', 'CatalogController')->names('catalog');
 });
 
 

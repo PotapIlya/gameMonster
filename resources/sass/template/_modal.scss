@@ -305,6 +305,10 @@
 
 @media only screen and (max-width:1400px){
 
+    .modal-bonus .modal-wrap .modal__wrap-text{
+        margin-bottom: 30px;
+    }
+
     .modal-bonus .modal-wrap .modal__wrap-title{
         font-size: 30px;
     }
@@ -357,6 +361,13 @@
 
 
 @media only screen and (max-width: 992px){
+
+    .modal-bonus .modal-wrap .modal__wrap-title{
+        font-size: 26px !important;
+        }
+    .modal-bonus .modal-wrap .modal__wrap-text{
+        font-size: 14px !important;
+    }
 
     .my{
         .modal .modal-wrap .button-close{
@@ -511,18 +522,26 @@
     .my .modal .modal-wrap{
         height: auto !important;
     }
-
+    .modal-bonus .modal-wrap .modal__wrap-input{
+        max-height: 40px;
+        font-size: 12px;
+        padding: 10px;
+        margin-bottom: 5px !important;
+    }
+    .modal .modal-wrap .getCash{
+        padding: 8px;
+    }
     .modal.modal-bonus .global-wrap .modal-wrap{
         padding: 20px 50px;
         align-items: flex-start;
         background-size: contain;
 
         .modal__wrap-title{
-            font-size: 18px;
+            font-size: 18px !important;
             margin-bottom: 15px !important;
         }
         .modal__wrap-text{
-            font-size: 10px;
+            font-size: 10px !important;
             width: 100%;
             max-width: 300px;
         }
@@ -677,14 +696,32 @@
 
 @media only screen and (max-width:400px){
 
+
+    .modal.modal-bonus .global-wrap .modal-wrap .modal__wrap-title{
+        font-size: 15px !important;
+        margin-bottom: 8px !important;
+    }
+    .modal.modal-bonus .global-wrap .modal-wrap .modal__wrap-text{
+        font-size: 8px !important;
+    }
+
     .proposal_item__wrapper-1 .proposal_item-btn{
         white-space: nowrap;
     }
 
+
+    .modal-bonus .modal-wrap .modal__wrap-text{
+        margin-bottom: 5px !important;
+    }
     .modal.modal-bonus .global-wrap .modal-wrap{
         padding: 20px 50px;
         align-items: flex-start;
         background-size: contain;
+
+        .social__network svg{
+            width: 14px;
+            height: 14px;
+        }
 
         .modal__wrap-title{
             font-size: 12px;

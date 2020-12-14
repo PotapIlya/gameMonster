@@ -83,7 +83,7 @@ Route::group([
 
     Route::crud('catalogkey', 'CatalogKeyCrudController');
     Route::crud('users', 'UsersCrudController');
-    Route::crud('lick', 'LickCrudController');
+    Route::crud('luck', 'LuckCrudController');
     Route::crud('proposal', 'ProposalCrudController');
     Route::crud('historypayments', 'HistoryPaymentsCrudController');
 //    Route::get('charts/weekly-users', 'Charts\WeeklyUsersChartController@response')->name('charts.weekly-users.index');
@@ -92,4 +92,5 @@ Route::group([
     Route::crud('languages', 'LanguagesCrudController');
     Route::crud('operatingsystem', 'OperatingSystemCrudController');
     Route::crud('buykey', 'BuyKeyCrudController');
+    Route::crud('currency', 'CurrencyCrudController');
 }); // this should be the absolute last line of this file

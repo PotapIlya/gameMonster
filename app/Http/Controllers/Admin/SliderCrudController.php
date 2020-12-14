@@ -99,15 +99,13 @@ class SliderCrudController extends CrudController
 		CRUD::addField([
 			'name' => 'price',
 			'label' => 'Цена',
-			'type' => 'number',
-			 'prefix'     => "₽",
+			'type' => 'currency',
 		]);
 
 		CRUD::addField([
 			'name' => 'old_price',
 			'label' => 'Старая цена',
-			'type' => 'number',
-			'prefix'     => "₽",
+			'type' => 'currency',
 		]);
 		CRUD::addField([
 			'name' => 'discounts',

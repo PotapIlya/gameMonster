@@ -9,7 +9,7 @@ class BasicAllController extends Controller
 {
 
 	const LOCALE = ['ru', 'en'];
-	const CURRENCY = ['ruble', 'dollar', 'euro'];
+	const CURRENCY = ['RUB', 'USD', 'EUR'];
 
 	public function __construct()
 	{

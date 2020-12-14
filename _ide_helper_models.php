@@ -213,20 +213,20 @@ namespace App\Models\Admin{
  * @property string|null $discount
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @method static \Illuminate\Database\Eloquent\Builder|Lick newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Lick newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Lick query()
- * @method static \Illuminate\Database\Eloquent\Builder|Lick whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Lick whereDiscount($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Lick whereGames($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Lick whereGamesForm($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Lick whereHref($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Lick whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Lick whereImg($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Lick whereNewPrice($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Lick whereOldPrice($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Lick whereProfit($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Lick whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Luck newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Luck newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Luck query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Luck whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Luck whereDiscount($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Luck whereGames($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Luck whereGamesForm($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Luck whereHref($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Luck whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Luck whereImg($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Luck whereNewPrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Luck whereOldPrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Luck whereProfit($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Luck whereUpdatedAt($value)
  */
 	class Lick extends \Eloquent {}
 }

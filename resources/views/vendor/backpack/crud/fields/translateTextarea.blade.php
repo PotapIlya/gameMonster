@@ -10,7 +10,7 @@
 @endphp
 
 
-<input
+<input style="background: grey;"
         id="translateTextarea"
         type="text"
         name="{{ $field['name'] }}"

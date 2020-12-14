@@ -108,8 +108,14 @@ class CatalogCrudController extends CrudController
 		CRUD::addField([
 			'name'            => 'title',
 			'label'           => "Заголовок",
-			'type'            => 'translateText',
+			'type'            => 'createUrlCatalog',
 		]);
+		CRUD::addField([
+			'name'            => 'url',
+			'label'           => "Заголовок",
+			'type'            => 'createUrlCatalogHidden',
+		]);
+
 
 		CRUD::addField([
 			'name' => 'text',
@@ -119,11 +125,11 @@ class CatalogCrudController extends CrudController
 
 
 
-		CRUD::addField([
-			'label'     => "Url (указывать на английском, без пробеллов)",
-			'type'      => 'text',
-			'name'      => 'url',
-		]);
+//		CRUD::addField([
+//			'label'     => "Url (указывать на английском, без пробеллов)",
+//			'type'      => 'text',
+//			'name'      => 'url',
+//		]);
 //		CRUD::addField([
 //			'label'     => "Заголовок",
 //			'type'      => 'text',
