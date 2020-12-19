@@ -109,6 +109,27 @@ namespace App\Models\Admin{
 
 namespace App\Models\Admin{
 /**
+ * App\Models\Admin\Currency
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $count
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Currency newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Currency newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Currency query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Currency whereCount($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Currency whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Currency whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Currency whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Currency whereUpdatedAt($value)
+ */
+	class Currency extends \Eloquent {}
+}
+
+namespace App\Models\Admin{
+/**
  * App\Models\Admin\Developers
  *
  * @property int $id
@@ -200,7 +221,7 @@ namespace App\Models\Admin{
 
 namespace App\Models\Admin{
 /**
- * App\Models\Admin\Lick
+ * App\Models\Admin\Luck
  *
  * @property int $id
  * @property string|null $img
@@ -228,7 +249,7 @@ namespace App\Models\Admin{
  * @method static \Illuminate\Database\Eloquent\Builder|Luck whereProfit($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Luck whereUpdatedAt($value)
  */
-	class Lick extends \Eloquent {}
+	class Luck extends \Eloquent {}
 }
 
 namespace App\Models\Admin{
@@ -236,7 +257,8 @@ namespace App\Models\Admin{
  * App\Models\Admin\Nav
  *
  * @property int $id
- * @property string|null $name
+ * @property string|null $name_desc
+ * @property string|null $name_mobile
  * @property string|null $url
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -245,7 +267,8 @@ namespace App\Models\Admin{
  * @method static \Illuminate\Database\Eloquent\Builder|Nav query()
  * @method static \Illuminate\Database\Eloquent\Builder|Nav whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Nav whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Nav whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Nav whereNameDesc($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Nav whereNameMobile($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Nav whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Nav whereUrl($value)
  */

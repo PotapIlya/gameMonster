@@ -2,11 +2,14 @@
 
 namespace App\Exceptions;
 
+use Illuminate\Contracts\Container\Container;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Handler extends ExceptionHandler
 {
-    /**
+
+	/**
      * A list of the exception types that are not reported.
      *
      * @var array
@@ -35,15 +38,16 @@ class Handler extends ExceptionHandler
         //
     }
 
-//    public function render($request, Throwable $exception){
-//    	return response([], 500);
-
-//    	if($request->wantsJson()){
-//    		$message = $this->handleApiRequest();
-//
-//    		return response(['message' => 'Motherfucker, something went wrong!'], 500);
-//		}
-//
-//    	return parent::$render;
+//	/**
+//	 * @param \Illuminate\Http\Request $request
+//	 * @param Exception $e
+//	 * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\Response|\Symfony\Component\HttpFoundation\Response
+//	 * @throws \Throwable
+//	 */
+//	public function render($request, \Ex $exception) {
+//		\Route::any(request()->path(), function () use ($exception, $request) {
+//			return parent::render($request, $exception);
+//		})->middleware('web');
+//		return app()->make(Kernel::class)->handle($request);
 //	}
 }

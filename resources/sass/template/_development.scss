@@ -34,7 +34,12 @@
     }
 
     &__button{
-        background: $orange;
+        background: #F59502;
+        backdrop-filter: blur(21.6px);
+        /* Note: backdrop-filter has minimal browser support */
+
+        border-radius: 10.8px;
+
         //backdrop-filter: blur(21.6px);
         //border-radius: 10px;
         padding: 17px 34px;

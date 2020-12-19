@@ -2,62 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="173ae8e2-6c61-4da4-b691-8c53b3dd54f3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/All/CatalogController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/all/catalog/IndexComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/all/catalog/include/AllGameComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/all/catalog/include/OperatingSystemComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/all/catalog/include/PriceComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/all/catalog/include/SearchComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/pages/catalog/_catalog.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/all/catalog/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vendor/backpack/crud/fields/createUrlCatalog.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vendor/backpack/crud/fields/createUrlCatalogHidden.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/All/AboutController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/about/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/about/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/about/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/static/img/about/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/template/noPage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/ru/template/noPage.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/sass/pages/about/_about.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/all/about/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.phpstorm.meta.php" beforeDir="false" afterPath="$PROJECT_DIR$/.phpstorm.meta.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_ide_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_ide_helper_models.php" beforeDir="false" afterPath="$PROJECT_DIR$/_ide_helper_models.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CatalogCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CatalogCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/LickCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/LuckCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/NavCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/NavCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SliderCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SliderCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/All/BasicAllController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/All/BasicAllController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/All/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/All/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/CustomTrait/AuthTrait.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/CustomTrait/AuthTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/LocaleMiddleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/LocaleMiddleware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Admin/Lick.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Admin/Luck.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/BasicServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/BasicServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/User/Balance/AddBalance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/User/Balance/AddBalance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/User/Balance/CheckBalance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/User/Balance/CheckBalance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/User/BuyKeyService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/User/BuyKeyService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/User/UpdatePersonalAreaService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/User/UpdatePersonalAreaService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_11_03_130459_create_tests_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_11_093846_create_currencies_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/All/CatalogController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/All/CatalogController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/template/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/template/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ru/template/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ru/template/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/pages/_app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/_app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/pages/main/_catalog.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/main/_catalog.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/pages/main/_proposal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/main/_proposal.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/pages/my/_my.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/pages/my/_my.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/sass/template/_development.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/template/_development.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/template/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/template/_footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/template/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/template/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/template/_media.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/template/_media.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/template/_modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/template/_modal.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/all/main/include/catalog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/all/main/include/catalog.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/all/main/include/fScreen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/all/main/include/fScreen.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/all/main/include/luck.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/all/main/include/luck.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/all/main/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/all/main/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/all/main/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/all/main/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/base/include/catalogItem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/base/include/catalogItem.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/base/modal/modalBonus.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/base/modal/modalBonus.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/include/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/include/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/errors/404.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/errors/404.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/include/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/include/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/backpack/crud/fields/currency.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/backpack/crud/fields/currency.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/backpack/crud/fields/translateText.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/backpack/crud/fields/translateText.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/backpack/crud/fields/translateTextarea.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/backpack/crud/fields/translateTextarea.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/backpack/custom.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/backpack/custom.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -273,24 +239,24 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/static/img/main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/lang/ru/template" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="Laravel.SettingsForm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\gameMonster\resources\lang\ru\template" />
+      <recent name="C:\OpenServer\domains\gameMonster\public\assets\static\img\main" />
+      <recent name="C:\OpenServer\domains\gameMonster\resources\views\vendor\backpack\crud\fields" />
+      <recent name="C:\OpenServer\domains\gameMonster\resources\views\vendor\backpack\fields" />
+      <recent name="C:\OpenServer\domains\gameMonster\resources\lang\ru" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\OpenServer\domains\gameMonster\app\Models\Admin" />
       <recent name="C:\OpenServer\domains\gameMonster\resources\views\vendor\backpack\crud\fields" />
       <recent name="C:\OpenServer\domains\gameMonster\resources\views\vendor\backpack\crud" />
       <recent name="C:\OpenServer\domains\gameMonster\app\Http\Requests\User" />
       <recent name="C:\OpenServer\domains\gameMonster\resources\sass\pages\my" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\OpenServer\domains\gameMonster\public\assets\static\img\main" />
-      <recent name="C:\OpenServer\domains\gameMonster\resources\views\vendor\backpack\crud\fields" />
-      <recent name="C:\OpenServer\domains\gameMonster\resources\lang\ru\template" />
-      <recent name="C:\OpenServer\domains\gameMonster\resources\views\vendor\backpack\fields" />
-      <recent name="C:\OpenServer\domains\gameMonster\resources\lang\ru" />
     </key>
   </component>
   <component name="RunManager">
@@ -466,7 +432,9 @@
       <workItem from="1607811261359" duration="176000" />
       <workItem from="1607946272895" duration="8772000" />
       <workItem from="1607961722174" duration="2683000" />
-      <workItem from="1607975566114" duration="7930000" />
+      <workItem from="1607975566114" duration="8063000" />
+      <workItem from="1608220595493" duration="7709000" />
+      <workItem from="1608405963973" duration="2320000" />
     </task>
     <servers />
   </component>
@@ -521,11 +489,11 @@
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="677" y="277" key="NewPhpClassDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1604517622128" />
-    <state x="795" y="478" key="NewPhpFileDialog" timestamp="1607949874126">
+    <state x="795" y="478" key="NewPhpFileDialog" timestamp="1608406162148">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>
     <state x="795" y="478" key="NewPhpFileDialog/0.30.1920.1050/-1920.102.1920.1050@0.30.1920.1050" timestamp="1607182376712" />
-    <state x="795" y="478" key="NewPhpFileDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1607949874126" />
+    <state x="795" y="478" key="NewPhpFileDialog/0.30.1920.1050@0.30.1920.1050" timestamp="1608406162148" />
     <state x="461" y="186" key="SettingsEditor" timestamp="1606081262977">
       <screen x="0" y="30" width="1920" height="1050" />
     </state>

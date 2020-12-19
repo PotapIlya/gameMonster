@@ -3,29 +3,24 @@
 namespace App\Http\Controllers\All;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin\Catalog;
-use App\Models\Admin\Category;
 use Illuminate\Http\Request;
-use View;
 
-class CatalogController extends BasicAllController
+class AboutController extends BasicAllController
 {
+	/**
+	 * AboutController constructor.
+	 */
 	public function __construct()
 	{
 		parent::__construct();
 	}
-
 
 	/**
 	 * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
 	 */
     public function index()
     {
-
-    	return view('all.catalog.index', [
-    		'category' => Category::all(),
-    		'games' => Catalog::paginate(10),
-		]);
+        return view('all.about.index');
     }
 
     /**

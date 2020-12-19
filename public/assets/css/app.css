@@ -1531,7 +1531,11 @@ input[type='number'] {
 }
 
 .development__button {
-  background: #F55902;
+  background: #F59502;
+  -webkit-backdrop-filter: blur(21.6px);
+          backdrop-filter: blur(21.6px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 10.8px;
   padding: 17px 34px;
   font-weight: 500;
   font-size: 16px;
@@ -5015,6 +5019,32 @@ input[type='number'] {
     font-size: 12px;
     margin-bottom: 22px;
   }
+}
+
+.aboutPage__item {
+  position: relative;
+}
+
+.aboutPage__item:first-child .aboutPage__text {
+  bottom: 25px;
+  left: -125px;
+  max-width: 400px;
+  width: 100%;
+  text-align: right;
+}
+
+.aboutPage__text {
+  position: absolute;
+}
+
+.aboutPage__text-title {
+  font-size: 65.0733px;
+  line-height: 99.69%;
+}
+
+.aboutPage__text-description {
+  font-size: 27.24px;
+  line-height: 147.69%;
 }
 
 /*!

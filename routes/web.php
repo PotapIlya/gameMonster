@@ -136,6 +136,10 @@ Route::group(
 
 
 
+// Error 404 not found
+Route::fallback(function () {
+	return view('errors.404');
+})->middleware('locale');
 
 
 /** All */
@@ -156,6 +160,9 @@ Route::group(
 
 		// GAMES
 		Route::resource('/games', 'CatalogController')->names('catalog');
+
+		// ABOUT
+		Route::resource('/about', 'AboutController')->names('about');
 });
 
 

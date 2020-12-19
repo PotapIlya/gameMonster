@@ -1,0 +1,48 @@
+.aboutPage{
+
+
+    &__title{
+
+    }
+
+    &__item{
+        position: relative;
+
+
+        &:first-child{
+
+
+            .aboutPage__text{
+                bottom: 25px;
+                left: -125px;
+
+                max-width: 400px;
+                width: 100%;
+                text-align: right;
+            }
+
+        }
+    }
+
+    &__img{
+
+    }
+
+    &__text{
+        position: absolute;
+
+        &-title{
+            font-size: 65.0733px;
+            line-height: 99.69%;
+        }
+        &-description{
+            font-size: 27.24px;
+            line-height: 147.69%;
+        }
+
+
+    }
+
+
+
+}

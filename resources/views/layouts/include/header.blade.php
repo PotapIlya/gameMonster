@@ -24,7 +24,7 @@
 
                 </div>
 
-                @if(count($basic['nav']))
+                @if($basic['nav'])
                     <ul class="header__list d-none d-xl-flex align-items-start align-items-xl-center flex-column flex-xl-row order-2 order-xl-0 mr-0 mr-xl-5">
                         @foreach($basic['nav'] as $index=>$nav)
                             @if($index <= 4)
@@ -53,14 +53,17 @@
                             @endif
                         @endforeach
                     </ul>
+                @endif
 
 {{--                    mobile--}}
 
 
+                @if($basic['nav'])
                     <ul class="header__list d-flex d-xl-none align-items-start align-items-xl-center flex-column flex-xl-row order-2 order-xl-0 mr-0 mr-xl-5">
                         @foreach($basic['nav'] as $index=>$nav)
 
                             @if($index !== 8)
+
                                 <li class="header__list-item">
                                     <a class="header__list-link" href="{{ $nav->url }}">
                                         {{ json_decode($nav->name_mobile, true)[session('locale')] }}
