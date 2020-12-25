@@ -5,6 +5,7 @@
 
 <div class="changeUrl">
     <input
+            style="background: grey;"
             id="getUrl"
             class="mainTitle form-control"
             type="text"
@@ -37,23 +38,6 @@
     {{-- FIELD EXTRA JS --}}
     {{-- push things in the after_scripts section --}}
     @push('crud_fields_scripts')
-        <script>
-            if (document.querySelector('.changeUrl'))
-            {
-                // const wrapper = document.querySelector('#getUrl');
 
-                const inputUrl = document.querySelector('#createUrlCatalogHidden');
-
-
-                const inputTitle = document.querySelector('#getUrl');
-
-                inputTitle.addEventListener('input', (e) =>
-                {
-                    console.log(12)
-                    inputUrl.value = inputTitle.value.toLowerCase().split(' ').join('_');
-                });
-
-            }
-        </script>
     @endpush
 @endif

@@ -39,6 +39,7 @@ class NewsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
+    	CRUD::addColumn(['name' => 'id']);
 
 		CRUD::addColumn([
 			'name' => 'title',
@@ -55,7 +56,7 @@ class NewsCrudController extends CrudController
 			'width' => '80px',
 		]);
 
-//        CRUD::setFromDb(); // columns
+        CRUD::setFromDb(); // columns
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -74,22 +75,18 @@ class NewsCrudController extends CrudController
     {
         CRUD::setValidation(NewsRequest::class);
 
-
 		CRUD::addField([
-			'name'      => 'title',
-			'label'     => 'Заголовок',
-			'type'      => 'text',
+			'name'            => 'url',
+			'label'           => "Url",
+			'type'            => 'news.createUrlHidden',
+		]);
+		CRUD::addField([
+			'name'            => 'title',
+			'label'           => "Заголовок",
+			'type'            => 'news.createUrl',
 		]);
 
-		CRUD::addField([
-			'name'      => 'img',
-			'label'     => 'Картинка',
-			'type'      => 'upload',
-			'upload'    => true,
-//			'disk'      => 'uploads', // if you store files in the /public folder, please ommit this; if you store them in /storage or S3, please specify it;
-			// optional:
-//			'temporary' => 10 // if using a service, such as S3, that requires you to make temporary URL's this will make a URL that is valid for the number of minutes specified
-		]);
+
 
 		CRUD::addField([
 			'label'     => "Категории",
@@ -104,11 +101,68 @@ class NewsCrudController extends CrudController
 			// 'select_all' => true, // show Select All and Clear buttons?
 		]);
 
-//		CRUD::addField([
-//			'name' => 'text',
-//			'label' => 'Описание',
-//			'type' => 'tinymce',
-//		]);
+		CRUD::addField([
+			'name' => 'subTitle',
+			'label' => 'Название',
+			'type' => 'translateText',
+		]);
+
+
+		CRUD::addField([
+			'name' => 'text_1',
+			'label' => 'Текст',
+			'type' => 'translateTextarea',
+		]);
+
+
+		CRUD::addField([
+			'name'      => 'img',
+			'label'     => 'Картинка',
+			'type'      => 'upload',
+			'upload'    => true,
+		]);
+
+		CRUD::addField([
+			'name' => 'text_2',
+			'label' => 'Текст',
+			'type' => 'translateTextarea',
+		]);
+
+
+		CRUD::addField([
+			'name'            => 'list',
+			'label'           => 'Список',
+			'type'            => 'table',
+			'entity_singular' => 'option', // used on the "Add X" button
+			'columns'         => [
+				'name'  => 'Список',
+			],
+//			'max' => 5, // maximum rows allowed in the table
+			'min' => 0, // minimum rows allowed in the table
+		]);
+
+		CRUD::addField([
+			'name'      => 'img_group',
+			'label'     => 'Photos',
+			'type'      => 'upload_multiple',
+			'upload'    => true,
+			'temporary' => 10
+		]);
+
+
+		CRUD::addField([
+			'name' => 'text_3',
+			'label' => 'Текст',
+			'type' => 'translateTextarea',
+		]);
+
+		CRUD::addField([
+			'name' => 'created_at',
+			'label' => 'Дата создания',
+			'type' => 'date'
+		]);
+
+
 
         CRUD::setFromDb(); // fields
 

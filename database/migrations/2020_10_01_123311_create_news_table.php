@@ -16,9 +16,15 @@ class CreateNewsTable extends Migration
         Schema::create('news', function (Blueprint $table) {
             $table->id();
 
+            $table->string('url', 255)->default(null)->nullable();
             $table->string('title', 255)->default(null)->nullable();
+            $table->string('subTitle', 255)->default(null)->nullable();
+			$table->text('text_1')->default(null)->nullable();
             $table->text('img')->default(null)->nullable();
-            $table->text('text')->default(null)->nullable();
+            $table->text('text_2')->default(null)->nullable();
+			$table->text('list')->default(null)->nullable();
+			$table->text('img_group')->default(null)->nullable();
+            $table->text('text_3')->default(null)->nullable();
 
             $table->timestamps();
         });

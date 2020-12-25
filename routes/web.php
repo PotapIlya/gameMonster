@@ -44,7 +44,6 @@ use Illuminate\Support\Facades\Route;
 
 
 
-
 //Route::view('errors.development', '/development');
 
 
@@ -163,6 +162,9 @@ Route::group(
 
 		// ABOUT
 		Route::resource('/about', 'AboutController')->names('about');
+
+		// NEWS
+		Route::resource('/news', 'NewsController')->names('news');
 });
 
 

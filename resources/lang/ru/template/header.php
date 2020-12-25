@@ -11,7 +11,7 @@ return [
 
 
 		'searchHeader' => 'Поиск',
-		'searchFooter' => 'Поиск Game Monster'
+		'searchFooter' => 'Поиск по Game Monster'
 
 	]
 

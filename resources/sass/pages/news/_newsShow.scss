@@ -1,0 +1,218 @@
+.newsShow{
+    padding-bottom: 120px;
+
+
+    &__tags{
+        margin-bottom: 53px;
+
+        &-item{
+            margin-right: 23px;
+            width: max-content;
+
+            font-size: 16px;
+            line-height: 64.19%;
+            color: #fff;
+            padding: 16px 26px;
+            background: #1C1C1C;
+            border-radius: 10px;
+        }
+        &-data{
+            font-size: 16px;
+            line-height: 64.19%;
+            color: #D5D5D5;
+        }
+    }
+
+
+    &__wrapper{
+
+
+        &-title{
+            font-size: 28px;
+            line-height: 170%;
+            margin-bottom: 14px;
+        }
+        &-text{
+            margin-bottom: 20px;
+
+            font-size: 18px;
+            line-height: 170%;
+            font-weight: 400;
+        }
+
+        &-img{
+            border-radius: 27px;
+            margin-bottom: 32px;
+        }
+
+        &-whatDo{
+
+            &-title{
+                font-size: 18px;
+                line-height: 170%;
+                margin-bottom: 10px;
+            }
+            &-ul{
+
+                li{
+                    font-size: 18px;
+                    line-height: 170%;
+                    margin-bottom: 30px;
+                    position: relative;
+                    max-width: 550px;
+                    width: 100%;
+
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        top: 13px;
+                        left: -30px;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background: #F59502;
+                    }
+                }
+            }
+        }
+
+
+        &-slider{
+            .swiper-button-prev,
+            .swiper-button-next{
+                transform: translateY(-40%) !important;
+            }
+        }
+
+
+
+    }
+
+
+    &__other{
+
+        &-wrapper{}
+        &-item{
+
+
+            &-img{
+                border-radius: 27px;
+                margin-bottom: 24px;
+            }
+
+            &-title{
+                font-size: 18px;
+                line-height: 140.5%;
+                font-weight: 400;
+            }
+            &-tags{
+                font-size: 18px;
+                line-height: 140.5%;
+                color: rgba(255, 255, 255, 0.6);
+            }
+        }
+    }
+
+
+    &__comments{
+        margin-top: 36px;
+
+
+        &-title{
+            margin-right: 20px;
+        }
+
+        &-addComment{
+            border: 0 none;
+            background: transparent;
+
+            color: #F59502;
+            font-size: 18px;
+            line-height: 125.69%;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+
+        &-wrapper{
+
+            //&-irem{
+            //    &:last-child{
+            //        background: red;
+            //        .newsShow__comments-item-text{
+            //            border-bottom: 0 none;
+            //        }
+            //    }
+            //}
+
+        }
+        &-item{
+            padding-top: 23px;
+
+            &:last-child{
+                background: red;
+            }
+
+            &-img{
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+
+                margin-right: 20px;
+            }
+            &-title{
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 125.69%;
+                margin-right: 25px;
+            }
+            &-data{
+                font-size: 16px;
+                line-height: 125.69%;
+                color: #969696;
+            }
+            &-text{
+                font-size: 16px;
+                line-height: 150%;
+
+                padding-bottom: 23px;
+                border-bottom: 1px solid #454138;
+            }
+
+        }
+
+        &-showMore{
+            background: rgba(245, 149, 2, 0.14);
+            border-radius: 7px;
+            padding: 17px 38px;
+
+            cursor: pointer;
+
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 170%;
+            color: #F59502;
+            margin-top: 80px;
+        }
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+}

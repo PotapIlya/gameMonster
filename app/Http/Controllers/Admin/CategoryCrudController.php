@@ -66,7 +66,14 @@ class CategoryCrudController extends CrudController
         CRUD::setValidation(CategoryRequest::class);
 
 
-        CRUD::setFromDb(); // fields
+		CRUD::addField([
+			'name' => 'name',
+			'label' => 'Название',
+			'type' => 'translateTextarea',
+		]);
+
+
+		CRUD::setFromDb(); // fields
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

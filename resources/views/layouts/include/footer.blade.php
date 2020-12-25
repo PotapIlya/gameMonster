@@ -62,7 +62,7 @@
                         <img class="mr-2" src="/assets/static/img/pay/visa.png" alt="Visa"/>
                         <img class="mr-2" src="/assets/static/img/pay/oval.png" alt=""/>
                     </div>
-                    <div class="footer__icons">
+                    <div class="footer__icons d-flex align-items-center">
                         <img class="mr-2" src="/assets/static/img/pay/gpay.png" alt="G Pay"/>
                         <img class="mr-2" src="/assets/static/img/pay/iphonepay.png" alt="Iphone Pay"/>
                         <img class="mr-2" src="/assets/static/img/pay/payeer.png" alt="Payeer"/>
@@ -87,7 +87,7 @@
                 <li class="footer__translate d-flex mb-4">
                     <a class="@if(session('locale') === 'en') activeText @endif" href="{{ route('locale', 'en') }}">En</a>
                     <div class="header__inclined">/</div>
-                    <a class="@if(session('locale') === 'ru') activeText @endif" href="{{ route('locale', 'ru') }}">Ru</a>
+                    <a class="ml-1 @if(session('locale') === 'ru') activeText @endif" href="{{ route('locale', 'ru') }}">Ru</a>
                 </li>
                 <li class="footer__money d-flex mb-4">
 
@@ -110,7 +110,7 @@
             </ul>
 
             @if(count($basic['socialNetworks']) && $basic['socialNetworks'])
-                <div class="footer__element7 unit d-flex flex-wrap element7 align-items-center align-items-md-start ml-auto">
+                <div class="footer__element7 unit d-flex flex-wrap element7 align-items-center  ml-auto">
 
                     @foreach($basic['socialNetworks'] as $item)
 

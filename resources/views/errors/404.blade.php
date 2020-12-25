@@ -8,7 +8,7 @@
         .development.noPage .development__title{
             color: #fff;
 
-            background: linear-gradient(#fff, #868686);
+            background: linear-gradient(#fff, #424242);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
 

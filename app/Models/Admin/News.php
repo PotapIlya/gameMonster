@@ -23,6 +23,11 @@ class News extends Model
     // protected $hidden = [];
     // protected $dates = [];
 
+
+	protected $imgGroup = [
+		'img_group' => 'array'
+	];
+
     /*
     |--------------------------------------------------------------------------
     | FUNCTIONS
@@ -67,5 +72,14 @@ class News extends Model
 		$this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
 
 		// return $this->attributes[{$attribute_name}]; // uncomment if this is a translatable field
+	}
+
+	public function setImgGroupAttribute($value)
+	{
+		$attribute_name = "img_group";
+		$disk = "public";
+		$destination_path = "news";
+
+		$this->uploadMultipleFilesToDisk($value, $attribute_name, $disk, $destination_path);
 	}
 }

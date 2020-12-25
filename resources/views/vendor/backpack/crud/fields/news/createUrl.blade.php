@@ -10,24 +10,24 @@
 @endphp
 
 
-<div class="wrapperTranslateTextarea">
+<div class="wrapperCustomItems">
     <input style="background: grey;"
-           id="translateTextarea"
+           class="translateText form-control"
            type="text"
            name="{{ $field['name'] }}"
            value="{{ old($field['name']) ? old($field['name']) : (isset($field['value']) ? $field['value'] : (isset($field['default']) ? $field['default'] : '' )) }}"
             @include('crud::fields.inc.attributes')
     >
-    <div class="wrapperTextarea row align-items-center justify-content-between">
-        <div class="col-md-6">
+    <div class="row align-items-center justify-content-between">
+        <label for="" class="col-md-6">
             <span>EN</span>
-            <textarea class="form-control" id="translateTextareaEn"></textarea>
-        </div>
+            <input class="form-control translateTextEn" type="text">
+        </label>
 
-        <div class="col-md-6">
+        <label for="" class="col-md-6">
             <span>RU</span>
-            <textarea class="form-control" id="translateTextareaRu"></textarea>
-        </div>
+            <input class="form-control translateTextRu" type="text">
+        </label>
     </div>
 
 </div>
@@ -47,30 +47,26 @@
     {{-- FIELD EXTRA CSS  --}}
     {{-- push things in the after_styles section --}}
     @push('crud_fields_styles')
-        <style>
-            .wrapperTextarea textarea{
-                resize: none;
-                min-height: 200px;
-            }
-            .wrapperTextarea span{
-                font-weight: bold;
-            }
-        </style>
+        <!-- no styles -->
     @endpush
 
     {{-- FIELD EXTRA JS --}}
     {{-- push things in the after_scripts section --}}
     @push('crud_fields_scripts')
         <script>
-            if (document.getElementById('translateTextarea'))
+            if (document.querySelectorAll('.wrapperCustomItems'))
             {
-                const wrapper = document.querySelectorAll('.wrapperTranslateTextarea');
+                const wrappers = document.querySelectorAll('.wrapperCustomItems')
 
-                wrapper.forEach(x =>
+                wrappers.forEach(wrapper =>
                 {
-                    const mainInput = x.querySelector('#translateTextarea');
-                    const enInput = x.querySelector('#translateTextareaEn');
-                    const ruInput = x.querySelector('#translateTextareaRu');
+                    const mainInput = wrapper.querySelector('.translateText');
+                    const enInput = wrapper.querySelector('.translateTextEn');
+                    const ruInput = wrapper.querySelector('.translateTextRu');
+
+                    // URL
+                    const getUrl = document.querySelector('#getUrl');
+
 
                     if (mainInput.value)
                     {
@@ -78,13 +74,16 @@
                         enInput.value = parse.en;
                         ruInput.value = parse.ru;
 
-                        // console.log(parse)
-
                         const resInput = (lang, langInput) =>
                         {
                             let parse = JSON.parse(mainInput.value);
                             parse[lang] = langInput.value;
                             mainInput.value = JSON.stringify(parse)
+
+                            if (lang === 'en')
+                            {
+                                getUrl.value = langInput.value.toLowerCase().split(' ').join('_');
+                            }
                         }
 
                         enInput.addEventListener('input', () => resInput('en', enInput));
@@ -92,7 +91,22 @@
                     }
                 })
             }
-
+            // if (document.querySelector('.changeUrl'))
+            // {
+            //     // const wrapper = document.querySelector('#getUrl');
+            //
+            //     const inputUrl = document.querySelector('#createUrlCatalogHidden');
+            //
+            //
+            //     const inputTitle = document.querySelector('#getUrl');
+            //
+            //     inputTitle.addEventListener('input', (e) =>
+            //     {
+            //         console.log(12)
+            //         inputUrl.value = inputTitle.value.toLowerCase().split(' ').join('_');
+            //     });
+            //
+            // }
         </script>
     @endpush
 @endif
