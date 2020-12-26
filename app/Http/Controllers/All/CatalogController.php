@@ -24,7 +24,8 @@ class CatalogController extends BasicAllController
 
     	return view('all.catalog.index', [
     		'category' => Category::all(),
-    		'games' => Catalog::paginate(10),
+//    		'games' => Catalog::paginate(10),
+    		'catalog' => Catalog::with('category')->get(),
 		]);
     }
 

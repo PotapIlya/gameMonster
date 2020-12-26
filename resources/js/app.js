@@ -53,6 +53,9 @@ Vue.component('all-catalog-component', require('./components/all/catalog/IndexCo
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+import store from './store/index';
+
 const app = new Vue({
     el: '#app',
+    store
 });

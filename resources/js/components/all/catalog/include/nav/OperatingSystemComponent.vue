@@ -22,7 +22,7 @@
 				</button>
 			</div>
 			
-			<ul v-if="category.length">
+			<ul v-if="category !== null && category.length">
 				<li
 						v-for="(item, index) in category"
 						class=catalogPage__navbar-item-bottom-label>
@@ -36,7 +36,7 @@
 					<label
 							:for=" 'checkbox_'+index"
 						>
-						{{ item.name }}
+						{{ JSON.parse(item.name)[locale] }}
 					</label>
 				</li>
 			</ul>
@@ -47,10 +47,14 @@
 
 <script>
     export default {
-        props: ['category'],
+        props: [
+        
+		],
         data: () => ({
 			showForm: false,
             inputCheckbox: [],
+			locale: '',
+            category: null,
 		}),
 		watch: {
             inputCheckbox(){
@@ -58,7 +62,13 @@
 			}
 		},
 		mounted() {
-            // console.log(this.category)
+            setTimeout(() => {
+                this.locale = this.$store.getters.getLocale;
+                this.category = this.$store.getters.getCategory;
+
+                // console.log(this.category)
+                
+            }, 5)
         },
         methods: {
             reset()
