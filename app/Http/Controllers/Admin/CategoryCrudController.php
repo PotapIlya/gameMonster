@@ -72,6 +72,21 @@ class CategoryCrudController extends CrudController
 			'type' => 'translateTextarea',
 		]);
 
+		CRUD::addField([
+			'name'      => 'img',
+			'label'     => 'Картинка',
+			'type'      => 'upload',
+			'upload'    => true,
+//			'disk'      => 'uploads', // if you store files in the /public folder, please ommit this; if you store them in /storage or S3, please specify it;
+			// optional:
+//			'temporary' => 10 // if using a service, such as S3, that requires you to make temporary URL's this will make a URL that is valid for the number of minutes specified
+		]);
+		CRUD::addField([
+			'name'      => 'showGames',
+			'label'     => 'Показать в Games',
+			'type'      => 'checkbox',
+		]);
+
 
 		CRUD::setFromDb(); // fields
 

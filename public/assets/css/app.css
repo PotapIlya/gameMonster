@@ -5361,6 +5361,14 @@ input[type='number'] {
           transform: translateY(-40%) !important;
 }
 
+.newsShow__wrapper-slider .swiper-button-next {
+  right: -40px !important;
+}
+
+.newsShow__wrapper-slider .swiper-button-next:after, .newsShow__wrapper-slider .swiper-container-rtl .swiper-button-prev:after {
+  font-size: 20px;
+}
+
 .newsShow__other-item-img {
   border-radius: 27px;
   margin-bottom: 24px;

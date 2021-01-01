@@ -36,11 +36,23 @@ class Category extends Model
     |--------------------------------------------------------------------------
     */
 
-    /*
-    |--------------------------------------------------------------------------
-    | RELATIONS
-    |--------------------------------------------------------------------------
-    */
+	public function setImgAttribute($value)
+	{
+		$attribute_name = "img";
+		$disk = "public";
+		$destination_path = "category";
+
+		$this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
+
+		// return $this->attributes[{$attribute_name}]; // uncomment if this is a translatable field
+	}
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| RELATIONS
+	|--------------------------------------------------------------------------
+	*/
 
     /*
     |--------------------------------------------------------------------------

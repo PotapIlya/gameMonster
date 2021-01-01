@@ -168,15 +168,19 @@
             </div>
 
 
+
             <div>
                 <all-catalog-component
                         :category="{{ json_encode($category) }}"
+                        :oc="{{ json_encode($oc) }}"
+
                         :locale="{{ json_encode(session('locale')) }}"
                         :currency="{{ json_encode(session('currency')) }}"
-                        :valutaIcon="{{ json_encode(session('currencyIcon')) }}"
-
+                        :valutaicon="{{ json_encode(session('currencyIcon')) }}"
 
                         :catalog="{{ json_encode($catalog) }}"
+
+                        :category_image="{{ json_encode($categoryImg) }}"
                 />
             </div>
 

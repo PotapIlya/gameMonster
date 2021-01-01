@@ -7,14 +7,12 @@
 			
 			<AllGameComponent />
 			
-			<OperatingSystemComponent
+			<OperatingSystemComponent/>
 			
-				
-			/>
+			<PriceComponent />
 			
-			<PriceComponent
-			
-			/>
+			<button @click="$store.dispatch('sendAxios')"
+					class="h1 btn btn-primary" type="button">SEND</button>
 		
 		</div>
 		
@@ -28,7 +26,7 @@
     import OperatingSystemComponent from "./nav/OperatingSystemComponent";
     import PriceComponent from "./nav/PriceComponent";
     import SearchComponent from "./nav/SearchComponent";
-
+    import { mapGetters, mapMutations } from 'vuex'
     export default {
         props:[
         
@@ -47,7 +45,9 @@
 
         }),
         methods: {
-
+            ...mapMutations([
+                'sendAxios'
+			])
         },
     }
 </script>

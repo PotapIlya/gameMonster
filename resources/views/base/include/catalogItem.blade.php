@@ -76,7 +76,7 @@
                     <div class="catalog__category">
                         @foreach($item->category as $category)
                             <span class="catalog__category-item mr-2">
-                                {{ $category->name }}
+                                {{ json_decode($category->name, true)[session('locale')] }}
                             </span>
                         @endforeach
 

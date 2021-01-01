@@ -52,7 +52,7 @@ class NewsController extends BasicAllController
     public function show(string $url)
     {
     	$item = News::where('url', $url)->with('category')->firstOrFail();
-    	$otherNews = News::where('url', '!=', $url)->get(['url', 'title', 'img	'])->random(3);
+    	$otherNews = News::where('url', '!=', $url)->get(['url', 'title', 'img'])->random(3);
 
 
         return view('all.news.show', compact('item', 'otherNews'));
@@ -61,7 +61,7 @@ class NewsController extends BasicAllController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id	
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)

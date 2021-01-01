@@ -1,15 +1,12 @@
 <template>
 	<div>
-		<NavComponent
 		
-			
-		/>
+		<NavComponent />
+		
 		<CategoryCartComponent />
 		
+		<WrapperCatalogComponent />
 		
-		<WrapperCatalogComponent
-		
-		/>
 	</div>
 </template>
 
@@ -20,11 +17,15 @@
     export default {
         props:[
             'category',
+            'oc',
+			
 			'locale',
 			'currency',
-			'valutaIcon',
+			'valutaicon',
 			
-			'catalog'
+			'catalog',
+			
+			'category_image'
 		],
         components: {
             NavComponent,
@@ -32,16 +33,17 @@
             WrapperCatalogComponent
 		},
 		mounted() {
-			
-            
             this.$store.dispatch('initCatalog', this.catalog)
             this.$store.dispatch('initLocale', this.locale)
             this.$store.dispatch('initCurrency', this.currency)
-            this.$store.dispatch('initCurrencyIcon', this.valutaIcon)
+            this.$store.dispatch('initCurrencyIcon', this.valutaicon)
 			
 			
             this.$store.dispatch('initCategory', this.category)
-			
+            this.$store.dispatch('initOperatingSystem', this.oc)
+
+   
+            this.$store.dispatch('initCategoryImg', this.category_image)
 			
         },
         data: () => ({

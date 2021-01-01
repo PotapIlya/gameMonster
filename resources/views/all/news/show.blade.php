@@ -71,7 +71,7 @@
                         <div class="newsShow__wrapper-slider">
 
                             <div class="swiper-container gallery-top">
-                                <div class="swiper-wrapper">
+                                <div class="swiper-wrapper d-flex align-items-center">
 
                                     @foreach(json_decode($item->img_group, true) as $img)
                                         <div class="swiper-slide">
@@ -87,7 +87,7 @@
 
                             </div>
                             <div class="swiper-container gallery-thumbs">
-                                <div class="swiper-wrapper">
+                                <div class="swiper-wrapper d-flex align-items-center">
 
                                     @foreach(json_decode($item->img_group, true) as $img)
                                         <div class="swiper-slide">
@@ -180,14 +180,14 @@
 @section('footer')
 
     <script>
-        var galleryThumbs = new Swiper('.gallery-thumbs', {
+        const galleryThumbs = new Swiper('.gallery-thumbs', {
             spaceBetween: 10,
             slidesPerView: 4,
             freeMode: true,
             watchSlidesVisibility: true,
             watchSlidesProgress: true,
         });
-        var galleryTop = new Swiper('.gallery-top', {
+        const galleryTop = new Swiper('.gallery-top', {
             spaceBetween: 10,
             navigation: {
                 nextEl: '.swiper-button-next',

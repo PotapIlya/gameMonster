@@ -1,6 +1,6 @@
 <template>
 	<div class="catalogPage__navbar-item">
-		<button @click="changeShow" type="button" class="catalogPage__navbar-item-top d-flex align-items-center">
+		<button @click="showList" type="button" class="catalogPage__navbar-item-top d-flex align-items-center">
 		   <span>
 				Операционная система
 			</span>
@@ -10,7 +10,7 @@
 		</button>
 		
 		<div
-			:class="{ 'active' : showForm }"
+			:class="{ 'active' : getShowList === 1 }"
 			class="catalogPage__navbar-item-bottom flex-column">
 			
 			<div class="catalogPage__navbar-item-bottom-title d-flex align-items-center justify-content-between">
@@ -22,21 +22,21 @@
 				</button>
 			</div>
 			
-			<ul v-if="category !== null && category.length">
+			<ul v-if="getOperatingSystem !== null && getOperatingSystem.length">
 				<li
-						v-for="(item, index) in category"
+						v-for="(item, index) in getOperatingSystem"
 						class=catalogPage__navbar-item-bottom-label>
 					<input
 							class="d-none"
-							:value="item.name"
-							v-model="inputCheckbox"
-							:id=" 'checkbox_'+index"
+							:value="item.id"
+							v-model="inputCheckboxOs"
+							:id=" 'Oscheckbox_'+index"
 							type="checkbox"
 					>
 					<label
-							:for=" 'checkbox_'+index"
+							:for=" 'Oscheckbox_'+index"
 						>
-						{{ JSON.parse(item.name)[locale] }}
+						{{ item.name }}
 					</label>
 				</li>
 			</ul>
@@ -46,39 +46,44 @@
 </template>
 
 <script>
+    import {mapMutations, mapGetters} from "vuex";
+
     export default {
-        props: [
-        
-		],
         data: () => ({
-			showForm: false,
-            inputCheckbox: [],
+            inputCheckboxOs: [],
 			locale: '',
-            category: null,
+            // operatingSystem: null,
 		}),
 		watch: {
-            inputCheckbox(){
-                console.log(this.inputCheckbox)
+            inputCheckboxOs(data){
+                this.$store.dispatch('setOs', data)
 			}
 		},
+		computed: {
+            ...mapGetters([
+				'getOperatingSystem',
+				'getShowList'
+			])
+		},
 		mounted() {
-            setTimeout(() => {
-                this.locale = this.$store.getters.getLocale;
-                this.category = this.$store.getters.getCategory;
-
-                // console.log(this.category)
-                
-            }, 5)
         },
         methods: {
+            ...mapMutations([
+                'setOs',
+				'resetStorage',
+				'showList'
+            ]),
             reset()
 			{
-			    this.inputCheckbox.length = 0;
-                // this.inputCheckbox = false;
+			    this.$store.dispatch('resetStorage', 'os')
+			    this.inputCheckboxOs.length = 0;
+
+                this.$forceUpdate();
 			},
-            changeShow()
+            showList()
 			{
-			    this.showForm = !this.showForm
+			    this.$store.dispatch('showList', 1)
+                // this.showForm = !this.showForm
 			}
 		}
     }

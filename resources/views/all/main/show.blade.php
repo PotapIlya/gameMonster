@@ -60,11 +60,12 @@
                     @endif
                     <div class="right-wrap12 d-flex flex-column flex-sm-row flex-xl-column justify-content-between">
                         <div class="right-wrap1">
+
                             @if(count($item->category))
                                 <div class="right-wrap__genre-button">
                                     @foreach($item->category as $category)
                                         <button class="right-wrap__genre mr-2">
-                                            {{ $category->name }}
+                                            {{ json_decode($category->name, true)[session('locale')] }}
                                         </button>
                                     @endforeach
                                 </div>

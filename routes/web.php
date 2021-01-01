@@ -160,11 +160,16 @@ Route::group(
 		// GAMES
 		Route::resource('/games', 'CatalogController')->names('catalog');
 
+
 		// ABOUT
 		Route::resource('/about', 'AboutController')->names('about');
 
 		// NEWS
 		Route::resource('/news', 'NewsController')->names('news');
+
+
+		//API
+		Route::post('api/searchCatalog', 'CatalogController@search');
 });
 
 
@@ -196,3 +201,41 @@ Route::group(
 );
 
 
+
+//Route::get('/test', function ()
+//{
+//
+//	$request['search'] = 'awdawda';
+//	$request['min'] = 10;
+//	$request['max'] = 1000;
+//	$request['price'] = session('currency') .':'. $request['max'];
+//
+//
+////	{"USD":100,"RUB":"1000000","EUR":"10000"}
+//
+//
+////	dd(session('currency') .':'. $request['max'] );
+//
+//	dd(
+//
+//		\App\Models\Admin\Catalog::whereHas('category', function ($query)
+//		{
+//			$query->whereIn('categories.id', [8, 9]);
+//		})
+//			->whereHas('operatingSystem', function ($query)
+//		{
+//			$query->whereIn('operating_system.id', [1]);
+//		})
+//			->where('title', 'LIKE', "%{$request['search']}%")
+//
+////			->where('price', 'LIKE', "%{$request['price']}%")
+//
+//			->get()
+//
+//
+//	);
+//
+//
+//
+//
+//});

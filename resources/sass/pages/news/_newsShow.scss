@@ -77,13 +77,24 @@
         }
 
 
-        &-slider{
+        &-slider {
             .swiper-button-prev,
-            .swiper-button-next{
+            .swiper-button-next {
                 transform: translateY(-40%) !important;
             }
-        }
 
+
+            .swiper-button-next {
+                right: -40px !important;
+            }
+
+            .swiper-container.gallery-thumbs.swiper-container-initialized.swiper-container-horizontal.swiper-container-free-mode.swiper-container-thumbs {
+                //overflow: inherit;
+            }
+            .swiper-button-next:after, .swiper-container-rtl .swiper-button-prev:after{
+                font-size: 20px;
+            }
+        }
 
 
     }

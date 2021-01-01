@@ -1,6 +1,6 @@
 <template>
 	<div class="catalogPage__navbar-item">
-		<button @click="changeShow" type="button" class="catalogPage__navbar-item-top d-flex align-items-center">
+		<button @click="showList" type="button" class="catalogPage__navbar-item-top d-flex align-items-center">
 		   <span>
 				Цена
 			</span>
@@ -10,14 +10,14 @@
 		</button>
 		
 		<div
-			:class="{ 'active' : showForm }"
+			:class="{ 'active' : getShowList === 2 }"
 			class="catalogPage__navbar-item-bottom flex-column">
 			
 			<div class="catalogPage__navbar-item-bottom-title d-flex align-items-center justify-content-between mb-2F59502">
 				<span>
-					От {{ value[0] }}{{ currencyIcon }} до {{ value[1] }}{{ currencyIcon }}
+					От {{ value[0] }}{{ getCurrencyIcon }} до {{ value[1] }}{{ getCurrencyIcon }}
 				</span>
-				<button class="catalogPage__navbar-item-bottom-reset">
+				<button @click="reset" class="catalogPage__navbar-item-bottom-reset">
 					Сбросить
 				</button>
 			</div>
@@ -37,6 +37,7 @@
 </template>
 
 <script>
+    import { mapGetters, mapMutations } from 'vuex'
     import VueSlider from 'vue-slider-component'
     import 'vue-slider-component/theme/antd.css'
     export default {
@@ -48,23 +49,43 @@
 			value: [0, 100],
             currencyIcon: '',
             showForm: false,
+			
+			defaultValue: [0, 100],
         }),
 		watch:{
             value()
 			{
+                this.$store.dispatch('setPrice', this.value);
                 // console.log( this.value )
 			}
 		},
+		computed: {
+            ...mapGetters([
+                'getCurrencyIcon',
+				'getShowList'
+			])
+		},
 		mounted() {
-            setTimeout(() => {
-                this.currencyIcon = this.$store.getters.getCurrencyIcon;
-            }, 5)
+            // setTimeout(() => {
+            //     this.currencyIcon = this.$store.getters.getCurrencyIcon;
+            // }, 5)
         },
         methods: {
-            changeShow()
+            ...mapMutations([
+                'setPrice',
+				'showList',
+				'resetStorage'
+			]),
+            showList()
             {
-                this.showForm = !this.showForm
-            }
+                this.$store.dispatch('showList', 2)
+                // this.showForm = !this.showForm
+            },
+            reset()
+			{
+			    this.$store.dispatch('resetStorage', 'price')
+			    this.value = this.defaultValue;
+			}
         }
     }
 </script>
